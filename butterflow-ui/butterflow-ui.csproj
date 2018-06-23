@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19F7E2B7-9C06-4A10-8AA2-BD0DD5ABB9C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>butterflow_ui</RootNamespace>
+    <AssemblyName>butterflow-ui</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ButterflowOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ButterflowOption.xaml.cs">
+      <DependentUpon>ButterflowOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Localization\Localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ThirdPartyCompiled\array.pyd" />
+    <None Include="ThirdPartyCompiled\binascii.pyd" />
+    <None Include="ThirdPartyCompiled\butterflow.avinfo.pyd" />
+    <None Include="ThirdPartyCompiled\butterflow.motion.pyd" />
+    <None Include="ThirdPartyCompiled\butterflow.ocl.pyd" />
+    <None Include="ThirdPartyCompiled\bz2.pyd" />
+    <None Include="ThirdPartyCompiled\cPickle.pyd" />
+    <None Include="ThirdPartyCompiled\cStringIO.pyd" />
+    <None Include="ThirdPartyCompiled\cv2.pyd" />
+    <None Include="ThirdPartyCompiled\datetime.pyd" />
+    <None Include="ThirdPartyCompiled\future_builtins.pyd" />
+    <None Include="ThirdPartyCompiled\itertools.pyd" />
+    <None Include="ThirdPartyCompiled\library.zip" />
+    <None Include="ThirdPartyCompiled\math.pyd" />
+    <None Include="ThirdPartyCompiled\mmap.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.core.multiarray.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.core.umath.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.fft.fftpack_lite.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.linalg.lapack_lite.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.linalg._umath_linalg.pyd" />
+    <None Include="ThirdPartyCompiled\numpy.random.mtrand.pyd" />
+    <None Include="ThirdPartyCompiled\pyexpat.pyd" />
+    <None Include="ThirdPartyCompiled\readline.pyd" />
+    <None Include="ThirdPartyCompiled\select.pyd" />
+    <None Include="ThirdPartyCompiled\strop.pyd" />
+    <None Include="ThirdPartyCompiled\unicodedata.pyd" />
+    <None Include="ThirdPartyCompiled\zlib.pyd" />
+    <None Include="ThirdPartyCompiled\_bisect.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_cn.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_hk.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_iso2022.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_jp.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_kr.pyd" />
+    <None Include="ThirdPartyCompiled\_codecs_tw.pyd" />
+    <None Include="ThirdPartyCompiled\_collections.pyd" />
+    <None Include="ThirdPartyCompiled\_ctypes.pyd" />
+    <None Include="ThirdPartyCompiled\_curses.pyd" />
+    <None Include="ThirdPartyCompiled\_hashlib.pyd" />
+    <None Include="ThirdPartyCompiled\_heapq.pyd" />
+    <None Include="ThirdPartyCompiled\_io.pyd" />
+    <None Include="ThirdPartyCompiled\_multibytecodec.pyd" />
+    <None Include="ThirdPartyCompiled\_multiprocessing.pyd" />
+    <None Include="ThirdPartyCompiled\_random.pyd" />
+    <None Include="ThirdPartyCompiled\_socket.pyd" />
+    <None Include="ThirdPartyCompiled\_ssl.pyd" />
+    <None Include="ThirdPartyCompiled\_struct.pyd" />
+    <None Include="ThirdPartyCompiled\_subprocess.pyd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ThirdPartyCompiled\avcodec-57.dll" />
+    <Content Include="ThirdPartyCompiled\avdevice-57.dll" />
+    <Content Include="ThirdPartyCompiled\avfilter-6.dll" />
+    <Content Include="ThirdPartyCompiled\avformat-57.dll" />
+    <Content Include="ThirdPartyCompiled\avresample-3.dll" />
+    <Content Include="ThirdPartyCompiled\avutil-55.dll" />
+    <Content Include="ThirdPartyCompiled\butterflow.exe" />
+    <Content Include="ThirdPartyCompiled\ffmpeg.exe" />
+    <Content Include="ThirdPartyCompiled\libass-9.dll" />
+    <Content Include="ThirdPartyCompiled\libbluray-1.dll" />
+    <Content Include="ThirdPartyCompiled\libbz2-1.dll" />
+    <Content Include="ThirdPartyCompiled\libcaca-0.dll" />
+    <Content Include="ThirdPartyCompiled\libcelt0-2.dll" />
+    <Content Include="ThirdPartyCompiled\LIBEAY32.dll" />
+    <Content Include="ThirdPartyCompiled\libexpat-1.dll" />
+    <Content Include="ThirdPartyCompiled\libffi-6.dll" />
+    <Content Include="ThirdPartyCompiled\libfontconfig-1.dll" />
+    <Content Include="ThirdPartyCompiled\libfreetype-6.dll" />
+    <Content Include="ThirdPartyCompiled\libfribidi-0.dll" />
+    <Content Include="ThirdPartyCompiled\libgcc_s_seh-1.dll" />
+    <Content Include="ThirdPartyCompiled\libgfortran-3.dll" />
+    <Content Include="ThirdPartyCompiled\libglib-2.0-0.dll" />
+    <Content Include="ThirdPartyCompiled\libgmp-10.dll" />
+    <Content Include="ThirdPartyCompiled\libgnutls-30.dll" />
+    <Content Include="ThirdPartyCompiled\libgraphite2.dll" />
+    <Content Include="ThirdPartyCompiled\libgsm.dll" />
+    <Content Include="ThirdPartyCompiled\libHalf-2_2.dll" />
+    <Content Include="ThirdPartyCompiled\libharfbuzz-0.dll" />
+    <Content Include="ThirdPartyCompiled\libhogweed-4.dll" />
+    <Content Include="ThirdPartyCompiled\libiconv-2.dll" />
+    <Content Include="ThirdPartyCompiled\libidn-11.dll" />
+    <Content Include="ThirdPartyCompiled\libIex-2_2.dll" />
+    <Content Include="ThirdPartyCompiled\libIlmImf-2_2.dll" />
+    <Content Include="ThirdPartyCompiled\libIlmThread-2_2.dll" />
+    <Content Include="ThirdPartyCompiled\libImath-2_2.dll" />
+    <Content Include="ThirdPartyCompiled\libintl-8.dll" />
+    <Content Include="ThirdPartyCompiled\libjasper-4.dll" />
+    <Content Include="ThirdPartyCompiled\libjpeg-8.dll" />
+    <Content Include="ThirdPartyCompiled\liblzma-5.dll" />
+    <Content Include="ThirdPartyCompiled\libmodplug-1.dll" />
+    <Content Include="ThirdPartyCompiled\libmp3lame-0.dll" />
+    <Content Include="ThirdPartyCompiled\libnettle-6.dll" />
+    <Content Include="ThirdPartyCompiled\libogg-0.dll" />
+    <Content Include="ThirdPartyCompiled\libopenal-1.dll" />
+    <Content Include="ThirdPartyCompiled\libopenblas.dll" />
+    <Content Include="ThirdPartyCompiled\libOpenCL.dll" />
+    <Content Include="ThirdPartyCompiled\libopencore-amrnb-0.dll" />
+    <Content Include="ThirdPartyCompiled\libopencore-amrwb-0.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_calib3d2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_contrib2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_core2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_features2d2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_flann2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_highgui2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_imgproc2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_legacy2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_ml2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_nonfree2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_objdetect2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_ocl2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_photo2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopencv_video2413.dll" />
+    <Content Include="ThirdPartyCompiled\libopenjp2-7.dll" />
+    <Content Include="ThirdPartyCompiled\libopus-0.dll" />
+    <Content Include="ThirdPartyCompiled\liborc-0.4-0.dll" />
+    <Content Include="ThirdPartyCompiled\libp11-kit-0.dll" />
+    <Content Include="ThirdPartyCompiled\libpcre-1.dll" />
+    <Content Include="ThirdPartyCompiled\libpng16-16.dll" />
+    <Content Include="ThirdPartyCompiled\libpython2.7.dll" />
+    <Content Include="ThirdPartyCompiled\libquadmath-0.dll" />
+    <Content Include="ThirdPartyCompiled\libreadline7.dll" />
+    <Content Include="ThirdPartyCompiled\librtmp-1.dll" />
+    <Content Include="ThirdPartyCompiled\libschroedinger-1.0-0.dll" />
+    <Content Include="ThirdPartyCompiled\libspeex-1.dll" />
+    <Content Include="ThirdPartyCompiled\libstdc++-6.dll" />
+    <Content Include="ThirdPartyCompiled\libtasn1-6.dll" />
+    <Content Include="ThirdPartyCompiled\libtermcap-0.dll" />
+    <Content Include="ThirdPartyCompiled\libtheoradec-1.dll" />
+    <Content Include="ThirdPartyCompiled\libtheoraenc-1.dll" />
+    <Content Include="ThirdPartyCompiled\libtiff-5.dll" />
+    <Content Include="ThirdPartyCompiled\libunistring-2.dll" />
+    <Content Include="ThirdPartyCompiled\libvorbis-0.dll" />
+    <Content Include="ThirdPartyCompiled\libvorbisenc-2.dll" />
+    <Content Include="ThirdPartyCompiled\libvpx-1.dll" />
+    <Content Include="ThirdPartyCompiled\libwavpack-1.dll" />
+    <Content Include="ThirdPartyCompiled\libwebp-7.dll" />
+    <Content Include="ThirdPartyCompiled\libwebpmux-3.dll" />
+    <Content Include="ThirdPartyCompiled\libwinpthread-1.dll" />
+    <Content Include="ThirdPartyCompiled\libx264-148.dll" />
+    <Content Include="ThirdPartyCompiled\libx265.dll" />
+    <Content Include="ThirdPartyCompiled\libxml2-2.dll" />
+    <Content Include="ThirdPartyCompiled\msvcrt.dll" />
+    <Content Include="ThirdPartyCompiled\opencv_ffmpeg2413_64.dll" />
+    <Content Include="ThirdPartyCompiled\postproc-54.dll" />
+    <Content Include="ThirdPartyCompiled\SDL2.dll" />
+    <Content Include="ThirdPartyCompiled\SSLEAY32.dll" />
+    <Content Include="ThirdPartyCompiled\swresample-2.dll" />
+    <Content Include="ThirdPartyCompiled\swscale-4.dll" />
+    <Content Include="ThirdPartyCompiled\tbb.dll" />
+    <Content Include="ThirdPartyCompiled\xvidcore.dll" />
+    <Content Include="ThirdPartyCompiled\zlib1.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
