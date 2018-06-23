@@ -14,8 +14,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="{Binding LabelValue, ElementName=userControl}" />
-                <ContentPresenter Grid.Column="1" Content="{TemplateBinding Content}" />
+                <Label Grid.Column="0" VerticalAlignment="Center" Content="{Binding LabelValue, ElementName=userControl}" />
+                <ContentPresenter Grid.Column="1" VerticalAlignment="Center" Content="{TemplateBinding Content}" />
             </Grid>
         </DataTemplate>
     </UserControl.ContentTemplate>

@@ -22,11 +22,11 @@ namespace butterflow_ui
     {
         #region Properties
 
-        public String LabelValue
+        public string LabelValue
         {
             get
             {
-                return (String)GetValue(LabelValueProperty);
+                return (string)GetValue(LabelValueProperty);
             }
             set
             {
@@ -38,7 +38,7 @@ namespace butterflow_ui
 
         #region Dependency Properties
 
-        public static DependencyProperty LabelValueProperty = DependencyProperty.Register("LabelProperty", typeof(String), typeof(ButterflowOption));
+        public static DependencyProperty LabelValueProperty = DependencyProperty.Register("LabelProperty", typeof(string), typeof(ButterflowOption));
 
         #endregion
 

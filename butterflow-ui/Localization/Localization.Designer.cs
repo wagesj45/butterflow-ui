@@ -61,6 +61,69 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 120 fps.
+        /// </summary>
+        public static string _120fpsLabel {
+            get {
+                return ResourceManager.GetString("_120fpsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24 fps.
+        /// </summary>
+        public static string _24fpsLabel {
+            get {
+                return ResourceManager.GetString("_24fpsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2x.
+        /// </summary>
+        public static string _2xLabel {
+            get {
+                return ResourceManager.GetString("_2xLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 30 fps.
+        /// </summary>
+        public static string _30fpsLabel {
+            get {
+                return ResourceManager.GetString("_30fpsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3x.
+        /// </summary>
+        public static string _3xLabel {
+            get {
+                return ResourceManager.GetString("_3xLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4x.
+        /// </summary>
+        public static string _4xLabel {
+            get {
+                return ResourceManager.GetString("_4xLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 60 fps.
+        /// </summary>
+        public static string _60fpsLabel {
+            get {
+                return ResourceManager.GetString("_60fpsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced Options.
         /// </summary>
         public static string AdvancedOptionsGroupBox {
@@ -75,6 +138,15 @@ namespace butterflow_ui.Localization {
         public static string CommonOptionsGroupBox {
             get {
                 return ResourceManager.GetString("CommonOptionsGroupBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Rate.
+        /// </summary>
+        public static string CustomPlaybackRateLabel {
+            get {
+                return ResourceManager.GetString("CustomPlaybackRateLabel", resourceCulture);
             }
         }
         
@@ -97,6 +169,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Height.
+        /// </summary>
+        public static string HeightLabel {
+            get {
+                return ResourceManager.GetString("HeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep Audio.
+        /// </summary>
+        public static string KeepAudioLabel {
+            get {
+                return ResourceManager.GetString("KeepAudioLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playback Rate.
         /// </summary>
         public static string PlaybackRateLabel {
@@ -106,11 +196,29 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Video Scale / Resolution.
+        /// </summary>
+        public static string ResolutionLabel {
+            get {
+                return ResourceManager.GetString("ResolutionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to butterflow-ui.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width.
+        /// </summary>
+        public static string WidthLabel {
+            get {
+                return ResourceManager.GetString("WidthLabel", resourceCulture);
             }
         }
     }

@@ -21,6 +21,28 @@ namespace butterflow_ui
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Properties
+
+        public string PlaybackRate
+        {
+            get
+            {
+                return (string)GetValue(PlaybackRateProperty);
+            }
+            set
+            {
+                SetValue(PlaybackRateProperty, value);
+            }
+        }
+
+        #endregion
+
+        #region Dependency Properties
+
+        public static DependencyProperty PlaybackRateProperty = DependencyProperty.Register("PlaybackRateProperty", typeof(string), typeof(MainWindow));
+
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();

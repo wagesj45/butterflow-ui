@@ -6,6 +6,7 @@
         xmlns:loc="clr-namespace:butterflow_ui.Localization"
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
+        x:Name="butterflowUIWindow"
         Title="{x:Static loc:Localization.Title}" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -41,25 +42,62 @@
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.CommonOptionsGroupBox}">
-                <StackPanel>
-                    <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}">
-                        <TextBox />
-                    </butterflow_ui:ButterflowOption>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{x:Static loc:Localization.PlaybackRateLabel}" />
-                        <TextBox Grid.Column="1" />
-                    </Grid>
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel>
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}">
+                            <StackPanel Orientation="Vertical">
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._2xLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._3xLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._4xLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._24fpsLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._30fpsLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._60fpsLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._120fpsLabel}">
+                                    <RadioButton GroupName="PlaybackRate" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}">
+                                    <TextBox Text="{Binding PlaybackRate, ElementName=butterflowUIWindow}"  />
+                                </butterflow_ui:ButterflowOption>
+                            </StackPanel>
+                        </butterflow_ui:ButterflowOption>
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.KeepAudioLabel}">
+                            <CheckBox />
+                        </butterflow_ui:ButterflowOption>
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.ResolutionLabel}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <butterflow_ui:ButterflowOption Grid.Column="0" LabelValue="{x:Static loc:Localization.WidthLabel}">
+                                    <TextBox />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption Grid.Column="1" LabelValue="{x:Static loc:Localization.HeightLabel}">
+                                    <TextBox />
+                                </butterflow_ui:ButterflowOption>
+                            </Grid>
+                        </butterflow_ui:ButterflowOption>
+                    </StackPanel>
+                </ScrollViewer>
             </GroupBox>
             <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.AdvancedOptionsGroupBox}">
-                <StackPanel>
+                <ScrollViewer>
+                    <StackPanel>
 
-                </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
             </GroupBox>
             <MediaElement Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Name="mediaPreview" />
         </Grid>
