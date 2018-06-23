@@ -138,6 +138,9 @@
   <data name="KeepAudioLabel" xml:space="preserve">
     <value>Keep Audio</value>
   </data>
+  <data name="LosslessLabel" xml:space="preserve">
+    <value>Lossless Quality</value>
+  </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
     <value>Playback Rate</value>
   </data>

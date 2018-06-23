@@ -75,6 +75,9 @@
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.KeepAudioLabel}">
                             <CheckBox />
                         </butterflow_ui:ButterflowOption>
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.LosslessLabel}">
+                            <CheckBox />
+                        </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.ResolutionLabel}">
                             <Grid>
                                 <Grid.ColumnDefinitions>

@@ -187,6 +187,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lossless Quality.
+        /// </summary>
+        public static string LosslessLabel {
+            get {
+                return ResourceManager.GetString("LosslessLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playback Rate.
         /// </summary>
         public static string PlaybackRateLabel {
