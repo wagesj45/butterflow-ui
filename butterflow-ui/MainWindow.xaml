@@ -68,7 +68,7 @@
                                     <RadioButton GroupName="PlaybackRate" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}">
-                                    <TextBox Text="{Binding PlaybackRate, ElementName=butterflowUIWindow}"  />
+                                    <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"  />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
@@ -85,10 +85,10 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <butterflow_ui:ButterflowOption Grid.Column="0" LabelValue="{x:Static loc:Localization.WidthLabel}">
-                                    <TextBox />
+                                    <TextBox Name="txtWidth" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption Grid.Column="1" LabelValue="{x:Static loc:Localization.HeightLabel}">
-                                    <TextBox />
+                                    <TextBox Name="txtHeight" Text="" />
                                 </butterflow_ui:ButterflowOption>
                             </Grid>
                         </butterflow_ui:ButterflowOption>

@@ -23,35 +23,24 @@ namespace butterflow_ui
     {
         #region Properties
 
-        public string PlaybackRate
-        {
-            get
-            {
-                return (string)GetValue(PlaybackRateProperty);
-            }
-            set
-            {
-                SetValue(PlaybackRateProperty, value);
-            }
-        }
+        public OptionsConfiguration OptionsConfiguration { get; set; } = new OptionsConfiguration();
 
         #endregion
 
-        #region Dependency Properties
-
-        public static DependencyProperty PlaybackRateProperty = DependencyProperty.Register("PlaybackRateProperty", typeof(string), typeof(MainWindow));
-
-        #endregion
-
+        /// <summary> Default constructor. </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary> Event handler. Called by btnFilePicker for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
         private void btnFilePicker_Click(object sender, RoutedEventArgs e)
         {
             var ofd = new OpenFileDialog();
             ofd.Filter = "Supported Video Files|*.mp4;*.mkv";
+            
 
             var result = ofd.ShowDialog(this);
             if (result.HasValue && result.Value)
