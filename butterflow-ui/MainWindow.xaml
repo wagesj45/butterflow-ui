@@ -46,26 +46,26 @@
                     <StackPanel>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}">
                             <StackPanel Orientation="Vertical">
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._2xLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._2xLabel}" Tag="2x" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._3xLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._3xLabel}" Tag="3x" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._4xLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._4xLabel}" Tag="4x" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._24fpsLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._24fpsLabel}" Tag="24"/>
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._30fpsLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._30fpsLabel}" Tag="30" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._60fpsLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._60fpsLabel}" Tag="60" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization._120fpsLabel}">
-                                    <RadioButton GroupName="PlaybackRate" />
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._120fpsLabel}" Tag="120" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}">
                                     <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"  />
@@ -73,10 +73,10 @@
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.KeepAudioLabel}">
-                            <CheckBox />
+                            <CheckBox IsChecked="{Binding OptionsConfiguration.KeepAudio, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.LosslessLabel}">
-                            <CheckBox />
+                            <CheckBox IsChecked="{Binding OptionsConfiguration.LosslessQuality, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.ResolutionLabel}">
                             <Grid>
@@ -85,10 +85,10 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <butterflow_ui:ButterflowOption Grid.Column="0" LabelValue="{x:Static loc:Localization.WidthLabel}">
-                                    <TextBox Name="txtWidth" />
+                                    <TextBox Text="{Binding OptionsConfiguration.Width, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption Grid.Column="1" LabelValue="{x:Static loc:Localization.HeightLabel}">
-                                    <TextBox Name="txtHeight" Text="" />
+                                    <TextBox Text="{Binding OptionsConfiguration.Height, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}}"  />
                                 </butterflow_ui:ButterflowOption>
                             </Grid>
                         </butterflow_ui:ButterflowOption>

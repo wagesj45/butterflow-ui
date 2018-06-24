@@ -24,6 +24,7 @@ namespace butterflow_ui
         private bool keepAudio;
         private int width;
         private int height;
+        private bool losslessQuality;
 
         #endregion
 
@@ -88,6 +89,21 @@ namespace butterflow_ui
                 interpreter.Interpret(value);
                 this.height = interpreter.Int;
                 OnPropertyChanged("Height");
+            }
+        }
+
+        /// <summary> Gets or sets a value indicating whether the result is rendered in lossless quality. </summary>
+        /// <value> True if lossless quality is selected, false if not. </value>
+        public bool LosslessQuality
+        {
+            get
+            {
+                return this.losslessQuality;
+            }
+            set
+            {
+                this.losslessQuality = value;
+                OnPropertyChanged("LosslessQuality");
             }
         }
 

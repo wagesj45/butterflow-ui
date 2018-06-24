@@ -23,6 +23,8 @@ namespace butterflow_ui
     {
         #region Properties
 
+        /// <summary> Gets or sets the butyterflow options configuration. </summary>
+        /// <value> The options configuration. </value>
         public OptionsConfiguration OptionsConfiguration { get; set; } = new OptionsConfiguration();
 
         #endregion
@@ -47,6 +49,20 @@ namespace butterflow_ui
             {
                 txtFileName.Text = ofd.FileName;
                 mediaPreview.Source = new Uri(ofd.FileName);
+            }
+        }
+
+        /// <summary> Event handler. Called by PlaybackRate radio buttons for checked events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void PlaybackRateRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var typedSender = (RadioButton)sender;
+
+            if(typedSender != null)
+            {
+                var tag = typedSender.Tag.ToString();
+                this.OptionsConfiguration.PlaybackRate = tag;
             }
         }
     }
