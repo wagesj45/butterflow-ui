@@ -196,6 +196,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Some description of playback rate goes here..
+        /// </summary>
+        public static string PlaybackRateDescription {
+            get {
+                return ResourceManager.GetString("PlaybackRateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playback Rate.
         /// </summary>
         public static string PlaybackRateLabel {
@@ -205,7 +214,16 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video Scale / Resolution.
+        ///   Looks up a localized string similar to Video Rendering.
+        /// </summary>
+        public static string RenderingLabel {
+            get {
+                return ResourceManager.GetString("RenderingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output Resolution.
         /// </summary>
         public static string ResolutionLabel {
             get {

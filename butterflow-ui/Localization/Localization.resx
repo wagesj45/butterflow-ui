@@ -141,11 +141,17 @@
   <data name="LosslessLabel" xml:space="preserve">
     <value>Lossless Quality</value>
   </data>
+  <data name="PlaybackRateDescription" xml:space="preserve">
+    <value>Some description of playback rate goes here.</value>
+  </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
     <value>Playback Rate</value>
   </data>
+  <data name="RenderingLabel" xml:space="preserve">
+    <value>Video Rendering</value>
+  </data>
   <data name="ResolutionLabel" xml:space="preserve">
-    <value>Video Scale / Resolution</value>
+    <value>Output Resolution</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>butterflow-ui</value>

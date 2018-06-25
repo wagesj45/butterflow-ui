@@ -13,7 +13,13 @@
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" VerticalAlignment="Center" Content="{TemplateBinding LabelValue}" />
                         <ContentControl Grid.Column="1" VerticalAlignment="Center" Content="{TemplateBinding Content}" />
+                        <Label x:Name="TheLabel" Grid.Column="2" Visibility="Visible" ToolTip="{TemplateBinding DescriptionValue}" Content="?"/>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="DescriptionValue" Value="{x:Null}">
+                            <Setter TargetName="TheLabel" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

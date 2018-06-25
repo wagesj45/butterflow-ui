@@ -11,10 +11,17 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                //
+                <MenuItem Header="Derp" />
+                <MenuItem Header="Darp" />
+                <MenuItem Header="Dorp" />
             </MenuItem>
             <MenuItem Header="_Edit" />
-            <MenuItem Header="_Help" />
+            <MenuItem Header="_Help">
+                <MenuItem Header="More about butterflow..." />
+                <MenuItem Header="More about butterflow-ui..." />
+                <Separator />
+                <MenuItem Header="About" />
+            </MenuItem>
         </Menu>
         <Grid>
             <Grid.RowDefinitions>
@@ -44,7 +51,7 @@
             <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.CommonOptionsGroupBox}">
                 <ScrollViewer>
                     <StackPanel>
-                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}">
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}" >
                             <StackPanel Orientation="Vertical">
                                 <butterflow_ui:ButterflowOption LabelValue="">
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._2xLabel}" Tag="2x" />
@@ -67,16 +74,20 @@
                                 <butterflow_ui:ButterflowOption LabelValue="">
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._120fpsLabel}" Tag="120" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}">
+                                <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}" DescriptionValue="{x:Static loc:Localization.PlaybackRateDescription}">
                                     <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"  />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
-                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.KeepAudioLabel}">
-                            <CheckBox IsChecked="{Binding OptionsConfiguration.KeepAudio, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
-                        </butterflow_ui:ButterflowOption>
-                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.LosslessLabel}">
-                            <CheckBox IsChecked="{Binding OptionsConfiguration.LosslessQuality, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.RenderingLabel}">
+                            <StackPanel>
+                                <butterflow_ui:ButterflowOption LabelValue="">
+                                    <CheckBox IsChecked="{Binding OptionsConfiguration.KeepAudio, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.KeepAudioLabel}" />
+                                </butterflow_ui:ButterflowOption>
+                                <butterflow_ui:ButterflowOption LabelValue="" DescriptionValue="Renders the video with no compression.">
+                                    <CheckBox IsChecked="{Binding OptionsConfiguration.LosslessQuality, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.LosslessLabel}" />
+                                </butterflow_ui:ButterflowOption>
+                            </StackPanel>
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.ResolutionLabel}">
                             <Grid>
