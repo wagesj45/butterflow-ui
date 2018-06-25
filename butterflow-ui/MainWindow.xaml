@@ -10,17 +10,29 @@
         Title="{x:Static loc:Localization.Title}" Height="600" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="Derp" />
-                <MenuItem Header="Darp" />
-                <MenuItem Header="Dorp" />
+            <MenuItem Header="{x:Static loc:Localization.FileMenu}">
+                <MenuItem Header="Open" />
+                <MenuItem Header="Save Configuration" />
+                <MenuItem Header="Save Configuration As..." />
             </MenuItem>
-            <MenuItem Header="_Edit" />
-            <MenuItem Header="_Help">
-                <MenuItem Header="More about butterflow..." />
-                <MenuItem Header="More about butterflow-ui..." />
+            <MenuItem Header="{x:Static loc:Localization.EditMenu}" />
+            <MenuItem Header="{x:Static loc:Localization.HelpMenu}">
+                <MenuItem Header="{x:Static loc:Localization.AboutButterflowMenu}" >
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource LinkIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{x:Static loc:Localization.AboutButterflowUIMenu}">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource LinkIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="About" />
+                <MenuItem Header="{x:Static loc:Localization.AboutMenu}">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource QuestionIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
         <Grid>
@@ -99,7 +111,7 @@
                                     <TextBox Text="{Binding OptionsConfiguration.Width, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption Grid.Column="1" LabelValue="{x:Static loc:Localization.HeightLabel}">
-                                    <TextBox Text="{Binding OptionsConfiguration.Height, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}}"  />
+                                    <TextBox Text="{Binding OptionsConfiguration.Height, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"  />
                                 </butterflow_ui:ButterflowOption>
                             </Grid>
                         </butterflow_ui:ButterflowOption>

@@ -12,29 +12,26 @@ namespace butterflow_ui
     {
         #region Properties
 
+        /// <summary> Gets or sets the label value. </summary>
+        /// <value> The label value. </value>
         public string LabelValue { get; set; }
 
+        /// <summary> Gets or sets the description value. </summary>
+        /// <value> The description value. </value>
         public string DescriptionValue { get; set; }
-
-        public Visibility ToolTipVisibility
-        {
-            get
-            {
-                //return string.IsNullOrWhiteSpace(this.DescriptionValue) ? Visibility.Hidden : Visibility.Visible;
-                return Visibility.Hidden;
-            }
-        }
 
         #endregion
 
         #region Dependency Properties
 
+        /// <summary> The label value property. </summary>
         public static DependencyProperty LabelValueProperty = DependencyProperty.Register("LabelValue", typeof(string), typeof(ButterflowOption));
+        /// <summary> The description value property. </summary>
         public static DependencyProperty DescriptionValueProperty = DependencyProperty.Register("DescriptionValue", typeof(string), typeof(ButterflowOption));
-        public static DependencyProperty ToolTipVisibilityProperty = DependencyProperty.Register("ToolTipVisibility", typeof(Visibility), typeof(ButterflowOption));
 
         #endregion
 
+        /// <summary> Default constructor. </summary>
         public ButterflowOption()
         {
             //

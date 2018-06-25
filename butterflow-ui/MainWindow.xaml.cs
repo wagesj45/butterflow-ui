@@ -49,6 +49,9 @@ namespace butterflow_ui
             {
                 txtFileName.Text = ofd.FileName;
                 mediaPreview.Source = new Uri(ofd.FileName);
+                this.OptionsConfiguration.Width = mediaPreview.NaturalVideoWidth.ToString();
+                this.OptionsConfiguration.Height = mediaPreview.NaturalVideoHeight.ToString();
+
             }
         }
 

@@ -124,6 +124,33 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More about butterflow....
+        /// </summary>
+        public static string AboutButterflowMenu {
+            get {
+                return ResourceManager.GetString("AboutButterflowMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More about butterflow-ui....
+        /// </summary>
+        public static string AboutButterflowUIMenu {
+            get {
+                return ResourceManager.GetString("AboutButterflowUIMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About butterflow-ui.
+        /// </summary>
+        public static string AboutMenu {
+            get {
+                return ResourceManager.GetString("AboutMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced Options.
         /// </summary>
         public static string AdvancedOptionsGroupBox {
@@ -151,6 +178,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Edit.
+        /// </summary>
+        public static string EditMenu {
+            get {
+                return ResourceManager.GetString("EditMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input.
         /// </summary>
         public static string FileInputGroupBox {
@@ -169,11 +205,29 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _File.
+        /// </summary>
+        public static string FileMenu {
+            get {
+                return ResourceManager.GetString("FileMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Height.
         /// </summary>
         public static string HeightLabel {
             get {
                 return ResourceManager.GetString("HeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Help.
+        /// </summary>
+        public static string HelpMenu {
+            get {
+                return ResourceManager.GetString("HelpMenu", resourceCulture);
             }
         }
         
@@ -214,7 +268,7 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some description of playback rate goes here..
+        ///   Looks up a localized string similar to Controls the new framerate of the output video. This can be set in both absolute and relative terms..
         /// </summary>
         public static string PlaybackRateDescription {
             get {
