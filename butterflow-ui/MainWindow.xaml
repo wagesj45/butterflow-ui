@@ -7,7 +7,7 @@
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
         x:Name="butterflowUIWindow"
-        Title="{x:Static loc:Localization.Title}" Height="450" Width="800">
+        Title="{x:Static loc:Localization.Title}" Height="600" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -26,9 +26,9 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -81,10 +81,10 @@
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.RenderingLabel}">
                             <StackPanel>
-                                <butterflow_ui:ButterflowOption LabelValue="">
+                                <butterflow_ui:ButterflowOption DescriptionValue="{x:Static loc:Localization.KeepAudioDescription}">
                                     <CheckBox IsChecked="{Binding OptionsConfiguration.KeepAudio, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.KeepAudioLabel}" />
                                 </butterflow_ui:ButterflowOption>
-                                <butterflow_ui:ButterflowOption LabelValue="" DescriptionValue="Renders the video with no compression.">
+                                <butterflow_ui:ButterflowOption DescriptionValue="Renders the video with no compression.">
                                     <CheckBox IsChecked="{Binding OptionsConfiguration.LosslessQuality, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.LosslessLabel}" />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>

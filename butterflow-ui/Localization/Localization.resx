@@ -135,8 +135,14 @@
   <data name="HeightLabel" xml:space="preserve">
     <value>Height</value>
   </data>
+  <data name="KeepAudioDescription" xml:space="preserve">
+    <value>Renders the output video with the audio from the original video. In unchecked, no sound will be included in the output video.</value>
+  </data>
   <data name="KeepAudioLabel" xml:space="preserve">
     <value>Keep Audio</value>
+  </data>
+  <data name="LosslessDescription" xml:space="preserve">
+    <value>Renders the video without lossy compression. The video will not lose any visual quality, but it will result in a very large output file.</value>
   </data>
   <data name="LosslessLabel" xml:space="preserve">
     <value>Lossless Quality</value>

@@ -178,11 +178,29 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Renders the output video with the audio from the original video. In unchecked, no sound will be included in the output video..
+        /// </summary>
+        public static string KeepAudioDescription {
+            get {
+                return ResourceManager.GetString("KeepAudioDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Keep Audio.
         /// </summary>
         public static string KeepAudioLabel {
             get {
                 return ResourceManager.GetString("KeepAudioLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renders the video without lossy compression. The video will not lose any visual quality, but it will result in a very large output file..
+        /// </summary>
+        public static string LosslessDescription {
+            get {
+                return ResourceManager.GetString("LosslessDescription", resourceCulture);
             }
         }
         

@@ -5,19 +5,33 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ButterflowOption}">
-                    <Grid>
+                    <Grid Height="Auto">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" VerticalAlignment="Center" Content="{TemplateBinding LabelValue}" />
-                        <ContentControl Grid.Column="1" VerticalAlignment="Center" Content="{TemplateBinding Content}" />
-                        <Label x:Name="TheLabel" Grid.Column="2" Visibility="Visible" ToolTip="{TemplateBinding DescriptionValue}" Content="?"/>
+                        <Label Grid.Column="0" Name="Label" VerticalAlignment="Center" Content="{TemplateBinding LabelValue}" />
+                        <ContentControl Grid.Column="1" Name="ContentArea" VerticalAlignment="Center" Content="{TemplateBinding Content}" />
+                        <Viewbox Grid.Column="2" Name="InfoBox" Margin="2,0,2,0" Width="16" ToolTip="{TemplateBinding DescriptionValue}">
+                            <Canvas Name="InfoIcon" Width="24" Height="24">
+                                <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="1.4" Canvas.Top="1.4" Width="21.2" Height="21.2" Name="path4524" Fill="#FF0F5777" StrokeThickness="4.02519703" StrokeMiterLimit="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Opacity="1"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FFFFFFFF">
+                                    <Path.Data>
+                                        <PathGeometry Figures="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" FillRule="EvenOdd"/>
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Viewbox>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="DescriptionValue" Value="{x:Null}">
-                            <Setter TargetName="TheLabel" Property="Visibility" Value="Hidden"/>
+                            <Setter TargetName="InfoBox" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <Trigger Property="LabelValue" Value="{x:Null}">
+                            <Setter TargetName="Label" Property="Grid.Column" Value="2" />
+                            <Setter TargetName="ContentArea" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="InfoBox" Property="Grid.Column" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
