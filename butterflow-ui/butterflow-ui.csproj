@@ -37,6 +37,9 @@
     <Reference Include="csmic, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\csmic.1.1.4\lib\net40\csmic.dll</HintPath>
     </Reference>
+    <Reference Include="Gu.Wpf.Media, Version=0.5.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Gu.Wpf.Media.0.5.0.2\lib\net45\Gu.Wpf.Media.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />

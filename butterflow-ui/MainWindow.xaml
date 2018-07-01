@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gu="https://github.com/JohanLarsson/Gu.Wpf.Media"
         xmlns:loc="clr-namespace:butterflow_ui.Localization"
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
@@ -143,8 +144,19 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <MediaElement Grid.Row="0" Name="mediaPreview" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
-                <Slider Grid.Row="1" Value="{Binding ElementName=mediaPreview, Path=Position.Seconds, Mode=OneWay}" Maximum="{Binding ElementName=mediaPreview, Path=NaturalDuration.TimeSpan.Seconds}" />
+                <gu:MediaElementWrapper Grid.Row="0" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="{Binding ElementName=mediaPreview, Path=Position, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
+                    <Slider Grid.Column="1" Name="sliderMedia" 
+                            Value="{Binding ElementName=mediaPreview, Path=Position, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" 
+                            Maximum="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" />
+                    <Label Grid.Column="2" Content="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
+                </Grid>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Name="bntVideoBackward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoBackward_Click">
                         <ContentControl HorizontalAlignment="Center" Template="{StaticResource BackwardIcon}" />

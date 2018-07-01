@@ -23,8 +23,7 @@ namespace butterflow_ui
     {
         #region Members
 
-        /// <summary> True if the media element is playing a video, false if not. </summary>
-        private bool isPlaying = false;
+        //
 
         #endregion
 
@@ -59,7 +58,7 @@ namespace butterflow_ui
                 //Hack to get the first frame to display in the media preview element.
                 //This also triggers the MediaOpened event so we can get the metadata from the element.
                 mediaPreview.Play();
-                mediaPreview.Pause();
+                mediaPreview.PausePlayback();
             }
         }
 
@@ -82,18 +81,17 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void bntVideoPlay_Click(object sender, RoutedEventArgs e)
         {
-            if (!this.isPlaying && this.mediaPreview.Source.IsFile)
+            if (this.mediaPreview.CanPlay() || this.mediaPreview.CanPause.GetValueOrDefault(false))
             {
-                this.isPlaying = true;
-                this.mediaPreview.Play();
+                this.mediaPreview.TogglePlayPause();
+            }
 
+            if(this.mediaPreview.IsPlaying)
+            {
                 this.PlayPauseButtonIcon.Template = Application.Current.Resources["PauseIcon"] as ControlTemplate;
             }
             else
             {
-                this.isPlaying = false;
-                this.mediaPreview.Pause();
-
                 this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
             }
         }
@@ -103,7 +101,6 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void bntVideoStop_Click(object sender, RoutedEventArgs e)
         {
-            this.isPlaying = false;
             this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
             this.mediaPreview.Stop();
         }
@@ -113,7 +110,10 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void bntVideoForward_Click(object sender, RoutedEventArgs e)
         {
-            this.mediaPreview.Position.Add(TimeSpan.FromSeconds(5));
+            if (this.mediaPreview.CanSkipForward(null))
+            {
+                this.mediaPreview.SkipForward(null);
+            }
         }
 
         /// <summary> Event handler. Called by bntVideoBackward for click events. </summary>
@@ -121,7 +121,10 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void bntVideoBackward_Click(object sender, RoutedEventArgs e)
         {
-            this.mediaPreview.Position.Subtract(TimeSpan.FromSeconds(5));
+            if (this.mediaPreview.CanSkipBack(null))
+            {
+                this.mediaPreview.SkipBack(null);
+            }
         }
 
         /// <summary> Event handler. Called by mediaPreview for media opened events. </summary>
@@ -138,7 +141,6 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void mediaPreview_MediaEnded(object sender, RoutedEventArgs e)
         {
-            this.isPlaying = false;
             this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
         }
     }
