@@ -11,9 +11,21 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{x:Static loc:Localization.FileMenu}">
-                <MenuItem Header="Open" />
-                <MenuItem Header="Save Configuration" />
-                <MenuItem Header="Save Configuration As..." />
+                <MenuItem Header="Open">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource OpenIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save Configuration">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource SaveIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save Configuration As...">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource SaveAsIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="{x:Static loc:Localization.EditMenu}" />
             <MenuItem Header="{x:Static loc:Localization.HelpMenu}">
@@ -56,7 +68,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                    <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True"/>
+                    <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
                     <Button Grid.Column="2" MinWidth="25" Name="btnFilePicker" Click="btnFilePicker_Click">...</Button>
                 </Grid>
             </GroupBox>
@@ -125,7 +137,49 @@
                     </StackPanel>
                 </ScrollViewer>
             </GroupBox>
-            <MediaElement Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Name="mediaPreview" />
+            <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <MediaElement Grid.Row="0" Name="mediaPreview" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
+                <Slider Grid.Row="1" Value="{Binding ElementName=mediaPreview, Path=Position.Seconds, Mode=OneWay}" Maximum="{Binding ElementName=mediaPreview, Path=NaturalDuration.TimeSpan.Seconds}" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="bntVideoBackward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoBackward_Click">
+                        <ContentControl HorizontalAlignment="Center" Template="{StaticResource BackwardIcon}" />
+                    </Button>
+                    <Button Name="bntVideoPlay" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoPlay_Click">
+                        <ContentControl HorizontalAlignment="Center" Name="PlayPauseButtonIcon" Template="{StaticResource PlayIcon}" />
+                    </Button>
+                    <Button Name="bntVideoStop" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoStop_Click">
+                        <ContentControl HorizontalAlignment="Center" Template="{StaticResource StopIcon}" />
+                    </Button>
+                    <Button Name="bntVideoForward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoForward_Click">
+                        <ContentControl HorizontalAlignment="Center" Template="{StaticResource ForwardIcon}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <StatusBar Grid.Row="3" Grid.ColumnSpan="4">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <StatusBarItem Grid.Column="0">
+                    <Button>
+                        <ContentControl Template="{StaticResource CopyIcon}" />
+                    </Button>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="1">
+                    <TextBlock Text="{Binding OptionsConfiguration.CommandLineOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}}"/>
+                </StatusBarItem>
+            </StatusBar>
         </Grid>
     </DockPanel>
 </Window>

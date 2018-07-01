@@ -21,6 +21,13 @@ namespace butterflow_ui
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Members
+
+        /// <summary> True if the media element is playing a video, false if not. </summary>
+        private bool isPlaying = false;
+
+        #endregion
+
         #region Properties
 
         /// <summary> Gets or sets the butyterflow options configuration. </summary>
@@ -47,11 +54,12 @@ namespace butterflow_ui
             var result = ofd.ShowDialog(this);
             if (result.HasValue && result.Value)
             {
-                txtFileName.Text = ofd.FileName;
-                mediaPreview.Source = new Uri(ofd.FileName);
-                this.OptionsConfiguration.Width = mediaPreview.NaturalVideoWidth.ToString();
-                this.OptionsConfiguration.Height = mediaPreview.NaturalVideoHeight.ToString();
+                this.OptionsConfiguration.VideoInput = ofd.FileName;
 
+                //Hack to get the first frame to display in the media preview element.
+                //This also triggers the MediaOpened event so we can get the metadata from the element.
+                mediaPreview.Play();
+                mediaPreview.Pause();
             }
         }
 
@@ -67,6 +75,71 @@ namespace butterflow_ui
                 var tag = typedSender.Tag.ToString();
                 this.OptionsConfiguration.PlaybackRate = tag;
             }
+        }
+
+        /// <summary> Event handler. Called by bntVideoPlay for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void bntVideoPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if (!this.isPlaying && this.mediaPreview.Source.IsFile)
+            {
+                this.isPlaying = true;
+                this.mediaPreview.Play();
+
+                this.PlayPauseButtonIcon.Template = Application.Current.Resources["PauseIcon"] as ControlTemplate;
+            }
+            else
+            {
+                this.isPlaying = false;
+                this.mediaPreview.Pause();
+
+                this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
+            }
+        }
+
+        /// <summary> Event handler. Called by bntVideoStop for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void bntVideoStop_Click(object sender, RoutedEventArgs e)
+        {
+            this.isPlaying = false;
+            this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
+            this.mediaPreview.Stop();
+        }
+
+        /// <summary> Event handler. Called by bntVideoForward for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void bntVideoForward_Click(object sender, RoutedEventArgs e)
+        {
+            this.mediaPreview.Position.Add(TimeSpan.FromSeconds(5));
+        }
+
+        /// <summary> Event handler. Called by bntVideoBackward for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void bntVideoBackward_Click(object sender, RoutedEventArgs e)
+        {
+            this.mediaPreview.Position.Subtract(TimeSpan.FromSeconds(5));
+        }
+
+        /// <summary> Event handler. Called by mediaPreview for media opened events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void mediaPreview_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            this.OptionsConfiguration.Width = this.mediaPreview.NaturalVideoWidth.ToString();
+            this.OptionsConfiguration.Height = this.mediaPreview.NaturalVideoHeight.ToString();
+        }
+
+        /// <summary> Event handler. Called by mediaPreview for media ended events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void mediaPreview_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            this.isPlaying = false;
+            this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
         }
     }
 }

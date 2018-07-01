@@ -74,6 +74,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ButterflowOption.cs" />
+    <Compile Include="ButterflowWrapper.cs" />
     <Compile Include="Localization\Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,4 +268,7 @@
     <Content Include="ThirdPartyCompiled\zlib1.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(SolutionDir)\ThirdPartyCompiled" "$(TargetDir)\ThirdPartyCompiled\" /S /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -31,4 +31,85 @@
             </Path>
         </Viewbox>
     </ControlTemplate>
+    <ControlTemplate x:Key="SaveIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M15.003 3h2.997v5h-2.997v-5zm8.997 1v20h-24v-24h20l4 4zm-19 5h14v-7h-14v7zm16 4h-18v9h18v-9z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="OpenIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M9 2h6v1h-6v-1zm6-1v-1h-6v1h6zm-5.146 21l-1.854 2h8l-1.854-2h-4.292zm10.146-14h-5v-4h-6v4h-5l8 8 8-8zm-2 11h-12v-6.172l-2-2v10.172h16v-10.172l-2 2v6.172z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SaveAsIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M15.563 22.282l-3.563.718.72-3.562 2.843 2.844zm-2.137-3.552l2.845 2.845 7.729-7.73-2.845-2.845-7.729 7.73zm-3.062 2.27h-7.364v-7h12.327l6.673-6.688v-2.312l-4-4h-18v22h9.953l.411-2zm-5.364-18h12v7h-12v-7zm8.004 6h2.996v-5h-2.996v5z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PlayIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M3 22v-20l18 10-18 10z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PauseIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="StopIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M2 2h20v20h-20z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ForwardIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M0 3.795l2.995-2.98 11.132 11.185-11.132 11.186-2.995-2.981 8.167-8.205-8.167-8.205zm18.04 8.205l-8.167 8.205 2.995 2.98 11.132-11.185-11.132-11.186-2.995 2.98 8.167 8.206z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="BackwardIcon">
+        <Viewbox>
+            <Path Name="path4846" Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M 24 3.795 21.005 0.815 9.873 12 21.005 23.186 24 20.205 15.833 12 Z M 5.96 12 14.127 20.205 11.132 23.185 0 12 11.132 0.814 l 2.995 2.98 z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CopyIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M15.143 13.244l.837-2.244 2.698 5.641-5.678 2.502.805-2.23s-8.055-3.538-7.708-10.913c2.715 5.938 9.046 7.244 9.046 7.244zm8.857-7.244v18h-18v-6h-6v-18h18v6h6zm-2 2h-12.112c-.562-.578-1.08-1.243-1.521-2h7.633v-4h-14v14h4v-3.124c.6.961 1.287 1.823 2 2.576v6.548h14v-14z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
 </ResourceDictionary>
