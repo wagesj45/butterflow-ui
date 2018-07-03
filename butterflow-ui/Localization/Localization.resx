@@ -129,6 +129,9 @@
   <data name="AdvancedOptionsGroupBox" xml:space="preserve">
     <value>Advanced Options</value>
   </data>
+  <data name="ClipTooltip" xml:space="preserve">
+    <value>Clip a subregion in the video.</value>
+  </data>
   <data name="CommonOptionsGroupBox" xml:space="preserve">
     <value>Common Options</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="EditMenu" xml:space="preserve">
     <value>_Edit</value>
+  </data>
+  <data name="EndLabel" xml:space="preserve">
+    <value>E</value>
   </data>
   <data name="FileInputGroupBox" xml:space="preserve">
     <value>Input</value>
@@ -171,14 +177,38 @@
   <data name="PlaybackRateLabel" xml:space="preserve">
     <value>Playback Rate</value>
   </data>
+  <data name="PlayPauseTooltip" xml:space="preserve">
+    <value>Play/Pause the video.</value>
+  </data>
   <data name="RenderingLabel" xml:space="preserve">
     <value>Video Rendering</value>
   </data>
   <data name="ResolutionLabel" xml:space="preserve">
     <value>Output Resolution</value>
   </data>
+  <data name="SkipBackTooltip" xml:space="preserve">
+    <value>Skip backward in the video.</value>
+  </data>
+  <data name="SkipForwardTooltip" xml:space="preserve">
+    <value>Skip forward in the video.</value>
+  </data>
+  <data name="StartLabel" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="StopTooltip" xml:space="preserve">
+    <value>Stop the video.</value>
+  </data>
+  <data name="SubregionsDescription" xml:space="preserve">
+    <value>Individual regions of the video to process.</value>
+  </data>
+  <data name="SubregionsLabel" xml:space="preserve">
+    <value>Subregions</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>butterflow-ui</value>
+  </data>
+  <data name="ToEndLabel" xml:space="preserve">
+    <value>To End</value>
   </data>
   <data name="WidthLabel" xml:space="preserve">
     <value>Width</value>

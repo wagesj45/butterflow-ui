@@ -160,6 +160,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clip a subregion in the video..
+        /// </summary>
+        public static string ClipTooltip {
+            get {
+                return ResourceManager.GetString("ClipTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Common Options.
         /// </summary>
         public static string CommonOptionsGroupBox {
@@ -183,6 +192,15 @@ namespace butterflow_ui.Localization {
         public static string EditMenu {
             get {
                 return ResourceManager.GetString("EditMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E.
+        /// </summary>
+        public static string EndLabel {
+            get {
+                return ResourceManager.GetString("EndLabel", resourceCulture);
             }
         }
         
@@ -286,6 +304,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Play/Pause the video..
+        /// </summary>
+        public static string PlayPauseTooltip {
+            get {
+                return ResourceManager.GetString("PlayPauseTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Video Rendering.
         /// </summary>
         public static string RenderingLabel {
@@ -304,11 +331,74 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip backward in the video..
+        /// </summary>
+        public static string SkipBackTooltip {
+            get {
+                return ResourceManager.GetString("SkipBackTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip forward in the video..
+        /// </summary>
+        public static string SkipForwardTooltip {
+            get {
+                return ResourceManager.GetString("SkipForwardTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        public static string StartLabel {
+            get {
+                return ResourceManager.GetString("StartLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop the video..
+        /// </summary>
+        public static string StopTooltip {
+            get {
+                return ResourceManager.GetString("StopTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Individual regions of the video to process..
+        /// </summary>
+        public static string SubregionsDescription {
+            get {
+                return ResourceManager.GetString("SubregionsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subregions.
+        /// </summary>
+        public static string SubregionsLabel {
+            get {
+                return ResourceManager.GetString("SubregionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to butterflow-ui.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To End.
+        /// </summary>
+        public static string ToEndLabel {
+            get {
+                return ResourceManager.GetString("ToEndLabel", resourceCulture);
             }
         }
         

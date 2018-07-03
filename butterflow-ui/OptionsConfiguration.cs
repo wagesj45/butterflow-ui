@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,9 @@ namespace butterflow_ui
 
     /// <summary> (Serializable) the options configuration. </summary>
     [Serializable]
-    public class OptionsConfiguration : INotifyPropertyChanged
+    public class OptionsConfiguration : PropertyChangedAlerter
     {
         #region Members
-
-        /// <summary> Occurs when a property value changes. </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary> An interpreter used to ensure numeric input is correctly calculated. </summary>
         private InputInterpreter interpreter = new InputInterpreter();
@@ -29,6 +27,7 @@ namespace butterflow_ui
         private bool losslessQuality;
         private string videoInput;
         private string videoOutput;
+        private ObservableCollection<ButterflowSubregion> subregions = new ObservableCollection<ButterflowSubregion>();
 
         #endregion
 
@@ -55,7 +54,7 @@ namespace butterflow_ui
             set
             {
                 this.playbackRate = value;
-                OnPropertyChanged("PlaybackRate");
+                OnPropertyChanged();
             }
         }
 
@@ -70,7 +69,7 @@ namespace butterflow_ui
             set
             {
                 this.keepAudio = value;
-                OnPropertyChanged("KeepAudio");
+                OnPropertyChanged();
             }
         }
 
@@ -86,7 +85,7 @@ namespace butterflow_ui
             {
                 interpreter.Interpret(value);
                 this.width = interpreter.Int;
-                OnPropertyChanged("Width");
+                OnPropertyChanged();
             }
         }
 
@@ -102,7 +101,7 @@ namespace butterflow_ui
             {
                 interpreter.Interpret(value);
                 this.height = interpreter.Int;
-                OnPropertyChanged("Height");
+                OnPropertyChanged();
             }
         }
 
@@ -117,7 +116,7 @@ namespace butterflow_ui
             set
             {
                 this.keepAspectRatio = value;
-                OnPropertyChanged("KeepAspectRatio");
+                OnPropertyChanged();
             }
         }
 
@@ -132,7 +131,7 @@ namespace butterflow_ui
             set
             {
                 this.losslessQuality = value;
-                OnPropertyChanged("LosslessQuality");
+                OnPropertyChanged();
             }
         }
 
@@ -147,7 +146,7 @@ namespace butterflow_ui
             set
             {
                 this.videoInput = value;
-                OnPropertyChanged("VideoInput");
+                OnPropertyChanged();
             }
         }
 
@@ -162,20 +161,64 @@ namespace butterflow_ui
             set
             {
                 this.videoOutput = value;
-                OnPropertyChanged("VideoOutput");
+                OnPropertyChanged();
             }
+        }
+
+        /// <summary> Gets or sets the subregions of the video on which to work. </summary>
+        /// <value> The subregions of the video. </value>
+        public ObservableCollection<ButterflowSubregion> Subregions
+        {
+            get
+            {
+                return this.subregions;
+            }
+            set
+            {
+                this.subregions = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Contructors
+
+        /// <summary> Default constructor. </summary>
+        public OptionsConfiguration()
+        {
+            AddConstantCallProperty("CommandLineOutput");
+
+            this.subregions.CollectionChanged += SubregionsCollectionChanged;
+        }
+
+        private void SubregionsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if(e.NewItems != null)
+            {
+                foreach(ButterflowSubregion newItem in e.NewItems)
+                {
+                    newItem.PropertyChanged += SubregionPropertyChanged;
+                }
+            }
+            if(e.OldItems != null)
+            {
+                foreach(ButterflowSubregion oldItem in e.OldItems)
+                {
+                    oldItem.PropertyChanged -= SubregionPropertyChanged;
+                }
+            }
+
+            OnPropertyChanged("CommandLineOutput");
         }
 
         #endregion
 
         #region Methods
 
-        /// <summary> Executes the property changed action. </summary>
-        /// <param name="name"> The name. </param>
-        protected void OnPropertyChanged(string name)
+        private void SubregionPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CommandLineOutput"));
+            OnPropertyChanged("CommandLineOutput");
         }
 
         /// <summary> Converts this object to a butterflow options. </summary>
@@ -184,7 +227,7 @@ namespace butterflow_ui
         {
             var stringBuilder = new StringBuilder("-v "); //Verbose
 
-            if(this.KeepAspectRatio)
+            if (this.KeepAspectRatio)
             {
                 stringBuilder.AppendFormat("-vs {0}:-1 ", this.Width);
             }
@@ -193,12 +236,36 @@ namespace butterflow_ui
                 stringBuilder.AppendFormat("-vs {0}:{1} ", this.Width, this.Height);
             }
 
-            stringBuilder.AppendFormat("-r {0} ", this.PlaybackRate);
-
+            if (!string.IsNullOrWhiteSpace(this.PlaybackRate)) stringBuilder.AppendFormat("-r {0} ", this.PlaybackRate);
             if (this.KeepAudio) stringBuilder.Append("-audio ");
             if (this.LosslessQuality) stringBuilder.Append("-l ");
 
             stringBuilder.AppendFormat("\"{0}\"", this.VideoInput);
+
+            if (this.Subregions.Any())
+            {
+                foreach (var anon in this.Subregions.Select((sr, index) => new { Index = index, Subregion = sr }))
+                {
+                    string format = "ss\\.fff";
+
+                    if (anon.Index > 0)
+                    {
+                        stringBuilder.Append(":");
+                    }
+
+                    if (anon.Subregion.Start.TotalHours > 1)
+                    {
+                        format = "h\\:m\\:s\\.fff";
+                    }
+                    else if (anon.Subregion.Start.TotalMinutes > 1)
+                    {
+                        format = "m\\:s\\.fff";
+                    }
+
+                    stringBuilder.AppendFormat("a={0},b={1},{2}={3}", anon.Subregion.Start.ToString(format), anon.Subregion.ToEnd ? "end" : anon.Subregion.End.ToString(format), anon.Subregion.SubregionType, anon.Subregion.Value);
+                }
+                stringBuilder.Append(" ");
+            }
 
             return stringBuilder.ToString();
         }

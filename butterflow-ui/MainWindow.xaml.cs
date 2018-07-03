@@ -23,15 +23,20 @@ namespace butterflow_ui
     {
         #region Members
 
-        //
+        /// <summary> True if is the user has started clipping, false if not. </summary>
+        private bool isClipping;
+        /// <summary> The temporary storage for the clip start time. </summary>
+        private TimeSpan clipStart;
 
         #endregion
 
         #region Properties
 
-        /// <summary> Gets or sets the butyterflow options configuration. </summary>
+        /// <summary> Gets or sets the butterflow options configuration. </summary>
         /// <value> The options configuration. </value>
         public OptionsConfiguration OptionsConfiguration { get; set; } = new OptionsConfiguration();
+        /// <summary> The butterflow wrapper used to call butterflow. </summary>
+        public ButterflowWrapper ButterflowWrapper { get; set; } = new ButterflowWrapper();
 
         #endregion
 
@@ -48,12 +53,14 @@ namespace butterflow_ui
         {
             var ofd = new OpenFileDialog();
             ofd.Filter = "Supported Video Files|*.mp4;*.mkv";
-            
 
             var result = ofd.ShowDialog(this);
             if (result.HasValue && result.Value)
             {
                 this.OptionsConfiguration.VideoInput = ofd.FileName;
+
+                //this.ButterflowWrapper.ConsoleOutputRecieved += (o, ce) => this.txtConsoleOutput.Text = ce.ConsoleOutput;
+                this.ButterflowWrapper.Probe(ofd.FileName);
 
                 //Hack to get the first frame to display in the media preview element.
                 //This also triggers the MediaOpened event so we can get the metadata from the element.
@@ -69,7 +76,7 @@ namespace butterflow_ui
         {
             var typedSender = (RadioButton)sender;
 
-            if(typedSender != null)
+            if (typedSender != null)
             {
                 var tag = typedSender.Tag.ToString();
                 this.OptionsConfiguration.PlaybackRate = tag;
@@ -86,7 +93,7 @@ namespace butterflow_ui
                 this.mediaPreview.TogglePlayPause();
             }
 
-            if(this.mediaPreview.IsPlaying)
+            if (this.mediaPreview.IsPlaying)
             {
                 this.PlayPauseButtonIcon.Template = Application.Current.Resources["PauseIcon"] as ControlTemplate;
             }
@@ -127,6 +134,31 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Event handler. Called by bntClip for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void bntClip_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.mediaPreview.Position.HasValue)
+            {
+                if (!this.isClipping)
+                {
+                    //start clipping
+                    this.isClipping = true;
+                    this.ClippingButtonIcon.Template = Application.Current.Resources["SnipCloseIcon"] as ControlTemplate;
+                    this.clipStart = this.mediaPreview.Position.Value;
+                }
+                else
+                {
+                    //end clipping
+                    this.isClipping = false;
+                    this.ClippingButtonIcon.Template = Application.Current.Resources["SnipOpenIcon"] as ControlTemplate;
+                    this.OptionsConfiguration.Subregions.Add(new ButterflowSubregion() { Start = this.clipStart, End = this.mediaPreview.Position.Value, ToEnd = false, Value = 1, SubregionType = RegionType.spd });
+                    this.clipStart = TimeSpan.Zero;
+                }
+            }
+        }
+
         /// <summary> Event handler. Called by mediaPreview for media opened events. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Routed event information. </param>
@@ -142,6 +174,44 @@ namespace butterflow_ui
         private void mediaPreview_MediaEnded(object sender, RoutedEventArgs e)
         {
             this.PlayPauseButtonIcon.Template = Application.Current.Resources["PlayIcon"] as ControlTemplate;
+        }
+
+        /// <summary> Event handler. Called by ScrollViewer for scroll changed events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Scroll changed event information. </param>
+        /// <remarks>
+        /// This code autoscrolls the scroll viewer as more text is added. It is based on this example
+        /// from Stack Overflow:
+        /// https://stackoverflow.com/questions/2984803/how-to-automatically-scroll-scrollviewer-only-if-the-user-did-not-change-scrol.
+        /// </remarks>
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            var scrollViewer = sender as ScrollViewer;
+            bool autoScroll = true;
+
+            if (scrollViewer != null)
+            {
+                if (e.ExtentHeightChange == 0)
+                {   // Content unchanged : user scroll event
+                    if (scrollViewer.VerticalOffset == scrollViewer.ScrollableHeight)
+                    {   // Scroll bar is in bottom
+                        // Set auto-scroll mode
+                        autoScroll = true;
+                    }
+                    else
+                    {   // Scroll bar isn't in bottom
+                        // Unset auto-scroll mode
+                        autoScroll = false;
+                    }
+                }
+
+                // Content scroll event : auto-scroll eventually
+                if (autoScroll && e.ExtentHeightChange != 0)
+                {   // Content changed and auto-scroll mode set
+                    // Autoscroll
+                    scrollViewer.ScrollToEnd();
+                }
+            }
         }
     }
 }

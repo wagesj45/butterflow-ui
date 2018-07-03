@@ -60,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PropertyChangedAlerter.cs" />
+    <Compile Include="RegionType.cs" />
     <Page Include="Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +79,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ButterflowOption.cs" />
+    <Compile Include="ButterflowSubregion.cs" />
     <Compile Include="ButterflowWrapper.cs" />
     <Compile Include="Localization\Localization.Designer.cs">
       <AutoGen>True</AutoGen>

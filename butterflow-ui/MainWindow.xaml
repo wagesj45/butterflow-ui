@@ -3,12 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:gu="https://github.com/JohanLarsson/Gu.Wpf.Media"
         xmlns:loc="clr-namespace:butterflow_ui.Localization"
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
         x:Name="butterflowUIWindow"
         Title="{x:Static loc:Localization.Title}" Height="600" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="enumDataProvider" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="butterflow_ui:RegionType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{x:Static loc:Localization.FileMenu}">
@@ -134,18 +143,39 @@
             <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.AdvancedOptionsGroupBox}">
                 <ScrollViewer>
                     <StackPanel>
-
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.SubregionsLabel}" DescriptionValue="{x:Static loc:Localization.SubregionsDescription}">
+                            <ListView Name="listSubregions" MinHeight="25" ItemsSource="{Binding OptionsConfiguration.Subregions, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Text="{x:Static loc:Localization.StartLabel}" />
+                                            <TextBlock Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}"/>
+                                            <TextBlock Text="{x:Static loc:Localization.EndLabel}" />
+                                            <TextBlock Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}"/>
+                                            <ComboBox ItemsSource="{Binding Source={StaticResource enumDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
+                                            <TextBox MinWidth="35" Text="{Binding Value, Mode=TwoWay}" />
+                                            <TextBlock Text="{x:Static loc:Localization.ToEndLabel}" />
+                                            <CheckBox IsChecked="{Binding ToEnd, Mode=TwoWay}" />
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </butterflow_ui:ButterflowOption>
                     </StackPanel>
                 </ScrollViewer>
             </GroupBox>
             <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <gu:MediaElementWrapper Grid.Row="0" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
-                <Grid Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                    <TextBlock Grid.Row="0" Name="txtConsoleOutput" Background="Black" Foreground="White" TextWrapping="Wrap" Text="{Binding ButterflowWrapper.ConsoleOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
+                </ScrollViewer>
+                <gu:MediaElementWrapper Grid.Row="1" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
+                <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
@@ -157,7 +187,7 @@
                             Maximum="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" />
                     <Label Grid.Column="2" Content="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
                 </Grid>
-                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Name="bntVideoBackward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoBackward_Click">
                         <ContentControl HorizontalAlignment="Center" Template="{StaticResource BackwardIcon}" />
                     </Button>
@@ -169,6 +199,9 @@
                     </Button>
                     <Button Name="bntVideoForward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoForward_Click">
                         <ContentControl HorizontalAlignment="Center" Template="{StaticResource ForwardIcon}" />
+                    </Button>
+                    <Button Name="bntClip" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntClip_Click">
+                        <ContentControl HorizontalAlignment="Center" Name="ClippingButtonIcon" Template="{StaticResource SnipOpenIcon}" />
                     </Button>
                 </StackPanel>
             </Grid>
