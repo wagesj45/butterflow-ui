@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace butterflow_ui
 {
+    /// <summary> A class responsible for implementing the <see cref="INotifyPropertyChanged"/> interface and helper functions. </summary>
     public abstract class PropertyChangedAlerter : INotifyPropertyChanged
     {
         #region Members

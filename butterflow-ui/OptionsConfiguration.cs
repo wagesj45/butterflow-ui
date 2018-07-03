@@ -10,7 +10,7 @@ using csmic;
 namespace butterflow_ui
 {
 
-    /// <summary> (Serializable) the options configuration. </summary>
+    /// <summary> The butterflow options configuration. Contians all the options necessary to run butterflow and process a video. </summary>
     [Serializable]
     public class OptionsConfiguration : PropertyChangedAlerter
     {
@@ -18,6 +18,8 @@ namespace butterflow_ui
 
         /// <summary> An interpreter used to ensure numeric input is correctly calculated. </summary>
         private InputInterpreter interpreter = new InputInterpreter();
+        /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
+        private decimal aspectRatio = 0;
 
         private string playbackRate;
         private bool keepAudio;
@@ -25,8 +27,17 @@ namespace butterflow_ui
         private int height;
         private bool keepAspectRatio;
         private bool losslessQuality;
+        private bool smoothMotion;
+        private bool lockAspectRatio;
         private string videoInput;
         private string videoOutput;
+        private bool fastPyramid;
+        private decimal pyramidScale;
+        private int levels;
+        private int windowSize;
+        private int iterations;
+        private int pixelNeighborhood;
+        private decimal smoothDerivativeStandardDeviation;
         private ObservableCollection<ButterflowSubregion> subregions = new ObservableCollection<ButterflowSubregion>();
 
         #endregion
@@ -73,6 +84,41 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Gets or sets a value indicating whether the butterflow should be turned toward smooth motion. </summary>
+        /// <value> True if tuned toward smooth motion, false if not. </value>
+        public bool SmoothMotion
+        {
+            get
+            {
+                return this.smoothMotion;
+            }
+            set
+            {
+                this.smoothMotion = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets a value indicating whether to lock aspect ratio of the video. </summary>
+        /// <value> True if locking aspect ratio of the video, false if not. </value>
+        public bool LockAspectRatio
+        {
+            get
+            {
+                return this.lockAspectRatio;
+            }
+            set
+            {
+                if (value)
+                {
+                    this.aspectRatio = Convert.ToDecimal(this.height) / Convert.ToDecimal(this.width);
+                }
+
+                this.lockAspectRatio = value;
+                OnPropertyChanged();
+            }
+        }
+
         /// <summary> Gets or sets the width of the video output. </summary>
         /// <value> The width of the video output. </value>
         public string Width
@@ -83,9 +129,20 @@ namespace butterflow_ui
             }
             set
             {
+                var oldWidth = this.width;
+
                 interpreter.Interpret(value);
                 this.width = interpreter.Int;
+
                 OnPropertyChanged();
+
+                if (this.lockAspectRatio)
+                {
+                    interpreter.Interpret(string.Format("{0} * {1}", this.aspectRatio, this.width));
+                    this.height = interpreter.Int;
+
+                    OnPropertyChanged("Height");
+                }
             }
         }
 
@@ -165,6 +222,117 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Gets or sets a value indicating whether to use fast pyramids. </summary>
+        /// <value> True if using fast pyramids, false if not. </value>
+        public bool FastPyramid
+        {
+            get
+            {
+                return this.fastPyramid;
+            }
+            set
+            {
+                this.fastPyramid = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the pyramid scale factor. </summary>
+        /// <value> The pyramid scale factor. </value>
+        public string PyramidScale
+        {
+            get
+            {
+                return this.pyramidScale.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.pyramidScale = interpreter.Decimal;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the number of pyramid layers. </summary>
+        /// <value> The number of pyramid layers. </value>
+        public string Levels
+        {
+            get
+            {
+                return this.levels.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.levels = interpreter.Int;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the size of the windowing average. </summary>
+        /// <value> The size of the windowing average. </value>
+        public string WindowSize
+        {
+            get
+            {
+                return this.windowSize.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.windowSize = interpreter.Int;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the number of iterations at each pyramid level. </summary>
+        /// <value> The number of iterations at each pyramid level. </value>
+        public string Iterations
+        {
+            get
+            {
+                return this.iterations.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.iterations = interpreter.Int;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the size of the pixel neighborhood. </summary>
+        /// <value> The size of the pixel neighborhood. </value>
+        public string PixelNeighborhood
+        {
+            get
+            {
+                return this.pixelNeighborhood.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.pixelNeighborhood = interpreter.Int;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the standard deviation of smooth derivatives. </summary>
+        /// <value> The standard deviation of smooth derivatives. </value>
+        public string SmoothDerivativeStandardDeviation
+        {
+            get
+            {
+                return this.smoothDerivativeStandardDeviation.ToString();
+            }
+            set
+            {
+                interpreter.Interpret(value);
+                this.smoothDerivativeStandardDeviation = interpreter.Decimal;
+                OnPropertyChanged();
+            }
+        }
+
         /// <summary> Gets or sets the subregions of the video on which to work. </summary>
         /// <value> The subregions of the video. </value>
         public ObservableCollection<ButterflowSubregion> Subregions
@@ -194,16 +362,16 @@ namespace butterflow_ui
 
         private void SubregionsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            if(e.NewItems != null)
+            if (e.NewItems != null)
             {
-                foreach(ButterflowSubregion newItem in e.NewItems)
+                foreach (ButterflowSubregion newItem in e.NewItems)
                 {
                     newItem.PropertyChanged += SubregionPropertyChanged;
                 }
             }
-            if(e.OldItems != null)
+            if (e.OldItems != null)
             {
-                foreach(ButterflowSubregion oldItem in e.OldItems)
+                foreach (ButterflowSubregion oldItem in e.OldItems)
                 {
                     oldItem.PropertyChanged -= SubregionPropertyChanged;
                 }

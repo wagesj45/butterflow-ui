@@ -5,20 +5,27 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace butterflow_ui
 {
+    /// <summary> A butterflow wrapper. Provides interaction with the butterflow executable. </summary>
     public class ButterflowWrapper : PropertyChangedAlerter
     {
         #region Members
+
+        /// <summary> The RegEx string for matching probed resolution. </summary>
+        private const string REGEX_RESOLUTION = @"Resolution\s*:\s(?<Width>\d+)x(?<Height>\d+)";
+        /// <summary> The RegEx string for matching the probed playback rate.. </summary>
+        private const string REGEX_RATE = @"Rate\s*:\s(?<Rate>\d+\.\d+) fps";
 
         /// <summary> Full pathname of the butterflow executable file. </summary>
         private Lazy<string> executablePath = new Lazy<string>(() => Path.Combine(Directory.GetCurrentDirectory(), "ThirdPartyCompiled", "butterflow.exe"));
         /// <summary> The console output from butterflow. </summary>
         private string consoleOutput = string.Empty;
-        /// <summary> Event queue for all listeners interested in ConsoleOutputRecieved events. </summary>
-        //public event EventHandler<ButterflowConsoleOutputArgs> ConsoleOutputRecieved;
+        /// <summary> Event queue for all listeners interested in ParsedConsoleOutputRecieved events. </summary>
+        public event EventHandler<ButterflowOutputArgs> ParsedConsoleOutputRecieved;
 
         #endregion
 
@@ -71,35 +78,100 @@ namespace butterflow_ui
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.EnableRaisingEvents = true;
-            process.OutputDataReceived += ProcessOutputDataReceived;
+            process.OutputDataReceived += Process_OutputDataReceived; ;
 
             process.Start();
             process.BeginOutputReadLine();
         }
 
-        /// <summary> Process the output data received from the butterflow executable. </summary>
-        /// <param name="sender"> Source of the event. </param>
-        /// <param name="e">      Data received event information. </param>
-        private void ProcessOutputDataReceived(object sender, DataReceivedEventArgs e)
+        /// <summary>
+        /// Parses console output and attempts to find known values. If a known value is found, the
+        /// <seealso cref="ParsedConsoleOutputRecieved"/> event is triggered.
+        /// </summary>
+        /// <param name="consoleOutput"> The console output from butterflow. </param>
+        private void ParseConsoleOutput(string consoleOutput)
         {
-            this.ConsoleOutput += string.Format("{0}{1}", e.Data, Environment.NewLine);
-            //OnConsoleOutputRecieved(e.Data);
+            if (string.IsNullOrWhiteSpace(consoleOutput))
+            {
+                //Ignore null content and just escape.
+                return;
+            }
+
+            //Test for resolution
+            var regex = new Regex(REGEX_RESOLUTION);
+            foreach (Match match in regex.Matches(consoleOutput))
+            {
+                var width = match.Groups["Width"].Value;
+                var height = match.Groups["Height"].Value;
+
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Width, width, consoleOutput);
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Height, height, consoleOutput);
+            }
+
+            //Test for playback rate
+            regex = new Regex(REGEX_RATE);
+            foreach(Match match in regex.Matches(consoleOutput))
+            {
+                var rate = match.Groups["Rate"].Value;
+
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Rate, rate, consoleOutput);
+            }
         }
 
-        /// <summary> Executes the console output recieved event handler. </summary>
-        /// <param name="output"> The output that has been recieved from butterflow. </param>
-        //protected void OnConsoleOutputRecieved(string output)
-        //{
-        //    if (this.ConsoleOutputRecieved != null)
-        //    {
-        //        this.ConsoleOutputRecieved(this, new ButterflowConsoleOutputArgs(output));
-        //    }
-        //}
+        /// <summary> Executes the parsed console output recieved action. </summary>
+        /// <param name="outputType">    Type of the output. </param>
+        /// <param name="value">         The value. </param>
+        /// <param name="consoleOutput"> The console output from butterflow. </param>
+        private void OnParsedConsoleOutputRecieved(ButterflowOutputType outputType, string value, string consoleOutput)
+        {
+            if (this.ParsedConsoleOutputRecieved != null)
+            {
+                this.ParsedConsoleOutputRecieved(this, new ButterflowOutputArgs(outputType, value, consoleOutput));
+            }
+        }
+
+        /// <summary> Event handler. Called by Process for output data received events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Data received event information. </param>
+        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            this.ConsoleOutput += string.Format("{0}{1}", e.Data, Environment.NewLine);
+            ParseConsoleOutput(e.Data);
+        }
 
         #endregion
 
         #region Subclasses
 
+        /// <summary> Arguments for butterflow output events where a known value of type <seealso cref="ButterflowOutputType"/> can be parsed. </summary>
+        public class ButterflowOutputArgs : ButterflowConsoleOutputArgs
+        {
+
+            #region Properties
+
+            /// <summary> Gets or sets the type of the output detected from butterflow. </summary>
+            /// <value> The type of the output detected from butterflow. </value>
+            public ButterflowOutputType OutputType { get; private set; }
+
+            /// <summary> Gets or sets the value detected from butterflow. </summary>
+            /// <value> The value detected from butterflow. </value>
+            public string Value { get; private set; }
+
+            #endregion
+
+            /// <summary> Constructor. </summary>
+            /// <param name="outputType">    The type of the output detected from butterflow. </param>
+            /// <param name="value">         The value detected from butterflow. </param>
+            /// <param name="consoleOutput"> The console output. </param>
+            public ButterflowOutputArgs(ButterflowOutputType outputType, string value, string consoleOutput)
+                : base(consoleOutput)
+            {
+                this.OutputType = outputType;
+                this.Value = value;
+            }
+        }
+
+        /// <summary> Arguments for butterflow console output events. </summary>
         public class ButterflowConsoleOutputArgs : EventArgs
         {
             #region Properties
@@ -120,6 +192,19 @@ namespace butterflow_ui
             }
 
             #endregion
+        }
+
+        /// <summary> Values that represent butterflow output types. </summary>
+        public enum ButterflowOutputType
+        {
+            /// <summary> Video Width. </summary>
+            Width,
+            /// <summary> Video Height. </summary>
+            Height,
+            /// <summary> Video playback rate. </summary>
+            Rate,
+            /// <summary> Video processing progress. </summary>
+            Progress
         }
 
         #endregion

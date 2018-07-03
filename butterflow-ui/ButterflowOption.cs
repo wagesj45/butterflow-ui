@@ -8,6 +8,7 @@ using System.Windows.Controls;
 
 namespace butterflow_ui
 {
+    /// <summary> A butterflowUI option. Contains layout information for use in butterflowUI. </summary>
     public class ButterflowOption : ContentControl
     {
         #region Properties

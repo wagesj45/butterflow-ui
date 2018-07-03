@@ -124,7 +124,7 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More about butterflow....
+        ///   Looks up a localized string similar to butterflow on github....
         /// </summary>
         public static string AboutButterflowMenu {
             get {
@@ -133,7 +133,7 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More about butterflow-ui....
+        ///   Looks up a localized string similar to butterflow-ui on github....
         /// </summary>
         public static string AboutButterflowUIMenu {
             get {
@@ -205,6 +205,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Fast Pyramids.
+        /// </summary>
+        public static string FastPyramidsLabel {
+            get {
+                return ResourceManager.GetString("FastPyramidsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string FastPyramidsTooltip {
+            get {
+                return ResourceManager.GetString("FastPyramidsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input.
         /// </summary>
         public static string FileInputGroupBox {
@@ -250,6 +268,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pyramid iterations.
+        /// </summary>
+        public static string IterationsLabel {
+            get {
+                return ResourceManager.GetString("IterationsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of iterations to use for each pyramid layer..
+        /// </summary>
+        public static string IterationsTooltip {
+            get {
+                return ResourceManager.GetString("IterationsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Renders the output video with the audio from the original video. In unchecked, no sound will be included in the output video..
         /// </summary>
         public static string KeepAudioDescription {
@@ -268,6 +304,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Levels.
+        /// </summary>
+        public static string LevelsLabel {
+            get {
+                return ResourceManager.GetString("LevelsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of pyramid layers..
+        /// </summary>
+        public static string LevelsTooltip {
+            get {
+                return ResourceManager.GetString("LevelsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Renders the video without lossy compression. The video will not lose any visual quality, but it will result in a very large output file..
         /// </summary>
         public static string LosslessDescription {
@@ -282,6 +336,24 @@ namespace butterflow_ui.Localization {
         public static string LosslessLabel {
             get {
                 return ResourceManager.GetString("LosslessLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pixel Neighborhood.
+        /// </summary>
+        public static string PixelNeighborhoodLabel {
+            get {
+                return ResourceManager.GetString("PixelNeighborhoodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size of the pixel neighborhood..
+        /// </summary>
+        public static string PixelNeighborhoodTooltip {
+            get {
+                return ResourceManager.GetString("PixelNeighborhoodTooltip", resourceCulture);
             }
         }
         
@@ -309,6 +381,24 @@ namespace butterflow_ui.Localization {
         public static string PlayPauseTooltip {
             get {
                 return ResourceManager.GetString("PlayPauseTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pyramid Scale Factor.
+        /// </summary>
+        public static string PyramidScaleLabel {
+            get {
+                return ResourceManager.GetString("PyramidScaleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PyramidScaleTooltip {
+            get {
+                return ResourceManager.GetString("PyramidScaleTooltip", resourceCulture);
             }
         }
         
@@ -345,6 +435,42 @@ namespace butterflow_ui.Localization {
         public static string SkipForwardTooltip {
             get {
                 return ResourceManager.GetString("SkipForwardTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Smooth Derivative.
+        /// </summary>
+        public static string SmoothDerivativeLabel {
+            get {
+                return ResourceManager.GetString("SmoothDerivativeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size of the standard deviation used for smooth derivatives..
+        /// </summary>
+        public static string SmoothDerivativeTooltip {
+            get {
+                return ResourceManager.GetString("SmoothDerivativeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Smooth Motion.
+        /// </summary>
+        public static string SmoothMotionLabel {
+            get {
+                return ResourceManager.GetString("SmoothMotionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set to tune for smooth motion. This mode yields artifact-less frames by emphasizing blended frames over warping pixels..
+        /// </summary>
+        public static string SmoothMotionTooltip {
+            get {
+                return ResourceManager.GetString("SmoothMotionTooltip", resourceCulture);
             }
         }
         
@@ -408,6 +534,24 @@ namespace butterflow_ui.Localization {
         public static string WidthLabel {
             get {
                 return ResourceManager.GetString("WidthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window Size.
+        /// </summary>
+        public static string WindowSizeLabel {
+            get {
+                return ResourceManager.GetString("WindowSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string WindowSizeTooltip {
+            get {
+                return ResourceManager.GetString("WindowSizeTooltip", resourceCulture);
             }
         }
     }

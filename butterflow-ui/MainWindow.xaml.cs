@@ -43,7 +43,28 @@ namespace butterflow_ui
         /// <summary> Default constructor. </summary>
         public MainWindow()
         {
+            this.ButterflowWrapper.ParsedConsoleOutputRecieved += ButterflowWrapper_ParsedConsoleOutputRecieved;
             InitializeComponent();
+        }
+
+        /// <summary> Butterflow wrapper parsed console output recieved. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      The ButterflowOutputArgs to process. </param>
+        private void ButterflowWrapper_ParsedConsoleOutputRecieved(object sender, ButterflowWrapper.ButterflowOutputArgs e)
+        {
+            switch (e.OutputType)
+            {
+                case ButterflowWrapper.ButterflowOutputType.Width:
+                    this.OptionsConfiguration.Width = e.Value;
+                    break;
+                case ButterflowWrapper.ButterflowOutputType.Height:
+                    this.OptionsConfiguration.Height = e.Value;
+                    break;
+                case ButterflowWrapper.ButterflowOutputType.Progress:
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary> Event handler. Called by btnFilePicker for click events. </summary>
@@ -164,8 +185,8 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void mediaPreview_MediaOpened(object sender, RoutedEventArgs e)
         {
-            this.OptionsConfiguration.Width = this.mediaPreview.NaturalVideoWidth.ToString();
-            this.OptionsConfiguration.Height = this.mediaPreview.NaturalVideoHeight.ToString();
+            //this.OptionsConfiguration.Width = this.mediaPreview.NaturalVideoWidth.ToString();
+            //this.OptionsConfiguration.Height = this.mediaPreview.NaturalVideoHeight.ToString();
         }
 
         /// <summary> Event handler. Called by mediaPreview for media ended events. </summary>
