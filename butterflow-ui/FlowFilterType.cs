@@ -12,7 +12,7 @@ namespace butterflow_ui
     {
         /// <summary> Box. </summary>
         box,
-        /// <summary> Guassian. </summary>
-        guassian
+        /// <summary> Gaussian. </summary>
+        gaussian
     }
 }
