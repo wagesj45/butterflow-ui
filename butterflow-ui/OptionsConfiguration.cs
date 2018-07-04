@@ -24,7 +24,7 @@ namespace butterflow_ui
         private const decimal DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION = 1.1m;
         private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
 
-        /// <summary> An interpreter used to ensure numeric input is correctly calculated. </summary>
+        /// <summary> An input interpreter used for converting string values to numeric values. </summary>
         private InputInterpreter interpreter = new InputInterpreter();
         /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
         private decimal aspectRatio = 0;

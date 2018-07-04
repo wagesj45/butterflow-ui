@@ -160,6 +160,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string CancelLabel {
+            get {
+                return ResourceManager.GetString("CancelLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel the current butterflow operation..
+        /// </summary>
+        public static string CancelTooltip {
+            get {
+                return ResourceManager.GetString("CancelTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clip a subregion in the video..
         /// </summary>
         public static string ClipTooltip {

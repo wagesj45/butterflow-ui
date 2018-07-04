@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csmic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -17,8 +18,12 @@ namespace butterflow_ui
 
         /// <summary> The RegEx string for matching probed resolution. </summary>
         private const string REGEX_RESOLUTION = @"Resolution\s*:\s(?<Width>\d+)x(?<Height>\d+)";
-        /// <summary> The RegEx string for matching the probed playback rate.. </summary>
+        /// <summary> The RegEx string for matching the probed playback rate. </summary>
         private const string REGEX_RATE = @"Rate\s*:\s(?<Rate>\d+\.\d+) fps";
+        /// <summary> The RegEx string for detecting progress made when rendering a video. </summary>
+        private const string REGEX_PROGRESS = @"To write\:\s*\w*\s*\w*\,*\w*\s*(?<Progress>\d+\.*\d*)%";
+        /// <summary> An alternative RegEx string for detecting progress made when rendering a video. </summary>
+        private const string REGEX_PROGRESS_ALT = @"\<Rendering progress\:\s*(?<Progress>\d+\.*\d*)%\>";
 
         /// <summary> Full pathname of the butterflow executable file. </summary>
         private Lazy<string> executablePath = new Lazy<string>(() => Path.Combine(Directory.GetCurrentDirectory(), "ThirdPartyCompiled", "butterflow.exe"));
@@ -26,6 +31,12 @@ namespace butterflow_ui
         private string consoleOutput = string.Empty;
         /// <summary> True if butterflow is running, false if not. </summary>
         private bool isRunning;
+        /// <summary> The progress percentage as reported by butterflow. </summary>
+        private double progressPercentage;
+        /// <summary> The running butterflow process. </summary>
+        private Process runningProcess;
+        /// <summary> An input interpreter used for converting string values to numeric values. </summary>
+        private InputInterpreter interpreter = new InputInterpreter();
         /// <summary> Event queue for all listeners interested in ParsedConsoleOutputRecieved events. </summary>
         public event EventHandler<ButterflowOutputArgs> ParsedConsoleOutputRecieved;
 
@@ -48,7 +59,7 @@ namespace butterflow_ui
             }
         }
 
-        /// <summary> Gets or sets a value indicating whether butterflow is currently running. </summary>
+        /// <summary> Gets a value indicating whether butterflow is currently running. </summary>
         /// <value> True if butterflow is running, false if not. </value>
         public bool IsRunning
         {
@@ -56,9 +67,24 @@ namespace butterflow_ui
             {
                 return this.isRunning;
             }
-            set
+            private set
             {
                 this.isRunning = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets the progress percentage as reported by butterflow. </summary>
+        /// <value> The progress percentage as reported by butterflow. </value>
+        public double ProgressPercentage
+        {
+            get
+            {
+                return this.progressPercentage;
+            }
+            private set
+            {
+                this.progressPercentage = value;
                 OnPropertyChanged();
             }
         }
@@ -74,6 +100,15 @@ namespace butterflow_ui
             string arguments = optionsConfiguration.ToButterflowArguments();
 
             Run(arguments);
+        }
+
+        /// <summary> Kills the running instance of butterflow, cancelling its current operation. </summary>
+        public void Cancel()
+        {
+            if(this.IsRunning && this.runningProcess != null)
+            {
+                this.runningProcess.Kill();
+            }
         }
 
         /// <summary> Probes a video file. </summary>
@@ -107,6 +142,7 @@ namespace butterflow_ui
                 process.BeginErrorReadLine();
 
                 this.IsRunning = true;
+                this.runningProcess = process;
             }
         }
 
@@ -116,6 +152,7 @@ namespace butterflow_ui
         private void Process_Exited(object sender, EventArgs e)
         {
             this.IsRunning = false;
+            this.runningProcess = null;
         }
 
         /// <summary>
@@ -131,7 +168,7 @@ namespace butterflow_ui
                 return;
             }
 
-            //Test for resolution
+            // Test for resolution
             var regex = new Regex(REGEX_RESOLUTION);
             foreach (Match match in regex.Matches(consoleOutput))
             {
@@ -142,13 +179,36 @@ namespace butterflow_ui
                 OnParsedConsoleOutputRecieved(ButterflowOutputType.Height, height, consoleOutput);
             }
 
-            //Test for playback rate
+            // Test for playback rate
             regex = new Regex(REGEX_RATE);
             foreach(Match match in regex.Matches(consoleOutput))
             {
                 var rate = match.Groups["Rate"].Value;
 
                 OnParsedConsoleOutputRecieved(ButterflowOutputType.Rate, rate, consoleOutput);
+            }
+
+            // Test for progress being made when rendering a video
+            regex = new Regex(REGEX_PROGRESS);
+            foreach(Match match in regex.Matches(consoleOutput))
+            {
+                var progress = match.Groups["Progress"].Value;
+
+                this.interpreter.Interpret(progress);
+                this.ProgressPercentage = this.interpreter.Double;
+
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Progress, progress, consoleOutput);
+            }
+
+            regex = new Regex(REGEX_PROGRESS_ALT);
+            foreach (Match match in regex.Matches(consoleOutput))
+            {
+                var progress = match.Groups["Progress"].Value;
+
+                this.interpreter.Interpret(progress);
+                this.ProgressPercentage = this.interpreter.Double;
+
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Progress, progress, consoleOutput);
             }
         }
 

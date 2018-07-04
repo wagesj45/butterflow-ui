@@ -9,7 +9,8 @@
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
         x:Name="butterflowUIWindow"
-        Title="{x:Static loc:Localization.Title}" Height="600" Width="800">
+        Title="{x:Static loc:Localization.Title}" Height="600" Width="800"
+        Icon="./Icon/icon.ico">
     <Window.Resources>
         <ObjectDataProvider x:Key="enumRegionTypeDataProvider" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
@@ -103,12 +104,24 @@
                     </Grid>
                 </GroupBox>
             </StackPanel>
-            <Button Grid.Column="4" Grid.Row="0" Name="btnProcess" ToolTip="{x:Static loc:Localization.ProcessTooltip}" IsEnabled="{Binding ButterflowWrapper.IsRunning, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolConverter}}" Click="btnProcess_Click">
-                <StackPanel>
-                    <ContentControl MaxWidth="32" HorizontalAlignment="Center" Name="btnRun" Template="{StaticResource RadarIcon}" />
-                    <Label Content="{x:Static loc:Localization.ProcessLabel}" />
-                </StackPanel>
-            </Button>
+            <Grid Grid.Column="4" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Name="btnProcess" ToolTip="{x:Static loc:Localization.ProcessTooltip}" IsEnabled="{Binding ButterflowWrapper.IsRunning, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolConverter}}" Click="btnProcess_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentControl MaxWidth="16" HorizontalAlignment="Center" Template="{StaticResource RadarIcon}" />
+                        <Label Content="{x:Static loc:Localization.ProcessLabel}" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="1" Name="btnCancel" ToolTip="{x:Static loc:Localization.CancelTooltip}" IsEnabled="{Binding ButterflowWrapper.IsRunning, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Click="btnProcess_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentControl MaxWidth="16" HorizontalAlignment="Center" Template="{StaticResource CancelIcon}" />
+                        <Label Content="{x:Static loc:Localization.CancelLabel}" />
+                    </StackPanel>
+                </Button>
+            </Grid>
             <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.CommonOptionsGroupBox}">
                 <ScrollViewer>
                     <StackPanel>
@@ -263,9 +276,27 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
-                    <TextBlock Grid.Row="0" Name="txtConsoleOutput" Background="Black" Foreground="White" TextWrapping="Wrap" Text="{Binding ButterflowWrapper.ConsoleOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
-                </ScrollViewer>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <TextBlock  Name="txtConsoleOutput" Background="Black" Foreground="White" TextWrapping="Wrap" Text="{Binding ButterflowWrapper.ConsoleOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
+                    </ScrollViewer>
+                    <ProgressBar Name="progressBar" Grid.Row="1" Height="10" Minimum="0" Maximum="100" IsEnabled="{Binding ButterflowWrapper.IsRunning, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Value="{Binding ButterflowWrapper.ProgressPercentage, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}">
+                        <ProgressBar.Style>
+                            <Style TargetType="ProgressBar">
+                                <Setter Property="Visibility" Value="Hidden" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="true">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ProgressBar.Style>
+                    </ProgressBar>
+                </Grid>
                 <gu:MediaElementWrapper Grid.Row="1" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>

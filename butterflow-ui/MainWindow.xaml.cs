@@ -94,7 +94,8 @@ namespace butterflow_ui
                     this.OptionsConfiguration.Height = e.Value;
                     break;
                 case ButterflowWrapper.ButterflowOutputType.Progress:
-                    break;
+                    // This case doesn't need to be considered since we're binding the progress bar's value to a property on the butterflow wrapper.
+                    // We may use this in the future, though.
                 default:
                     break;
             }
@@ -112,7 +113,7 @@ namespace butterflow_ui
             if (result.HasValue && result.Value)
             {
                 this.OptionsConfiguration.VideoInput = ofd.FileName;
-                
+
                 this.ButterflowWrapper.Probe(ofd.FileName);
 
                 //Hack to get the first frame to display in the media preview element.

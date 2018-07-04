@@ -234,6 +234,12 @@
   <data name="_60fpsLabel" xml:space="preserve">
     <value>60 fps</value>
   </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CancelTooltip" xml:space="preserve">
+    <value>Cancel the current butterflow operation.</value>
+  </data>
   <data name="FastPyramidsLabel" xml:space="preserve">
     <value>Use Fast Pyramids</value>
   </data>
