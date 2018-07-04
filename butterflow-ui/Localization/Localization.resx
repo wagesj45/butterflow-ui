@@ -240,11 +240,23 @@
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
+  <data name="FlowFilterLabel" xml:space="preserve">
+    <value>Flow Filter</value>
+  </data>
+  <data name="FlowFilterTooltip" xml:space="preserve">
+    <value>Filter used for optical flow estimation.</value>
+  </data>
   <data name="IterationsLabel" xml:space="preserve">
     <value>Pyramid iterations</value>
   </data>
   <data name="IterationsTooltip" xml:space="preserve">
     <value>The number of iterations to use for each pyramid layer.</value>
+  </data>
+  <data name="KeepSubregionsLabel" xml:space="preserve">
+    <value>Keep Subregions</value>
+  </data>
+  <data name="KeepSubregionsTooltip" xml:space="preserve">
+    <value>Renders subregions not explicitly specified.</value>
   </data>
   <data name="LevelsLabel" xml:space="preserve">
     <value>Levels</value>

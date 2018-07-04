@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace butterflow_ui
 {
     /// <summary> Values that represent subregion types. </summary>
+    [Serializable]
     public enum RegionType
     {
         /// <summary> Speed. </summary>

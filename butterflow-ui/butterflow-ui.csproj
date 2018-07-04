@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FlowFilterType.cs" />
     <Compile Include="PropertyChangedAlerter.cs" />
     <Compile Include="RegionType.cs" />
     <Page Include="Icons.xaml">

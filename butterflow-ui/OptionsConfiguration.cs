@@ -16,6 +16,14 @@ namespace butterflow_ui
     {
         #region Members
 
+        private const decimal DEFAULT_PYRAMID_SCALE = 0.5m;
+        private const int DEFAULT_LEVELS = 3;
+        private const int DEFAULT_WINDOW_SIZE = 25;
+        private const int DEFAULT_ITERATIONS = 3;
+        private const int DEFAULT_PIXEL_NEIGHBORHOOD = 5;
+        private const decimal DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION = 1.1m;
+        private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
+
         /// <summary> An interpreter used to ensure numeric input is correctly calculated. </summary>
         private InputInterpreter interpreter = new InputInterpreter();
         /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
@@ -25,7 +33,7 @@ namespace butterflow_ui
         private bool keepAudio;
         private int width;
         private int height;
-        private bool keepAspectRatio;
+        private bool keepSubRegions;
         private bool losslessQuality;
         private bool smoothMotion;
         private bool lockAspectRatio;
@@ -38,6 +46,7 @@ namespace butterflow_ui
         private int iterations;
         private int pixelNeighborhood;
         private decimal smoothDerivativeStandardDeviation;
+        private FlowFilterType flowFilterType = FlowFilterType.box;
         private ObservableCollection<ButterflowSubregion> subregions = new ObservableCollection<ButterflowSubregion>();
 
         #endregion
@@ -109,7 +118,7 @@ namespace butterflow_ui
             }
             set
             {
-                if (value)
+                if (value && this.width != 0 && this.height != 0)
                 {
                     this.aspectRatio = Convert.ToDecimal(this.height) / Convert.ToDecimal(this.width);
                 }
@@ -162,17 +171,17 @@ namespace butterflow_ui
             }
         }
 
-        /// <summary> Gets or sets a value indicating whether the keep aspect ratio of the input video file for the output video file. </summary>
-        /// <value> True if keep aspect ratio, false if not. </value>
-        public bool KeepAspectRatio
+        /// <summary> Gets or sets a value indicating whether the keep subregions that are not explicitly specified. </summary>
+        /// <value> True if keeping subregions not explicitly specified, false if not. </value>
+        public bool KeepSubregions
         {
             get
             {
-                return this.keepAspectRatio;
+                return this.keepSubRegions;
             }
             set
             {
-                this.keepAspectRatio = value;
+                this.keepSubRegions = value;
                 OnPropertyChanged();
             }
         }
@@ -312,7 +321,13 @@ namespace butterflow_ui
             set
             {
                 interpreter.Interpret(value);
-                this.pixelNeighborhood = interpreter.Int;
+
+                // Per butterflow's documentation, the valid range for --poly-n is {5,7}
+                if (interpreter.Int >= 5 || interpreter.Int <= 7)
+                {
+                    this.pixelNeighborhood = interpreter.Int;
+                }
+
                 OnPropertyChanged();
             }
         }
@@ -329,6 +344,21 @@ namespace butterflow_ui
             {
                 interpreter.Interpret(value);
                 this.smoothDerivativeStandardDeviation = interpreter.Decimal;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets the type of the flow filter used for optical flow calculations. </summary>
+        /// <value> The type of the flow filter used for optical flow calculations. </value>
+        public FlowFilterType FlowFilterType
+        {
+            get
+            {
+                return this.flowFilterType;
+            }
+            set
+            {
+                this.flowFilterType = value;
                 OnPropertyChanged();
             }
         }
@@ -355,12 +385,24 @@ namespace butterflow_ui
         /// <summary> Default constructor. </summary>
         public OptionsConfiguration()
         {
+            // Set default values
+            this.pyramidScale = DEFAULT_PYRAMID_SCALE;
+            this.levels = DEFAULT_LEVELS;
+            this.windowSize = DEFAULT_WINDOW_SIZE;
+            this.iterations = DEFAULT_ITERATIONS;
+            this.pixelNeighborhood = DEFAULT_PIXEL_NEIGHBORHOOD;
+            this.smoothDerivativeStandardDeviation = DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION;
+            this.flowFilterType = DEFAULT_FLOW_FILTER_TYPE;
+
             AddConstantCallProperty("CommandLineOutput");
 
-            this.subregions.CollectionChanged += SubregionsCollectionChanged;
+            this.subregions.CollectionChanged += Subregions_CollectionChanged; ;
         }
 
-        private void SubregionsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        /// <summary> Event handler. Called by Subregions for collection changed events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Notify collection changed event information. </param>
+        private void Subregions_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
@@ -393,9 +435,9 @@ namespace butterflow_ui
         /// <returns> This object as a string. </returns>
         public string ToButterflowArguments()
         {
-            var stringBuilder = new StringBuilder("-v "); //Verbose
+            var stringBuilder = new StringBuilder("-v "); // Verbose
 
-            if (this.KeepAspectRatio)
+            if (this.LockAspectRatio)
             {
                 stringBuilder.AppendFormat("-vs {0}:-1 ", this.Width);
             }
@@ -434,6 +476,17 @@ namespace butterflow_ui
                 }
                 stringBuilder.Append(" ");
             }
+
+            if (this.KeepSubregions) stringBuilder.Append("-k ");
+            if (this.SmoothMotion) stringBuilder.Append("-sm ");
+            if (this.FastPyramid) stringBuilder.Append("--fast-pyr ");
+            if (this.pyramidScale != DEFAULT_PYRAMID_SCALE) stringBuilder.AppendFormat("--pyr-scale {0} ", this.PyramidScale);
+            if (this.levels != DEFAULT_LEVELS) stringBuilder.AppendFormat("--levels {0} ", this.Levels);
+            if (this.windowSize != DEFAULT_WINDOW_SIZE) stringBuilder.AppendFormat("--winsize {0} ", this.WindowSize);
+            if (this.iterations != DEFAULT_ITERATIONS) stringBuilder.AppendFormat("--iters {0} ", this.Iterations);
+            if (this.pixelNeighborhood != DEFAULT_PIXEL_NEIGHBORHOOD) stringBuilder.AppendFormat("--poly-n {0} ", this.PixelNeighborhood);
+            if (this.smoothDerivativeStandardDeviation != DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION) stringBuilder.AppendFormat("--poly-s {0} ", this.SmoothDerivativeStandardDeviation);
+            if (this.FlowFilterType != DEFAULT_FLOW_FILTER_TYPE) stringBuilder.AppendFormat("-ff {0} ", this.FlowFilterType);
 
             return stringBuilder.ToString();
         }

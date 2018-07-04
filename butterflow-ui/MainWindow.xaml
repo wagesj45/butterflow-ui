@@ -11,10 +11,16 @@
         x:Name="butterflowUIWindow"
         Title="{x:Static loc:Localization.Title}" Height="600" Width="800">
     <Window.Resources>
-        <ObjectDataProvider x:Key="enumDataProvider" MethodName="GetValues"
+        <ObjectDataProvider x:Key="enumRegionTypeDataProvider" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="butterflow_ui:RegionType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="enumFlowFilterTypeDataProvider" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="butterflow_ui:FlowFilterType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
@@ -109,7 +115,7 @@
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._120fpsLabel}" Tag="120" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}" DescriptionValue="{x:Static loc:Localization.PlaybackRateDescription}">
-                                    <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"  />
+                                    <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" GotFocus="TextBox_GotFocus"  />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
@@ -157,7 +163,18 @@
 
                                 </Button>
                                 <butterflow_ui:ButterflowOption Grid.Column="2" LabelValue="{x:Static loc:Localization.HeightLabel}">
-                                    <TextBox Text="{Binding OptionsConfiguration.Height, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" IsReadOnly="{Binding OptionsConfiguration.LockAspectRatio, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Text="{Binding OptionsConfiguration.Height, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" IsReadOnly="{Binding OptionsConfiguration.LockAspectRatio, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}">
+                                        <TextBox.Style>
+                                            <Style TargetType="{x:Type TextBox}">
+                                                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlColor}}" />
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsReadOnly" Value="True">
+                                                        <Setter Property="Background" Value="Gray" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBox.Style>
+                                    </TextBox>
                                 </butterflow_ui:ButterflowOption>
                             </Grid>
                         </butterflow_ui:ButterflowOption>
@@ -176,7 +193,7 @@
                                             <TextBlock Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}"/>
                                             <TextBlock Text="{x:Static loc:Localization.EndLabel}" />
                                             <TextBlock Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}"/>
-                                            <ComboBox ItemsSource="{Binding Source={StaticResource enumDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
+                                            <ComboBox ItemsSource="{Binding Source={StaticResource enumRegionTypeDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
                                             <TextBox MinWidth="35" Text="{Binding Value, Mode=TwoWay}" />
                                             <TextBlock Text="{x:Static loc:Localization.ToEndLabel}" />
                                             <CheckBox IsChecked="{Binding ToEnd, Mode=TwoWay}" />
@@ -184,6 +201,9 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
+                        </butterflow_ui:ButterflowOption>
+                        <butterflow_ui:ButterflowOption DescriptionValue="{x:Static loc:Localization.KeepSubregionsTooltip}">
+                            <CheckBox IsChecked="{Binding OptionsConfiguration.KeepSubregions, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.KeepSubregionsLabel}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption DescriptionValue="{x:Static loc:Localization.SmoothMotionTooltip}">
                             <CheckBox IsChecked="{Binding OptionsConfiguration.SmoothMotion, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static loc:Localization.SmoothMotionLabel}" />
@@ -195,19 +215,22 @@
                             <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.LevelsLabel}" DescriptionValue="{x:Static loc:Localization.LevelsTooltip}">
-                            <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                            <TextBox Text="{Binding OptionsConfiguration.Levels, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.WindowSizeLabel}" DescriptionValue="{x:Static loc:Localization.WindowSizeTooltip}">
-                            <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                            <TextBox Text="{Binding OptionsConfiguration.WindowSize, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.IterationsLabel}" DescriptionValue="{x:Static loc:Localization.IterationsTooltip}">
-                            <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                            <TextBox Text="{Binding OptionsConfiguration.Iterations, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PixelNeighborhoodLabel}" DescriptionValue="{x:Static loc:Localization.PixelNeighborhoodTooltip}">
-                            <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                            <TextBox Text="{Binding OptionsConfiguration.PixelNeighborhood, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.SmoothDerivativeLabel}" DescriptionValue="{x:Static loc:Localization.SmoothDerivativeTooltip}">
-                            <TextBox Text="{Binding OptionsConfiguration.PyramidScale, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                            <TextBox Text="{Binding OptionsConfiguration.SmoothDerivativeStandardDeviation, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
+                        </butterflow_ui:ButterflowOption>
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.FlowFilterLabel}" DescriptionValue="{x:Static loc:Localization.FlowFilterTooltip}">
+                            <ComboBox ItemsSource="{Binding Source={StaticResource enumFlowFilterTypeDataProvider}}" SelectedItem="{Binding OptionsConfiguration.FlowFilterType, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
                         </butterflow_ui:ButterflowOption>
                     </StackPanel>
                 </ScrollViewer>

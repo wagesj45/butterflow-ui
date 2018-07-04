@@ -250,6 +250,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flow Filter.
+        /// </summary>
+        public static string FlowFilterLabel {
+            get {
+                return ResourceManager.GetString("FlowFilterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter used for optical flow estimation..
+        /// </summary>
+        public static string FlowFilterTooltip {
+            get {
+                return ResourceManager.GetString("FlowFilterTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Height.
         /// </summary>
         public static string HeightLabel {
@@ -300,6 +318,24 @@ namespace butterflow_ui.Localization {
         public static string KeepAudioLabel {
             get {
                 return ResourceManager.GetString("KeepAudioLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep Subregions.
+        /// </summary>
+        public static string KeepSubregionsLabel {
+            get {
+                return ResourceManager.GetString("KeepSubregionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renders subregions not explicitly specified..
+        /// </summary>
+        public static string KeepSubregionsTooltip {
+            get {
+                return ResourceManager.GetString("KeepSubregionsTooltip", resourceCulture);
             }
         }
         

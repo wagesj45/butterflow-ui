@@ -47,6 +47,39 @@ namespace butterflow_ui
             InitializeComponent();
         }
 
+        #region Methods
+
+        /// <summary> Gets the recursive children of a <paramref name="parent"/> element that are of type <typeparamref name="T"/>. </summary>
+        /// <typeparam name="T"> Generic type parameter. </typeparam>
+        /// <param name="parent"> The parent element. </param>
+        /// <returns>
+        /// An enumerator that allows foreach to be used to process the recursive childrens in this
+        /// collection.
+        /// </returns>
+        private IEnumerable<T> GetRecursiveChildren<T>(object parent) where T : DependencyObject
+        {
+            if (parent is DependencyObject)
+            {
+                var list = new List<T>();
+
+                foreach (var child in LogicalTreeHelper.GetChildren((DependencyObject)parent))
+                {
+                    if (child is DependencyObject)
+                    {
+                        if (child is T)
+                        {
+                            list.Add((T)child);
+                        }
+                        list.AddRange(GetRecursiveChildren<T>((DependencyObject)child));
+                    }
+                }
+
+                return list;
+            }
+
+            return Enumerable.Empty<T>();
+        }
+
         /// <summary> Butterflow wrapper parsed console output recieved. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      The ButterflowOutputArgs to process. </param>
@@ -234,5 +267,21 @@ namespace butterflow_ui
                 }
             }
         }
+
+        /// <summary> Event handler. Called by TextBox for got focus events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //Clear all the radio buttons because we got focus from the user in the playbackrate textbox.
+            var playbackRateRadioButtons = GetRecursiveChildren<RadioButton>(this.butterflowUIWindow);
+
+            foreach(var radioButton in playbackRateRadioButtons)
+            {
+                radioButton.IsChecked = false;
+            }
+        }
+
+        #endregion
     }
 }
