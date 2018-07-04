@@ -24,6 +24,8 @@ namespace butterflow_ui
         private Lazy<string> executablePath = new Lazy<string>(() => Path.Combine(Directory.GetCurrentDirectory(), "ThirdPartyCompiled", "butterflow.exe"));
         /// <summary> The console output from butterflow. </summary>
         private string consoleOutput = string.Empty;
+        /// <summary> True if butterflow is running, false if not. </summary>
+        private bool isRunning;
         /// <summary> Event queue for all listeners interested in ParsedConsoleOutputRecieved events. </summary>
         public event EventHandler<ButterflowOutputArgs> ParsedConsoleOutputRecieved;
 
@@ -42,6 +44,21 @@ namespace butterflow_ui
             private set
             {
                 this.consoleOutput = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets or sets a value indicating whether butterflow is currently running. </summary>
+        /// <value> True if butterflow is running, false if not. </value>
+        public bool IsRunning
+        {
+            get
+            {
+                return this.isRunning;
+            }
+            set
+            {
+                this.isRunning = value;
                 OnPropertyChanged();
             }
         }
@@ -71,20 +88,34 @@ namespace butterflow_ui
         /// <param name="arguments">     Options for controlling the operation. </param>
         private void Run(string arguments)
         {
-            var process = new Process();
-            process.StartInfo = new ProcessStartInfo(executablePath.Value, arguments);
+            if (!this.IsRunning)
+            {
+                var process = new Process();
+                process.StartInfo = new ProcessStartInfo(executablePath.Value, arguments);
 
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.EnableRaisingEvents = true;
-            process.OutputDataReceived += Process_OutputDataReceived;
-            process.ErrorDataReceived += Process_OutputDataReceived;
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.EnableRaisingEvents = true;
+                process.OutputDataReceived += Process_OutputDataReceived;
+                process.ErrorDataReceived += Process_OutputDataReceived;
+                process.Exited += Process_Exited;
 
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                this.IsRunning = true;
+            }
+        }
+
+        /// <summary> Event handler. Called by Process for exited events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Event information. </param>
+        private void Process_Exited(object sender, EventArgs e)
+        {
+            this.IsRunning = false;
         }
 
         /// <summary>

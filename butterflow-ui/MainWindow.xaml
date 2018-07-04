@@ -23,6 +23,7 @@
                 <x:Type TypeName="butterflow_ui:FlowFilterType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <butterflow_ui:InverseBoolConverter x:Key="InverseBoolConverter" />
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -102,7 +103,7 @@
                     </Grid>
                 </GroupBox>
             </StackPanel>
-            <Button Grid.Column="4" Grid.Row="0" Name="btnProcess" ToolTip="{x:Static loc:Localization.ProcessTooltip}" Click="btnProcess_Click">
+            <Button Grid.Column="4" Grid.Row="0" Name="btnProcess" ToolTip="{x:Static loc:Localization.ProcessTooltip}" IsEnabled="{Binding ButterflowWrapper.IsRunning, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolConverter}}" Click="btnProcess_Click">
                 <StackPanel>
                     <ContentControl MaxWidth="32" HorizontalAlignment="Center" Name="btnRun" Template="{StaticResource RadarIcon}" />
                     <Label Content="{x:Static loc:Localization.ProcessLabel}" />
