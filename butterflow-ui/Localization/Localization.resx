@@ -240,6 +240,9 @@
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
+  <data name="FileOutputGroupBox" xml:space="preserve">
+    <value>Output</value>
+  </data>
   <data name="FlowFilterLabel" xml:space="preserve">
     <value>Flow Filter</value>
   </data>
@@ -269,6 +272,12 @@
   </data>
   <data name="PixelNeighborhoodTooltip" xml:space="preserve">
     <value>Size of the pixel neighborhood.</value>
+  </data>
+  <data name="ProcessLabel" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="ProcessTooltip" xml:space="preserve">
+    <value>Process the video. This may be a long process.</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
     <value>Pyramid Scale Factor</value>

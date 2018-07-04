@@ -450,8 +450,6 @@ namespace butterflow_ui
             if (this.KeepAudio) stringBuilder.Append("-audio ");
             if (this.LosslessQuality) stringBuilder.Append("-l ");
 
-            stringBuilder.AppendFormat("\"{0}\"", this.VideoInput);
-
             if (this.Subregions.Any())
             {
                 foreach (var anon in this.Subregions.Select((sr, index) => new { Index = index, Subregion = sr }))
@@ -487,6 +485,9 @@ namespace butterflow_ui
             if (this.pixelNeighborhood != DEFAULT_PIXEL_NEIGHBORHOOD) stringBuilder.AppendFormat("--poly-n {0} ", this.PixelNeighborhood);
             if (this.smoothDerivativeStandardDeviation != DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION) stringBuilder.AppendFormat("--poly-s {0} ", this.SmoothDerivativeStandardDeviation);
             if (this.FlowFilterType != DEFAULT_FLOW_FILTER_TYPE) stringBuilder.AppendFormat("-ff {0} ", this.FlowFilterType);
+            if (!string.IsNullOrWhiteSpace(this.VideoOutput)) stringBuilder.AppendFormat("-o \"{0}\" ", this.VideoOutput);
+
+            stringBuilder.AppendFormat("\"{0}\"", this.VideoInput);
 
             return stringBuilder.ToString();
         }

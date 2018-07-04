@@ -71,23 +71,43 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <GroupBox Grid.ColumnSpan="4"  Grid.Row="0" Header="{x:Static loc:Localization.FileInputGroupBox}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                    <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Grid.Column="2" MinWidth="25" Name="btnFilePicker" Click="btnFilePicker_Click">...</Button>
-                </Grid>
-            </GroupBox>
+            <StackPanel Grid.ColumnSpan="3"  Grid.Row="0">
+                <GroupBox  Header="{x:Static loc:Localization.FileInputGroupBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
+                        <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Grid.Column="2" MinWidth="25" Name="btnFilePicker" Click="btnFilePicker_Click">...</Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox  Header="{x:Static loc:Localization.FileOutputGroupBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
+                        <TextBox Name="txtFileOutputName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoOutput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Grid.Column="2" MinWidth="25" Name="btnFileOutputPicker" Click="btnFileOutputPicker_Click">...</Button>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+            <Button Grid.Column="4" Grid.Row="0" Name="btnProcess" ToolTip="{x:Static loc:Localization.ProcessTooltip}" Click="btnProcess_Click">
+                <StackPanel>
+                    <ContentControl MaxWidth="32" HorizontalAlignment="Center" Name="btnRun" Template="{StaticResource RadarIcon}" />
+                    <Label Content="{x:Static loc:Localization.ProcessLabel}" />
+                </StackPanel>
+            </Button>
             <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.CommonOptionsGroupBox}">
                 <ScrollViewer>
                     <StackPanel>
@@ -115,7 +135,7 @@
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._120fpsLabel}" Tag="120" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}" DescriptionValue="{x:Static loc:Localization.PlaybackRateDescription}">
-                                    <TextBox Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" GotFocus="TextBox_GotFocus"  />
+                                    <TextBox Name="txtPlaybackRate" Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" GotFocus="txtPlaybackRate_GotFocus"  />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
@@ -288,7 +308,7 @@
                     </ItemsPanelTemplate>
                 </StatusBar.ItemsPanel>
                 <StatusBarItem Grid.Column="0">
-                    <Button>
+                    <Button Name="btnCopyArguments" Click="btnCopyArguments_Click">
                         <ContentControl Template="{StaticResource CopyIcon}" />
                     </Button>
                 </StatusBarItem>

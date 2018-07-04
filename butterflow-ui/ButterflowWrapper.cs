@@ -77,11 +77,14 @@ namespace butterflow_ui
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.EnableRaisingEvents = true;
-            process.OutputDataReceived += Process_OutputDataReceived; ;
+            process.OutputDataReceived += Process_OutputDataReceived;
+            process.ErrorDataReceived += Process_OutputDataReceived;
 
             process.Start();
             process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
         }
 
         /// <summary>

@@ -112,14 +112,27 @@ namespace butterflow_ui
             if (result.HasValue && result.Value)
             {
                 this.OptionsConfiguration.VideoInput = ofd.FileName;
-
-                //this.ButterflowWrapper.ConsoleOutputRecieved += (o, ce) => this.txtConsoleOutput.Text = ce.ConsoleOutput;
+                
                 this.ButterflowWrapper.Probe(ofd.FileName);
 
                 //Hack to get the first frame to display in the media preview element.
-                //This also triggers the MediaOpened event so we can get the metadata from the element.
                 mediaPreview.Play();
                 mediaPreview.PausePlayback();
+            }
+        }
+
+        /// <summary> Event handler. Called by btnFileOutputPicker for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void btnFileOutputPicker_Click(object sender, RoutedEventArgs e)
+        {
+            var sfd = new SaveFileDialog();
+            sfd.Filter = "MPEG 4|*.mp4";
+
+            var result = sfd.ShowDialog(this);
+            if (result.HasValue && result.Value)
+            {
+                this.OptionsConfiguration.VideoOutput = sfd.FileName;
             }
         }
 
@@ -268,18 +281,34 @@ namespace butterflow_ui
             }
         }
 
-        /// <summary> Event handler. Called by TextBox for got focus events. </summary>
+        /// <summary> Event handler. Called by txtPlaybackRate for got focus events. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Routed event information. </param>
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        private void txtPlaybackRate_GotFocus(object sender, RoutedEventArgs e)
         {
             //Clear all the radio buttons because we got focus from the user in the playbackrate textbox.
             var playbackRateRadioButtons = GetRecursiveChildren<RadioButton>(this.butterflowUIWindow);
 
-            foreach(var radioButton in playbackRateRadioButtons)
+            foreach (var radioButton in playbackRateRadioButtons)
             {
                 radioButton.IsChecked = false;
             }
+        }
+
+        /// <summary> Event handler. Called by btnCopyArguments for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void btnCopyArguments_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(this.OptionsConfiguration.CommandLineOutput);
+        }
+
+        /// <summary> Event handler. Called by btnProcess for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void btnProcess_Click(object sender, RoutedEventArgs e)
+        {
+            this.ButterflowWrapper.Run(this.OptionsConfiguration);
         }
 
         #endregion

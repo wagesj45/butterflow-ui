@@ -250,6 +250,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output.
+        /// </summary>
+        public static string FileOutputGroupBox {
+            get {
+                return ResourceManager.GetString("FileOutputGroupBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flow Filter.
         /// </summary>
         public static string FlowFilterLabel {
@@ -417,6 +426,24 @@ namespace butterflow_ui.Localization {
         public static string PlayPauseTooltip {
             get {
                 return ResourceManager.GetString("PlayPauseTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process.
+        /// </summary>
+        public static string ProcessLabel {
+            get {
+                return ResourceManager.GetString("ProcessLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process the video. This may be a long process..
+        /// </summary>
+        public static string ProcessTooltip {
+            get {
+                return ResourceManager.GetString("ProcessTooltip", resourceCulture);
             }
         }
         
