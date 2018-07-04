@@ -452,6 +452,8 @@ namespace butterflow_ui
 
             if (this.Subregions.Any())
             {
+                stringBuilder.Append("-s ");
+
                 foreach (var anon in this.Subregions.Select((sr, index) => new { Index = index, Subregion = sr }))
                 {
                     string format = "ss\\.fff";
