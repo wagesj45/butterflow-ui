@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="butterflow-ui" Language="1033" Version="1.0.0.0" Manufacturer="butterflow-ui @ github" UpgradeCode="bba9d512-377a-467e-920a-cbcf36ffc072">
+    <Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="butterflow-ui" Level="1">
+      <ComponentGroupRef Id="FullInstallComponentGroup" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="butterflow-ui" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="butterflow-ui"/>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Directory Id="dir9AE38F4F5CB5E565E774521E138F44FD" Name="es" />
+      <Directory Id="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Name="ThirdPartyCompiled" />
+    </DirectoryRef>
+    <DirectoryRef Id="ProgramMenuFolder">
+      <Component Id="ApplicationShortcut" Guid="{35DF3459-15DF-4057-ABC9-B068EAC827D3}">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="butterflow-ui"
+                  Description="A graphical user interface for butterflow."
+                  Target="[#filC94D01CD05DAC96FA92659280C2DB64B]"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="CleanUpShortCut" Directory="ProgramFilesFolder" On="uninstall"/>
+        <RemoveFolder Id="CleanUpMainFolder" Directory="ApplicationProgramsFolder" On ="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="FullInstallComponentGroup">
+      <Component Id="cmp6062B87E64C3703DE1C21DDD3999CD8F" Directory="INSTALLFOLDER" Guid="{D818A143-2B53-4DFA-830C-46C6DAEACB1A}">
+        <File Id="filC94D01CD05DAC96FA92659280C2DB64B" KeyPath="yes" Source="..\butterflow-ui\bin\Release\butterflow-ui.exe" />
+      </Component>
+      <Component Id="cmp092011C0A405671A8F4522555A2427F9" Directory="INSTALLFOLDER" Guid="{A6EFCB42-2854-4025-BCC1-90793CEB940F}">
+        <File Id="fil0F0DC12157A6F1AA0F6D979BB6550B41" KeyPath="yes" Source="..\butterflow-ui\bin\Release\butterflow-ui.exe.config" />
+      </Component>
+      <Component Id="cmp0AFA71BE0C63DC1D815B303AFADEFC94" Directory="INSTALLFOLDER" Guid="{B393E322-F841-4BA7-8F63-CEB438E96DF1}">
+        <File Id="fil6F0165AEECC652372A517124703C42F8" KeyPath="yes" Source="..\butterflow-ui\bin\Release\csmic.dll" />
+      </Component>
+      <Component Id="cmpD1DB4DD903CA87C9F22D0575BAAA8D1E" Directory="INSTALLFOLDER" Guid="{9F830B40-AA93-4C4C-A193-BA2EED7A9EB7}">
+        <File Id="filB7FC3A545FDBCEF80F3BB2B7A79EAD6A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Gu.Wpf.Media.dll" />
+      </Component>
+      <Component Id="cmpA92B99883E0DB6154DB87A067B20DCDE" Directory="INSTALLFOLDER" Guid="{6E279AC9-5B1B-4B58-8C8C-3BFEE35AE701}">
+        <File Id="filF8B79D49DE875310B08A74573BF5DEFF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Gu.Wpf.Media.xml" />
+      </Component>
+      <Component Id="cmpD87291FDA8565331FD5CB4B241AC4A2B" Directory="dir9AE38F4F5CB5E565E774521E138F44FD" Guid="{7182522E-B59C-43A1-B0EC-011DC1C6F4EC}">
+        <File Id="fil43079BECA15FF44CEBA1E161D4AD0836" KeyPath="yes" Source="..\butterflow-ui\bin\Release\es\butterflow-ui.resources.dll" />
+      </Component>
+      <Component Id="cmp2C52914140116DBB79F7A1FEC48C415C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BEEF40BA-93C8-4B21-B855-7C18870C2737}">
+        <File Id="filC164B5963A1B88C703CC4421BB5208EB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\array.pyd" />
+      </Component>
+      <Component Id="cmp1BF5731B0958C5F384BD9C4D7A20262E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{3203DC5B-D2B7-48DC-9412-EF1736BBBFF8}">
+        <File Id="filA98CF120258FEA4557EE27FB835D5B11" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avcodec-57.dll" />
+      </Component>
+      <Component Id="cmp2AF2D6A8B54F97CBAEEE77EE9D273F7C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{49B6B03D-DD68-456E-A58B-58FFF80E36E6}">
+        <File Id="fil36CCBE0F0E1D405BA21B903891371511" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avdevice-57.dll" />
+      </Component>
+      <Component Id="cmp7476BD70282D71F6D9EE45083B436290" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{440D1FE2-05EE-4ED7-AB28-C159FC80957F}">
+        <File Id="filF4F7DDDB6B0985120B1F0244CD5AC4AF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avfilter-6.dll" />
+      </Component>
+      <Component Id="cmpBAB11B98961FBDDAA36FFD280D242A25" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{28715533-8003-4326-AFCD-5F8AE9DF6804}">
+        <File Id="fil684078A491B4CE9501F008458A27A709" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avformat-57.dll" />
+      </Component>
+      <Component Id="cmpE7DDB7DD5387614887AF413E8A9DF1F1" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F66CD4BF-2AD2-4FEC-9CA1-E3F50B4ED3B5}">
+        <File Id="filD729FC2A7A83784DBCB724523C2A3ECD" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avresample-3.dll" />
+      </Component>
+      <Component Id="cmpD0F4234574B4F2FA9DABCD1A43D936E6" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{4A9A43AB-D87B-41B4-97DE-CE2895A09349}">
+        <File Id="fil1912CCB27F1B69E9235D918E4DBB197C" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\avutil-55.dll" />
+      </Component>
+      <Component Id="cmp33E8EABFB9344A7D0707128886B282AE" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B854DA6B-86FD-4C4E-9196-6CB6F1273AC1}">
+        <File Id="filB8C184BEEE2FE34FC0342295BB4EACDB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\binascii.pyd" />
+      </Component>
+      <Component Id="cmp4A9C60E69EA580F78CB40C4C5FA38060" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DDD73AAA-A67E-4BEC-8323-542369ECECF9}">
+        <File Id="filF0934B83F12AEC974F8F58F7FFA91E2E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\butterflow.avinfo.pyd" />
+      </Component>
+      <Component Id="cmp2851FBA785EBD36A00BB149CA4B49A99" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{4F6B1DD6-C783-41BF-84FF-CC97BDB2CD99}">
+        <File Id="filE0B342CEA1AF902B660D168548EF2BFC" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\butterflow.exe" />
+      </Component>
+      <Component Id="cmp809B31C6F3B92EF0D0BCF0334B8D7956" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{D431B0BA-DEDC-45E5-AB06-A6835675E5FC}">
+        <File Id="fil2B963463973D837B3AE7D814C381F1BC" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\butterflow.motion.pyd" />
+      </Component>
+      <Component Id="cmp34F27BEB78C1237BD8022CBAE542DDD5" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B6CA659F-0187-4272-ABE8-2FE1FD212023}">
+        <File Id="filBBDE72EF96435EAD50428A2F7A312A00" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\butterflow.ocl.pyd" />
+      </Component>
+      <Component Id="cmp1DB87A2D23083042759B38DCCB19FC24" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{21B68C15-F31A-477E-92A1-CA9B4B6C0A9F}">
+        <File Id="filB692839281890F6E0E56A6EFAF1BF5B9" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\butterflow_commands.txt" />
+      </Component>
+      <Component Id="cmp5832DE4ED85B4B9287266F6B1741FD22" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{ED679380-5CA1-4FF9-9616-77A4334E08CB}">
+        <File Id="fil100C1C8CE187940391E9E38F09E6ADAC" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\bz2.pyd" />
+      </Component>
+      <Component Id="cmp03C60871ED7747B693F641B9F80844E0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A4B412F3-7C7C-4567-9FF5-BECAD9E3200C}">
+        <File Id="fil7CC43AECAEAEACDF9413FC9BF315C47E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\cPickle.pyd" />
+      </Component>
+      <Component Id="cmpA42E6B24A41EBB1C301938B0AD06CBC0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{139E8039-1CB4-4779-A28D-E4EB215AEE23}">
+        <File Id="filFDEE9F028379A341EACD8764E840BD4E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\cStringIO.pyd" />
+      </Component>
+      <Component Id="cmp09C75DC3860E8C88285F2FFCB446C58E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{2463A496-0B0A-4D89-858E-D44094D16388}">
+        <File Id="fil32EB34C4D4FF5F02C8D07D691D85A5CA" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\cv2.pyd" />
+      </Component>
+      <Component Id="cmp0439E71B241DB30BC7EA67B6695D3D2B" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C7EF772C-7C37-4018-8424-CA17C539B900}">
+        <File Id="fil0A9813773FD90E567B8C7D90D3244632" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\datetime.pyd" />
+      </Component>
+      <Component Id="cmpB69E6E7707834E3FBE16CAAF0E66941C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{AB31BBD4-5979-4A9A-8509-389A289FE515}">
+        <File Id="fil65905089058664B7036A526BB6CC2B0E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\ffmpeg.exe" />
+      </Component>
+      <Component Id="cmpB2BB0FDF5103F73F1637C6D74B06A585" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{794B7264-2019-4CF5-B4C2-A80790056310}">
+        <File Id="fil7D5627EC6D9C748AC37464CE02379856" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\future_builtins.pyd" />
+      </Component>
+      <Component Id="cmp6C10DF872A86EDC2C7FED4D9B3ED6B6D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{96DD70E2-B4EC-4F3B-BD75-516752B04C42}">
+        <File Id="filFC82D517FF93406E4A5C110D67741965" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\itertools.pyd" />
+      </Component>
+      <Component Id="cmpD152D10043B580E889D4BFD4D233746D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{00E51EAB-353D-474B-8153-9703066269CA}">
+        <File Id="fil3AC7D9617C00EC27093CB0232773682C" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libass-9.dll" />
+      </Component>
+      <Component Id="cmpE26DA2982F3F6714D39FC0A9C093D99E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{57ED843F-A7B3-46EA-9BBF-4FA08EA692DC}">
+        <File Id="filE319CA529C488AA189A7E0794FED2D95" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libbluray-1.dll" />
+      </Component>
+      <Component Id="cmpE902DFBDB35B646EAD24E5B12E7639C2" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{105FD43E-7CC4-4C21-81F5-8497222FDCDE}">
+        <File Id="fil8B72F8343DF71BDFB59BC2739E4C075F" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libbz2-1.dll" />
+      </Component>
+      <Component Id="cmpF62B392E80BB97D0CFC0F3BDA7272F1A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{585D05F4-891A-4895-80BD-17932DB2DCBE}">
+        <File Id="fil78F6237410D86DBD082436192D7A3F66" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libcaca-0.dll" />
+      </Component>
+      <Component Id="cmp5D47BA8AAA862F86CE5115B096068975" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{9C8D0956-1CE5-49B3-8B27-BDDC1726ABFF}">
+        <File Id="filD8F2367CA4121D2651C5476E496EBB7A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libcelt0-2.dll" />
+      </Component>
+      <Component Id="cmp1CD1A8EDF76D0B1243D9A159E6986780" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5F6B6108-287B-4AA6-860A-6ABD45E3965D}">
+        <File Id="fil6119F9D20ADFB014CC36225D9CB15975" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\LIBEAY32.dll" />
+      </Component>
+      <Component Id="cmpD9523D5DBED33E291DC141194ADC0352" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A461564A-C35F-447E-9FE9-0163CCE0D3B7}">
+        <File Id="filEB46B5BA490141AA7794DE9AACDCC9AC" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libexpat-1.dll" />
+      </Component>
+      <Component Id="cmpA66563EF0868BB3E347E29C10AF0CA88" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DAC4B86A-11AC-40B5-ADA7-D3664596F994}">
+        <File Id="fil15903E2AB9B3E13661479045BEB6F435" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libffi-6.dll" />
+      </Component>
+      <Component Id="cmp225F420CBD8CD46F39E0CD31A97A0C6A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{92A05E2D-02E7-4F6F-B4E5-33B4996DED89}">
+        <File Id="fil51EB71D4A3AB4C6EF87D7A24FC2D991E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libfontconfig-1.dll" />
+      </Component>
+      <Component Id="cmpE86D0D7060D261C40E9BDE77ECACC836" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{00272450-3498-4664-87D1-9B2D38CFE5A8}">
+        <File Id="fil09B5A49CB7CB62AEE38C71B3A18F8BEB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libfreetype-6.dll" />
+      </Component>
+      <Component Id="cmp2C4055BFDC7EE8942D705702E535E33A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C72902AD-C324-403B-B9BC-6DC4D7509443}">
+        <File Id="filC8730494B31E639BD16060B65ECD0ACB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libfribidi-0.dll" />
+      </Component>
+      <Component Id="cmp7D17EFA6764A80C60E9FBF2F4D4F5076" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{E17AB1D2-4D09-4677-8B26-38DA720002C4}">
+        <File Id="fil918951960C118632DB040BBB9563B05E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgcc_s_seh-1.dll" />
+      </Component>
+      <Component Id="cmpB3EF434A85EEA8AC80EC066F6A9E7A00" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{955610AA-D610-49CD-90FA-4A5C70FEBEC6}">
+        <File Id="filC03CCDE152E99BF99209DF7C1AD9215F" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgfortran-3.dll" />
+      </Component>
+      <Component Id="cmp6765E515D3C30F8582A2D0425E73EA5C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{FBA8B8E2-3182-4DA3-839A-45DB4C2B60FD}">
+        <File Id="fil77B2D94AAC262180E01D1F5A8AEE82AF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libglib-2.0-0.dll" />
+      </Component>
+      <Component Id="cmpDB36512858686707A7FE4D84BAE53A1C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{76087F77-84F9-483F-BF86-5391CA76BF66}">
+        <File Id="filACC1986AD9D69C14595F2E02F95FA3E6" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgmp-10.dll" />
+      </Component>
+      <Component Id="cmp80EC744B06C292D8AAF1EFA9B7088A7E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{388D5DA9-3A2D-4A30-9740-A98F5EC1088B}">
+        <File Id="filE5F455BD4A9C4D7D95C68EA0C2B3CDA5" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgnutls-30.dll" />
+      </Component>
+      <Component Id="cmp5F7D7C848BEAD81BB634A4153D3343E0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{1D656448-9F5D-4A9D-A725-2A7FC0DA9BC6}">
+        <File Id="fil2D98FB0F6919E59EBF6DF7CA2A3E9FD9" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgraphite2.dll" />
+      </Component>
+      <Component Id="cmpDC779A3BD9FCB862677C8C43B93EF13D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B2E2A70C-6284-4CCA-AA81-9DA857E489BC}">
+        <File Id="fil6D53D01EC40AEF930596918B1D707654" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libgsm.dll" />
+      </Component>
+      <Component Id="cmpBC32C0FF1CDFACA6C22D3A42364FEE19" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{982B9F93-5F79-4A1C-977A-06E7DD31BFE5}">
+        <File Id="filBECB2B7B8A70D13BDCB7BDE207656936" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libHalf-2_2.dll" />
+      </Component>
+      <Component Id="cmp68A162DF574DC0A9CAC0309D93E020A7" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{76010ACF-A92B-41FB-9528-ED209EC491CB}">
+        <File Id="fil3CED756F17AD3D6E6807EC5EB26A5179" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libharfbuzz-0.dll" />
+      </Component>
+      <Component Id="cmpA03AAA1255FEABA93903548C44472F1A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F5F69E8D-AF26-41B6-A394-D8A34E502B6B}">
+        <File Id="filE2B520E3AF88D84095CBD3334A374050" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libhogweed-4.dll" />
+      </Component>
+      <Component Id="cmpB3EC16EE06E829D167C450C1E35528C4" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{567D09AB-F9B2-4F90-808D-8CE074B83E81}">
+        <File Id="filD15AA75EEF811F6CD849C8FB6BF313F4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libiconv-2.dll" />
+      </Component>
+      <Component Id="cmp772224204EC0BBD91D597D63C83C1F1D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{E8628C38-B642-4502-9036-7718CEAA115C}">
+        <File Id="filAB1AD7105F48A44BDCD28BF8370C87B1" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libidn-11.dll" />
+      </Component>
+      <Component Id="cmp74E65699832BCF459D5F9ADF9DC86FBB" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{810535EA-B950-4CFE-8FC0-73253A6D56CB}">
+        <File Id="filE46946ECFFEC25955345081F84E2F55E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libIex-2_2.dll" />
+      </Component>
+      <Component Id="cmp858FD6D5886695D52FE4A2A7C8FF4653" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{05B4FE4D-8C89-49F4-92A4-D8B45FCA25B8}">
+        <File Id="fil02BB84370376872B1DD4FE141706CBE9" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libIlmImf-2_2.dll" />
+      </Component>
+      <Component Id="cmp0BEC526BD40C2F6C7A42D1A73263DA9D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{6306A6BD-0EE3-4098-A600-835CC6CE8764}">
+        <File Id="fil6BC73B07146684202482AB4038E6C821" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libIlmThread-2_2.dll" />
+      </Component>
+      <Component Id="cmp9863258B24BBCF5B3D97639AE8153E33" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{1D99084B-982D-4523-B0C7-49C1B25ABF57}">
+        <File Id="filCAC9D79696D8ADA924B2342B486F782D" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libImath-2_2.dll" />
+      </Component>
+      <Component Id="cmp79522203AB288E377475A4ADD03CD3AC" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{76DAE18E-84DA-4778-8C42-3BCF23B5CACF}">
+        <File Id="fil3F60439CE0DCEEDB7E44E2B024A61A41" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libintl-8.dll" />
+      </Component>
+      <Component Id="cmp2ED5EE6765E571665DD795790F0C544C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{1BE14DCF-E923-45E7-81D1-724D53E6B868}">
+        <File Id="filF9B44C96A9C4A664B6DAE2736B8C7C47" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libjasper-4.dll" />
+      </Component>
+      <Component Id="cmpDF0011F9B7511B04FB356389B78FE0B8" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{113D4433-9778-4CA6-820E-92BFAFB7F558}">
+        <File Id="filD45C9203DB1DCEA19601935D2F2872C5" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libjpeg-8.dll" />
+      </Component>
+      <Component Id="cmpE0C42ACF7D197DE9A16B0DBE0B2DE438" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{07CED194-7586-497F-9430-822635FB08A1}">
+        <File Id="filADDB4CB7E44537E2D2EE804E7F071302" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\liblzma-5.dll" />
+      </Component>
+      <Component Id="cmp336745FD1C06ACB1DA0746E0FC3A5640" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{57031BE8-B864-46AB-8B7A-8C6A50E141B0}">
+        <File Id="filDC4194578AB98E262372F2704C2C7D8C" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libmodplug-1.dll" />
+      </Component>
+      <Component Id="cmp000E1FD43991AFAF3C4D6E13D685FDC6" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DC149AC5-EF89-4C5C-9CD0-05E2F727D5C9}">
+        <File Id="fil6B030703150696AFD7B20A2D434B7E31" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libmp3lame-0.dll" />
+      </Component>
+      <Component Id="cmp8DFACDC14F8B820E0E757F9D9CB61950" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{E001D4EF-FA63-4B38-B6E1-FE931322EA51}">
+        <File Id="fil17B8A60EBD85D030E6ECA310D32055A0" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libnettle-6.dll" />
+      </Component>
+      <Component Id="cmpC936B237A5866052E52BB0A0FFF17AA6" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{04043DD7-C620-44F1-97E4-81C794887AF6}">
+        <File Id="filB0BE52D089E6743051469E28CF6D2345" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libogg-0.dll" />
+      </Component>
+      <Component Id="cmp791779D8BA6112881820CF6320D4F628" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{883C8BAE-6DAD-4423-8869-5AB391149544}">
+        <File Id="fil8089919BAB60BD54F68E2E9C61706FC6" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopenal-1.dll" />
+      </Component>
+      <Component Id="cmp5B39E341DFEBA5FDD4D5745B9E6A0BA1" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F83801A7-9B5C-4EFA-B833-593EE54FDCD3}">
+        <File Id="filBBA888A40E810577C4D5640688ACEF16" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopenblas.dll" />
+      </Component>
+      <Component Id="cmp3B58B6F995B327E0468327630134C5BC" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BAC8ED5A-AF3E-47C2-BEEA-F9C16C2FAEE2}">
+        <File Id="fil8AD1BBCA56FEB1530288375E87923815" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libOpenCL.dll" />
+      </Component>
+      <Component Id="cmp6AC144ABD624F23A9B6427DA89476895" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{7E0A377C-B634-4497-BE02-B7896FFAA36F}">
+        <File Id="fil7780F1C58E6563A14349A83216183A61" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencore-amrnb-0.dll" />
+      </Component>
+      <Component Id="cmp3A94F76EA843AD6AA9E019E9F7D3D4E7" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{14CE5E29-BB90-4B8B-8D71-16BA5ED92E3B}">
+        <File Id="fil11588051A24807EB4158593F6B4047C4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencore-amrwb-0.dll" />
+      </Component>
+      <Component Id="cmp687165D42E2463639DCBFBCC812B4AED" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{895831A2-E86A-42D8-B515-23FFFF17B994}">
+        <File Id="filE1A276C7E120EF1D889E6231B1244208" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_calib3d2413.dll" />
+      </Component>
+      <Component Id="cmpA290F4469D5F6DD8402E4FA537C1E3C7" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{D6834630-DF0D-4B8D-A69E-7E3CC6990E99}">
+        <File Id="filC8DE9C3C490F2ACB09E8139DCE4EDB33" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_contrib2413.dll" />
+      </Component>
+      <Component Id="cmp4E7D158815748296CF4480DCD1EC11E0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C945FE56-2C22-4FE9-ADEC-4A4E5E3B9B1F}">
+        <File Id="fil4C9131C827ABDAB32D1D69A846A3C8F4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_core2413.dll" />
+      </Component>
+      <Component Id="cmp0C5C28D0DA664A71E657175CDBE7632C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{AC4E64F6-C30F-4E8A-A46C-C85C718C74A8}">
+        <File Id="filE13F39C12A88F80972A8B4F8747B54F4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_features2d2413.dll" />
+      </Component>
+      <Component Id="cmpD28099A318140C012237E6BCD34AB6DE" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{99219156-E51B-45EA-B0B9-CBD04091BF51}">
+        <File Id="fil4574153D423BF9D0C7A9ACE596604768" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_flann2413.dll" />
+      </Component>
+      <Component Id="cmpEB5250297EB538EBB1ADDF217855C60A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{0F2DC5F3-CC69-44C9-9F4E-86A04F9A5DC0}">
+        <File Id="fil3EED9D58E0253908C0E9C12E33702F61" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_highgui2413.dll" />
+      </Component>
+      <Component Id="cmpC720B0AB22555D9BDF0EB8165C713C63" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{EFC5C06E-A347-4D45-9EF5-6CCD508F5E7A}">
+        <File Id="fil5BA96D3EE49D451778F6ADF061E5F2D0" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_imgproc2413.dll" />
+      </Component>
+      <Component Id="cmp7C4ECA051AB06D1C7563096E3449D5E8" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{9DAAC89F-C591-402B-853F-2A3E5E4135BC}">
+        <File Id="filE1C8A5D883B64C41608DDC26A9AECBAD" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_legacy2413.dll" />
+      </Component>
+      <Component Id="cmp0B7BCA07F3FC66F2106E9EEA580C1977" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{3D328747-6F69-49AA-BD39-36F5B558BEA2}">
+        <File Id="filDE13BA49732626D2F6992C1E907A644F" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_ml2413.dll" />
+      </Component>
+      <Component Id="cmp4C740B47E0C2B8D144ADAAD79437AD46" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5F532883-506F-4421-993D-02E2EB9BE6D4}">
+        <File Id="filF4BDEB568B0F0EE17F487E60F5C84AA8" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_nonfree2413.dll" />
+      </Component>
+      <Component Id="cmp7DBF680FE71606A27F96838BB4123934" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{7399350A-E41A-4ECA-B9A1-A3FB3D08B50D}">
+        <File Id="fil6E3C7BCA45F0ED224CDE0580A46C2533" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_objdetect2413.dll" />
+      </Component>
+      <Component Id="cmpE942BE2422ABE8FB07BDA5580D22F53D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{4D36B97D-B99E-46F4-AA5C-87942004291C}">
+        <File Id="fil1412A28B0610994018183323B9F2890E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_ocl2413.dll" />
+      </Component>
+      <Component Id="cmpB546A6FEBC3A1C1A87144F44BBB7AD99" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{70814E39-B27F-4C53-AB9A-AED1082DDA38}">
+        <File Id="fil57533CC23BAFD83A65674F15A3CD37FF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_photo2413.dll" />
+      </Component>
+      <Component Id="cmp8B1603FC04C202715958483883A39507" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DCACAAA6-955F-4EF0-B2CF-F81745F406F3}">
+        <File Id="fil0C883D0F7BE334E74D4336393053BA98" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopencv_video2413.dll" />
+      </Component>
+      <Component Id="cmpE9D953A97E445D604FD516C3A37B38E3" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{EEA0C290-9C47-4A3E-90D3-21EEE13BA0BF}">
+        <File Id="fil31B1756A421B4B9DFB1C97224ED85089" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopenjp2-7.dll" />
+      </Component>
+      <Component Id="cmp814A7C8F1009B10C313BE19085F927B5" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A09123AE-DCE5-4D54-B586-3BB1727DB045}">
+        <File Id="fil9782BA1D97508B82239226E8D2AF084E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libopus-0.dll" />
+      </Component>
+      <Component Id="cmp6411417E5B85C7D9E35DCB00FA4FCA3C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{0FE1177F-EC85-41C0-B789-8C91B093E939}">
+        <File Id="fil7B10EB75C59CEC9F2EA1E47849A83074" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\liborc-0.4-0.dll" />
+      </Component>
+      <Component Id="cmp5713181729CE9B0CBF17D7DC8B3F7D9E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{67766FE3-50DB-41BE-836C-8F20AC8AF9D2}">
+        <File Id="filD44146878180FD071546AFB42A616C38" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libp11-kit-0.dll" />
+      </Component>
+      <Component Id="cmpDDFADE7F515CB772CDDC96511E1A6CED" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BF778CB5-FE22-4B3F-B2EA-AA88DCADBCEE}">
+        <File Id="fil3B93078F9DD4D956F758064084A63D36" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libpcre-1.dll" />
+      </Component>
+      <Component Id="cmp562A1C38E0510FA4A717C426112208E6" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{350CF472-6904-437C-91C4-1F0B81944A00}">
+        <File Id="fil2CD227C32FD702CA9DE81CB7672E45F1" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libpng16-16.dll" />
+      </Component>
+      <Component Id="cmp5D3CD0779F709E49A1B275E7208BD88F" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{3586E3F3-1524-4529-B725-79064D735826}">
+        <File Id="filFE9BCCBEAE075085CCD5159485FB12F3" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libpython2.7.dll" />
+      </Component>
+      <Component Id="cmp241D6AC53ED7F374E1F7D00C50FB43B8" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{AFFD86F8-BAF2-4EAB-A8E4-68079AD871D7}">
+        <File Id="filD1C325A6497AA66930CEE7DD70C0C739" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libquadmath-0.dll" />
+      </Component>
+      <Component Id="cmp978061B037B83310EAF5519B14FB22A7" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{FF73BDFA-A7CE-450E-AD75-B2C9185EC01B}">
+        <File Id="filD60A2B90E3B20DFC8C0C2CF3F7F3B4E0" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\library.zip" />
+      </Component>
+      <Component Id="cmp24E26769A90720211D52F2A6D7D09FBA" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{CAC2FAB0-320E-4460-ADC2-FB5F4B91D891}">
+        <File Id="fil53DA9C0A536D164930EA81F6E3C3E29F" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libreadline7.dll" />
+      </Component>
+      <Component Id="cmp999E0227AAEE4455C8F601566308423F" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{97512C71-D350-4A6C-85BE-CC4467BE8300}">
+        <File Id="filE9DB922784DE3F9009C0FBF53704B5A4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\librtmp-1.dll" />
+      </Component>
+      <Component Id="cmp4EF6EBCD0CBCFA61ED1AC969E38E799E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{52F5D6F6-FC65-412B-8977-1A6296A66E9C}">
+        <File Id="fil15EB8B72F97CB2D809603B7E8BF49C96" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libschroedinger-1.0-0.dll" />
+      </Component>
+      <Component Id="cmpE8CAA54B8178CDEDFF1742EEFF154A66" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{82AD0994-B23F-43C6-9A9D-229E7CEA014E}">
+        <File Id="filA45922D9307EF25AB292D4A787770BC6" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libspeex-1.dll" />
+      </Component>
+      <Component Id="cmpF77BE318A802DE8631B28517E7527870" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{E4ABA014-7FB9-4925-B9B6-D39A0BC45559}">
+        <File Id="filDE434029A30B8A9BE9371F8DD13F3966" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libstdc++-6.dll" />
+      </Component>
+      <Component Id="cmpB349CBFBB89F99251682990542DAB629" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DB7C3026-7CA0-4F36-A9C0-E3FFC74E0CB2}">
+        <File Id="fil040325D21D68C7F55DCD63E35F721EED" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libtasn1-6.dll" />
+      </Component>
+      <Component Id="cmp65F4541FA18E3C1D532A357A33E390E5" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C5CDE977-2374-466B-8217-757EC779849E}">
+        <File Id="fil974EEED20B70D389AE747CE26C06E433" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libtermcap-0.dll" />
+      </Component>
+      <Component Id="cmp2F99C362D133E7E56990A9E0DA2B7640" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C04CF6A5-E1F8-44B3-B7D5-707AA467E507}">
+        <File Id="filF3A9F0547B0EFAA9EC6601E2420F4106" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libtheoradec-1.dll" />
+      </Component>
+      <Component Id="cmpCE6D487DCEDBA760FEC116CD24FDAEE4" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{3542C026-63BC-421F-98CA-D6D31CEA86D1}">
+        <File Id="fil0B1A71C6CA86354B613E665A7360FC2A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libtheoraenc-1.dll" />
+      </Component>
+      <Component Id="cmpB61481191A22D328CCBE194BF2C8C488" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{8C8B29CF-1040-43D5-A94D-F6957F631998}">
+        <File Id="filB548E9C1F5147E837CE37AE19BF5EACA" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libtiff-5.dll" />
+      </Component>
+      <Component Id="cmp341DB22F8E9C614CC0B94921762B76E2" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{32CBA4CB-E526-4F22-B335-AE852BEC64E4}">
+        <File Id="fil728CC80AA0768BF2637D565B73111308" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libunistring-2.dll" />
+      </Component>
+      <Component Id="cmpFB22C42805628EE0E10E8220016448AB" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A1B64353-3189-49D8-A37F-F3FB7B010B64}">
+        <File Id="fil33B0339E127BD59610B793918EEA7281" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libvorbis-0.dll" />
+      </Component>
+      <Component Id="cmp28433F0AD45733711D4CAE12EF52CE17" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{82507EEB-2A1F-4DE4-9C80-69854BF9FAEC}">
+        <File Id="fil0E095C26B4C69FD040838955BD0BE0EF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libvorbisenc-2.dll" />
+      </Component>
+      <Component Id="cmp80015AC33B0C9E326797786F274F5C83" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{79BB4DE8-0FBC-4089-938A-AA10B7F129D6}">
+        <File Id="fil496E22614BB5CA84DAF57D3915722242" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libvpx-1.dll" />
+      </Component>
+      <Component Id="cmp37326AA58CE1FB066314A1DE28FA5FF1" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F1BF6430-3E6B-4F33-B8CE-5AA5FB9C7206}">
+        <File Id="fil62E68D90389126461CA5EA33FE3DB931" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libwavpack-1.dll" />
+      </Component>
+      <Component Id="cmp4CC10E8E1D042486C6ED77B667F70441" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{58E8136C-A412-4E73-ACA3-3E3F737BE37A}">
+        <File Id="filD943780AABB1B35782610950D7AA37CE" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libwebp-7.dll" />
+      </Component>
+      <Component Id="cmp09C51E698174E6339543B04EE97C4E53" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{D7E858C8-69E0-4B7E-9623-7DAA6210C0F6}">
+        <File Id="fil26E8C209B1FF337D36B441D1EF1DED04" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libwebpmux-3.dll" />
+      </Component>
+      <Component Id="cmpFAAF3E1C5A93D41BB9A6E8505F166FE5" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{1223FBB4-7A0A-4A17-B807-A5A10B565FE6}">
+        <File Id="filDBBAE3989F8C82CD0387E8110C7AF0F2" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libwinpthread-1.dll" />
+      </Component>
+      <Component Id="cmp2ABA32313BDCEF3DF1BC3F7EB543E7EC" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C78D970A-7F62-435D-A470-7E817EA3DC01}">
+        <File Id="fil0CCBD8E43A71ED2C2CB82D426411C2B2" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libx264-148.dll" />
+      </Component>
+      <Component Id="cmp50E369ECAB0FDFACFB1973DF2AAD2891" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{80717F35-EC6D-418E-A198-1ACCE1193193}">
+        <File Id="fil2FF8638AE2CD195436C611BD011CD9F1" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libx265.dll" />
+      </Component>
+      <Component Id="cmpD6EB52CA9B3DBA0A451050F1FBDF0B3D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{2350ABAA-BBAE-46E2-8115-BAB4482A8B00}">
+        <File Id="filD4E50E81EEEE35555505B0FACADA574A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\libxml2-2.dll" />
+      </Component>
+      <Component Id="cmp714EA239C2E24056EB7ED2B8FB0625E0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{3EB310A3-A2BD-4E69-9699-AA0E16EB0C67}">
+        <File Id="filFC8FB10B89C8DE7F5B98D06C17D8C27E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\math.pyd" />
+      </Component>
+      <Component Id="cmpDA3A88C8D440B8647FD7F6ADC4D1A807" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{8687BE98-1DDD-4AE8-942E-12D21C7058CB}">
+        <File Id="filD3177176781D039EDF8A290FBA96B6D5" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\mmap.pyd" />
+      </Component>
+      <Component Id="cmpACDCEB8009A9D8C43099BA2D34F8591C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{D4D24E8E-EDAB-4987-A1AF-484E0F22C896}">
+        <File Id="filE6FBE8EF9696F919CD679B2A1893FA03" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\msvcrt.dll" />
+      </Component>
+      <Component Id="cmp3D2568FF7612962D964ED46C5F16045B" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{751FF1CC-6B40-478C-B7A5-169B99C3A1B7}">
+        <File Id="filDEAEE65715B27E73C570D985BA07812F" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.core.multiarray.pyd" />
+      </Component>
+      <Component Id="cmp089D1B17DE4A3CC3408AEE1C2ACC8FDB" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{62D38839-B92A-4E3A-BD1B-9151026DA049}">
+        <File Id="fil59D44FFA170E9202288570E461D538B8" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.core.umath.pyd" />
+      </Component>
+      <Component Id="cmpF526AFF2CFC59540E6E6386C90C267CE" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{CED8CF59-D1CB-4089-8B05-45014BD5D35E}">
+        <File Id="fil74864EBD439D8C36F744AD582C5D47AB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.fft.fftpack_lite.pyd" />
+      </Component>
+      <Component Id="cmp9B5C95E5E2FD65E1DE9B68AF5D637260" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A0490A1D-9A0C-40E1-A172-5698E3E451F6}">
+        <File Id="fil50D154387BD1C8893C467CA5C4CC6E6B" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.linalg.lapack_lite.pyd" />
+      </Component>
+      <Component Id="cmp36E7718B356B007E4C3C350414CD1A3D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{8C263C0F-9E6A-48D5-8D3A-A4D382A86A58}">
+        <File Id="filABFC7F0CD8989D6047CBEEE540BAC616" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.linalg._umath_linalg.pyd" />
+      </Component>
+      <Component Id="cmp3D8BEDFCAC89374BE4AB7801BE45DEFD" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{28DD5A15-254E-4A93-85C1-35672F01925C}">
+        <File Id="fil0FA141EA0159C874CBD89328A91DC156" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\numpy.random.mtrand.pyd" />
+      </Component>
+      <Component Id="cmp91434CC05C2B3E66EE27A8E26D6CCA84" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{892A86EA-6139-4CAF-8F34-823BA6C6132F}">
+        <File Id="fil53310E7D979B08132CE15937E3BA9655" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\opencv_ffmpeg2413_64.dll" />
+      </Component>
+      <Component Id="cmp65D5FBF849FACA7DFE138014B874631A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A7936668-3580-4F70-91C8-FBFFC4BA38EE}">
+        <File Id="fil5A5FE1C78FAC0B187FC1C360432F92B9" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\postproc-54.dll" />
+      </Component>
+      <Component Id="cmp6726A631F82CF0AEB991C1B1E042117E" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F0AED951-5C76-4B2A-ABC0-BAC3CDF764AC}">
+        <File Id="filBE8DCD025F2B6CA0871EC03C77161277" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\pyexpat.pyd" />
+      </Component>
+      <Component Id="cmp940854431F1D331EDE5EECBDC107A648" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DA899A37-0814-4963-BB4C-AD7F9A0529B5}">
+        <File Id="fil92E5C0971F4ABE8D1716402A2A7A6E11" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\readline.pyd" />
+      </Component>
+      <Component Id="cmp920A55F10919640BF8A60A1F83609D00" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F4E09CD8-AEC9-4ADB-9F09-E4CE7F1A0214}">
+        <File Id="fil876A7D12B7009572474C5E7FB8301C31" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\SDL2.dll" />
+      </Component>
+      <Component Id="cmp6DD665BEF1678C8C780659277A5DC189" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{ADC557C1-FA17-4065-9A93-E6D221788429}">
+        <File Id="fil91684E7E51CAC9B04F5842D8DDBD3710" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\select.pyd" />
+      </Component>
+      <Component Id="cmp705B3C46763319589B542C6052A49376" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{8ABAEF72-151C-4D6C-B4FD-8F0E1FC8AEF3}">
+        <File Id="fil72833200FC2808E756188B2E296FCD21" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\SSLEAY32.dll" />
+      </Component>
+      <Component Id="cmp038415E98DF58597A34665A08DEC245C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{CA5D5E6F-AC87-4420-9531-2A4A9BA2ACF7}">
+        <File Id="fil0DE8DCA6DFCFC80CE53C43E1FC07A887" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\strop.pyd" />
+      </Component>
+      <Component Id="cmp367324B72255F88F9A45A6294328599A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5F94A344-C126-4CA0-9CAE-636FFCBB2B0D}">
+        <File Id="fil4A305F239CD9C5350F48AB5718CC7CBD" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\swresample-2.dll" />
+      </Component>
+      <Component Id="cmp0486D48BBCC9C8975CC1CF0EB6CC1B00" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{6335ED58-B22F-4DFB-8574-8968B1FA34CC}">
+        <File Id="fil5FD282246C7F2419FDA28BBC844365D0" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\swscale-4.dll" />
+      </Component>
+      <Component Id="cmp81E472D83BD89EEF7C1B645F4785B5AF" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5BB6B837-0016-43FC-ADD1-FDEB19E58727}">
+        <File Id="filBC0C030164882A3969050C5633BEE6C4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\tbb.dll" />
+      </Component>
+      <Component Id="cmp03D5ABE8C7EF119CB42AB3EA712ED727" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BD389AB2-9008-4CA2-8B0D-DE6C8A1CD251}">
+        <File Id="fil959B739D83FC49115690D5482A894370" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\unicodedata.pyd" />
+      </Component>
+      <Component Id="cmp027ED1287E013F71FACACCA13BDC3CA0" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{77BB27D2-4DF1-4DD0-A824-CE096E8AB1BD}">
+        <File Id="filF6A7EAA68B60158D720FE9587EB2B961" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\xvidcore.dll" />
+      </Component>
+      <Component Id="cmp50ECA739CD846D5D2D03D151AC705308" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{F1B3C23A-2CD0-4A03-9CD1-5B33E6FED565}">
+        <File Id="filCAB1CE6923D2A2E7147597F4991B11E5" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\zlib.pyd" />
+      </Component>
+      <Component Id="cmp965CB3C431FC546B6E5BBFC2305F5627" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{4618A5CC-1E85-44BB-8F44-C9404D98BD9F}">
+        <File Id="fil436EDA4B48BDE102D18E47F64CF3E36B" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\zlib1.dll" />
+      </Component>
+      <Component Id="cmp41681A2248C5029E073A887328EEEE2A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{10D2C0A3-CDC0-4D1A-AA26-FFF6EDA6B14E}">
+        <File Id="fil2698C1F657C451D4179B9061B633644A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_bisect.pyd" />
+      </Component>
+      <Component Id="cmpF9F7B411FEEA89F205D0554E4BEEAABA" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{E2FA51F9-58FA-4E17-B119-DE73E5EC793F}">
+        <File Id="fil6D5F88B4A3C77D67019F05A0F99141DB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_cn.pyd" />
+      </Component>
+      <Component Id="cmp6B1196EBB30D7A7FD78C71FDE7289841" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C57E0307-A522-4371-89C6-4E5601C9BDD2}">
+        <File Id="filEAB8B3353A15C91752DFF069A3257944" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_hk.pyd" />
+      </Component>
+      <Component Id="cmp2C7A3D296D2063FE0A352C08B7D47A1A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{DE016491-8359-4B91-A885-A0EC4978E511}">
+        <File Id="fil0FEDC4A36FF5B55429893502011ED8E6" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_iso2022.pyd" />
+      </Component>
+      <Component Id="cmp23EC895AFEB1E6280C2E6C383CC2F899" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{581AE77D-A655-4B00-8854-C7387849845D}">
+        <File Id="fil17BF27F3FCA275CA75F9682ACF735188" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_jp.pyd" />
+      </Component>
+      <Component Id="cmp82025346E0CBA747A87CA5806881F71D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{6C33184C-83E2-402D-A195-EB3CBE9936C1}">
+        <File Id="filBA66F42711D4A56D3EB6847219E219EF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_kr.pyd" />
+      </Component>
+      <Component Id="cmp8EB31BC7EECDD1E62D01A8391A2B6E28" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B22E4A41-CC68-493B-82CD-66C1E6B2170A}">
+        <File Id="filA9A4094316F6A2727152E34784366511" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_codecs_tw.pyd" />
+      </Component>
+      <Component Id="cmpB09388D601236D863B8299109510B9FA" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{49EB2EFB-525E-406E-A152-D90BE05B25BE}">
+        <File Id="fil8F784D69D7E7E8D38CBFB1690E6F0369" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_collections.pyd" />
+      </Component>
+      <Component Id="cmpF75DA06FCA7457067AFCF3A510DFD556" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B4CFA9BA-6052-435F-8F29-40111783590F}">
+        <File Id="filA8DBA860FB0F14D0086D077C66F90B29" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_ctypes.pyd" />
+      </Component>
+      <Component Id="cmp7714B93A95593A9C2BFD5CFF6DF44176" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{78D5AFE0-8856-4462-B2CD-2871BC7C5BB7}">
+        <File Id="filE28F963737F087B31CD364CF98729B96" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_curses.pyd" />
+      </Component>
+      <Component Id="cmp1B6C762DF328FE2B4F29EE45C8B04BD4" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{A99B8C47-38A6-4E7C-8F16-2B667DABA0B5}">
+        <File Id="fil1542E63536F40B91905A9FC639CA787A" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_hashlib.pyd" />
+      </Component>
+      <Component Id="cmp4F60C409961F79443BF0FDB79B085D57" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5FF911D8-3411-494D-839B-BD281F393220}">
+        <File Id="fil1D9F9099FA8B2E2C0B3DA73BFBA7FFE7" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_heapq.pyd" />
+      </Component>
+      <Component Id="cmp219E98C860E40F4CA129379347E591EC" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{C806E161-2A34-4BFC-B5EF-C9D56DF6A708}">
+        <File Id="filEE714153618CFFC77D31403F047DAE32" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_io.pyd" />
+      </Component>
+      <Component Id="cmpC7D16E3473BB82EE39BD0DE8D2231BB1" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{B3BACB8D-38B3-4E33-8C51-6D52370EA18E}">
+        <File Id="fil9F3C1DD1A34FFB7DE18DD1B7C61FB59E" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_multibytecodec.pyd" />
+      </Component>
+      <Component Id="cmp62102DF81673673F3A2A4F6E05A1C2F1" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BF7505AA-04D2-424C-A7A0-FABC312B8A1A}">
+        <File Id="fil37AA0805DA9C5958E9B58EB7AA89C337" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_multiprocessing.pyd" />
+      </Component>
+      <Component Id="cmp1F168C4AFD3DE3E89A4D977BE72ADD3D" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{66BFD4D0-8D9A-4C10-8E9A-BABCEBEEB3D9}">
+        <File Id="filC35974B7F794BA93076ECD68AC77C026" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_random.pyd" />
+      </Component>
+      <Component Id="cmp8C226B4E640095506188A4792BC9CD30" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{D423BBE6-30F6-436A-AC51-499732B12777}">
+        <File Id="fil645626FFF7BD35EA8FBB594C764143A5" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_socket.pyd" />
+      </Component>
+      <Component Id="cmpC1A654BB284630F717E8AFBD36699A3A" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{CE6E333D-970E-41D1-A359-79970EFF9878}">
+        <File Id="fil788B7196C00CFB3618B70FD9AC650A8B" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_ssl.pyd" />
+      </Component>
+      <Component Id="cmp96C7A7FFF91D11277A80B3B20AC98ABF" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{1D218FA5-C51C-45D5-945A-8F9CDB869EA3}">
+        <File Id="filA654C71E6C4B6EB99AD33079CB24CFD4" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_struct.pyd" />
+      </Component>
+      <Component Id="cmpF8AE3ADFA220466D59176D22B089336C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{5C0CFCED-99E9-4DEC-BFA0-1801A700AA49}">
+        <File Id="fil278F3E5E37BA5294BDA2920AA03B0D59" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\_subprocess.pyd" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
