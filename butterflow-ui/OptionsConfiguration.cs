@@ -312,6 +312,7 @@ namespace butterflow_ui
 
         /// <summary> Gets or sets the size of the pixel neighborhood. </summary>
         /// <value> The size of the pixel neighborhood. </value>
+        /// <remarks> Per butterflow's documentation, the valid range for --poly-n is {5,7}. </remarks>
         public string PixelNeighborhood
         {
             get
@@ -322,8 +323,7 @@ namespace butterflow_ui
             {
                 interpreter.Interpret(value);
 
-                // Per butterflow's documentation, the valid range for --poly-n is {5,7}
-                if (interpreter.Int >= 5 || interpreter.Int <= 7)
+                if (interpreter.Int >= 5 && interpreter.Int <= 7)
                 {
                     this.pixelNeighborhood = interpreter.Int;
                 }

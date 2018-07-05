@@ -21,6 +21,8 @@ namespace butterflow_ui
         private decimal value;
         /// <summary> True if the subregion runs to the end, false if not. </summary>
         private bool toEnd;
+        /// <summary> A unique identifier used to locate this subregion withing a subregion collection. </summary>
+        private Guid identifier = new Guid();
 
         #endregion
 
@@ -98,6 +100,16 @@ namespace butterflow_ui
             {
                 this.toEnd = value;
                 OnPropertyChanged();
+            }
+        }
+
+        /// <summary> Gets a unique identifier used to locate this subregion withing a subregion collection. </summary>
+        /// <value> The unique identifier. </value>
+        public Guid Identifier
+        {
+            get
+            {
+                return this.identifier;
             }
         }
         

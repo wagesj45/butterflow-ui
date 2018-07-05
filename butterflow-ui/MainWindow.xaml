@@ -29,17 +29,17 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{x:Static loc:Localization.FileMenu}">
-                <MenuItem Header="Open">
+                <MenuItem Name="menuOpen" Header="{x:Static loc:Localization.OpenMenuItem}" Click="menuOpen_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource OpenIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Save Configuration">
+                <MenuItem Name="menuSaveConfiguration" Header="{x:Static loc:Localization.SaveMenuItem}" Click="menuSaveConfiguration_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource SaveIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Save Configuration As...">
+                <MenuItem Name="menuSaveConfigurationAs" Header="{x:Static loc:Localization.SaveAsMenuItem}" Click="menuSaveConfigurationAs_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource SaveAsIcon}" />
                     </MenuItem.Icon>
@@ -47,18 +47,18 @@
             </MenuItem>
             <MenuItem Header="{x:Static loc:Localization.EditMenu}" />
             <MenuItem Header="{x:Static loc:Localization.HelpMenu}">
-                <MenuItem Header="{x:Static loc:Localization.AboutButterflowMenu}" >
+                <MenuItem Name="menuButterflowGithub" Header="{x:Static loc:Localization.AboutButterflowMenu}" Click="menuButterflowGithub_Click" >
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource LinkIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static loc:Localization.AboutButterflowUIMenu}">
+                <MenuItem Name="menuButterflowUIGithub" Header="{x:Static loc:Localization.AboutButterflowUIMenu}" Click="menuButterflowUIGithub_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource LinkIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="{x:Static loc:Localization.AboutMenu}">
+                <MenuItem Name="menuAboutButterflowUI" Header="{x:Static loc:Localization.AboutMenu}" Click="menuAboutButterflowUI_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource QuestionIcon}" />
                     </MenuItem.Icon>
@@ -222,16 +222,19 @@
                             <ListView Name="listSubregions" MinHeight="25" ItemsSource="{Binding OptionsConfiguration.Subregions, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <WrapPanel>
-                                            <TextBlock Text="{x:Static loc:Localization.StartLabel}" />
-                                            <TextBlock Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}"/>
-                                            <TextBlock Text="{x:Static loc:Localization.EndLabel}" />
-                                            <TextBlock Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}"/>
-                                            <ComboBox ItemsSource="{Binding Source={StaticResource enumRegionTypeDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
-                                            <TextBox MinWidth="35" Text="{Binding Value, Mode=TwoWay}" />
-                                            <TextBlock Text="{x:Static loc:Localization.ToEndLabel}" />
-                                            <CheckBox IsChecked="{Binding ToEnd, Mode=TwoWay}" />
-                                        </WrapPanel>
+                                        <DockPanel MaxHeight="24">
+                                            <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.StartLabel}" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}"/>
+                                            <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.EndLabel}" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}"/>
+                                            <ComboBox VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource enumRegionTypeDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
+                                            <TextBox VerticalAlignment="Center" MinWidth="35" Text="{Binding Value, Mode=TwoWay}" />
+                                            <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.ToEndLabel}" />
+                                            <CheckBox VerticalAlignment="Center" IsChecked="{Binding ToEnd, Mode=TwoWay}" />
+                                            <Button VerticalAlignment="Center" HorizontalAlignment="Right" Name="btnRemoveSubregion" Click="btnRemoveSubregion_Click" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Tag="{Binding Identifier}">
+                                                <ContentControl Template="{StaticResource CancelIcon}" />
+                                            </Button>
+                                        </DockPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>

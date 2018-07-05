@@ -273,6 +273,9 @@
   <data name="LevelsTooltip" xml:space="preserve">
     <value>The number of pyramid layers.</value>
   </data>
+  <data name="OpenMenuItem" xml:space="preserve">
+    <value>_Open...</value>
+  </data>
   <data name="PixelNeighborhoodLabel" xml:space="preserve">
     <value>Pixel Neighborhood</value>
   </data>
@@ -290,6 +293,12 @@
   </data>
   <data name="PyramidScaleTooltip" xml:space="preserve">
     <value />
+  </data>
+  <data name="SaveAsMenuItem" xml:space="preserve">
+    <value>Save Configuration _As...</value>
+  </data>
+  <data name="SaveMenuItem" xml:space="preserve">
+    <value>_Save Configuration...</value>
   </data>
   <data name="SmoothDerivativeLabel" xml:space="preserve">
     <value>Smooth Derivative</value>

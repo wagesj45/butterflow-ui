@@ -403,6 +403,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Open....
+        /// </summary>
+        public static string OpenMenuItem {
+            get {
+                return ResourceManager.GetString("OpenMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pixel Neighborhood.
         /// </summary>
         public static string PixelNeighborhoodLabel {
@@ -498,6 +507,24 @@ namespace butterflow_ui.Localization {
         public static string ResolutionLabel {
             get {
                 return ResourceManager.GetString("ResolutionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Configuration _As....
+        /// </summary>
+        public static string SaveAsMenuItem {
+            get {
+                return ResourceManager.GetString("SaveAsMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Save Configuration....
+        /// </summary>
+        public static string SaveMenuItem {
+            get {
+                return ResourceManager.GetString("SaveMenuItem", resourceCulture);
             }
         }
         

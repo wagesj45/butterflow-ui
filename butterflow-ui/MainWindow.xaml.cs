@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -310,6 +311,76 @@ namespace butterflow_ui
         private void btnProcess_Click(object sender, RoutedEventArgs e)
         {
             this.ButterflowWrapper.Run(this.OptionsConfiguration);
+        }
+
+        /// <summary> Event handler. Called by btnRemoveSubregion for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void btnRemoveSubregion_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if(button != null)
+            {
+                if (button.Tag.GetType() == typeof(Guid))
+                {
+                    var identifier = (Guid)button.Tag;
+
+                    if (this.OptionsConfiguration.Subregions.Any(sr => sr.Identifier == identifier))
+                    {
+                        var item = this.OptionsConfiguration.Subregions.Where(sr => sr.Identifier == identifier).First();
+                        this.OptionsConfiguration.Subregions.Remove(item);
+                    }
+                }
+            }
+        }
+
+        /// <summary> Event handler. Called by menuOpen for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuOpen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary> Event handler. Called by menuSaveConfiguration for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuSaveConfiguration_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary> Event handler. Called by menuSaveConfigurationAs for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuSaveConfigurationAs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary> Event handler. Called by menuButterflowGithub for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuButterflowGithub_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/dthpham/butterflow");
+        }
+
+        /// <summary> Event handler. Called by menuButterflowUIGithub for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuButterflowUIGithub_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/wagesj45/butterflow-ui");
+        }
+
+        /// <summary> Event handler. Called by menuAboutButterflowUI for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuAboutButterflowUI_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         #endregion
