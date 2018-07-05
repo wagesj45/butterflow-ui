@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,6 +46,7 @@ namespace butterflow_ui
         public MainWindow()
         {
             this.ButterflowWrapper.ParsedConsoleOutputRecieved += ButterflowWrapper_ParsedConsoleOutputRecieved;
+            this.OptionsConfiguration.AddConstantCallProperty("CommandLineOutput");
             InitializeComponent();
         }
 
@@ -313,6 +315,14 @@ namespace butterflow_ui
             this.ButterflowWrapper.Run(this.OptionsConfiguration);
         }
 
+        /// <summary> Event handler. Called by btnCancel for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.ButterflowWrapper.Cancel();
+        }
+
         /// <summary> Event handler. Called by btnRemoveSubregion for click events. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Routed event information. </param>
@@ -340,7 +350,19 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void menuOpen_Click(object sender, RoutedEventArgs e)
         {
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "ButterflowUI Configuration|*.bui";
 
+            var result = ofd.ShowDialog(this);
+            if (result.HasValue && result.Value)
+            {
+                var binaryFormatter = new BinaryFormatter();
+                var file = binaryFormatter.Deserialize(ofd.OpenFile());
+                if(file is OptionsConfigurationFile)
+                {
+                    this.OptionsConfiguration.LoadFile((OptionsConfigurationFile)file);
+                }
+            }
         }
 
         /// <summary> Event handler. Called by menuSaveConfiguration for click events. </summary>
@@ -348,15 +370,15 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void menuSaveConfiguration_Click(object sender, RoutedEventArgs e)
         {
+            var sfd = new SaveFileDialog();
+            sfd.Filter = "ButterflowUI Configuration|*.bui";
 
-        }
-
-        /// <summary> Event handler. Called by menuSaveConfigurationAs for click events. </summary>
-        /// <param name="sender"> Source of the event. </param>
-        /// <param name="e">      Routed event information. </param>
-        private void menuSaveConfigurationAs_Click(object sender, RoutedEventArgs e)
-        {
-
+            var result = sfd.ShowDialog(this);
+            if (result.HasValue && result.Value)
+            {
+                var binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(sfd.OpenFile(), this.OptionsConfiguration.ToFile());
+            }
         }
 
         /// <summary> Event handler. Called by menuButterflowGithub for click events. </summary>

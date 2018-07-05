@@ -23,7 +23,11 @@ namespace butterflow_ui
 
         /// <summary> Gets or sets the supported languages. </summary>
         /// <value> The supported languages. </value>
-        public List<CultureInfo> SupportedLanguages { get; set; } = new List<CultureInfo>(new[] { CultureInfo.CreateSpecificCulture("en-US"), CultureInfo.CreateSpecificCulture("es-ES") });
+        public List<CultureInfo> SupportedLanguages { get; set; } = new List<CultureInfo>(new[]
+        {
+            CultureInfo.CreateSpecificCulture("en-US"),
+            CultureInfo.CreateSpecificCulture("es-ES")
+        });
 
         #endregion
 

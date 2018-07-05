@@ -13,7 +13,7 @@
         <StackPanel HorizontalAlignment="Center">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="128">
                 <ContentControl VerticalAlignment="Center" Template="{StaticResource ButterflowUIIcon}" />
-                <TextBox VerticalAlignment="Center" Text="{x:Static loc:Localization.Title}" FontSize="64" FontFamily="Segoe UI Black" />
+                <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.Title}" FontSize="64" FontFamily="Segoe UI Black" />
             </StackPanel>
             <TextBlock Text="{x:Static loc:Localization.AboutWindowDescription}" TextAlignment="Center" />
             <Separator Margin="0,15" />

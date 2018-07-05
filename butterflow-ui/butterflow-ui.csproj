@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="FlowFilterType.cs" />
     <Compile Include="InverseBoolConverter.cs" />
+    <Compile Include="OptionsConfigurationFile.cs" />
     <Compile Include="OptionsWindow.xaml.cs">
       <DependentUpon>OptionsWindow.xaml</DependentUpon>
     </Compile>

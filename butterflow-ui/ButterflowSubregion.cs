@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace butterflow_ui
 {
     /// <summary> A butterflow video subregion. Represents a snippet of a video on which butterflow will act. </summary>
+    [Serializable]
     public class ButterflowSubregion : PropertyChangedAlerter
     {
         #region Members
@@ -110,6 +111,11 @@ namespace butterflow_ui
             get
             {
                 return this.identifier;
+            }
+            private set
+            {
+                this.identifier = value;
+                OnPropertyChanged();
             }
         }
         

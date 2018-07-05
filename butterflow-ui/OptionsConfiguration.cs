@@ -11,7 +11,6 @@ namespace butterflow_ui
 {
 
     /// <summary> The butterflow options configuration. Contians all the options necessary to run butterflow and process a video. </summary>
-    [Serializable]
     public class OptionsConfiguration : PropertyChangedAlerter
     {
         #region Members
@@ -25,6 +24,7 @@ namespace butterflow_ui
         private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
 
         /// <summary> An input interpreter used for converting string values to numeric values. </summary>
+        [NonSerialized]
         private InputInterpreter interpreter = new InputInterpreter();
         /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
         private decimal aspectRatio = 0;
@@ -394,8 +394,6 @@ namespace butterflow_ui
             this.smoothDerivativeStandardDeviation = DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION;
             this.flowFilterType = DEFAULT_FLOW_FILTER_TYPE;
 
-            AddConstantCallProperty("CommandLineOutput");
-
             this.subregions.CollectionChanged += Subregions_CollectionChanged; ;
         }
 
@@ -429,6 +427,51 @@ namespace butterflow_ui
         private void SubregionPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged("CommandLineOutput");
+        }
+
+        /// <summary> Converts this object to a <seealso cref="OptionsConfigurationFile"/>. </summary>
+        /// <returns> This object as an OptionsConfigurationFile. </returns>
+        public OptionsConfigurationFile ToFile()
+        {
+            var file = new OptionsConfigurationFile()
+            {
+                FastPyramid = this.fastPyramid,
+                FlowFilterType = this.flowFilterType,
+                Iterations = this.iterations,
+                KeepAudio = this.keepAudio,
+                KeepSubregions = this.keepSubRegions,
+                Levels = this.levels,
+                LockAspectRatio = this.lockAspectRatio,
+                LosslessQuality = this.losslessQuality,
+                PixelNeighborhood = this.pixelNeighborhood,
+                PlaybackRate = this.playbackRate,
+                PyramidScale = this.pyramidScale,
+                SmoothDerivativeStandardDeviation = this.smoothDerivativeStandardDeviation,
+                SmoothMotion = this.smoothMotion,
+                WindowSize = this.windowSize
+            };
+
+            return file;
+        }
+
+        /// <summary> Loads an option configuration file's contents into the <seealso cref="OptionsConfiguration"/>. </summary>
+        /// <param name="file"> The file to load. </param>
+        public void LoadFile(OptionsConfigurationFile file)
+        {
+            this.FastPyramid = file.FastPyramid;
+            this.FlowFilterType = file.FlowFilterType;
+            this.Iterations = file.Iterations.ToString();
+            this.KeepAudio = file.KeepAudio;
+            this.KeepSubregions = file.KeepSubregions;
+            this.Levels = file.Levels.ToString();
+            this.LockAspectRatio = file.LockAspectRatio;
+            this.LosslessQuality = file.LosslessQuality;
+            this.PixelNeighborhood = file.PixelNeighborhood.ToString();
+            this.PlaybackRate = file.PlaybackRate;
+            this.PyramidScale = file.PyramidScale.ToString();
+            this.SmoothDerivativeStandardDeviation = file.SmoothDerivativeStandardDeviation.ToString();
+            this.SmoothMotion = file.SmoothMotion;
+            this.WindowSize = file.WindowSize.ToString();
         }
 
         /// <summary> Converts this object to a butterflow options. </summary>

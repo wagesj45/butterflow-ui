@@ -42,10 +42,21 @@ namespace butterflow_ui
             }
         }
 
+        protected virtual void OnAllPropertiesChanged()
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
+        }
+
         /// <summary> Adds a property that will always be called when any property is updated.. </summary>
         /// <param name="name"> The name of the property. </param>
         public void AddConstantCallProperty(string name)
         {
+            if(this.alwaysCall == null)
+            {
+                // This item has been deserialized and the list needs to be reinitialized.
+                this.alwaysCall = new List<string>();
+            }
+
             if (!this.alwaysCall.Any(c => c.Equals(name, StringComparison.OrdinalIgnoreCase)))
             {
                 this.alwaysCall.Add(name);
