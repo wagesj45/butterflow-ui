@@ -9,7 +9,7 @@
         xmlns:butterflow_ui="clr-namespace:butterflow_ui"
         mc:Ignorable="d"
         x:Name="butterflowUIWindow"
-        Title="{x:Static loc:Localization.Title}" Height="600" Width="800"
+        Title="{x:Static loc:Localization.Title}" Width="Auto" Height="Auto"
         Icon="./Icon/icon.ico">
     <Window.Resources>
         <ObjectDataProvider x:Key="enumRegionTypeDataProvider" MethodName="GetValues"
@@ -45,7 +45,19 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static loc:Localization.EditMenu}" />
+            <MenuItem Header="{x:Static loc:Localization.EditMenu}">
+                <MenuItem Name="menuCopyArguments" Header="{x:Static loc:Localization.CopyArgumentsMenu}" Click="btnCopyArguments_Click">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource CopyIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="menuOptions" Header="{x:Static loc:Localization.OptionsMenu}" Click="menuOptions_Click">
+                    <MenuItem.Icon>
+                        <ContentControl Template="{StaticResource OptionsIcon}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="{x:Static loc:Localization.HelpMenu}">
                 <MenuItem Name="menuButterflowGithub" Header="{x:Static loc:Localization.AboutButterflowMenu}" Click="menuButterflowGithub_Click" >
                     <MenuItem.Icon>

@@ -380,7 +380,19 @@ namespace butterflow_ui
         /// <param name="e">      Routed event information. </param>
         private void menuAboutButterflowUI_Click(object sender, RoutedEventArgs e)
         {
+            var aboutWindow = new AboutWindow();
 
+            aboutWindow.Show();
+        }
+
+        /// <summary> Event handler. Called by menuOptions for click events. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Routed event information. </param>
+        private void menuOptions_Click(object sender, RoutedEventArgs e)
+        {
+            var optionsWindow = new OptionsWindow();
+
+            optionsWindow.Show();
         }
 
         #endregion

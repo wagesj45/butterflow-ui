@@ -118,100 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutButterflowMenu" xml:space="preserve">
-    <value>butterflow on github...</value>
+    <value>butterflow en github ...</value>
   </data>
   <data name="AboutButterflowUIMenu" xml:space="preserve">
-    <value>butterflow-ui on github...</value>
+    <value>butterflow-ui en github ...</value>
   </data>
   <data name="AboutMenu" xml:space="preserve">
-    <value>About butterflow-ui</value>
+    <value>Acerca de butterflow-ui</value>
   </data>
   <data name="AdvancedOptionsGroupBox" xml:space="preserve">
-    <value>Advanced Options</value>
+    <value>Opciones avanzadas</value>
   </data>
   <data name="ClipTooltip" xml:space="preserve">
-    <value>Clip a subregion in the video.</value>
+    <value>Clip una subregión en el video.</value>
   </data>
   <data name="CommonOptionsGroupBox" xml:space="preserve">
-    <value>Common Options</value>
+    <value>Opciones Comunes</value>
   </data>
   <data name="CustomPlaybackRateLabel" xml:space="preserve">
-    <value>Custom Rate</value>
+    <value>Tarifa personalizada</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>_Edit</value>
+    <value>_Editar</value>
   </data>
   <data name="EndLabel" xml:space="preserve">
-    <value>E</value>
+    <value>mi</value>
   </data>
   <data name="FileInputGroupBox" xml:space="preserve">
-    <value>Input</value>
+    <value>Entrada</value>
   </data>
   <data name="FileLabel" xml:space="preserve">
-    <value>Video File</value>
+    <value>Archivo de vídeo</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>_File</value>
+    <value>_Archivo</value>
   </data>
   <data name="HeightLabel" xml:space="preserve">
-    <value>Height</value>
+    <value>Altura</value>
   </data>
   <data name="HelpMenu" xml:space="preserve">
-    <value>_Help</value>
+    <value>_Ayuda</value>
   </data>
   <data name="KeepAudioDescription" xml:space="preserve">
-    <value>Renders the output video with the audio from the original video. In unchecked, no sound will be included in the output video.</value>
+    <value>Representa el video de salida con el audio del video original. Sin marcar, no se incluirá sonido en el video de salida.</value>
   </data>
   <data name="KeepAudioLabel" xml:space="preserve">
-    <value>Keep Audio</value>
+    <value>Mantener el audio</value>
   </data>
   <data name="LosslessDescription" xml:space="preserve">
-    <value>Renders the video without lossy compression. The video will not lose any visual quality, but it will result in a very large output file.</value>
+    <value>Renderiza el video sin compresión con pérdida. El video no perderá ninguna calidad visual, pero dará como resultado un archivo de salida muy grande.</value>
   </data>
   <data name="LosslessLabel" xml:space="preserve">
-    <value>Lossless Quality</value>
+    <value>Calidad sin pérdida</value>
   </data>
   <data name="PlaybackRateDescription" xml:space="preserve">
-    <value>Controls the new framerate of the output video. This can be set in both absolute and relative terms.</value>
+    <value>Controla el nuevo framerate del video de salida. Esto se puede establecer en términos absolutos y relativos.</value>
   </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
-    <value>Playback Rate</value>
+    <value>Velocidad de reproducción</value>
   </data>
   <data name="PlayPauseTooltip" xml:space="preserve">
-    <value>Play/Pause the video.</value>
+    <value>Reproducir / Pausar el video</value>
   </data>
   <data name="RenderingLabel" xml:space="preserve">
-    <value>Video Rendering</value>
+    <value>Representación de video</value>
   </data>
   <data name="ResolutionLabel" xml:space="preserve">
-    <value>Output Resolution</value>
+    <value>Resolución de salida</value>
   </data>
   <data name="SkipBackTooltip" xml:space="preserve">
-    <value>Skip backward in the video.</value>
+    <value>Salte hacia atrás en el video.</value>
   </data>
   <data name="SkipForwardTooltip" xml:space="preserve">
-    <value>Skip forward in the video.</value>
+    <value>Salta hacia adelante en el video.</value>
   </data>
   <data name="StartLabel" xml:space="preserve">
     <value>S</value>
   </data>
   <data name="StopTooltip" xml:space="preserve">
-    <value>Stop the video.</value>
+    <value>Detener el video</value>
   </data>
   <data name="SubregionsDescription" xml:space="preserve">
-    <value>Individual regions of the video to process.</value>
+    <value>Regiones individuales del video a procesar.</value>
   </data>
   <data name="SubregionsLabel" xml:space="preserve">
-    <value>Subregions</value>
+    <value>Subregiones</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>butterflow-ui</value>
   </data>
   <data name="ToEndLabel" xml:space="preserve">
-    <value>To End</value>
+    <value>Para terminar</value>
   </data>
   <data name="WidthLabel" xml:space="preserve">
-    <value>Width</value>
+    <value>Anchura</value>
   </data>
   <data name="_120fpsLabel" xml:space="preserve">
     <value>120 fps</value>
@@ -235,126 +235,123 @@
     <value>60 fps</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="CancelTooltip" xml:space="preserve">
-    <value>Cancel the current butterflow operation.</value>
+    <value>Cancele la operación de flujo de mantequilla actual.</value>
   </data>
   <data name="FastPyramidsLabel" xml:space="preserve">
-    <value>Use Fast Pyramids</value>
+    <value>Usa pirámides rápidas</value>
   </data>
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="FileOutputGroupBox" xml:space="preserve">
-    <value>Output</value>
+    <value>Salida</value>
   </data>
   <data name="FlowFilterLabel" xml:space="preserve">
-    <value>Flow Filter</value>
+    <value>Filtro de flujo</value>
   </data>
   <data name="FlowFilterTooltip" xml:space="preserve">
-    <value>Filter used for optical flow estimation.</value>
+    <value>Filtro utilizado para la estimación del flujo óptico.</value>
   </data>
   <data name="IterationsLabel" xml:space="preserve">
-    <value>Pyramid iterations</value>
+    <value>Iteraciones de pirámide</value>
   </data>
   <data name="IterationsTooltip" xml:space="preserve">
-    <value>The number of iterations to use for each pyramid layer.</value>
+    <value>El número de iteraciones a usar para cada capa de pirámide.</value>
   </data>
   <data name="KeepSubregionsLabel" xml:space="preserve">
-    <value>Keep Subregions</value>
+    <value>Mantener subregiones</value>
   </data>
   <data name="KeepSubregionsTooltip" xml:space="preserve">
-    <value>Renders subregions not explicitly specified.</value>
+    <value>Renderiza subregiones no especificadas explícitamente.</value>
   </data>
   <data name="LevelsLabel" xml:space="preserve">
-    <value>Levels</value>
+    <value>Niveles</value>
   </data>
   <data name="LevelsTooltip" xml:space="preserve">
-    <value>The number of pyramid layers.</value>
+    <value>El número de capas de pirámide.</value>
   </data>
   <data name="OpenMenuItem" xml:space="preserve">
-    <value>_Open...</value>
+    <value>_Abierto...</value>
   </data>
   <data name="PixelNeighborhoodLabel" xml:space="preserve">
-    <value>Pixel Neighborhood</value>
+    <value>Barrio de píxeles</value>
   </data>
   <data name="PixelNeighborhoodTooltip" xml:space="preserve">
-    <value>Size of the pixel neighborhood.</value>
+    <value>Tamaño del vecindario de píxeles.</value>
   </data>
   <data name="ProcessLabel" xml:space="preserve">
-    <value>Process</value>
+    <value>Proceso</value>
   </data>
   <data name="ProcessTooltip" xml:space="preserve">
-    <value>Process the video. This may be a long process.</value>
+    <value>Procesar el video Este puede ser un proceso largo.</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
-    <value>Pyramid Scale Factor</value>
+    <value>Factor de escala de pirámide</value>
   </data>
   <data name="PyramidScaleTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="SaveAsMenuItem" xml:space="preserve">
-    <value>Save Configuration _As...</value>
+    <value>Guardar configuración _Como ...</value>
   </data>
   <data name="SaveMenuItem" xml:space="preserve">
-    <value>_Save Configuration...</value>
+    <value>_Guardar configuración ...</value>
   </data>
   <data name="SmoothDerivativeLabel" xml:space="preserve">
-    <value>Smooth Derivative</value>
+    <value>Derivado suave</value>
   </data>
   <data name="SmoothDerivativeTooltip" xml:space="preserve">
-    <value>Size of the standard deviation used for smooth derivatives.</value>
+    <value>Tamaño de la desviación estándar utilizada para derivados suaves.</value>
   </data>
   <data name="SmoothMotionLabel" xml:space="preserve">
-    <value>Smooth Motion</value>
+    <value>Movimiento suave</value>
   </data>
   <data name="SmoothMotionTooltip" xml:space="preserve">
-    <value>Set to tune for smooth motion. This mode yields artifact-less frames by emphasizing blended frames over warping pixels.</value>
+    <value>Ajuste para sintonizar para un movimiento suave. Este modo produce cuadros sin artefactos al enfatizar los cuadros combinados sobre los píxeles de deformación.</value>
   </data>
   <data name="WindowSizeLabel" xml:space="preserve">
-    <value>Window Size</value>
+    <value>Tamaño de ventana</value>
   </data>
   <data name="WindowSizeTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="AboutWindowDescription" xml:space="preserve">
-    <value>buttterflow-ui is a graphical user interface for the butterflow video processor. </value>
+    <value>buttterflow-ui es una interfaz gráfica de usuario para el procesador de video butterflow.</value>
   </data>
   <data name="AboutWindowGithubLinkLabel" xml:space="preserve">
     <value>github</value>
   </data>
   <data name="AboutWindowLicenseLinkLabel" xml:space="preserve">
-    <value>license</value>
+    <value>licencia</value>
   </data>
   <data name="AboutWindowTitle" xml:space="preserve">
-    <value>About butterflow-ui</value>
+    <value>Acerca de butterflow-ui</value>
   </data>
   <data name="CopyArgumentsMenu" xml:space="preserve">
-    <value>Copy butterflow arguments</value>
+    <value>Copie los argumentos de butterflow</value>
   </data>
   <data name="DevelopersLabel" xml:space="preserve">
-    <value>Developers and Contributors</value>
+    <value>Desarrolladores y colaboradores</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Language</value>
+    <value>Idioma</value>
   </data>
   <data name="OKLabel" xml:space="preserve">
-    <value>OK</value>
+    <value>DE ACUERDO</value>
   </data>
   <data name="OpenSourceCreditsLabel" xml:space="preserve">
-    <value>Open Source Libraries</value>
+    <value>Bibliotecas de código abierto</value>
   </data>
   <data name="OptionsMenu" xml:space="preserve">
-    <value>Application Options...</value>
-  </data>
-  <data name="OptionsWindowLanguageChangeNotice" xml:space="preserve">
-    <value>Note: Changing the user language will require a restart of the program.</value>
+    <value>Opciones de aplicación ...</value>
   </data>
   <data name="OptionsWindowTitle" xml:space="preserve">
-    <value>Options</value>
+    <value>Opciones</value>
   </data>
   <data name="SaveLabel" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvar</value>
   </data>
 </root>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="butterflow_ui.OptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:butterflow_ui="clr-namespace:butterflow_ui"
+        xmlns:settings="clr-namespace:butterflow_ui.Properties"
+        xmlns:loc="clr-namespace:butterflow_ui.Localization"
+        mc:Ignorable="d"
+        Title="{x:Static loc:Localization.OptionsWindowTitle}" SizeToContent="WidthAndHeight">
+    <DockPanel Margin="32">
+        <StackPanel>
+            <WrapPanel>
+                <Label Content="{x:Static loc:Localization.LanguageLabel}" />
+                <ComboBox DisplayMemberPath="DisplayName" ItemsSource="{Binding SupportedLanguages, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:OptionsWindow}}, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Source={x:Static settings:Settings.Default}, Path=Language}" />
+            </WrapPanel>
+            <TextBlock Text="{x:Static loc:Localization.OptionsWindowLanguageChangeNotice}" />
+            <Separator Margin="0,10" />
+            <Button Name="btnSave" MaxWidth="45" Content="{x:Static loc:Localization.SaveLabel}" Click="btnSave_Click" />
+        </StackPanel>
+    </DockPanel>
+</Window>

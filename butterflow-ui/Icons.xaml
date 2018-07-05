@@ -1,6 +1,46 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:butterflow_ui">
+    <ControlTemplate x:Key="ButterflowUIIcon">
+        <Viewbox>
+            <Canvas Width="64" Height="64">
+                <Canvas.Resources>
+                    <LinearGradientBrush x:Key="linearGradient1386" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#FFFFDC3F" Offset="0"/>
+                                <GradientStop Color="#FFFFC820" Offset="1"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="linearGradient1388" MappingMode="Absolute" StartPoint="12,-9" EndPoint="53,-30">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#FFFFDC3F" Offset="0"/>
+                                <GradientStop Color="#FFFFC820" Offset="1"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                        <LinearGradientBrush.Transform>
+                            <MatrixTransform Matrix="1.060401 0 0 1.2239724 -1.8709853 6.7167357"/>
+                        </LinearGradientBrush.Transform>
+                    </LinearGradientBrush>
+                </Canvas.Resources>
+                <Canvas Name="layer1">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="0" Y="48"/>
+                    </Canvas.RenderTransform>
+                    <Path Name="rect1380" Fill="{StaticResource linearGradient1388}" StrokeThickness="1" Stroke="#FF000000" StrokeMiterLimit="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Opacity="1">
+                        <Path.Data>
+                            <PathGeometry Figures="m 10.313536 -31.470442 c 0 0 23.745103 -0.995305 21.686464 6.68764 -1.957898 7.306975 21.686464 -6.68764 21.686464 -6.68764 v 30.94088382 c 0 0 -23.644362 0.61933472 -21.686464 -6.68764042 2.469776 -9.2173294 -21.686464 6.68764042 -21.686464 6.68764042 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                    <TextBlock FontSize="21.84967232" FontWeight="Bold" FontFamily="Liberation Sans" FontStyle="normal" Foreground="#FFFFECB4" Canvas.Left="35.388515" Canvas.Top="-14.3" Name="text1378">
+                        <Span Foreground="#FFFFECB4" FontSize="21.84967232">UI</Span>
+                    </TextBlock>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
     <ControlTemplate x:Key="InfoIcon">
         <Viewbox>
             <Canvas Width="24" Height="24">
@@ -162,6 +202,15 @@
             <Path Fill="#FF5B0D0D">
                 <Path.Data>
                     <PathGeometry Figures="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="OptionsIcon">
+        <Viewbox>
+            <Path Fill="#000000">
+                <Path.Data>
+                    <PathGeometry Figures="M19 0h-14c-2.762 0-5 2.239-5 5v14c0 2.761 2.238 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4 4h2v3h-2v-3zm-8 0h2v8h-2v-8zm4 13h-2v3h-2v-3h-2v-3h6v3zm8-5h-2v8h-2v-8h-2v-3h6v3z" FillRule="NonZero"/>
                 </Path.Data>
             </Path>
         </Viewbox>

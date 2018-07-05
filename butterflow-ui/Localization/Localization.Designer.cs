@@ -151,6 +151,42 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to buttterflow-ui is a graphical user interface for the butterflow video processor. .
+        /// </summary>
+        public static string AboutWindowDescription {
+            get {
+                return ResourceManager.GetString("AboutWindowDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to github.
+        /// </summary>
+        public static string AboutWindowGithubLinkLabel {
+            get {
+                return ResourceManager.GetString("AboutWindowGithubLinkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to license.
+        /// </summary>
+        public static string AboutWindowLicenseLinkLabel {
+            get {
+                return ResourceManager.GetString("AboutWindowLicenseLinkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About butterflow-ui.
+        /// </summary>
+        public static string AboutWindowTitle {
+            get {
+                return ResourceManager.GetString("AboutWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced Options.
         /// </summary>
         public static string AdvancedOptionsGroupBox {
@@ -196,11 +232,29 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy butterflow arguments.
+        /// </summary>
+        public static string CopyArgumentsMenu {
+            get {
+                return ResourceManager.GetString("CopyArgumentsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom Rate.
         /// </summary>
         public static string CustomPlaybackRateLabel {
             get {
                 return ResourceManager.GetString("CustomPlaybackRateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Developers and Contributors.
+        /// </summary>
+        public static string DevelopersLabel {
+            get {
+                return ResourceManager.GetString("DevelopersLabel", resourceCulture);
             }
         }
         
@@ -367,6 +421,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LanguageLabel {
+            get {
+                return ResourceManager.GetString("LanguageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Levels.
         /// </summary>
         public static string LevelsLabel {
@@ -403,11 +466,56 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OKLabel {
+            get {
+                return ResourceManager.GetString("OKLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Open....
         /// </summary>
         public static string OpenMenuItem {
             get {
                 return ResourceManager.GetString("OpenMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Source Libraries.
+        /// </summary>
+        public static string OpenSourceCreditsLabel {
+            get {
+                return ResourceManager.GetString("OpenSourceCreditsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application Options....
+        /// </summary>
+        public static string OptionsMenu {
+            get {
+                return ResourceManager.GetString("OptionsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: Changing the user language will require a restart of the program..
+        /// </summary>
+        public static string OptionsWindowLanguageChangeNotice {
+            get {
+                return ResourceManager.GetString("OptionsWindowLanguageChangeNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string OptionsWindowTitle {
+            get {
+                return ResourceManager.GetString("OptionsWindowTitle", resourceCulture);
             }
         }
         
@@ -516,6 +624,15 @@ namespace butterflow_ui.Localization {
         public static string SaveAsMenuItem {
             get {
                 return ResourceManager.GetString("SaveAsMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string SaveLabel {
+            get {
+                return ResourceManager.GetString("SaveLabel", resourceCulture);
             }
         }
         
