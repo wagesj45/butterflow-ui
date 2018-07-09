@@ -14,7 +14,7 @@
     <Name>Documentation</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.7.1</FrameworkVersion>
-    <OutputPath>.\Help\</OutputPath>
+    <OutputPath>docs\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
@@ -36,6 +36,7 @@
       <NamespaceSummaryItem name="butterflow_ui.Properties" isDocumented="False" />
     </NamespaceSummaries>
     <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, Internals, Privates, PrivateFields, Protected, SealedProtected, ProtectedInternalAsProtected, PublicCompilerGenerated, NonBrowsable</VisibleItems>
+    <WarnOnMissingSourceContext>False</WarnOnMissingSourceContext>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
