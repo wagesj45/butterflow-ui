@@ -28,8 +28,28 @@ namespace butterflow_ui
 
         #region Methods
 
-        /// <summary> Executes the property changed action. </summary>
-        /// <param name="name"> The name. </param>
+        /// <summary>
+        /// Executes the property changed action. This alerts subscribers to its change in value.
+        /// </summary>
+        /// <param name="name"> (Optional) The name of the property. </param>
+        /// <example>
+        /// This will automatically pass in "SomeProperty" as the property name, derived useing the
+        /// <see cref="CallerMemberNameAttribute" /> attribute.
+        /// <code lang="cs" title="Automatic Property Detection">
+        /// public bool SomeProperty
+        /// {
+        ///     get
+        ///     {
+        ///         return this.someProperty;
+        ///     }
+        ///     set
+        ///     {
+        ///         this.someProperty = value;
+        ///         OnPropertyChanged();
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
         protected virtual void OnPropertyChanged([CallerMemberName]string name = null)
         {
             if (!string.IsNullOrWhiteSpace(name))
@@ -42,6 +62,7 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Executes when all properties are changed and should be updated. </summary>
         protected virtual void OnAllPropertiesChanged()
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
@@ -51,7 +72,7 @@ namespace butterflow_ui
         /// <param name="name"> The name of the property. </param>
         public void AddConstantCallProperty(string name)
         {
-            if(this.alwaysCall == null)
+            if (this.alwaysCall == null)
             {
                 // This item has been deserialized and the list needs to be reinitialized.
                 this.alwaysCall = new List<string>();

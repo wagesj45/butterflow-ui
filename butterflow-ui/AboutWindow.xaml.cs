@@ -20,6 +20,7 @@ namespace butterflow_ui
     /// </summary>
     public partial class AboutWindow : Window
     {
+        /// <summary> Default constructor. </summary>
         public AboutWindow()
         {
             InitializeComponent();

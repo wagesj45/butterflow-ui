@@ -15,12 +15,19 @@ namespace butterflow_ui
     {
         #region Members
 
+        /// <summary> The default pyramid scale setting. </summary>
         private const decimal DEFAULT_PYRAMID_SCALE = 0.5m;
+        /// <summary> The default levels setting. </summary>
         private const int DEFAULT_LEVELS = 3;
+        /// <summary> The default window size setting. </summary>
         private const int DEFAULT_WINDOW_SIZE = 25;
+        /// <summary> The default iterations setting. </summary>
         private const int DEFAULT_ITERATIONS = 3;
+        /// <summary> The default pixel neighborhood setting. </summary>
         private const int DEFAULT_PIXEL_NEIGHBORHOOD = 5;
+        /// <summary> The default smooth derivative standard deviation setting. </summary>
         private const decimal DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION = 1.1m;
+        /// <summary> The default flow filter type setting. </summary>
         private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
 
         /// <summary> An input interpreter used for converting string values to numeric values. </summary>
@@ -29,24 +36,43 @@ namespace butterflow_ui
         /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
         private decimal aspectRatio = 0;
 
+        /// <summary> The playback rate. </summary>
         private string playbackRate;
+        /// <summary> A value indicating whether or not to keep the original audio in the final video. </summary>
         private bool keepAudio;
+        /// <summary> The width of the output video. </summary>
         private int width;
+        /// <summary> The height of the output video. </summary>
         private int height;
-        private bool keepSubRegions;
+        /// <summary> A value indicating whether or not to render unspecified subregions. </summary>
+        private bool keepSubregions;
+        /// <summary> A value indicating whether or not to render the final video with lossless quality. </summary>
         private bool losslessQuality;
+        /// <summary> A value indicating whether or not to tune processing for smooth motion. </summary>
         private bool smoothMotion;
+        /// <summary> A value indicating whether or not to lock the aspect ratio to the <seealso cref="width"/> of the video. </summary>
         private bool lockAspectRatio;
+        /// <summary> The video input file. </summary>
         private string videoInput;
+        /// <summary> The video output file. </summary>
         private string videoOutput;
+        /// <summary> A value indicating whether or not to use fast pyramids when processing a video. </summary>
         private bool fastPyramid;
+        /// <summary> The pyramid scale setting. </summary>
         private decimal pyramidScale;
+        /// <summary> The level size setting. </summary>
         private int levels;
+        /// <summary> Size of the windowing average. </summary>
         private int windowSize;
+        /// <summary> The number of iterations per pyramid level. </summary>
         private int iterations;
+        /// <summary> The size of pixel neighborhood. </summary>
         private int pixelNeighborhood;
+        /// <summary> The standard deviation of smooth derivatives </summary>
         private decimal smoothDerivativeStandardDeviation;
+        /// <summary> Type of the flow filter to use for processing. </summary>
         private FlowFilterType flowFilterType = FlowFilterType.box;
+        /// <summary> The subregions of the video on which to process. </summary>
         private ObservableCollection<ButterflowSubregion> subregions = new ObservableCollection<ButterflowSubregion>();
 
         #endregion
@@ -79,7 +105,7 @@ namespace butterflow_ui
         }
 
         /// <summary> Gets or sets a value indicating whether the keep audio. </summary>
-        /// <value> True if keep audio, false if not. </value>
+        /// <value> True if keeping audio in the final video, false if not. </value>
         public bool KeepAudio
         {
             get
@@ -177,11 +203,11 @@ namespace butterflow_ui
         {
             get
             {
-                return this.keepSubRegions;
+                return this.keepSubregions;
             }
             set
             {
-                this.keepSubRegions = value;
+                this.keepSubregions = value;
                 OnPropertyChanged();
             }
         }
@@ -439,7 +465,7 @@ namespace butterflow_ui
                 FlowFilterType = this.flowFilterType,
                 Iterations = this.iterations,
                 KeepAudio = this.keepAudio,
-                KeepSubregions = this.keepSubRegions,
+                KeepSubregions = this.keepSubregions,
                 Levels = this.levels,
                 LockAspectRatio = this.lockAspectRatio,
                 LosslessQuality = this.losslessQuality,
