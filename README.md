@@ -32,4 +32,4 @@ If you'd like to help contribute to the project, please don't be shy! Translatio
 
 ## Code Documentation
 
-**butterflow-ui** is [fully documented](https://wagesj45.github.io/butterflow-ui/docs) via [Sandcastle](https://github.com/EWSoftware/SHFB). You can find generated documents to help you contribute to the project in the [documentation section](https://wagesj45.github.io/butterflow-ui/docs).
+**butterflow-ui** is [fully documented](https://wagesj45.github.io/butterflow-ui) via [Sandcastle](https://github.com/EWSoftware/SHFB). You can find generated documents to help you contribute to the project in the [documentation section](https://wagesj45.github.io/butterflow-ui).
