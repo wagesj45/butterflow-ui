@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="butterflow-ui" Language="1033" Version="1.0.0.0" Manufacturer="butterflow-ui @ github" UpgradeCode="bba9d512-377a-467e-920a-cbcf36ffc072">
+  <Product Id="*" Name="butterflow-ui" Language="1033" Version="1.0.1" Manufacturer="butterflow-ui @ github" UpgradeCode="bba9d512-377a-467e-920a-cbcf36ffc072">
     <Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -25,7 +25,11 @@
 
   <Fragment>
     <DirectoryRef Id="INSTALLFOLDER">
-      <Directory Id="dir9AE38F4F5CB5E565E774521E138F44FD" Name="es" />
+      <Directory Id="dirar" Name="ar" />
+      <Directory Id="dires" Name="es" />
+      <Directory Id="dirja" Name="ja" />
+      <Directory Id="dirru" Name="ru" />
+      <Directory Id="dirzhCN" Name="zh-CN" />
       <Directory Id="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Name="ThirdPartyCompiled" />
     </DirectoryRef>
     <DirectoryRef Id="ProgramMenuFolder">
@@ -58,8 +62,20 @@
       <Component Id="cmpA92B99883E0DB6154DB87A067B20DCDE" Directory="INSTALLFOLDER" Guid="{6E279AC9-5B1B-4B58-8C8C-3BFEE35AE701}">
         <File Id="filF8B79D49DE875310B08A74573BF5DEFF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Gu.Wpf.Media.xml" />
       </Component>
-      <Component Id="cmpD87291FDA8565331FD5CB4B241AC4A2B" Directory="dir9AE38F4F5CB5E565E774521E138F44FD" Guid="{7182522E-B59C-43A1-B0EC-011DC1C6F4EC}">
-        <File Id="fil43079BECA15FF44CEBA1E161D4AD0836" KeyPath="yes" Source="..\butterflow-ui\bin\Release\es\butterflow-ui.resources.dll" />
+      <Component Id="cmpar" Directory="dirar" Guid="{7399EF14-06B7-4575-BA0B-7B4375E25CF7}">
+        <File Id="filar" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ar\butterflow-ui.resources.dll" />
+      </Component>
+      <Component Id="cmpes" Directory="dires" Guid="{7182522E-B59C-43A1-B0EC-011DC1C6F4EC}">
+        <File Id="files" KeyPath="yes" Source="..\butterflow-ui\bin\Release\es\butterflow-ui.resources.dll" />
+      </Component>
+      <Component Id="cmpja" Directory="dirja" Guid="{64DEC484-628B-457B-ABC4-E26682265922}">
+        <File Id="filja" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ja\butterflow-ui.resources.dll" />
+      </Component>
+      <Component Id="cmpru" Directory="dirru" Guid="{A14E0527-56FC-446B-B6BD-C297E696919C}">
+        <File Id="fileru" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ru\butterflow-ui.resources.dll" />
+      </Component>
+      <Component Id="cmpzhCN" Directory="dirzhCN" Guid="{C0045DB8-05F0-4145-B7DC-E7D13A63145D}">
+        <File Id="filzhcn" KeyPath="yes" Source="..\butterflow-ui\bin\Release\zh-CN\butterflow-ui.resources.dll" />
       </Component>
       <Component Id="cmp2C52914140116DBB79F7A1FEC48C415C" Directory="dir2BAAB9BDF610FB0BD92BD04F0F8E2CA6" Guid="{BEEF40BA-93C8-4B21-B855-7C18870C2737}">
         <File Id="filC164B5963A1B88C703CC4421BB5208EB" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ThirdPartyCompiled\array.pyd" />
