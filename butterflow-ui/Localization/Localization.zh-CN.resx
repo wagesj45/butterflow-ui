@@ -118,100 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutButterflowMenu" xml:space="preserve">
-    <value>butterflow en github ...</value>
+    <value>github上的butterflow ...</value>
   </data>
   <data name="AboutButterflowUIMenu" xml:space="preserve">
-    <value>butterflow-ui en github ...</value>
+    <value>在github上的butterflow-ui ...</value>
   </data>
   <data name="AboutMenu" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>关于butterflow-ui</value>
   </data>
   <data name="AdvancedOptionsGroupBox" xml:space="preserve">
-    <value>Opciones avanzadas</value>
+    <value>高级选项</value>
   </data>
   <data name="ClipTooltip" xml:space="preserve">
-    <value>Clip una subregión en el video.</value>
+    <value>剪辑视频中的子区域。</value>
   </data>
   <data name="CommonOptionsGroupBox" xml:space="preserve">
-    <value>Opciones Comunes</value>
+    <value>常见选项</value>
   </data>
   <data name="CustomPlaybackRateLabel" xml:space="preserve">
-    <value>Tarifa personalizada</value>
+    <value>自定义费率</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>_Editar</value>
+    <value>_编辑</value>
   </data>
   <data name="EndLabel" xml:space="preserve">
-    <value>mi</value>
+    <value>Ë</value>
   </data>
   <data name="FileInputGroupBox" xml:space="preserve">
-    <value>Entrada</value>
+    <value>输入</value>
   </data>
   <data name="FileLabel" xml:space="preserve">
-    <value>Archivo de vídeo</value>
+    <value>视频文件</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>_Archivo</value>
+    <value>_文件</value>
   </data>
   <data name="HeightLabel" xml:space="preserve">
-    <value>Altura</value>
+    <value>高度</value>
   </data>
   <data name="HelpMenu" xml:space="preserve">
-    <value>_Ayuda</value>
+    <value>_帮帮我</value>
   </data>
   <data name="KeepAudioDescription" xml:space="preserve">
-    <value>Representa el video de salida con el audio del video original. Sin marcar, no se incluirá sonido en el video de salida.</value>
+    <value>使用原始视频中的音频渲染输出视频。在未选中状态下，输出视频中不会包含任何声音。</value>
   </data>
   <data name="KeepAudioLabel" xml:space="preserve">
-    <value>Mantener el audio</value>
+    <value>保持音频</value>
   </data>
   <data name="LosslessDescription" xml:space="preserve">
-    <value>Renderiza el video sin compresión con pérdida. El video no perderá ninguna calidad visual, pero dará como resultado un archivo de salida muy grande.</value>
+    <value>在没有有损压缩的情况下呈现视频。视频不会失去任何视觉质量，但会产生非常大的输出文件。</value>
   </data>
   <data name="LosslessLabel" xml:space="preserve">
-    <value>Calidad sin pérdida</value>
+    <value>无损质量</value>
   </data>
   <data name="PlaybackRateDescription" xml:space="preserve">
-    <value>Controla el nuevo framerate del video de salida. Esto se puede establecer en términos absolutos y relativos.</value>
+    <value>控制输出视频的新帧速率。这可以用绝对和相对术语来设置。</value>
   </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
-    <value>Velocidad de reproducción</value>
+    <value>播放率</value>
   </data>
   <data name="PlayPauseTooltip" xml:space="preserve">
-    <value>Reproducir / Pausar el video</value>
+    <value>播放/暂停视频。</value>
   </data>
   <data name="RenderingLabel" xml:space="preserve">
-    <value>Representación de video</value>
+    <value>视频渲染</value>
   </data>
   <data name="ResolutionLabel" xml:space="preserve">
-    <value>Resolución de salida</value>
+    <value>输出分辨率</value>
   </data>
   <data name="SkipBackTooltip" xml:space="preserve">
-    <value>Salte hacia atrás en el video.</value>
+    <value>在视频中向后跳过。</value>
   </data>
   <data name="SkipForwardTooltip" xml:space="preserve">
-    <value>Salta hacia adelante en el video.</value>
+    <value>在视频中向前跳过。</value>
   </data>
   <data name="StartLabel" xml:space="preserve">
-    <value>S</value>
+    <value>小号</value>
   </data>
   <data name="StopTooltip" xml:space="preserve">
-    <value>Detener el video</value>
+    <value>停止视频。</value>
   </data>
   <data name="SubregionsDescription" xml:space="preserve">
-    <value>Regiones individuales del video a procesar.</value>
+    <value>要处理的视频的各个区域。</value>
   </data>
   <data name="SubregionsLabel" xml:space="preserve">
-    <value>Subregiones</value>
+    <value>分区域</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>butterflow-ui</value>
+    <value>butterflow的UI</value>
   </data>
   <data name="ToEndLabel" xml:space="preserve">
-    <value>Para terminar</value>
+    <value>结束</value>
   </data>
   <data name="WidthLabel" xml:space="preserve">
-    <value>Anchura</value>
+    <value>宽度</value>
   </data>
   <data name="_120fpsLabel" xml:space="preserve">
     <value>120 fps</value>
@@ -220,144 +220,144 @@
     <value>24 fps</value>
   </data>
   <data name="_2xLabel" xml:space="preserve">
-    <value>2x</value>
+    <value>2倍</value>
   </data>
   <data name="_30fpsLabel" xml:space="preserve">
     <value>30 fps</value>
   </data>
   <data name="_3xLabel" xml:space="preserve">
-    <value>3x</value>
+    <value>3X</value>
   </data>
   <data name="_4xLabel" xml:space="preserve">
-    <value>4x</value>
+    <value>4X</value>
   </data>
   <data name="_60fpsLabel" xml:space="preserve">
     <value>60 fps</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>取消</value>
   </data>
   <data name="CancelTooltip" xml:space="preserve">
-    <value>Cancele la operación de flujo de mantequilla actual.</value>
+    <value>取消当前的butterflow操作。</value>
   </data>
   <data name="FastPyramidsLabel" xml:space="preserve">
-    <value>Usa pirámides rápidas</value>
+    <value>使用快速金字塔</value>
   </data>
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="FileOutputGroupBox" xml:space="preserve">
-    <value>Salida</value>
+    <value>产量</value>
   </data>
   <data name="FlowFilterLabel" xml:space="preserve">
-    <value>Filtro de flujo</value>
+    <value>流量过滤器</value>
   </data>
   <data name="FlowFilterTooltip" xml:space="preserve">
-    <value>Filtro utilizado para la estimación del flujo óptico.</value>
+    <value>用于光流估计的滤波器。</value>
   </data>
   <data name="IterationsLabel" xml:space="preserve">
-    <value>Iteraciones de pirámide</value>
+    <value>金字塔迭代</value>
   </data>
   <data name="IterationsTooltip" xml:space="preserve">
-    <value>El número de iteraciones a usar para cada capa de pirámide.</value>
+    <value>每个金字塔图层使用的迭代次数。</value>
   </data>
   <data name="KeepSubregionsLabel" xml:space="preserve">
-    <value>Mantener subregiones</value>
+    <value>保留子区域</value>
   </data>
   <data name="KeepSubregionsTooltip" xml:space="preserve">
-    <value>Renderiza subregiones no especificadas explícitamente.</value>
+    <value>渲染未明确指定的子区域。</value>
   </data>
   <data name="LevelsLabel" xml:space="preserve">
-    <value>Niveles</value>
+    <value>水平</value>
   </data>
   <data name="LevelsTooltip" xml:space="preserve">
-    <value>El número de capas de pirámide.</value>
+    <value>金字塔层数。</value>
   </data>
   <data name="OpenMenuItem" xml:space="preserve">
-    <value>_Abierto...</value>
+    <value>_打开...</value>
   </data>
   <data name="PixelNeighborhoodLabel" xml:space="preserve">
-    <value>Barrio de píxeles</value>
+    <value>像素邻居</value>
   </data>
   <data name="PixelNeighborhoodTooltip" xml:space="preserve">
-    <value>Tamaño del vecindario de píxeles.</value>
+    <value>像素邻域的大小。</value>
   </data>
   <data name="ProcessLabel" xml:space="preserve">
-    <value>Proceso</value>
+    <value>处理</value>
   </data>
   <data name="ProcessTooltip" xml:space="preserve">
-    <value>Procesar el video Este puede ser un proceso largo.</value>
+    <value>处理视频。这可能是一个漫长的过程。</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
-    <value>Factor de escala de pirámide</value>
+    <value>金字塔比例因子</value>
   </data>
   <data name="PyramidScaleTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="SaveAsMenuItem" xml:space="preserve">
-    <value>Guardar configuración _Como ...</value>
+    <value>保存配置_As ...</value>
   </data>
   <data name="SaveMenuItem" xml:space="preserve">
-    <value>_Guardar configuración ...</value>
+    <value>_保存配置......</value>
   </data>
   <data name="SmoothDerivativeLabel" xml:space="preserve">
-    <value>Derivado suave</value>
+    <value>光滑的衍生物</value>
   </data>
   <data name="SmoothDerivativeTooltip" xml:space="preserve">
-    <value>Tamaño de la desviación estándar utilizada para derivados suaves.</value>
+    <value>用于平滑导数的标准偏差的大小。</value>
   </data>
   <data name="SmoothMotionLabel" xml:space="preserve">
-    <value>Movimiento suave</value>
+    <value>平稳运动</value>
   </data>
   <data name="SmoothMotionTooltip" xml:space="preserve">
-    <value>Ajuste para sintonizar para un movimiento suave. Este modo produce cuadros sin artefactos al enfatizar los cuadros combinados sobre los píxeles de deformación.</value>
+    <value>设置为调整平滑运动。此模式通过强调扭曲像素上的混合帧来产生无伪影帧。</value>
   </data>
   <data name="WindowSizeLabel" xml:space="preserve">
-    <value>Tamaño de ventana</value>
+    <value>窗口大小</value>
   </data>
   <data name="WindowSizeTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="AboutWindowDescription" xml:space="preserve">
-    <value>buttterflow-ui es una interfaz gráfica de usuario para el procesador de video butterflow.</value>
+    <value>buttterflow-ui是butterflow视频处理器的图形用户界面。</value>
   </data>
   <data name="AboutWindowGithubLinkLabel" xml:space="preserve">
-    <value>github</value>
+    <value>github上</value>
   </data>
   <data name="AboutWindowLicenseLinkLabel" xml:space="preserve">
-    <value>licencia</value>
+    <value>执照</value>
   </data>
   <data name="AboutWindowTitle" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>关于butterflow-ui</value>
   </data>
   <data name="CopyArgumentsMenu" xml:space="preserve">
-    <value>Copie los argumentos de butterflow</value>
+    <value>复制butterflow参数</value>
   </data>
   <data name="DevelopersLabel" xml:space="preserve">
-    <value>Desarrolladores y colaboradores</value>
+    <value>开发人员和贡献者</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Idioma</value>
+    <value>语言</value>
   </data>
   <data name="OKLabel" xml:space="preserve">
-    <value>DE ACUERDO</value>
+    <value>好</value>
   </data>
   <data name="OpenSourceCreditsLabel" xml:space="preserve">
-    <value>Bibliotecas de código abierto</value>
+    <value>开源库</value>
   </data>
   <data name="OptionsMenu" xml:space="preserve">
-    <value>Opciones de aplicación ...</value>
+    <value>应用选项......</value>
   </data>
   <data name="OptionsWindowLanguageChangeNotice" xml:space="preserve">
-    <value>Nota: Cambiar el idioma del usuario requerirá un reinicio del programa.</value>
+    <value>注意：更改用户语言将需要重新启动程序。</value>
   </data>
   <data name="OptionsWindowTitle" xml:space="preserve">
-    <value>Opciones</value>
+    <value>选项</value>
   </data>
   <data name="SaveLabel" xml:space="preserve">
-    <value>Salvar</value>
+    <value>保存</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
-    <value>Versión</value>
+    <value>版</value>
   </data>
 </root>

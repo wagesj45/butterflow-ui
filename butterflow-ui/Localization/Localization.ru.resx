@@ -118,112 +118,112 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutButterflowMenu" xml:space="preserve">
-    <value>butterflow en github ...</value>
+    <value>масляный поток на github ...</value>
   </data>
   <data name="AboutButterflowUIMenu" xml:space="preserve">
-    <value>butterflow-ui en github ...</value>
+    <value>butterflow-ui на github ...</value>
   </data>
   <data name="AboutMenu" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>О butterflow-ui</value>
   </data>
   <data name="AdvancedOptionsGroupBox" xml:space="preserve">
-    <value>Opciones avanzadas</value>
+    <value>Расширенные опции</value>
   </data>
   <data name="ClipTooltip" xml:space="preserve">
-    <value>Clip una subregión en el video.</value>
+    <value>Закрепите субрегион в видео.</value>
   </data>
   <data name="CommonOptionsGroupBox" xml:space="preserve">
-    <value>Opciones Comunes</value>
+    <value>Общие параметры</value>
   </data>
   <data name="CustomPlaybackRateLabel" xml:space="preserve">
-    <value>Tarifa personalizada</value>
+    <value>Пользовательская ставка</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>_Editar</value>
+    <value>_Редактировать</value>
   </data>
   <data name="EndLabel" xml:space="preserve">
-    <value>mi</value>
+    <value>Е</value>
   </data>
   <data name="FileInputGroupBox" xml:space="preserve">
-    <value>Entrada</value>
+    <value>вход</value>
   </data>
   <data name="FileLabel" xml:space="preserve">
-    <value>Archivo de vídeo</value>
+    <value>Видеофайл</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>_Archivo</value>
+    <value>_Файл</value>
   </data>
   <data name="HeightLabel" xml:space="preserve">
-    <value>Altura</value>
+    <value>Высота</value>
   </data>
   <data name="HelpMenu" xml:space="preserve">
-    <value>_Ayuda</value>
+    <value>_Помогите</value>
   </data>
   <data name="KeepAudioDescription" xml:space="preserve">
-    <value>Representa el video de salida con el audio del video original. Sin marcar, no se incluirá sonido en el video de salida.</value>
+    <value>Отображает видеоизображение с аудио из исходного видео. Неконтролируемый звук не будет включен в выходной видеосигнал.</value>
   </data>
   <data name="KeepAudioLabel" xml:space="preserve">
-    <value>Mantener el audio</value>
+    <value>Сохранить аудио</value>
   </data>
   <data name="LosslessDescription" xml:space="preserve">
-    <value>Renderiza el video sin compresión con pérdida. El video no perderá ninguna calidad visual, pero dará como resultado un archivo de salida muy grande.</value>
+    <value>Отображает видео без сжатия с потерями. Видео не потеряет визуального качества, но это приведет к очень большому выходному файлу.</value>
   </data>
   <data name="LosslessLabel" xml:space="preserve">
-    <value>Calidad sin pérdida</value>
+    <value>Качество без потерь</value>
   </data>
   <data name="PlaybackRateDescription" xml:space="preserve">
-    <value>Controla el nuevo framerate del video de salida. Esto se puede establecer en términos absolutos y relativos.</value>
+    <value>Управляет новой частотой кадров выходного видео. Это можно установить как в абсолютном, так и в относительном терминах.</value>
   </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
-    <value>Velocidad de reproducción</value>
+    <value>Скорость воспроизведения</value>
   </data>
   <data name="PlayPauseTooltip" xml:space="preserve">
-    <value>Reproducir / Pausar el video</value>
+    <value>Воспроизведение / Пауза видео.</value>
   </data>
   <data name="RenderingLabel" xml:space="preserve">
-    <value>Representación de video</value>
+    <value>Видеообъявления</value>
   </data>
   <data name="ResolutionLabel" xml:space="preserve">
-    <value>Resolución de salida</value>
+    <value>Разрешение вывода</value>
   </data>
   <data name="SkipBackTooltip" xml:space="preserve">
-    <value>Salte hacia atrás en el video.</value>
+    <value>Пропустите назад в видео.</value>
   </data>
   <data name="SkipForwardTooltip" xml:space="preserve">
-    <value>Salta hacia adelante en el video.</value>
+    <value>Пропустить вперед в видео.</value>
   </data>
   <data name="StartLabel" xml:space="preserve">
     <value>S</value>
   </data>
   <data name="StopTooltip" xml:space="preserve">
-    <value>Detener el video</value>
+    <value>Остановите видео.</value>
   </data>
   <data name="SubregionsDescription" xml:space="preserve">
-    <value>Regiones individuales del video a procesar.</value>
+    <value>Отдельные области видео для обработки.</value>
   </data>
   <data name="SubregionsLabel" xml:space="preserve">
-    <value>Subregiones</value>
+    <value>Субрегионы</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>butterflow-ui</value>
+    <value>butterflow-щ</value>
   </data>
   <data name="ToEndLabel" xml:space="preserve">
-    <value>Para terminar</value>
+    <value>В конец</value>
   </data>
   <data name="WidthLabel" xml:space="preserve">
-    <value>Anchura</value>
+    <value>Ширина</value>
   </data>
   <data name="_120fpsLabel" xml:space="preserve">
-    <value>120 fps</value>
+    <value>120 кадров в секунду</value>
   </data>
   <data name="_24fpsLabel" xml:space="preserve">
-    <value>24 fps</value>
+    <value>24 кадра в секунду</value>
   </data>
   <data name="_2xLabel" xml:space="preserve">
     <value>2x</value>
   </data>
   <data name="_30fpsLabel" xml:space="preserve">
-    <value>30 fps</value>
+    <value>30 кадров в секунду</value>
   </data>
   <data name="_3xLabel" xml:space="preserve">
     <value>3x</value>
@@ -232,132 +232,132 @@
     <value>4x</value>
   </data>
   <data name="_60fpsLabel" xml:space="preserve">
-    <value>60 fps</value>
+    <value>60 кадров в секунду</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Отмена</value>
   </data>
   <data name="CancelTooltip" xml:space="preserve">
-    <value>Cancele la operación de flujo de mantequilla actual.</value>
+    <value>Отмените текущую операцию масляного потока.</value>
   </data>
   <data name="FastPyramidsLabel" xml:space="preserve">
-    <value>Usa pirámides rápidas</value>
+    <value>Использование быстрых пирамид</value>
   </data>
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="FileOutputGroupBox" xml:space="preserve">
-    <value>Salida</value>
+    <value>Вывод</value>
   </data>
   <data name="FlowFilterLabel" xml:space="preserve">
-    <value>Filtro de flujo</value>
+    <value>Фильтр потока</value>
   </data>
   <data name="FlowFilterTooltip" xml:space="preserve">
-    <value>Filtro utilizado para la estimación del flujo óptico.</value>
+    <value>Фильтр, используемый для оценки оптического потока.</value>
   </data>
   <data name="IterationsLabel" xml:space="preserve">
-    <value>Iteraciones de pirámide</value>
+    <value>Итерации пирамид</value>
   </data>
   <data name="IterationsTooltip" xml:space="preserve">
-    <value>El número de iteraciones a usar para cada capa de pirámide.</value>
+    <value>Количество итераций, используемых для каждого слоя пирамиды.</value>
   </data>
   <data name="KeepSubregionsLabel" xml:space="preserve">
-    <value>Mantener subregiones</value>
+    <value>Сохранять субрегионы</value>
   </data>
   <data name="KeepSubregionsTooltip" xml:space="preserve">
-    <value>Renderiza subregiones no especificadas explícitamente.</value>
+    <value>Показывает субрегионы, явно не указанные.</value>
   </data>
   <data name="LevelsLabel" xml:space="preserve">
-    <value>Niveles</value>
+    <value>Уровни</value>
   </data>
   <data name="LevelsTooltip" xml:space="preserve">
-    <value>El número de capas de pirámide.</value>
+    <value>Количество пирамидных слоев.</value>
   </data>
   <data name="OpenMenuItem" xml:space="preserve">
-    <value>_Abierto...</value>
+    <value>_Открыто...</value>
   </data>
   <data name="PixelNeighborhoodLabel" xml:space="preserve">
-    <value>Barrio de píxeles</value>
+    <value>Пиксельное соседство</value>
   </data>
   <data name="PixelNeighborhoodTooltip" xml:space="preserve">
-    <value>Tamaño del vecindario de píxeles.</value>
+    <value>Размер окрестности пикселя.</value>
   </data>
   <data name="ProcessLabel" xml:space="preserve">
-    <value>Proceso</value>
+    <value>Обработать</value>
   </data>
   <data name="ProcessTooltip" xml:space="preserve">
-    <value>Procesar el video Este puede ser un proceso largo.</value>
+    <value>Обработайте видео. Это может быть долгий процесс.</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
-    <value>Factor de escala de pirámide</value>
+    <value>Масштабный коэффициент пирамиды</value>
   </data>
   <data name="PyramidScaleTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="SaveAsMenuItem" xml:space="preserve">
-    <value>Guardar configuración _Como ...</value>
+    <value>Сохранить конфигурацию _As ...</value>
   </data>
   <data name="SaveMenuItem" xml:space="preserve">
-    <value>_Guardar configuración ...</value>
+    <value>_Сохранить конфигурацию ...</value>
   </data>
   <data name="SmoothDerivativeLabel" xml:space="preserve">
-    <value>Derivado suave</value>
+    <value>Гладкий производный</value>
   </data>
   <data name="SmoothDerivativeTooltip" xml:space="preserve">
-    <value>Tamaño de la desviación estándar utilizada para derivados suaves.</value>
+    <value>Размер стандартного отклонения, используемого для гладких производных.</value>
   </data>
   <data name="SmoothMotionLabel" xml:space="preserve">
-    <value>Movimiento suave</value>
+    <value>Плавное движение</value>
   </data>
   <data name="SmoothMotionTooltip" xml:space="preserve">
-    <value>Ajuste para sintonizar para un movimiento suave. Este modo produce cuadros sin artefactos al enfatizar los cuadros combinados sobre los píxeles de deformación.</value>
+    <value>Установите настройку для плавного движения. Этот режим дает без артефактов кадров, подчеркивая смешанные кадры по сравнению с пикселями пикселей.</value>
   </data>
   <data name="WindowSizeLabel" xml:space="preserve">
-    <value>Tamaño de ventana</value>
+    <value>Размер окна</value>
   </data>
   <data name="WindowSizeTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="AboutWindowDescription" xml:space="preserve">
-    <value>buttterflow-ui es una interfaz gráfica de usuario para el procesador de video butterflow.</value>
+    <value>buttterflow-ui - графический пользовательский интерфейс для видеопроцессора butterflow.</value>
   </data>
   <data name="AboutWindowGithubLinkLabel" xml:space="preserve">
-    <value>github</value>
+    <value>GitHub</value>
   </data>
   <data name="AboutWindowLicenseLinkLabel" xml:space="preserve">
-    <value>licencia</value>
+    <value>лицензия</value>
   </data>
   <data name="AboutWindowTitle" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>О butterflow-ui</value>
   </data>
   <data name="CopyArgumentsMenu" xml:space="preserve">
-    <value>Copie los argumentos de butterflow</value>
+    <value>Копировать аргументы масляного потока</value>
   </data>
   <data name="DevelopersLabel" xml:space="preserve">
-    <value>Desarrolladores y colaboradores</value>
+    <value>Разработчики и участники</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Idioma</value>
+    <value>язык</value>
   </data>
   <data name="OKLabel" xml:space="preserve">
-    <value>DE ACUERDO</value>
+    <value>ОК</value>
   </data>
   <data name="OpenSourceCreditsLabel" xml:space="preserve">
-    <value>Bibliotecas de código abierto</value>
+    <value>Библиотеки с открытым исходным кодом</value>
   </data>
   <data name="OptionsMenu" xml:space="preserve">
-    <value>Opciones de aplicación ...</value>
+    <value>Параметры приложения ...</value>
   </data>
   <data name="OptionsWindowLanguageChangeNotice" xml:space="preserve">
-    <value>Nota: Cambiar el idioma del usuario requerirá un reinicio del programa.</value>
+    <value>Примечание. Для изменения языка пользователя потребуется перезапуск программы.</value>
   </data>
   <data name="OptionsWindowTitle" xml:space="preserve">
-    <value>Opciones</value>
+    <value>Опции</value>
   </data>
   <data name="SaveLabel" xml:space="preserve">
-    <value>Salvar</value>
+    <value>Сохранить</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
-    <value>Versión</value>
+    <value>Версия</value>
   </data>
 </root>

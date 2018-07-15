@@ -118,246 +118,246 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutButterflowMenu" xml:space="preserve">
-    <value>butterflow en github ...</value>
+    <value>butterflow على جيثب ...</value>
   </data>
   <data name="AboutButterflowUIMenu" xml:space="preserve">
-    <value>butterflow-ui en github ...</value>
+    <value>butterflow -ii على جيثب ...</value>
   </data>
   <data name="AboutMenu" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>حول butterflow -ii</value>
   </data>
   <data name="AdvancedOptionsGroupBox" xml:space="preserve">
-    <value>Opciones avanzadas</value>
+    <value>خيارات متقدمة</value>
   </data>
   <data name="ClipTooltip" xml:space="preserve">
-    <value>Clip una subregión en el video.</value>
+    <value>مقطع منطقة فرعية في الفيديو.</value>
   </data>
   <data name="CommonOptionsGroupBox" xml:space="preserve">
-    <value>Opciones Comunes</value>
+    <value>خيارات مشتركة</value>
   </data>
   <data name="CustomPlaybackRateLabel" xml:space="preserve">
-    <value>Tarifa personalizada</value>
+    <value>معدل مخصص</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>_Editar</value>
+    <value>_تصحيح</value>
   </data>
   <data name="EndLabel" xml:space="preserve">
-    <value>mi</value>
+    <value>E</value>
   </data>
   <data name="FileInputGroupBox" xml:space="preserve">
-    <value>Entrada</value>
+    <value>إدخال</value>
   </data>
   <data name="FileLabel" xml:space="preserve">
-    <value>Archivo de vídeo</value>
+    <value>ملف فيديو</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>_Archivo</value>
+    <value>_ملف</value>
   </data>
   <data name="HeightLabel" xml:space="preserve">
-    <value>Altura</value>
+    <value>ارتفاع</value>
   </data>
   <data name="HelpMenu" xml:space="preserve">
-    <value>_Ayuda</value>
+    <value>_مساعدة</value>
   </data>
   <data name="KeepAudioDescription" xml:space="preserve">
-    <value>Representa el video de salida con el audio del video original. Sin marcar, no se incluirá sonido en el video de salida.</value>
+    <value>يعرض الفيديو الناتج مع الصوت من الفيديو الأصلي. في غير محدد ، لن يتم تضمين أي صوت في الفيديو الناتج.</value>
   </data>
   <data name="KeepAudioLabel" xml:space="preserve">
-    <value>Mantener el audio</value>
+    <value>حافظ على الصوت</value>
   </data>
   <data name="LosslessDescription" xml:space="preserve">
-    <value>Renderiza el video sin compresión con pérdida. El video no perderá ninguna calidad visual, pero dará como resultado un archivo de salida muy grande.</value>
+    <value>يعرض الفيديو دون ضغط الفقد. لن يفقد الفيديو أي جودة بصرية ، ولكنه سينتج عنه ملف إخراج كبير جدًا.</value>
   </data>
   <data name="LosslessLabel" xml:space="preserve">
-    <value>Calidad sin pérdida</value>
+    <value>جودة بلا خسائر</value>
   </data>
   <data name="PlaybackRateDescription" xml:space="preserve">
-    <value>Controla el nuevo framerate del video de salida. Esto se puede establecer en términos absolutos y relativos.</value>
+    <value>يتحكم في معدل الإطارات الجديد لمخرجات الفيديو. يمكن تعيين هذا في كل من الشروط المطلقة والنسبية.</value>
   </data>
   <data name="PlaybackRateLabel" xml:space="preserve">
-    <value>Velocidad de reproducción</value>
+    <value>معدل التشغيل</value>
   </data>
   <data name="PlayPauseTooltip" xml:space="preserve">
-    <value>Reproducir / Pausar el video</value>
+    <value>تشغيل / إيقاف مؤقت للفيديو.</value>
   </data>
   <data name="RenderingLabel" xml:space="preserve">
-    <value>Representación de video</value>
+    <value>تقديم الفيديو</value>
   </data>
   <data name="ResolutionLabel" xml:space="preserve">
-    <value>Resolución de salida</value>
+    <value>قرار الإخراج</value>
   </data>
   <data name="SkipBackTooltip" xml:space="preserve">
-    <value>Salte hacia atrás en el video.</value>
+    <value>تخطي للخلف في الفيديو.</value>
   </data>
   <data name="SkipForwardTooltip" xml:space="preserve">
-    <value>Salta hacia adelante en el video.</value>
+    <value>تخط إلى الأمام في الفيديو.</value>
   </data>
   <data name="StartLabel" xml:space="preserve">
     <value>S</value>
   </data>
   <data name="StopTooltip" xml:space="preserve">
-    <value>Detener el video</value>
+    <value>أوقف الفيديو.</value>
   </data>
   <data name="SubregionsDescription" xml:space="preserve">
-    <value>Regiones individuales del video a procesar.</value>
+    <value>المناطق الفردية للفيديو لمعالجة.</value>
   </data>
   <data name="SubregionsLabel" xml:space="preserve">
-    <value>Subregiones</value>
+    <value>المناطق الفرعية</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>butterflow-ui</value>
+    <value>butterflow-واجهة المستخدم</value>
   </data>
   <data name="ToEndLabel" xml:space="preserve">
-    <value>Para terminar</value>
+    <value>إلى النهاية</value>
   </data>
   <data name="WidthLabel" xml:space="preserve">
-    <value>Anchura</value>
+    <value>عرض</value>
   </data>
   <data name="_120fpsLabel" xml:space="preserve">
-    <value>120 fps</value>
+    <value>120 إطارًا في الثانية</value>
   </data>
   <data name="_24fpsLabel" xml:space="preserve">
-    <value>24 fps</value>
+    <value>24 إطارًا في الثانية</value>
   </data>
   <data name="_2xLabel" xml:space="preserve">
-    <value>2x</value>
+    <value>2X</value>
   </data>
   <data name="_30fpsLabel" xml:space="preserve">
-    <value>30 fps</value>
+    <value>30 إطارًا في الثانية</value>
   </data>
   <data name="_3xLabel" xml:space="preserve">
-    <value>3x</value>
+    <value>3X</value>
   </data>
   <data name="_4xLabel" xml:space="preserve">
-    <value>4x</value>
+    <value>4X</value>
   </data>
   <data name="_60fpsLabel" xml:space="preserve">
-    <value>60 fps</value>
+    <value>60 إطارًا في الثانية</value>
   </data>
   <data name="CancelLabel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>إلغاء</value>
   </data>
   <data name="CancelTooltip" xml:space="preserve">
-    <value>Cancele la operación de flujo de mantequilla actual.</value>
+    <value>إلغاء عملية butterflow الحالية.</value>
   </data>
   <data name="FastPyramidsLabel" xml:space="preserve">
-    <value>Usa pirámides rápidas</value>
+    <value>استخدم الأهرامات السريعة</value>
   </data>
   <data name="FastPyramidsTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="FileOutputGroupBox" xml:space="preserve">
-    <value>Salida</value>
+    <value>انتاج |</value>
   </data>
   <data name="FlowFilterLabel" xml:space="preserve">
-    <value>Filtro de flujo</value>
+    <value>فلتر التدفق</value>
   </data>
   <data name="FlowFilterTooltip" xml:space="preserve">
-    <value>Filtro utilizado para la estimación del flujo óptico.</value>
+    <value>مرشح يستخدم لتقدير التدفق البصري.</value>
   </data>
   <data name="IterationsLabel" xml:space="preserve">
-    <value>Iteraciones de pirámide</value>
+    <value>تكرارات الهرم</value>
   </data>
   <data name="IterationsTooltip" xml:space="preserve">
-    <value>El número de iteraciones a usar para cada capa de pirámide.</value>
+    <value>عدد التكرارات المستخدمة لكل طبقة هرمية.</value>
   </data>
   <data name="KeepSubregionsLabel" xml:space="preserve">
-    <value>Mantener subregiones</value>
+    <value>حافظ على مناطق فرعية</value>
   </data>
   <data name="KeepSubregionsTooltip" xml:space="preserve">
-    <value>Renderiza subregiones no especificadas explícitamente.</value>
+    <value>تجعل المناطق الفرعية غير محددة صراحة.</value>
   </data>
   <data name="LevelsLabel" xml:space="preserve">
-    <value>Niveles</value>
+    <value>مستويات</value>
   </data>
   <data name="LevelsTooltip" xml:space="preserve">
-    <value>El número de capas de pirámide.</value>
+    <value>عدد طبقات الهرم.</value>
   </data>
   <data name="OpenMenuItem" xml:space="preserve">
-    <value>_Abierto...</value>
+    <value>_افتح...</value>
   </data>
   <data name="PixelNeighborhoodLabel" xml:space="preserve">
-    <value>Barrio de píxeles</value>
+    <value>حي بكسل</value>
   </data>
   <data name="PixelNeighborhoodTooltip" xml:space="preserve">
-    <value>Tamaño del vecindario de píxeles.</value>
+    <value>حجم حي البكسل.</value>
   </data>
   <data name="ProcessLabel" xml:space="preserve">
-    <value>Proceso</value>
+    <value>معالجة</value>
   </data>
   <data name="ProcessTooltip" xml:space="preserve">
-    <value>Procesar el video Este puede ser un proceso largo.</value>
+    <value>قم بمعالجة الفيديو. هذا قد يكون عملية طويلة.</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
-    <value>Factor de escala de pirámide</value>
+    <value>عامل مقياس الهرم</value>
   </data>
   <data name="PyramidScaleTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="SaveAsMenuItem" xml:space="preserve">
-    <value>Guardar configuración _Como ...</value>
+    <value>حفظ التهيئة _As ...</value>
   </data>
   <data name="SaveMenuItem" xml:space="preserve">
-    <value>_Guardar configuración ...</value>
+    <value>_حفظ التكوين...</value>
   </data>
   <data name="SmoothDerivativeLabel" xml:space="preserve">
-    <value>Derivado suave</value>
+    <value>مشتقة سلسة</value>
   </data>
   <data name="SmoothDerivativeTooltip" xml:space="preserve">
-    <value>Tamaño de la desviación estándar utilizada para derivados suaves.</value>
+    <value>حجم الانحراف المعياري المستخدم للمشتقات السلسة.</value>
   </data>
   <data name="SmoothMotionLabel" xml:space="preserve">
-    <value>Movimiento suave</value>
+    <value>الحركة السلسة</value>
   </data>
   <data name="SmoothMotionTooltip" xml:space="preserve">
-    <value>Ajuste para sintonizar para un movimiento suave. Este modo produce cuadros sin artefactos al enfatizar los cuadros combinados sobre los píxeles de deformación.</value>
+    <value>اضبط لضبط الحركة السلسة. ينتج هذا الوضع إطارات أقل تأثيرًا عن طريق التأكيد على الإطارات الممزوجة على وحدات البكسل المخروطية.</value>
   </data>
   <data name="WindowSizeLabel" xml:space="preserve">
-    <value>Tamaño de ventana</value>
+    <value>بحجم النافذه</value>
   </data>
   <data name="WindowSizeTooltip" xml:space="preserve">
     <value />
   </data>
   <data name="AboutWindowDescription" xml:space="preserve">
-    <value>buttterflow-ui es una interfaz gráfica de usuario para el procesador de video butterflow.</value>
+    <value>buttterflow-ui هي واجهة مستخدم رسومية لمعالج الفيديو butterflow.</value>
   </data>
   <data name="AboutWindowGithubLinkLabel" xml:space="preserve">
-    <value>github</value>
+    <value>جيثب</value>
   </data>
   <data name="AboutWindowLicenseLinkLabel" xml:space="preserve">
-    <value>licencia</value>
+    <value>رخصة</value>
   </data>
   <data name="AboutWindowTitle" xml:space="preserve">
-    <value>Acerca de butterflow-ui</value>
+    <value>حول butterflow -ii</value>
   </data>
   <data name="CopyArgumentsMenu" xml:space="preserve">
-    <value>Copie los argumentos de butterflow</value>
+    <value>نسخ الحجج butterflow</value>
   </data>
   <data name="DevelopersLabel" xml:space="preserve">
-    <value>Desarrolladores y colaboradores</value>
+    <value>المطورين والمساهمين</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Idioma</value>
+    <value>لغة</value>
   </data>
   <data name="OKLabel" xml:space="preserve">
-    <value>DE ACUERDO</value>
+    <value>حسنا</value>
   </data>
   <data name="OpenSourceCreditsLabel" xml:space="preserve">
-    <value>Bibliotecas de código abierto</value>
+    <value>مكتبات المصدر المفتوح</value>
   </data>
   <data name="OptionsMenu" xml:space="preserve">
-    <value>Opciones de aplicación ...</value>
+    <value>خيارات التطبيق ...</value>
   </data>
   <data name="OptionsWindowLanguageChangeNotice" xml:space="preserve">
-    <value>Nota: Cambiar el idioma del usuario requerirá un reinicio del programa.</value>
+    <value>ملاحظة: سيتطلب تغيير لغة المستخدم إعادة تشغيل البرنامج.</value>
   </data>
   <data name="OptionsWindowTitle" xml:space="preserve">
-    <value>Opciones</value>
+    <value>خيارات</value>
   </data>
   <data name="SaveLabel" xml:space="preserve">
-    <value>Salvar</value>
+    <value>حفظ</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
-    <value>Versión</value>
+    <value>الإصدار</value>
   </data>
 </root>

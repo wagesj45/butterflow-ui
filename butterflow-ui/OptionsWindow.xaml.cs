@@ -26,7 +26,11 @@ namespace butterflow_ui
         public List<CultureInfo> SupportedLanguages { get; set; } = new List<CultureInfo>(new[]
         {
             CultureInfo.CreateSpecificCulture("en-US"),
-            CultureInfo.CreateSpecificCulture("es-ES")
+            CultureInfo.CreateSpecificCulture("es"),
+            CultureInfo.CreateSpecificCulture("ar"),
+            CultureInfo.CreateSpecificCulture("ja"),
+            CultureInfo.CreateSpecificCulture("ru"),
+            CultureInfo.CreateSpecificCulture("zh-CN"),
         });
 
         #endregion
