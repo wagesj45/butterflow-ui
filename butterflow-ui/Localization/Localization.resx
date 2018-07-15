@@ -357,4 +357,7 @@
   <data name="SaveLabel" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Version</value>
+  </data>
 </root>

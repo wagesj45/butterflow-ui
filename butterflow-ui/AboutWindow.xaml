@@ -15,6 +15,11 @@
                 <ContentControl VerticalAlignment="Center" Template="{StaticResource ButterflowUIIcon}" />
                 <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.Title}" FontSize="64" FontFamily="Segoe UI Black" />
             </StackPanel>
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBlock Text="{x:Static loc:Localization.VersionLabel}" />
+                <TextBlock Text=" - "/>
+                <TextBlock Name="txtVersion" Text="0.0.0.0" />
+            </WrapPanel>
             <TextBlock Text="{x:Static loc:Localization.AboutWindowDescription}" TextAlignment="Center" />
             <Separator Margin="0,15" />
             <Grid>

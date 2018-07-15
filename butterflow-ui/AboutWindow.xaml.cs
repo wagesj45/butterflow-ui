@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +25,8 @@ namespace butterflow_ui
         public AboutWindow()
         {
             InitializeComponent();
+
+            this.txtVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         /// <summary> Event handler. Called by Hyperlink for request navigate events. </summary>
