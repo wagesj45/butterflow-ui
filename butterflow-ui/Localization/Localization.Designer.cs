@@ -466,6 +466,24 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Video previewing and subregion clipping is not available when processing multiple files..
+        /// </summary>
+        public static string MultipleFilesPreviewWarningLabel {
+            get {
+                return ResourceManager.GetString("MultipleFilesPreviewWarningLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Multiple Files].
+        /// </summary>
+        public static string MultipleFilesText {
+            get {
+                return ResourceManager.GetString("MultipleFilesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string OKLabel {

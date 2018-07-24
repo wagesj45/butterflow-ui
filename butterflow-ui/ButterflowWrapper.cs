@@ -27,6 +27,8 @@ namespace butterflow_ui
 
         /// <summary> Full pathname of the butterflow executable file. </summary>
         private Lazy<string> executablePath = new Lazy<string>(() => Path.Combine(Directory.GetCurrentDirectory(), "ThirdPartyCompiled", "butterflow.exe"));
+        /// <summary> Queue of butterflow commands to run. </summary>
+        private Queue<string> runQueue = new Queue<string>();
         /// <summary> The console output from butterflow. </summary>
         private string consoleOutput = string.Empty;
         /// <summary> True if butterflow is running, false if not. </summary>
@@ -93,38 +95,26 @@ namespace butterflow_ui
 
         #region Methods
 
-        /// <summary> Runs butterflow with the given <paramref name="optionsConfiguration"/>. </summary>
+        /// <summary> Runs butterflow with the given <paramref name="optionsConfiguration"/> by adding it to the queue. </summary>
         /// <param name="optionsConfiguration"> The options configuration. </param>
         public void Run(OptionsConfiguration optionsConfiguration)
         {
-            string arguments = optionsConfiguration.ToButterflowArguments();
-
-            Run(arguments);
-        }
-
-        /// <summary> Kills the running instance of butterflow, cancelling its current operation. </summary>
-        public void Cancel()
-        {
-            if(this.IsRunning && this.runningProcess != null)
+            for(int i = 0; i < optionsConfiguration.VideoInput.Count(); i++)
             {
-                this.runningProcess.Kill();
+                var arguments = optionsConfiguration.ToButterflowArguments(i);
+                this.runQueue.Enqueue(arguments);
             }
+
+            ProcessQueue();
         }
 
-        /// <summary> Probes a video file. </summary>
-        /// <param name="videoFile"> The video file to be probed. </param>
-        public void Probe(string videoFile)
+        /// <summary> Process the queue of butterflow arguments. </summary>
+        public void ProcessQueue()
         {
-            string arguments = string.Format("-prb \"{0}\"", videoFile);
-            Run(arguments);
-        }
-
-        /// <summary> Runs butterflow with the given <paramref name="arguments"/>. </summary>
-        /// <param name="arguments">     Options for controlling the operation. </param>
-        private void Run(string arguments)
-        {
-            if (!this.IsRunning)
+            if (!this.IsRunning && this.runQueue.Any())
             {
+                var arguments = this.runQueue.Dequeue();
+
                 var process = new Process();
                 process.StartInfo = new ProcessStartInfo(executablePath.Value, arguments);
 
@@ -146,6 +136,34 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Kills the running instance of butterflow, cancelling its current operation. </summary>
+        public void Cancel()
+        {
+            if(this.IsRunning && this.runningProcess != null)
+            {
+                this.runningProcess.Kill();
+            }
+
+            this.runQueue.Clear();
+        }
+
+        /// <summary> Probes a video file. </summary>
+        /// <param name="videoFile"> The video file to be probed. </param>
+        public void Probe(string videoFile)
+        {
+            string arguments = string.Format("-prb \"{0}\"", videoFile);
+            Run(arguments);
+        }
+
+        /// <summary> Runs butterflow with the given <paramref name="arguments"/> by adding it to the queue. </summary>
+        /// <param name="arguments">     Options for controlling the operation. </param>
+        private void Run(string arguments)
+        {
+            this.runQueue.Enqueue(arguments);
+
+            ProcessQueue();
+        }
+
         /// <summary> Event handler. Called by Process for exited events. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Event information. </param>
@@ -153,6 +171,8 @@ namespace butterflow_ui
         {
             this.IsRunning = false;
             this.runningProcess = null;
+
+            ProcessQueue();
         }
 
         /// <summary>

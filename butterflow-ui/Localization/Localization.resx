@@ -360,4 +360,10 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="MultipleFilesPreviewWarningLabel" xml:space="preserve">
+    <value>Video previewing and subregion clipping is not available when processing multiple files.</value>
+  </data>
+  <data name="MultipleFilesText" xml:space="preserve">
+    <value>[Multiple Files]</value>
+  </data>
 </root>

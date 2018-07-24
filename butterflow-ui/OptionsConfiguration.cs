@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace butterflow_ui
         private const decimal DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION = 1.1m;
         /// <summary> The default flow filter type setting. </summary>
         private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
+        /// <summary> The output file format when operating on more than one video. </summary>
+        private const string OUTPUT_FILE_FORMAT = "{0}_{1}";
 
         /// <summary> An input interpreter used for converting string values to numeric values. </summary>
         [NonSerialized]
@@ -52,8 +55,8 @@ namespace butterflow_ui
         private bool smoothMotion;
         /// <summary> A value indicating whether or not to lock the aspect ratio to the <seealso cref="width"/> of the video. </summary>
         private bool lockAspectRatio;
-        /// <summary> The video input file. </summary>
-        private string videoInput;
+        /// <summary> The video input files. </summary>
+        private IEnumerable<string> videoInput;
         /// <summary> The video output file. </summary>
         private string videoOutput;
         /// <summary> A value indicating whether or not to use fast pyramids when processing a video. </summary>
@@ -86,6 +89,16 @@ namespace butterflow_ui
             get
             {
                 return ToButterflowArguments();
+            }
+        }
+
+        /// <summary> Gets a value indicating whether butterflow will process multiple files. </summary>
+        /// <value> True if butterflow will process multiple files, false if not. </value>
+        public bool MultipleFiles
+        {
+            get
+            {
+                return this.VideoInput != null && this.VideoInput.Count() > 1;
             }
         }
 
@@ -229,7 +242,7 @@ namespace butterflow_ui
 
         /// <summary> Gets or sets the video input file path. </summary>
         /// <value> The video input file path. </value>
-        public string VideoInput
+        public IEnumerable<string> VideoInput
         {
             get
             {
@@ -239,6 +252,7 @@ namespace butterflow_ui
             {
                 this.videoInput = value;
                 OnPropertyChanged();
+                OnPropertyChanged("MultipleFiles");
             }
         }
 
@@ -420,6 +434,8 @@ namespace butterflow_ui
             this.smoothDerivativeStandardDeviation = DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION;
             this.flowFilterType = DEFAULT_FLOW_FILTER_TYPE;
 
+            this.videoInput = new string[0];
+
             this.subregions.CollectionChanged += Subregions_CollectionChanged; ;
         }
 
@@ -502,7 +518,7 @@ namespace butterflow_ui
 
         /// <summary> Converts this object to a butterflow options. </summary>
         /// <returns> This object as a string. </returns>
-        public string ToButterflowArguments()
+        public string ToButterflowArguments(int videoInputIndex = 0)
         {
             var stringBuilder = new StringBuilder("-v "); // Verbose
 
@@ -556,9 +572,38 @@ namespace butterflow_ui
             if (this.pixelNeighborhood != DEFAULT_PIXEL_NEIGHBORHOOD) stringBuilder.AppendFormat("--poly-n {0} ", this.PixelNeighborhood);
             if (this.smoothDerivativeStandardDeviation != DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION) stringBuilder.AppendFormat("--poly-s {0} ", this.SmoothDerivativeStandardDeviation);
             if (this.FlowFilterType != DEFAULT_FLOW_FILTER_TYPE) stringBuilder.AppendFormat("-ff {0} ", this.FlowFilterType);
-            if (!string.IsNullOrWhiteSpace(this.VideoOutput)) stringBuilder.AppendFormat("-o \"{0}\" ", this.VideoOutput);
 
-            stringBuilder.AppendFormat("\"{0}\"", this.VideoInput);
+            if (!string.IsNullOrWhiteSpace(this.VideoOutput))
+            {
+                string videoOutputFile = string.Empty;
+
+                if (this.MultipleFiles)
+                {
+                    var format = new StringBuilder(Path.GetFileNameWithoutExtension(this.VideoOutput));
+                    format.Append("_{0:");
+                    for (int i = 0; i < this.videoInput.Count().ToString().Length; i++)
+                    {
+                        format.Append("0");
+                    }
+                    format.Append("}");
+                    format.Append(Path.GetExtension(this.VideoOutput));
+
+                    var newName = string.Format(format.ToString(), videoInputIndex + 1); // Since the index is zero based, we will add one to make the output more human readable.
+
+                    videoOutputFile = Path.Combine(Path.GetDirectoryName(this.VideoOutput), newName);
+                }
+                else
+                {
+                    videoOutputFile = this.VideoOutput;
+                }
+
+                stringBuilder.AppendFormat("-o \"{0}\" ", videoOutputFile);
+            }
+
+            if (this.VideoInput.Any())
+            {
+                stringBuilder.AppendFormat("\"{0}\"", this.VideoInput.ElementAt(videoInputIndex));
+            }
 
             return stringBuilder.ToString();
         }

@@ -25,6 +25,8 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <butterflow_ui:InverseBoolConverter x:Key="InverseBoolConverter" />
+        <butterflow_ui:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+        <butterflow_ui:InverseBoolVisibilityConverter x:Key="InverseBoolVisibilityConverter" />
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -94,7 +96,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                        <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True"/>
                         <Button Grid.Column="2" MinWidth="25" Name="btnFilePicker" Click="btnFilePicker_Click">...</Button>
                     </Grid>
                 </GroupBox>
@@ -106,7 +108,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                        <TextBox Name="txtFileOutputName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoOutput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Name="txtFileOutputName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
                         <Button Grid.Column="2" MinWidth="25" Name="btnFileOutputPicker" Click="btnFileOutputPicker_Click">...</Button>
                     </Grid>
                 </GroupBox>
@@ -307,8 +309,11 @@
                         </ProgressBar.Style>
                     </ProgressBar>
                 </Grid>
-                <gu:MediaElementWrapper Grid.Row="1" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" Source="{Binding OptionsConfiguration.VideoInput, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" />
-                <Grid Grid.Row="2">
+                <Canvas x:Name="canvas" Grid.Row="1" Grid.RowSpan="3" Visibility="{Binding OptionsConfiguration.MultipleFiles, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolVisibilityConverter}}">
+                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=canvas}" Height="{Binding ActualHeight, ElementName=canvas}" TextWrapping="WrapWithOverflow" Text="{x:Static loc:Localization.MultipleFilesPreviewWarningLabel}" />
+                </Canvas>
+                <gu:MediaElementWrapper Grid.Row="1" Name="mediaPreview" Stretch="Uniform" ScrubbingEnabled="True" MediaOpened="mediaPreview_MediaOpened" MediaEnded="mediaPreview_MediaEnded" Visibility="{Binding OptionsConfiguration.MultipleFiles, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolVisibilityConverter}}" />
+                <Grid Grid.Row="2" Visibility="{Binding OptionsConfiguration.MultipleFiles, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolVisibilityConverter}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
@@ -320,7 +325,7 @@
                             Maximum="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" />
                     <Label Grid.Column="2" Content="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
                 </Grid>
-                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding OptionsConfiguration.MultipleFiles, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource InverseBoolVisibilityConverter}}">
                     <Button Name="bntVideoBackward" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoBackward_Click">
                         <ContentControl HorizontalAlignment="Center" Template="{StaticResource BackwardIcon}" />
                     </Button>

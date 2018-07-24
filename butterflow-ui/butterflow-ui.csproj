@@ -68,8 +68,10 @@
     <Compile Include="AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BoolVisibilityConverter.cs" />
     <Compile Include="FlowFilterType.cs" />
     <Compile Include="InverseBoolConverter.cs" />
+    <Compile Include="InverseBoolVisibilityConverter.cs" />
     <Compile Include="OptionsConfigurationFile.cs" />
     <Compile Include="OptionsWindow.xaml.cs">
       <DependentUpon>OptionsWindow.xaml</DependentUpon>
