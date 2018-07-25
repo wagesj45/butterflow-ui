@@ -360,4 +360,16 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>Versión</value>
   </data>
+  <data name="ButterflowUIConfigurationLabel" xml:space="preserve">
+    <value>Archivo de configuración de ButterflowUI</value>
+  </data>
+  <data name="MultipleFilesPreviewWarningLabel" xml:space="preserve">
+    <value>La vista previa de video y el recorte subregional no están disponibles cuando se procesan varios archivos.</value>
+  </data>
+  <data name="MultipleFilesText" xml:space="preserve">
+    <value>[Varios archivos]</value>
+  </data>
+  <data name="SupportedFileTypesLabel" xml:space="preserve">
+    <value>Tipos de archivos admitidos</value>
+  </data>
 </root>

@@ -360,4 +360,16 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>バージョン</value>
   </data>
+  <data name="ButterflowUIConfigurationLabel" xml:space="preserve">
+    <value>ButterflowUI構成ファイル</value>
+  </data>
+  <data name="MultipleFilesPreviewWarningLabel" xml:space="preserve">
+    <value>複数のファイルを処理する場合、ビデオのプレビューとサブリージョンのクリッピングは使用できません。</value>
+  </data>
+  <data name="MultipleFilesText" xml:space="preserve">
+    <value>[複数のファイル]</value>
+  </data>
+  <data name="SupportedFileTypesLabel" xml:space="preserve">
+    <value>サポートされているファイルの種類</value>
+  </data>
 </root>

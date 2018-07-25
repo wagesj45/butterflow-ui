@@ -360,4 +360,16 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>版</value>
   </data>
+  <data name="ButterflowUIConfigurationLabel" xml:space="preserve">
+    <value>ButterflowUI配置文件</value>
+  </data>
+  <data name="MultipleFilesPreviewWarningLabel" xml:space="preserve">
+    <value>处理多个文件时，视频预览和子区域剪辑不可用。</value>
+  </data>
+  <data name="MultipleFilesText" xml:space="preserve">
+    <value>[多个文件]</value>
+  </data>
+  <data name="SupportedFileTypesLabel" xml:space="preserve">
+    <value>支持的文件类型</value>
+  </data>
 </root>

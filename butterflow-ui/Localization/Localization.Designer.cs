@@ -196,6 +196,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ButterflowUI Configuration File.
+        /// </summary>
+        public static string ButterflowUIConfigurationLabel {
+            get {
+                return ResourceManager.GetString("ButterflowUIConfigurationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CancelLabel {
@@ -750,6 +759,15 @@ namespace butterflow_ui.Localization {
         public static string SubregionsLabel {
             get {
                 return ResourceManager.GetString("SubregionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supported File Types.
+        /// </summary>
+        public static string SupportedFileTypesLabel {
+            get {
+                return ResourceManager.GetString("SupportedFileTypesLabel", resourceCulture);
             }
         }
         

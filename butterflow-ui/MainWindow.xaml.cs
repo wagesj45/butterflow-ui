@@ -114,7 +114,7 @@ namespace butterflow_ui
         {
             var ofd = new OpenFileDialog();
             ofd.Multiselect = true;
-            ofd.Filter = "Supported Video Files|" + SUPPORTED_FILE_TYPES;
+            ofd.Filter = Localization.Localization.SupportedFileTypesLabel + "|" + SUPPORTED_FILE_TYPES;
 
             var result = ofd.ShowDialog(this);
             if (result.HasValue && result.Value)
@@ -365,7 +365,7 @@ namespace butterflow_ui
         private void menuOpen_Click(object sender, RoutedEventArgs e)
         {
             var ofd = new OpenFileDialog();
-            ofd.Filter = "ButterflowUI Configuration|*.bui";
+            ofd.Filter = Localization.Localization.ButterflowUIConfigurationLabel + "|*.bui";
 
             var result = ofd.ShowDialog(this);
             if (result.HasValue && result.Value)
@@ -385,7 +385,7 @@ namespace butterflow_ui
         private void menuSaveConfiguration_Click(object sender, RoutedEventArgs e)
         {
             var sfd = new SaveFileDialog();
-            sfd.Filter = "ButterflowUI Configuration|*.bui";
+            sfd.Filter = Localization.Localization.ButterflowUIConfigurationLabel + "|*.bui";
 
             var result = sfd.ShowDialog(this);
             if (result.HasValue && result.Value)

@@ -360,4 +360,16 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>الإصدار</value>
   </data>
+  <data name="ButterflowUIConfigurationLabel" xml:space="preserve">
+    <value>ButterflowUI ملف التكوين</value>
+  </data>
+  <data name="MultipleFilesPreviewWarningLabel" xml:space="preserve">
+    <value>لا تتوفر إمكانية معاينة الفيديو والقاطع الفرعي عند معالجة ملفات متعددة.</value>
+  </data>
+  <data name="MultipleFilesText" xml:space="preserve">
+    <value>[ملفات متعددة]</value>
+  </data>
+  <data name="SupportedFileTypesLabel" xml:space="preserve">
+    <value>أنواع الملفات المدعومة</value>
+  </data>
 </root>
