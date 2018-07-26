@@ -21,6 +21,10 @@ A graphical user interface for butterflow.
 * *Reusable Configurations*
 
   Save your favorite configurations and load them for use with other videos.
+
+* *Batch Processing*
+
+  Process multiple files at once using the same settings across all files.
   
 ## Contribution
 
