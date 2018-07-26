@@ -12,6 +12,7 @@
   <HelpKINode Title="AboutWindow.butterflowUIAboutWindow field" Url="html/d7508a2b-37c7-477f-8521-88cfb2fdb1f8.htm" />
   <HelpKINode Title="AboutWindow.Hyperlink_RequestNavigate method" Url="html/f3cce935-cd34-1288-c640-71abf150348b.htm" />
   <HelpKINode Title="AboutWindow.InitializeComponent method" Url="html/c37faee0-5e01-956d-d3e2-5886571fc135.htm" />
+  <HelpKINode Title="AboutWindow.txtVersion field" Url="html/99ccdcc6-c59a-3ecb-3769-dc7e9187cb8d.htm" />
   <HelpKINode Title="AboutWindow._contentLoaded field" Url="html/2f71d195-1df5-c4f8-42e7-3417205293ab.htm" />
   <HelpKINode Title="AddConstantCallProperty method" Url="html/94283020-fd41-a0ab-0e86-5d285dc72cff.htm" />
   <HelpKINode Title="alwaysCall field" Url="html/de4e26b6-b925-00d1-b5c8-6cffb5cabf61.htm" />
@@ -37,6 +38,14 @@
   <HelpKINode Title="bntVideoPlay_Click method" Url="html/360ba781-8ee0-01ff-50c7-1bc627c2fca4.htm" />
   <HelpKINode Title="bntVideoStop field" Url="html/1315e07b-dc1d-1e81-66f1-6f75592f4d16.htm" />
   <HelpKINode Title="bntVideoStop_Click method" Url="html/fc15d46c-fb37-8d4f-fcf0-48b230dcf98f.htm" />
+  <HelpKINode Title="BoolVisibilityConverter class">
+    <HelpKINode Title="BoolVisibilityConverter Class" Url="html/327f2eef-b268-4eee-32e9-6933d366f80c.htm" />
+    <HelpKINode Title="constructor" Url="html/2d8d2703-5ae5-12f7-d4d6-44af1ae15e88.htm" />
+    <HelpKINode Title="methods" Url="html/f5133f2e-1f2b-5d9e-7ab6-4b66f6e0cc03.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BoolVisibilityConverter.BoolVisibilityConverter constructor" Url="html/2d8d2703-5ae5-12f7-d4d6-44af1ae15e88.htm" />
+  <HelpKINode Title="BoolVisibilityConverter.Convert method" Url="html/f9386a65-5781-289d-6c0c-e0747f0ee30c.htm" />
+  <HelpKINode Title="BoolVisibilityConverter.ConvertBack method" Url="html/a185930f-4eae-88b8-a227-919a18e3d23d.htm" />
   <HelpKINode Title="box enumeration member" Url="html/dede81d0-e317-bc55-5d70-fda170fdee9e.htm" />
   <HelpKINode Title="btnCancel field" Url="html/accd0d60-a4db-0849-c2b4-5b264534526c.htm" />
   <HelpKINode Title="btnCancel_Click method" Url="html/9d94996e-f302-80d3-e438-3996083bf4d1.htm" />
@@ -58,14 +67,14 @@
   </HelpKINode>
   <HelpKINode Title="ButterflowOption class">
     <HelpKINode Title="ButterflowOption Class" Url="html/014a2f1b-9848-61b6-74c1-8cfcdc507450.htm" />
-    <HelpKINode Title="constructor" Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
     <HelpKINode Title="constructor" Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
+    <HelpKINode Title="constructor" Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
     <HelpKINode Title="fields" Url="html/648d089f-f07e-b1cb-f721-90e85651ac1c.htm" />
     <HelpKINode Title="properties" Url="html/94537008-4543-dfe4-9289-9bd1888c21de.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.ButterflowOption constructor">
-    <HelpKINode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
     <HelpKINode Title="ButterflowOption Constructor " Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
+    <HelpKINode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.DescriptionValue property" Url="html/78c4c081-252e-17d4-672d-1cc91216a0b3.htm" />
   <HelpKINode Title="ButterflowOption.DescriptionValueProperty field" Url="html/4cce9345-4d0e-3448-bd43-915028cfa134.htm" />
@@ -132,6 +141,7 @@
   <HelpKINode Title="ButterflowWrapper.ParseConsoleOutput method" Url="html/a40dbce6-a556-a0b5-a504-e0e6b5f9b2b2.htm" />
   <HelpKINode Title="ButterflowWrapper.ParsedConsoleOutputRecieved event" Url="html/35c52789-71d0-91af-efb7-d7a4618a0278.htm" />
   <HelpKINode Title="ButterflowWrapper.Probe method" Url="html/5f2749a7-c303-eaab-d82d-6b5a5d5957af.htm" />
+  <HelpKINode Title="ButterflowWrapper.ProcessQueue method" Url="html/8a2f8de4-a4d7-02a5-2edf-5d86511ecf0c.htm" />
   <HelpKINode Title="ButterflowWrapper.Process_Exited method" Url="html/ecdfd054-a9b2-3571-09c4-a006bae59ed2.htm" />
   <HelpKINode Title="ButterflowWrapper.Process_OutputDataReceived method" Url="html/ade5760c-a582-25e6-1253-15bbccd18447.htm" />
   <HelpKINode Title="ButterflowWrapper.progressPercentage field" Url="html/45368a3c-9928-e1e7-18d7-b4fae812bfb2.htm" />
@@ -142,10 +152,12 @@
   <HelpKINode Title="ButterflowWrapper.REGEX_RESOLUTION field" Url="html/80068044-4661-d53c-d40d-056745fc309e.htm" />
   <HelpKINode Title="ButterflowWrapper.Run method" Url="html/1282edb3-a085-8b0a-9eed-131760d451b5.htm" />
   <HelpKINode Title="ButterflowWrapper.runningProcess field" Url="html/d7727346-f68e-b3e2-a774-7beb9171cc11.htm" />
+  <HelpKINode Title="ButterflowWrapper.runQueue field" Url="html/e8746b49-f99f-9eb2-f858-251facee577f.htm" />
   <HelpKINode Title="ButterflowWrapper_ParsedConsoleOutputRecieved method" Url="html/ee9991ab-468d-a111-0a47-134e11ab7914.htm" />
   <HelpKINode Title="butterflow_ui namespace" Url="html/e151fc72-f3cc-1740-7ea1-73c21ce1fa93.htm" />
   <HelpKINode Title="butterflow_ui.AboutWindow class" Url="html/4570f55e-9488-16c6-9dab-e11f856874bb.htm" />
   <HelpKINode Title="butterflow_ui.App class" Url="html/d15fc1fd-caee-16f8-14ce-9dcc70712385.htm" />
+  <HelpKINode Title="butterflow_ui.BoolVisibilityConverter class" Url="html/327f2eef-b268-4eee-32e9-6933d366f80c.htm" />
   <HelpKINode Title="butterflow_ui.ButterflowOption class" Url="html/014a2f1b-9848-61b6-74c1-8cfcdc507450.htm" />
   <HelpKINode Title="butterflow_ui.ButterflowSubregion class" Url="html/c0e400bb-1bb1-4eb0-ec46-a134802bb550.htm" />
   <HelpKINode Title="butterflow_ui.ButterflowWrapper class" Url="html/fbe7965e-3c27-b071-c7cb-326cec0f4597.htm" />
@@ -154,6 +166,7 @@
   <HelpKINode Title="butterflow_ui.ButterflowWrapper.ButterflowOutputType enumeration" Url="html/4d847e66-a863-43bf-dbdb-3a98d55468b9.htm" />
   <HelpKINode Title="butterflow_ui.FlowFilterType enumeration" Url="html/dede81d0-e317-bc55-5d70-fda170fdee9e.htm" />
   <HelpKINode Title="butterflow_ui.InverseBoolConverter class" Url="html/571e5a65-b19d-80a7-fc52-e02575182e64.htm" />
+  <HelpKINode Title="butterflow_ui.InverseBoolVisibilityConverter class" Url="html/58dd4a01-cfc7-3be7-f8bd-0322141b67a4.htm" />
   <HelpKINode Title="butterflow_ui.MainWindow class" Url="html/7ae7656b-c378-ab3d-9af4-1be26a4a3904.htm" />
   <HelpKINode Title="butterflow_ui.OptionsConfiguration class" Url="html/8b6c756f-d88d-a439-ae46-36933c20e4cc.htm" />
   <HelpKINode Title="butterflow_ui.OptionsConfigurationFile class" Url="html/b6d681cc-0a33-4090-fc85-261516d0a18b.htm" />
@@ -161,6 +174,7 @@
   <HelpKINode Title="butterflow_ui.PropertyChangedAlerter class" Url="html/229e6869-f14d-a176-5ac6-d0d28dc43a71.htm" />
   <HelpKINode Title="butterflow_ui.RegionType enumeration" Url="html/4e076ed3-56c3-9ed7-43ef-41dd0c624aa7.htm" />
   <HelpKINode Title="Cancel method" Url="html/4ae309d0-c1b6-0cf8-5c03-ff0ca2ba871c.htm" />
+  <HelpKINode Title="canvas field" Url="html/3e5afd2f-63a6-319e-2a7b-e113410a07ac.htm" />
   <HelpKINode Title="ClippingButtonIcon field" Url="html/76da4765-2b8e-7546-731c-36022fd99be0.htm" />
   <HelpKINode Title="clipStart field" Url="html/be383e5a-6606-a9a5-c136-6795578d2552.htm" />
   <HelpKINode Title="CommandLineOutput property" Url="html/2ab1f69f-ff78-6e57-8ade-6ffd38070087.htm" />
@@ -169,8 +183,16 @@
     <HelpKINode Title="ButterflowWrapper.ButterflowConsoleOutputArgs.ConsoleOutput Property " Url="html/5cc26985-b52b-af6d-eea5-25cd24c79bf8.htm" />
     <HelpKINode Title="ButterflowWrapper.ConsoleOutput Property " Url="html/b2d0780d-8432-2b78-6b06-76b778c65083.htm" />
   </HelpKINode>
-  <HelpKINode Title="Convert method" Url="html/097cfdfe-d69f-d263-612c-a33468013317.htm" />
-  <HelpKINode Title="ConvertBack method" Url="html/09aaa9de-0353-b04f-53b0-541e73ff99f9.htm" />
+  <HelpKINode Title="Convert method">
+    <HelpKINode Title="BoolVisibilityConverter.Convert Method " Url="html/f9386a65-5781-289d-6c0c-e0747f0ee30c.htm" />
+    <HelpKINode Title="InverseBoolConverter.Convert Method " Url="html/097cfdfe-d69f-d263-612c-a33468013317.htm" />
+    <HelpKINode Title="InverseBoolVisibilityConverter.Convert Method " Url="html/afa3f247-e56c-c3e9-b327-72a95d647de3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConvertBack method">
+    <HelpKINode Title="BoolVisibilityConverter.ConvertBack Method " Url="html/a185930f-4eae-88b8-a227-919a18e3d23d.htm" />
+    <HelpKINode Title="InverseBoolConverter.ConvertBack Method " Url="html/09aaa9de-0353-b04f-53b0-541e73ff99f9.htm" />
+    <HelpKINode Title="InverseBoolVisibilityConverter.ConvertBack Method " Url="html/92a037c1-416e-21e0-6fb5-3673d2cdcc9b.htm" />
+  </HelpKINode>
   <HelpKINode Title="DEFAULT_FLOW_FILTER_TYPE field" Url="html/829c1e85-9830-0ade-d7c3-01105c20e9d4.htm" />
   <HelpKINode Title="DEFAULT_ITERATIONS field" Url="html/78d5bca2-0453-b125-ea2e-fdc7a659b475.htm" />
   <HelpKINode Title="DEFAULT_LEVELS field" Url="html/499ad123-ec06-695b-086c-6938ee390049.htm" />
@@ -223,6 +245,14 @@
   <HelpKINode Title="InverseBoolConverter.Convert method" Url="html/097cfdfe-d69f-d263-612c-a33468013317.htm" />
   <HelpKINode Title="InverseBoolConverter.ConvertBack method" Url="html/09aaa9de-0353-b04f-53b0-541e73ff99f9.htm" />
   <HelpKINode Title="InverseBoolConverter.InverseBoolConverter constructor" Url="html/84818717-8b03-d621-ac9f-1ba54b3bcf9a.htm" />
+  <HelpKINode Title="InverseBoolVisibilityConverter class">
+    <HelpKINode Title="InverseBoolVisibilityConverter Class" Url="html/58dd4a01-cfc7-3be7-f8bd-0322141b67a4.htm" />
+    <HelpKINode Title="constructor" Url="html/cf27effc-1e6b-1f07-a48d-4de6672d24d3.htm" />
+    <HelpKINode Title="methods" Url="html/614fa26d-7621-b4c0-6859-4cd7a6ebc72b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InverseBoolVisibilityConverter.Convert method" Url="html/afa3f247-e56c-c3e9-b327-72a95d647de3.htm" />
+  <HelpKINode Title="InverseBoolVisibilityConverter.ConvertBack method" Url="html/92a037c1-416e-21e0-6fb5-3673d2cdcc9b.htm" />
+  <HelpKINode Title="InverseBoolVisibilityConverter.InverseBoolVisibilityConverter constructor" Url="html/cf27effc-1e6b-1f07-a48d-4de6672d24d3.htm" />
   <HelpKINode Title="isClipping field" Url="html/d9b05831-2559-4997-f1ef-7115569377dc.htm" />
   <HelpKINode Title="isRunning field" Url="html/b38f4c5c-0a95-5352-c899-243474c8a504.htm" />
   <HelpKINode Title="IsRunning property" Url="html/1037f945-7735-af3d-f3dd-f40750e81a2b.htm" />
@@ -292,6 +322,7 @@
   <HelpKINode Title="MainWindow.butterflowUIWindow field" Url="html/a300a7af-5af7-52fe-d6b1-8cd473bca8fd.htm" />
   <HelpKINode Title="MainWindow.ButterflowWrapper property" Url="html/71dbe8e5-6340-d797-bcea-762b9a7fff03.htm" />
   <HelpKINode Title="MainWindow.ButterflowWrapper_ParsedConsoleOutputRecieved method" Url="html/ee9991ab-468d-a111-0a47-134e11ab7914.htm" />
+  <HelpKINode Title="MainWindow.canvas field" Url="html/3e5afd2f-63a6-319e-2a7b-e113410a07ac.htm" />
   <HelpKINode Title="MainWindow.ClippingButtonIcon field" Url="html/76da4765-2b8e-7546-731c-36022fd99be0.htm" />
   <HelpKINode Title="MainWindow.clipStart field" Url="html/be383e5a-6606-a9a5-c136-6795578d2552.htm" />
   <HelpKINode Title="MainWindow.GetRecursiveChildren(Of T) method" Url="html/52a1e179-0dd0-8575-f84e-f325333aff0d.htm" />
@@ -322,6 +353,7 @@
   <HelpKINode Title="MainWindow.progressBar field" Url="html/623dc67b-c034-71b5-d021-ec6e72d54795.htm" />
   <HelpKINode Title="MainWindow.ScrollViewer_ScrollChanged method" Url="html/aef87ef8-07f6-846c-9ef1-6ca90f68eb28.htm" />
   <HelpKINode Title="MainWindow.sliderMedia field" Url="html/d085e974-3f4c-cb5e-7807-e1568c366e2a.htm" />
+  <HelpKINode Title="MainWindow.SUPPORTED_FILE_TYPES field" Url="html/723c709b-44fe-3d14-8e21-2ec7deb4c8e0.htm" />
   <HelpKINode Title="MainWindow.txtConsoleOutput field" Url="html/3511274f-33e0-5bc9-a9cf-3ae95318533b.htm" />
   <HelpKINode Title="MainWindow.txtFileName field" Url="html/35147e71-4581-88a3-a864-2d4fd0a153de.htm" />
   <HelpKINode Title="MainWindow.txtFileOutputName field" Url="html/33a83e72-85d9-95cb-d99e-a9345c4f92a6.htm" />
@@ -345,14 +377,15 @@
   <HelpKINode Title="menuOptions_Click method" Url="html/925b0a64-fbeb-2c36-54a8-7e900796d49c.htm" />
   <HelpKINode Title="menuSaveConfiguration field" Url="html/f52ac2d8-799e-d820-d84a-77f6d8c4561b.htm" />
   <HelpKINode Title="menuSaveConfiguration_Click method" Url="html/c061d836-bf52-c52c-3745-0faab8b4b42e.htm" />
+  <HelpKINode Title="MultipleFiles property" Url="html/13c73cc4-b3e4-00ab-4e06-fc79e457ca64.htm" />
   <HelpKINode Title="OnAllPropertiesChanged method" Url="html/f4ce3949-e7fd-ce94-51cc-3c3698c097b5.htm" />
   <HelpKINode Title="OnParsedConsoleOutputRecieved method" Url="html/c16980db-32b2-dc80-d568-ef30ce3ea3bf.htm" />
   <HelpKINode Title="OnPropertyChanged method" Url="html/eedea241-4ddb-bac9-5717-c691ef57e6ea.htm" />
   <HelpKINode Title="OnStartup method" Url="html/ccc1be7a-d5d7-ad31-d88e-3bc9f970885d.htm" />
   <HelpKINode Title="OptionsConfiguration class">
     <HelpKINode Title="OptionsConfiguration Class" Url="html/8b6c756f-d88d-a439-ae46-36933c20e4cc.htm" />
-    <HelpKINode Title="constructor" Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="constructor" Url="html/09c4fb13-1283-2577-67f6-743c466a6f4b.htm" />
+    <HelpKINode Title="constructor" Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="events" Url="html/cb8c955a-251f-0ecf-6487-38d42a4c82e1.htm" />
     <HelpKINode Title="fields" Url="html/3ccf0d1f-1e4a-6f63-7257-985718950daf.htm" />
     <HelpKINode Title="methods" Url="html/63626eb2-554c-1d04-c1c3-26d0352bee6b.htm" />
@@ -388,10 +421,12 @@
   <HelpKINode Title="OptionsConfiguration.LockAspectRatio property" Url="html/6a62b320-0dc7-5c55-5fc1-7960ce031f08.htm" />
   <HelpKINode Title="OptionsConfiguration.losslessQuality field" Url="html/e57fd7ee-cc60-87e6-b91a-a649281baaff.htm" />
   <HelpKINode Title="OptionsConfiguration.LosslessQuality property" Url="html/73a52eb1-4244-8eb1-e3c0-31fa95ca7595.htm" />
+  <HelpKINode Title="OptionsConfiguration.MultipleFiles property" Url="html/13c73cc4-b3e4-00ab-4e06-fc79e457ca64.htm" />
   <HelpKINode Title="OptionsConfiguration.OptionsConfiguration constructor">
-    <HelpKINode Title="OptionsConfiguration Constructor " Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="OptionsConfiguration Constructor " Url="html/09c4fb13-1283-2577-67f6-743c466a6f4b.htm" />
+    <HelpKINode Title="OptionsConfiguration Constructor " Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
   </HelpKINode>
+  <HelpKINode Title="OptionsConfiguration.OUTPUT_FILE_FORMAT field" Url="html/b0f7dcea-f771-c054-b833-f40dcb1bd196.htm" />
   <HelpKINode Title="OptionsConfiguration.pixelNeighborhood field" Url="html/c08cb601-d3f9-b04f-501b-4d8194e11287.htm" />
   <HelpKINode Title="OptionsConfiguration.PixelNeighborhood property" Url="html/54ad7414-0302-6706-ed2d-640fba85f6c9.htm" />
   <HelpKINode Title="OptionsConfiguration.playbackRate field" Url="html/43a9964a-0d39-7337-210a-45a09d8ac537.htm" />
@@ -406,7 +441,7 @@
   <HelpKINode Title="OptionsConfiguration.subregions field" Url="html/e28dc1ca-51ec-79ce-fc93-ea977229f95a.htm" />
   <HelpKINode Title="OptionsConfiguration.Subregions property" Url="html/1154a99f-7acf-3847-1876-87a31b8fbb9c.htm" />
   <HelpKINode Title="OptionsConfiguration.Subregions_CollectionChanged method" Url="html/d2133235-452c-bdf9-0999-1a5e0341c18a.htm" />
-  <HelpKINode Title="OptionsConfiguration.ToButterflowArguments method" Url="html/33bad8a9-ff3b-c7f3-f9d4-864c25e77217.htm" />
+  <HelpKINode Title="OptionsConfiguration.ToButterflowArguments method" Url="html/07e044a4-3d0e-57b0-117a-fdb8ed9b7e2a.htm" />
   <HelpKINode Title="OptionsConfiguration.ToFile method" Url="html/e34f04fb-f23f-b33a-2c7b-fd1d7c590626.htm" />
   <HelpKINode Title="OptionsConfiguration.ToString method" Url="html/e973f29c-14ab-597d-a4b5-2003d9caee33.htm" />
   <HelpKINode Title="OptionsConfiguration.videoInput field" Url="html/7d67c0ac-0746-5dde-367c-4f03ae83b8ce.htm" />
@@ -451,6 +486,7 @@
   <HelpKINode Title="OptionsWindow.SupportedLanguages property" Url="html/f26a6239-ec29-cd10-3708-9eac4f361fa1.htm" />
   <HelpKINode Title="OptionsWindow._contentLoaded field" Url="html/f393224d-1ef0-9983-82e9-93632650e5f0.htm" />
   <HelpKINode Title="OutputType property" Url="html/94402421-c646-c7c3-8c02-55b0e976a82e.htm" />
+  <HelpKINode Title="OUTPUT_FILE_FORMAT field" Url="html/b0f7dcea-f771-c054-b833-f40dcb1bd196.htm" />
   <HelpKINode Title="ParseConsoleOutput method" Url="html/a40dbce6-a556-a0b5-a504-e0e6b5f9b2b2.htm" />
   <HelpKINode Title="ParsedConsoleOutputRecieved event" Url="html/35c52789-71d0-91af-efb7-d7a4618a0278.htm" />
   <HelpKINode Title="pixelNeighborhood field" Url="html/c08cb601-d3f9-b04f-501b-4d8194e11287.htm" />
@@ -466,6 +502,7 @@
   <HelpKINode Title="PlaybackRateRadioButton_Checked method" Url="html/b470ef9a-593f-578b-66e8-72a0e6d60182.htm" />
   <HelpKINode Title="PlayPauseButtonIcon field" Url="html/f657cb72-e98f-259e-f503-49bc0ebfbf81.htm" />
   <HelpKINode Title="Probe method" Url="html/5f2749a7-c303-eaab-d82d-6b5a5d5957af.htm" />
+  <HelpKINode Title="ProcessQueue method" Url="html/8a2f8de4-a4d7-02a5-2edf-5d86511ecf0c.htm" />
   <HelpKINode Title="Process_Exited method" Url="html/ecdfd054-a9b2-3571-09c4-a006bae59ed2.htm" />
   <HelpKINode Title="Process_OutputDataReceived method" Url="html/ade5760c-a582-25e6-1253-15bbccd18447.htm" />
   <HelpKINode Title="Progress enumeration member" Url="html/4d847e66-a863-43bf-dbdb-3a98d55468b9.htm" />
@@ -499,6 +536,7 @@
   <HelpKINode Title="RegionType enumeration" Url="html/4e076ed3-56c3-9ed7-43ef-41dd0c624aa7.htm" />
   <HelpKINode Title="Run method" Url="html/1282edb3-a085-8b0a-9eed-131760d451b5.htm" />
   <HelpKINode Title="runningProcess field" Url="html/d7727346-f68e-b3e2-a774-7beb9171cc11.htm" />
+  <HelpKINode Title="runQueue field" Url="html/e8746b49-f99f-9eb2-f858-251facee577f.htm" />
   <HelpKINode Title="ScrollViewer_ScrollChanged method" Url="html/aef87ef8-07f6-846c-9ef1-6ca90f68eb28.htm" />
   <HelpKINode Title="sliderMedia field" Url="html/d085e974-3f4c-cb5e-7807-e1568c366e2a.htm" />
   <HelpKINode Title="smoothDerivativeStandardDeviation field" Url="html/f7a3f2af-fe72-72ad-2e1e-9a441ec7f4a8.htm" />
@@ -521,7 +559,8 @@
   <HelpKINode Title="subregionType field" Url="html/392e3793-d7df-16b9-12f9-2ea84d7b294b.htm" />
   <HelpKINode Title="SubregionType property" Url="html/a3f633e6-1123-0b13-91a2-0bbcd4cb672a.htm" />
   <HelpKINode Title="SupportedLanguages property" Url="html/f26a6239-ec29-cd10-3708-9eac4f361fa1.htm" />
-  <HelpKINode Title="ToButterflowArguments method" Url="html/33bad8a9-ff3b-c7f3-f9d4-864c25e77217.htm" />
+  <HelpKINode Title="SUPPORTED_FILE_TYPES field" Url="html/723c709b-44fe-3d14-8e21-2ec7deb4c8e0.htm" />
+  <HelpKINode Title="ToButterflowArguments method" Url="html/07e044a4-3d0e-57b0-117a-fdb8ed9b7e2a.htm" />
   <HelpKINode Title="toEnd field" Url="html/b4d246de-9fb3-1a75-fd47-cfee0e64186c.htm" />
   <HelpKINode Title="ToEnd property" Url="html/e5cace0e-19fd-680f-7849-355994e9f76e.htm" />
   <HelpKINode Title="ToFile method" Url="html/e34f04fb-f23f-b33a-2c7b-fd1d7c590626.htm" />
@@ -531,6 +570,7 @@
   <HelpKINode Title="txtFileOutputName field" Url="html/33a83e72-85d9-95cb-d99e-a9345c4f92a6.htm" />
   <HelpKINode Title="txtPlaybackRate field" Url="html/8189f496-1084-50e8-e6be-66b389743464.htm" />
   <HelpKINode Title="txtPlaybackRate_GotFocus method" Url="html/008bd778-d3ec-4ebf-2179-f19ee49276ea.htm" />
+  <HelpKINode Title="txtVersion field" Url="html/99ccdcc6-c59a-3ecb-3769-dc7e9187cb8d.htm" />
   <HelpKINode Title="value field" Url="html/2c5a9da9-6863-04d4-df2e-0ab2df859d73.htm" />
   <HelpKINode Title="Value property">
     <HelpKINode Title="ButterflowSubregion.Value Property " Url="html/3c0eaca3-8818-0101-3aaf-6742fe42e6ba.htm" />

@@ -1,46 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="476bfb2d-b7a7-4d39-a9f3-a3014191bdc4" Title="butterflow_ui" Url="html/e151fc72-f3cc-1740-7ea1-73c21ce1fa93.htm">
-    <HelpTOCNode Id="eda1cd34-9a6c-4877-9f0c-09d854289e0d" Title="AboutWindow Class" Url="html/4570f55e-9488-16c6-9dab-e11f856874bb.htm">
+  <HelpTOCNode Id="eb850ab5-e2fb-486e-92c4-643d682d0d49" Title="butterflow_ui" Url="html/e151fc72-f3cc-1740-7ea1-73c21ce1fa93.htm">
+    <HelpTOCNode Id="13534ec5-461e-4c57-978a-768fa086047f" Title="AboutWindow Class" Url="html/4570f55e-9488-16c6-9dab-e11f856874bb.htm">
       <HelpTOCNode Title="AboutWindow Constructor " Url="html/223b45d3-3d9f-f0dd-a1a4-a68aeafa61c7.htm" />
-      <HelpTOCNode Id="63853e19-6cf3-4f39-9488-7aa0d3e3453e" Title="AboutWindow Methods" Url="html/ec84d0ee-c692-6f5f-1864-aa438ca0100e.htm">
+      <HelpTOCNode Id="5ccc07a5-0034-4a69-a9ba-c331b4c769e8" Title="AboutWindow Methods" Url="html/ec84d0ee-c692-6f5f-1864-aa438ca0100e.htm">
         <HelpTOCNode Title="btnOK_Click Method " Url="html/2f595b81-d931-6e17-5543-cea3192d7ec4.htm" />
         <HelpTOCNode Title="Hyperlink_RequestNavigate Method " Url="html/f3cce935-cd34-1288-c640-71abf150348b.htm" />
         <HelpTOCNode Title="InitializeComponent Method " Url="html/c37faee0-5e01-956d-d3e2-5886571fc135.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a94966f5-c2d9-4325-a144-64a39011f54e" Title="AboutWindow Fields" Url="html/3fbb427d-a3ea-5c49-fd2e-c713e6521c1f.htm">
+      <HelpTOCNode Id="8f0ed51c-0771-4dd8-ac10-b65ae0e02cc6" Title="AboutWindow Fields" Url="html/3fbb427d-a3ea-5c49-fd2e-c713e6521c1f.htm">
         <HelpTOCNode Title="_contentLoaded Field" Url="html/2f71d195-1df5-c4f8-42e7-3417205293ab.htm" />
         <HelpTOCNode Title="btnOK Field" Url="html/6fceb25b-2fad-c1b6-502b-d32c8023c7a6.htm" />
         <HelpTOCNode Title="butterflowUIAboutWindow Field" Url="html/d7508a2b-37c7-477f-8521-88cfb2fdb1f8.htm" />
+        <HelpTOCNode Title="txtVersion Field" Url="html/99ccdcc6-c59a-3ecb-3769-dc7e9187cb8d.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="96f43e0a-91a4-457d-8bdb-25a3902f2e90" Title="App Class" Url="html/d15fc1fd-caee-16f8-14ce-9dcc70712385.htm">
+    <HelpTOCNode Id="c4f9a271-fd0f-492e-af52-2801593c4eb9" Title="App Class" Url="html/d15fc1fd-caee-16f8-14ce-9dcc70712385.htm">
       <HelpTOCNode Title="App Constructor " Url="html/f173f142-e371-d0cb-e9c3-6b907bf464b3.htm" />
-      <HelpTOCNode Id="d7d2491b-c964-4a88-84f9-aca16ac339eb" Title="App Methods" Url="html/5d4abde6-222f-ffeb-b411-437c57e74bba.htm">
+      <HelpTOCNode Id="063bb706-dd84-4f20-92cd-f68d50c9e0cd" Title="App Methods" Url="html/5d4abde6-222f-ffeb-b411-437c57e74bba.htm">
         <HelpTOCNode Title="InitializeComponent Method " Url="html/8c58ad6a-9b27-bed4-0200-4de7ed4cfaa6.htm" />
         <HelpTOCNode Title="Main Method " Url="html/8f4477c6-2409-fd95-a54e-fda52def0197.htm" />
         <HelpTOCNode Title="OnStartup Method " Url="html/ccc1be7a-d5d7-ad31-d88e-3bc9f970885d.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3bce0948-7a72-4fb6-99b7-a3d8643698c0" Title="App Fields" Url="html/088f08e4-112d-abf9-9790-db6e53d23eb4.htm">
+      <HelpTOCNode Id="07597611-8673-40a0-8681-4f9f6c737424" Title="App Fields" Url="html/088f08e4-112d-abf9-9790-db6e53d23eb4.htm">
         <HelpTOCNode Title="_contentLoaded Field" Url="html/e06a7bf9-5653-bac5-c064-b72384a5c09e.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bc77ad28-3fbe-4b70-b5d6-a4a1bb4adcd6" Title="ButterflowOption Class" Url="html/014a2f1b-9848-61b6-74c1-8cfcdc507450.htm">
+    <HelpTOCNode Id="324429ad-3d92-4f2a-a280-6d2b90189692" Title="BoolVisibilityConverter Class" Url="html/327f2eef-b268-4eee-32e9-6933d366f80c.htm">
+      <HelpTOCNode Title="BoolVisibilityConverter Constructor " Url="html/2d8d2703-5ae5-12f7-d4d6-44af1ae15e88.htm" />
+      <HelpTOCNode Id="76f09574-941b-4722-aa74-ac8deab1115d" Title="BoolVisibilityConverter Methods" Url="html/f5133f2e-1f2b-5d9e-7ab6-4b66f6e0cc03.htm">
+        <HelpTOCNode Title="Convert Method " Url="html/f9386a65-5781-289d-6c0c-e0747f0ee30c.htm" />
+        <HelpTOCNode Title="ConvertBack Method " Url="html/a185930f-4eae-88b8-a227-919a18e3d23d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f7280f13-250a-4c0e-a5cd-3c7b67e873a2" Title="ButterflowOption Class" Url="html/014a2f1b-9848-61b6-74c1-8cfcdc507450.htm">
       <HelpTOCNode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
       <HelpTOCNode Title="ButterflowOption Constructor " Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
-      <HelpTOCNode Id="d9356a2e-2265-4128-80ef-2b23cc30f01c" Title="ButterflowOption Properties" Url="html/94537008-4543-dfe4-9289-9bd1888c21de.htm">
+      <HelpTOCNode Id="df4b51fb-9de2-455f-b07f-afd185876681" Title="ButterflowOption Properties" Url="html/94537008-4543-dfe4-9289-9bd1888c21de.htm">
         <HelpTOCNode Title="DescriptionValue Property " Url="html/78c4c081-252e-17d4-672d-1cc91216a0b3.htm" />
         <HelpTOCNode Title="LabelValue Property " Url="html/74a38e5b-a3a5-706a-58e8-c8a299d2d843.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c7924cfb-a990-4e92-8c9a-f62b73f1c333" Title="ButterflowOption Fields" Url="html/648d089f-f07e-b1cb-f721-90e85651ac1c.htm">
+      <HelpTOCNode Id="78ed2040-7445-47dd-852a-43af42277b33" Title="ButterflowOption Fields" Url="html/648d089f-f07e-b1cb-f721-90e85651ac1c.htm">
         <HelpTOCNode Title="DescriptionValueProperty Field" Url="html/4cce9345-4d0e-3448-bd43-915028cfa134.htm" />
         <HelpTOCNode Title="LabelValueProperty Field" Url="html/21657b8b-5d2c-de68-30b7-355d47e658f1.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f99acb21-830e-42c5-b8e0-2c8f36f2b03f" Title="ButterflowSubregion Class" Url="html/c0e400bb-1bb1-4eb0-ec46-a134802bb550.htm">
+    <HelpTOCNode Id="ba6f3712-46af-461b-9659-2a03af834304" Title="ButterflowSubregion Class" Url="html/c0e400bb-1bb1-4eb0-ec46-a134802bb550.htm">
       <HelpTOCNode Title="ButterflowSubregion Constructor " Url="html/9aaf8814-a9be-c775-226d-998529c5f8d7.htm" />
-      <HelpTOCNode Id="7f34d022-1e77-4e9a-aa72-1bfe44d3a045" Title="ButterflowSubregion Properties" Url="html/a40e23e6-9c50-5e59-6333-f62782ef9f39.htm">
+      <HelpTOCNode Id="f4b2f15c-ac33-4727-b7ac-5cb0796f01b4" Title="ButterflowSubregion Properties" Url="html/a40e23e6-9c50-5e59-6333-f62782ef9f39.htm">
         <HelpTOCNode Title="End Property " Url="html/bd86cc5c-f5bd-af92-2244-7bd87550c0e5.htm" />
         <HelpTOCNode Title="Identifier Property " Url="html/25147637-5cad-bfa3-7ac3-68997e99e351.htm" />
         <HelpTOCNode Title="Start Property " Url="html/a881f3fc-6b17-9df8-75b6-a4fb44cc9991.htm" />
@@ -50,7 +58,7 @@
       </HelpTOCNode>
       <HelpTOCNode Title="ButterflowSubregion Methods" Url="html/fafb4b0f-a28a-5a5a-6c8f-065427520b4a.htm" />
       <HelpTOCNode Title="ButterflowSubregion Events" Url="html/d0c347a1-95fe-1844-5195-811f4794ee35.htm" />
-      <HelpTOCNode Id="cffcfff7-d333-4341-bb65-fde225eb6e93" Title="ButterflowSubregion Fields" Url="html/3e131f45-f067-24ab-d7da-d5c551a47477.htm">
+      <HelpTOCNode Id="858b84d9-67d9-4c71-a43e-04217259ffcd" Title="ButterflowSubregion Fields" Url="html/3e131f45-f067-24ab-d7da-d5c551a47477.htm">
         <HelpTOCNode Title="end Field" Url="html/0828f0f7-9015-2ed8-a635-fdc316c414b3.htm" />
         <HelpTOCNode Title="identifier Field" Url="html/542d3983-0d33-8f33-0eb9-f2a8f05b59c1.htm" />
         <HelpTOCNode Title="start Field" Url="html/26aa70fb-5f49-52e3-d1ab-02cab3f94fdb.htm" />
@@ -59,29 +67,30 @@
         <HelpTOCNode Title="value Field" Url="html/2c5a9da9-6863-04d4-df2e-0ab2df859d73.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="13226aa6-1593-4952-84a8-3f2c4ded715c" Title="ButterflowWrapper Class" Url="html/fbe7965e-3c27-b071-c7cb-326cec0f4597.htm">
+    <HelpTOCNode Id="625fa2e9-e95e-4827-a6f2-5634ba5192d8" Title="ButterflowWrapper Class" Url="html/fbe7965e-3c27-b071-c7cb-326cec0f4597.htm">
       <HelpTOCNode Title="ButterflowWrapper Constructor " Url="html/428e99bd-48ad-4370-5fa4-b32e6271e65c.htm" />
-      <HelpTOCNode Id="7d82fa12-feb4-4e65-be3d-4f2b35079194" Title="ButterflowWrapper Properties" Url="html/701a84d3-5bbb-187b-6abe-6e05c0ac26d1.htm">
+      <HelpTOCNode Id="7564deca-3115-468a-9484-92ba9ab17adf" Title="ButterflowWrapper Properties" Url="html/701a84d3-5bbb-187b-6abe-6e05c0ac26d1.htm">
         <HelpTOCNode Title="ConsoleOutput Property " Url="html/b2d0780d-8432-2b78-6b06-76b778c65083.htm" />
         <HelpTOCNode Title="IsRunning Property " Url="html/1037f945-7735-af3d-f3dd-f40750e81a2b.htm" />
         <HelpTOCNode Title="ProgressPercentage Property " Url="html/951a287b-c7e8-64f1-f982-bb77d31aba13.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ed06a049-0582-4ea2-b023-f332babae4ba" Title="ButterflowWrapper Methods" Url="html/98c35fae-9e4e-225a-03af-5da2f15cccc7.htm">
+      <HelpTOCNode Id="1bc514e8-c228-499d-82f8-f90a3dd1b00c" Title="ButterflowWrapper Methods" Url="html/98c35fae-9e4e-225a-03af-5da2f15cccc7.htm">
         <HelpTOCNode Title="Cancel Method " Url="html/4ae309d0-c1b6-0cf8-5c03-ff0ca2ba871c.htm" />
         <HelpTOCNode Title="OnParsedConsoleOutputRecieved Method " Url="html/c16980db-32b2-dc80-d568-ef30ce3ea3bf.htm" />
         <HelpTOCNode Title="ParseConsoleOutput Method " Url="html/a40dbce6-a556-a0b5-a504-e0e6b5f9b2b2.htm" />
         <HelpTOCNode Title="Probe Method " Url="html/5f2749a7-c303-eaab-d82d-6b5a5d5957af.htm" />
         <HelpTOCNode Title="Process_Exited Method " Url="html/ecdfd054-a9b2-3571-09c4-a006bae59ed2.htm" />
         <HelpTOCNode Title="Process_OutputDataReceived Method " Url="html/ade5760c-a582-25e6-1253-15bbccd18447.htm" />
-        <HelpTOCNode Id="0fb19139-9b70-46fb-bc54-8cee71c40343" Title="Run Method " Url="html/1282edb3-a085-8b0a-9eed-131760d451b5.htm">
+        <HelpTOCNode Title="ProcessQueue Method " Url="html/8a2f8de4-a4d7-02a5-2edf-5d86511ecf0c.htm" />
+        <HelpTOCNode Id="7200326b-34f6-4638-aef0-fcef81a9ff63" Title="Run Method " Url="html/1282edb3-a085-8b0a-9eed-131760d451b5.htm">
           <HelpTOCNode Title="Run Method (String)" Url="html/e76fa5c5-defd-752c-1b7d-1a6e0e849e94.htm" />
           <HelpTOCNode Title="Run Method (OptionsConfiguration)" Url="html/1970f320-0445-a329-d826-7eb6c236d533.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5d903758-7e53-4c73-86ab-d294604c6d05" Title="ButterflowWrapper Events" Url="html/376543fe-9fb9-ed00-3666-8cf4e1852e80.htm">
+      <HelpTOCNode Id="a50df129-80db-4847-94b9-76dcb6ed840a" Title="ButterflowWrapper Events" Url="html/376543fe-9fb9-ed00-3666-8cf4e1852e80.htm">
         <HelpTOCNode Title="ParsedConsoleOutputRecieved Event" Url="html/35c52789-71d0-91af-efb7-d7a4618a0278.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e3fde281-cf11-431a-b8a5-88fb03736f70" Title="ButterflowWrapper Fields" Url="html/e71cc668-7b97-a2a1-d744-9c9f0d6b54f2.htm">
+      <HelpTOCNode Id="a64e8e11-c9c5-496d-afaf-873cc7874a73" Title="ButterflowWrapper Fields" Url="html/e71cc668-7b97-a2a1-d744-9c9f0d6b54f2.htm">
         <HelpTOCNode Title="consoleOutput Field" Url="html/9a3697fc-2123-df08-0328-d113471c80bc.htm" />
         <HelpTOCNode Title="executablePath Field" Url="html/420ffbdc-a962-1e6e-b104-769177739ae5.htm" />
         <HelpTOCNode Title="interpreter Field" Url="html/a9af32ff-32d5-dd12-872e-a465698e82c7.htm" />
@@ -92,37 +101,45 @@
         <HelpTOCNode Title="REGEX_RATE Field" Url="html/0c17e820-04c1-9027-76be-c6efb92e4866.htm" />
         <HelpTOCNode Title="REGEX_RESOLUTION Field" Url="html/80068044-4661-d53c-d40d-056745fc309e.htm" />
         <HelpTOCNode Title="runningProcess Field" Url="html/d7727346-f68e-b3e2-a774-7beb9171cc11.htm" />
+        <HelpTOCNode Title="runQueue Field" Url="html/e8746b49-f99f-9eb2-f858-251facee577f.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6f3d0cd3-c6b7-415c-a40c-a238d8799142" Title="ButterflowWrapper.ButterflowConsoleOutputArgs Class" Url="html/4f5187fc-d00e-1d7a-87e4-76997d33cde3.htm">
+    <HelpTOCNode Id="90df4b06-0609-4fc3-ad06-679910bc5670" Title="ButterflowWrapper.ButterflowConsoleOutputArgs Class" Url="html/4f5187fc-d00e-1d7a-87e4-76997d33cde3.htm">
       <HelpTOCNode Title="ButterflowWrapper.ButterflowConsoleOutputArgs Constructor " Url="html/3ade1dca-05fb-dec9-46a5-81aca56659d8.htm" />
-      <HelpTOCNode Id="d5b665ad-b038-48df-9b80-21d80ed39f2c" Title="ButterflowConsoleOutputArgs Properties" Url="html/81b1b6e5-351c-83e1-f00e-f91be8632ddf.htm">
+      <HelpTOCNode Id="300b60c3-deb4-4451-b8fa-81cfa97a3a5a" Title="ButterflowConsoleOutputArgs Properties" Url="html/81b1b6e5-351c-83e1-f00e-f91be8632ddf.htm">
         <HelpTOCNode Title="ConsoleOutput Property " Url="html/5cc26985-b52b-af6d-eea5-25cd24c79bf8.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0a1df6f4-a273-4ebf-9982-64356d5651fa" Title="ButterflowWrapper.ButterflowOutputArgs Class" Url="html/66e690de-9367-e42a-b964-af247afae7ff.htm">
+    <HelpTOCNode Id="44e0fe50-12aa-43c9-9d9a-22412faa732a" Title="ButterflowWrapper.ButterflowOutputArgs Class" Url="html/66e690de-9367-e42a-b964-af247afae7ff.htm">
       <HelpTOCNode Title="ButterflowWrapper.ButterflowOutputArgs Constructor " Url="html/839dba3d-2df5-fb9e-0a0b-ab1ad9572b02.htm" />
-      <HelpTOCNode Id="83bcd631-b5ab-4e5c-962d-c20f316c8c99" Title="ButterflowOutputArgs Properties" Url="html/eba4ee7f-ddb2-4f88-1d40-5aa7b7327b7a.htm">
+      <HelpTOCNode Id="3f8382d0-e1aa-44a1-acc2-6795d04e1f42" Title="ButterflowOutputArgs Properties" Url="html/eba4ee7f-ddb2-4f88-1d40-5aa7b7327b7a.htm">
         <HelpTOCNode Title="OutputType Property " Url="html/94402421-c646-c7c3-8c02-55b0e976a82e.htm" />
         <HelpTOCNode Title="Value Property " Url="html/6a134abb-33d1-58fc-3cf4-4bf50959614a.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="ButterflowWrapper.ButterflowOutputType Enumeration" Url="html/4d847e66-a863-43bf-dbdb-3a98d55468b9.htm" />
     <HelpTOCNode Title="FlowFilterType Enumeration" Url="html/dede81d0-e317-bc55-5d70-fda170fdee9e.htm" />
-    <HelpTOCNode Id="21481970-34fb-486b-bb31-817dbbdee29a" Title="InverseBoolConverter Class" Url="html/571e5a65-b19d-80a7-fc52-e02575182e64.htm">
+    <HelpTOCNode Id="e87c181e-d152-4795-b39a-b6144019993a" Title="InverseBoolConverter Class" Url="html/571e5a65-b19d-80a7-fc52-e02575182e64.htm">
       <HelpTOCNode Title="InverseBoolConverter Constructor " Url="html/84818717-8b03-d621-ac9f-1ba54b3bcf9a.htm" />
-      <HelpTOCNode Id="6555137e-6302-42e9-94aa-e8af362e1bb0" Title="InverseBoolConverter Methods" Url="html/825b5c96-d9f1-20e2-cb31-7c084b449b1f.htm">
+      <HelpTOCNode Id="bf95f58b-33a8-40d2-8b62-15a5576dc344" Title="InverseBoolConverter Methods" Url="html/825b5c96-d9f1-20e2-cb31-7c084b449b1f.htm">
         <HelpTOCNode Title="Convert Method " Url="html/097cfdfe-d69f-d263-612c-a33468013317.htm" />
         <HelpTOCNode Title="ConvertBack Method " Url="html/09aaa9de-0353-b04f-53b0-541e73ff99f9.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2ea73360-f55d-4d57-9d1c-9d70bec8cbea" Title="MainWindow Class" Url="html/7ae7656b-c378-ab3d-9af4-1be26a4a3904.htm">
+    <HelpTOCNode Id="a42ffcfa-1ff7-40ba-b2a8-279bb0863595" Title="InverseBoolVisibilityConverter Class" Url="html/58dd4a01-cfc7-3be7-f8bd-0322141b67a4.htm">
+      <HelpTOCNode Title="InverseBoolVisibilityConverter Constructor " Url="html/cf27effc-1e6b-1f07-a48d-4de6672d24d3.htm" />
+      <HelpTOCNode Id="2d789aa0-1405-4b8d-a989-726b03fa7990" Title="InverseBoolVisibilityConverter Methods" Url="html/614fa26d-7621-b4c0-6859-4cd7a6ebc72b.htm">
+        <HelpTOCNode Title="Convert Method " Url="html/afa3f247-e56c-c3e9-b327-72a95d647de3.htm" />
+        <HelpTOCNode Title="ConvertBack Method " Url="html/92a037c1-416e-21e0-6fb5-3673d2cdcc9b.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="68aa8817-811a-46c7-8c6f-ee024fc09013" Title="MainWindow Class" Url="html/7ae7656b-c378-ab3d-9af4-1be26a4a3904.htm">
       <HelpTOCNode Title="MainWindow Constructor " Url="html/ea49083b-3151-9ed4-5f35-96b0b298f9ab.htm" />
-      <HelpTOCNode Id="1fe58bbe-244b-415e-8db0-bcb0ebe323e4" Title="MainWindow Properties" Url="html/8853bb14-1eb9-dfec-a3ab-28964240023f.htm">
+      <HelpTOCNode Id="7e2b4043-98f0-4065-ac1b-a2314c27b406" Title="MainWindow Properties" Url="html/8853bb14-1eb9-dfec-a3ab-28964240023f.htm">
         <HelpTOCNode Title="ButterflowWrapper Property " Url="html/71dbe8e5-6340-d797-bcea-762b9a7fff03.htm" />
         <HelpTOCNode Title="OptionsConfiguration Property " Url="html/54f215a0-e027-2805-b2d9-bd132a4f2b9f.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e3f6840a-29d2-4167-8be5-fc5f9a09d2d8" Title="MainWindow Methods" Url="html/4afa4f83-5da6-1df0-b340-99b2c96b3285.htm">
+      <HelpTOCNode Id="5b8f4b5c-3ee8-4c35-ac75-eae8aba1d92d" Title="MainWindow Methods" Url="html/4afa4f83-5da6-1df0-b340-99b2c96b3285.htm">
         <HelpTOCNode Title="_CreateDelegate Method " Url="html/dce4b75f-140c-76b3-2f51-a04b46ca5640.htm" />
         <HelpTOCNode Title="bntClip_Click Method " Url="html/7480f4c7-7ae7-238f-ac6a-c4851fef0af0.htm" />
         <HelpTOCNode Title="bntVideoBackward_Click Method " Url="html/afa48c69-3b6a-3df7-1ccc-de0ee41155e5.htm" />
@@ -150,7 +167,7 @@
         <HelpTOCNode Title="ScrollViewer_ScrollChanged Method " Url="html/aef87ef8-07f6-846c-9ef1-6ca90f68eb28.htm" />
         <HelpTOCNode Title="txtPlaybackRate_GotFocus Method " Url="html/008bd778-d3ec-4ebf-2179-f19ee49276ea.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="00ec5a75-fafd-4d4f-86e2-5ab19997eb71" Title="MainWindow Fields" Url="html/c1d13dec-659d-d40f-71a5-8192bf4afc2e.htm">
+      <HelpTOCNode Id="d3842b2e-7702-468a-ab71-7f654bb10dd2" Title="MainWindow Fields" Url="html/c1d13dec-659d-d40f-71a5-8192bf4afc2e.htm">
         <HelpTOCNode Title="_contentLoaded Field" Url="html/307e1f61-f592-ed02-b8cb-637f4e0c1925.htm" />
         <HelpTOCNode Title="bntClip Field" Url="html/12a1f6be-78bc-aad9-24f2-48cc1dca5c23.htm" />
         <HelpTOCNode Title="bntVideoBackward Field" Url="html/c6defcae-e147-6929-9524-b3f2de228379.htm" />
@@ -163,6 +180,7 @@
         <HelpTOCNode Title="btnFilePicker Field" Url="html/09bda8fb-0830-67bc-0580-3f1de96e4de5.htm" />
         <HelpTOCNode Title="btnProcess Field" Url="html/f9fa5919-e67d-a8a5-39c6-3835949c8144.htm" />
         <HelpTOCNode Title="butterflowUIWindow Field" Url="html/a300a7af-5af7-52fe-d6b1-8cd473bca8fd.htm" />
+        <HelpTOCNode Title="canvas Field" Url="html/3e5afd2f-63a6-319e-2a7b-e113410a07ac.htm" />
         <HelpTOCNode Title="ClippingButtonIcon Field" Url="html/76da4765-2b8e-7546-731c-36022fd99be0.htm" />
         <HelpTOCNode Title="clipStart Field" Url="html/be383e5a-6606-a9a5-c136-6795578d2552.htm" />
         <HelpTOCNode Title="isClipping Field" Url="html/d9b05831-2559-4997-f1ef-7115569377dc.htm" />
@@ -178,16 +196,17 @@
         <HelpTOCNode Title="PlayPauseButtonIcon Field" Url="html/f657cb72-e98f-259e-f503-49bc0ebfbf81.htm" />
         <HelpTOCNode Title="progressBar Field" Url="html/623dc67b-c034-71b5-d021-ec6e72d54795.htm" />
         <HelpTOCNode Title="sliderMedia Field" Url="html/d085e974-3f4c-cb5e-7807-e1568c366e2a.htm" />
+        <HelpTOCNode Title="SUPPORTED_FILE_TYPES Field" Url="html/723c709b-44fe-3d14-8e21-2ec7deb4c8e0.htm" />
         <HelpTOCNode Title="txtConsoleOutput Field" Url="html/3511274f-33e0-5bc9-a9cf-3ae95318533b.htm" />
         <HelpTOCNode Title="txtFileName Field" Url="html/35147e71-4581-88a3-a864-2d4fd0a153de.htm" />
         <HelpTOCNode Title="txtFileOutputName Field" Url="html/33a83e72-85d9-95cb-d99e-a9345c4f92a6.htm" />
         <HelpTOCNode Title="txtPlaybackRate Field" Url="html/8189f496-1084-50e8-e6be-66b389743464.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="86676ca9-0b6f-44ba-93c4-b6a4fa5bbf08" Title="OptionsConfiguration Class" Url="html/8b6c756f-d88d-a439-ae46-36933c20e4cc.htm">
+    <HelpTOCNode Id="5862ab83-d4da-4466-a615-df99d02f8c6a" Title="OptionsConfiguration Class" Url="html/8b6c756f-d88d-a439-ae46-36933c20e4cc.htm">
       <HelpTOCNode Title="OptionsConfiguration Constructor " Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
       <HelpTOCNode Title="OptionsConfiguration Constructor " Url="html/09c4fb13-1283-2577-67f6-743c466a6f4b.htm" />
-      <HelpTOCNode Id="ef9d5a3e-22d7-425f-affa-b2208284c905" Title="OptionsConfiguration Properties" Url="html/967fbfe1-1e06-96ce-2a6e-e86982fb6935.htm">
+      <HelpTOCNode Id="b57cea02-6300-4052-8387-832458c65d31" Title="OptionsConfiguration Properties" Url="html/967fbfe1-1e06-96ce-2a6e-e86982fb6935.htm">
         <HelpTOCNode Title="CommandLineOutput Property " Url="html/2ab1f69f-ff78-6e57-8ade-6ffd38070087.htm" />
         <HelpTOCNode Title="FastPyramid Property " Url="html/ba5c0673-a02d-29fa-7793-d9bf04419d1d.htm" />
         <HelpTOCNode Title="FlowFilterType Property " Url="html/985d56af-6017-1462-1514-a6feafcdacf2.htm" />
@@ -198,6 +217,7 @@
         <HelpTOCNode Title="Levels Property " Url="html/68ef1656-e3cc-1ad4-094e-267dcdb43182.htm" />
         <HelpTOCNode Title="LockAspectRatio Property " Url="html/6a62b320-0dc7-5c55-5fc1-7960ce031f08.htm" />
         <HelpTOCNode Title="LosslessQuality Property " Url="html/73a52eb1-4244-8eb1-e3c0-31fa95ca7595.htm" />
+        <HelpTOCNode Title="MultipleFiles Property " Url="html/13c73cc4-b3e4-00ab-4e06-fc79e457ca64.htm" />
         <HelpTOCNode Title="PixelNeighborhood Property " Url="html/54ad7414-0302-6706-ed2d-640fba85f6c9.htm" />
         <HelpTOCNode Title="PlaybackRate Property " Url="html/543c18ec-e299-2053-3100-3b5d56c488b4.htm" />
         <HelpTOCNode Title="PyramidScale Property " Url="html/dab6a385-86c3-93b9-70c4-0a46f5f2f148.htm" />
@@ -209,16 +229,16 @@
         <HelpTOCNode Title="Width Property " Url="html/27e98f58-66a9-04a8-cb4e-ecdedb30512d.htm" />
         <HelpTOCNode Title="WindowSize Property " Url="html/87181628-098e-7a09-6c4b-c68c0eb78157.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7a673366-1477-43f4-bece-67d00c8014e1" Title="OptionsConfiguration Methods" Url="html/63626eb2-554c-1d04-c1c3-26d0352bee6b.htm">
+      <HelpTOCNode Id="5cf696f5-52ce-469c-9395-84ac1e534254" Title="OptionsConfiguration Methods" Url="html/63626eb2-554c-1d04-c1c3-26d0352bee6b.htm">
         <HelpTOCNode Title="LoadFile Method " Url="html/2d21bf05-43bf-5769-f8b1-3110b7683cee.htm" />
         <HelpTOCNode Title="SubregionPropertyChanged Method " Url="html/623ea212-0570-afa3-41f1-cfc51bd295a4.htm" />
         <HelpTOCNode Title="Subregions_CollectionChanged Method " Url="html/d2133235-452c-bdf9-0999-1a5e0341c18a.htm" />
-        <HelpTOCNode Title="ToButterflowArguments Method " Url="html/33bad8a9-ff3b-c7f3-f9d4-864c25e77217.htm" />
+        <HelpTOCNode Title="ToButterflowArguments Method " Url="html/07e044a4-3d0e-57b0-117a-fdb8ed9b7e2a.htm" />
         <HelpTOCNode Title="ToFile Method " Url="html/e34f04fb-f23f-b33a-2c7b-fd1d7c590626.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/e973f29c-14ab-597d-a4b5-2003d9caee33.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="OptionsConfiguration Events" Url="html/cb8c955a-251f-0ecf-6487-38d42a4c82e1.htm" />
-      <HelpTOCNode Id="4ca8c524-c61f-447b-ad5c-1e013a3f28c8" Title="OptionsConfiguration Fields" Url="html/3ccf0d1f-1e4a-6f63-7257-985718950daf.htm">
+      <HelpTOCNode Id="325c29f7-ed76-4d88-97b4-c63ae328ee47" Title="OptionsConfiguration Fields" Url="html/3ccf0d1f-1e4a-6f63-7257-985718950daf.htm">
         <HelpTOCNode Title="aspectRatio Field" Url="html/f4f5eab8-72e8-9ffd-f024-ac667450f2cb.htm" />
         <HelpTOCNode Title="DEFAULT_FLOW_FILTER_TYPE Field" Url="html/829c1e85-9830-0ade-d7c3-01105c20e9d4.htm" />
         <HelpTOCNode Title="DEFAULT_ITERATIONS Field" Url="html/78d5bca2-0453-b125-ea2e-fdc7a659b475.htm" />
@@ -237,6 +257,7 @@
         <HelpTOCNode Title="levels Field" Url="html/a591008a-bfa2-0585-8e61-892d9b4e8dea.htm" />
         <HelpTOCNode Title="lockAspectRatio Field" Url="html/ea4e6242-2392-9060-92cc-edf7e47d043b.htm" />
         <HelpTOCNode Title="losslessQuality Field" Url="html/e57fd7ee-cc60-87e6-b91a-a649281baaff.htm" />
+        <HelpTOCNode Title="OUTPUT_FILE_FORMAT Field" Url="html/b0f7dcea-f771-c054-b833-f40dcb1bd196.htm" />
         <HelpTOCNode Title="pixelNeighborhood Field" Url="html/c08cb601-d3f9-b04f-501b-4d8194e11287.htm" />
         <HelpTOCNode Title="playbackRate Field" Url="html/43a9964a-0d39-7337-210a-45a09d8ac537.htm" />
         <HelpTOCNode Title="pyramidScale Field" Url="html/dd14a1af-3bfc-0635-6ea6-5e9ed0d8258f.htm" />
@@ -249,9 +270,9 @@
         <HelpTOCNode Title="windowSize Field" Url="html/f65ad95a-6f34-e58b-6f8b-4397ab6cd2c7.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="536f5349-6d23-4512-af65-2b7bc453c89f" Title="OptionsConfigurationFile Class" Url="html/b6d681cc-0a33-4090-fc85-261516d0a18b.htm">
+    <HelpTOCNode Id="06ebc24b-fff1-40e8-9a08-e18583ca9533" Title="OptionsConfigurationFile Class" Url="html/b6d681cc-0a33-4090-fc85-261516d0a18b.htm">
       <HelpTOCNode Title="OptionsConfigurationFile Constructor " Url="html/3391e962-c1b2-d3b7-781c-7d11f8aa3bbe.htm" />
-      <HelpTOCNode Id="60b974c7-0875-4b36-9d4a-8b123a401eef" Title="OptionsConfigurationFile Properties" Url="html/70316688-ddc5-44a2-cedc-9b5b5599775f.htm">
+      <HelpTOCNode Id="dfc27ab3-b60c-4cb4-a027-3533a328b46c" Title="OptionsConfigurationFile Properties" Url="html/70316688-ddc5-44a2-cedc-9b5b5599775f.htm">
         <HelpTOCNode Title="FastPyramid Property " Url="html/775384d8-abb5-3b65-3aa7-2e6dd9386900.htm" />
         <HelpTOCNode Title="FlowFilterType Property " Url="html/18dd4070-3087-439a-2de3-2c8f67e149ee.htm" />
         <HelpTOCNode Title="Iterations Property " Url="html/731bf473-ef8c-a851-93bc-5c91955a1a10.htm" />
@@ -268,31 +289,31 @@
         <HelpTOCNode Title="WindowSize Property " Url="html/2542a2b6-d2f8-3bc1-3e58-602e74790c42.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0bb7918d-2039-463a-8a66-05de03fb651d" Title="OptionsWindow Class" Url="html/40aedc8a-3b6a-2a82-5d77-e3558e9efaab.htm">
+    <HelpTOCNode Id="60a12809-8ee1-45ac-b19a-e8f30eee2384" Title="OptionsWindow Class" Url="html/40aedc8a-3b6a-2a82-5d77-e3558e9efaab.htm">
       <HelpTOCNode Title="OptionsWindow Constructor " Url="html/0fb61c2f-e9ec-2c31-4d3f-6843444484b1.htm" />
-      <HelpTOCNode Id="ecc7bb4a-3b97-440f-b6c4-3c7a4bee8fd7" Title="OptionsWindow Properties" Url="html/0308fe94-07ba-b8f1-0d6e-739efc2231a1.htm">
+      <HelpTOCNode Id="4f83065a-f5fd-477a-bf42-8aa2f7459dce" Title="OptionsWindow Properties" Url="html/0308fe94-07ba-b8f1-0d6e-739efc2231a1.htm">
         <HelpTOCNode Title="SupportedLanguages Property " Url="html/f26a6239-ec29-cd10-3708-9eac4f361fa1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5c852521-d7b4-4641-bd5b-bc37b3d80973" Title="OptionsWindow Methods" Url="html/efbdac41-5d4f-ce20-ff7d-d9e1ec65cef4.htm">
+      <HelpTOCNode Id="58b8b74a-ad0c-4c6d-8629-3f8ec4710169" Title="OptionsWindow Methods" Url="html/efbdac41-5d4f-ce20-ff7d-d9e1ec65cef4.htm">
         <HelpTOCNode Title="btnSave_Click Method " Url="html/d06cd6bc-11f9-936c-17ac-91258dd3341a.htm" />
         <HelpTOCNode Title="InitializeComponent Method " Url="html/439fa3a9-b5ca-3f5c-b7a9-7273d38d5d7d.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="802f3a87-bf11-445d-a9a2-0d447df370f9" Title="OptionsWindow Fields" Url="html/1ffd32ff-0f5a-9073-9b59-c87f23084b6f.htm">
+      <HelpTOCNode Id="c14c04fe-43b5-4c85-991e-b630a3732714" Title="OptionsWindow Fields" Url="html/1ffd32ff-0f5a-9073-9b59-c87f23084b6f.htm">
         <HelpTOCNode Title="_contentLoaded Field" Url="html/f393224d-1ef0-9983-82e9-93632650e5f0.htm" />
         <HelpTOCNode Title="btnSave Field" Url="html/40085487-a1f6-dd07-1d52-dccb6e579877.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="61d6edb1-9f32-4ec5-a6bc-9111d7c69c93" Title="PropertyChangedAlerter Class" Url="html/229e6869-f14d-a176-5ac6-d0d28dc43a71.htm">
+    <HelpTOCNode Id="20034f0f-e4f4-4d15-b360-60a2ee850f99" Title="PropertyChangedAlerter Class" Url="html/229e6869-f14d-a176-5ac6-d0d28dc43a71.htm">
       <HelpTOCNode Title="PropertyChangedAlerter Constructor " Url="html/994d1e81-d491-4dec-039e-4c0a3e2cb869.htm" />
-      <HelpTOCNode Id="dd0bff85-d3d8-473d-b250-c1d800d34810" Title="PropertyChangedAlerter Methods" Url="html/1a0b274b-3529-1902-9922-af6e09ecea11.htm">
+      <HelpTOCNode Id="23b82fd2-2357-4e43-a511-c80b1ed8f196" Title="PropertyChangedAlerter Methods" Url="html/1a0b274b-3529-1902-9922-af6e09ecea11.htm">
         <HelpTOCNode Title="AddConstantCallProperty Method " Url="html/94283020-fd41-a0ab-0e86-5d285dc72cff.htm" />
         <HelpTOCNode Title="OnAllPropertiesChanged Method " Url="html/f4ce3949-e7fd-ce94-51cc-3c3698c097b5.htm" />
         <HelpTOCNode Title="OnPropertyChanged Method " Url="html/eedea241-4ddb-bac9-5717-c691ef57e6ea.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="30d14cb1-2f02-40ca-b52d-ce2a3199a167" Title="PropertyChangedAlerter Events" Url="html/90401cff-257b-db0c-848a-5900e476f5c1.htm">
+      <HelpTOCNode Id="8f443482-71d5-4fa0-a8ff-2e1cebfdca7b" Title="PropertyChangedAlerter Events" Url="html/90401cff-257b-db0c-848a-5900e476f5c1.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/2bc00061-8840-fad4-50b6-7b7fad95336c.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="37684202-439a-46d9-afac-1c2c62b51af9" Title="PropertyChangedAlerter Fields" Url="html/69308a43-096a-6703-61f8-0612dfb3c65a.htm">
+      <HelpTOCNode Id="f774e717-6123-4e20-a56d-3721e8be6410" Title="PropertyChangedAlerter Fields" Url="html/69308a43-096a-6703-61f8-0612dfb3c65a.htm">
         <HelpTOCNode Title="alwaysCall Field" Url="html/de4e26b6-b925-00d1-b5c8-6cffb5cabf61.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
