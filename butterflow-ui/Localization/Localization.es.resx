@@ -372,4 +372,22 @@
   <data name="SupportedFileTypesLabel" xml:space="preserve">
     <value>Tipos de archivos admitidos</value>
   </data>
+  <data name="BehindVersionStatusDescription" xml:space="preserve">
+    <value>La versión actual está detrás del repositorio de Github y debe actualizarse.</value>
+  </data>
+  <data name="CurrentVersionStatusDescription" xml:space="preserve">
+    <value>La versión actual está actualizada con el repositorio github.</value>
+  </data>
+  <data name="CustomVersionStatusDescription" xml:space="preserve">
+    <value>La versión actual está por delante del repositorio github, o es una versión personalizada de butterflow-ui que no se puede comparar con el repositorio github.</value>
+  </data>
+  <data name="UnknownVersionStatusDescription" xml:space="preserve">
+    <value>Github no respondió con la versión actual. Esto podría deberse a límites de velocidad o a una falla de la red.</value>
+  </data>
+  <data name="BehindVersionQuestion" xml:space="preserve">
+    <value>¿Le gustaría visitar butterflow-ui en github para actualizar a la última versión?</value>
+  </data>
+  <data name="UpdateAvailableLabel" xml:space="preserve">
+    <value>Una versión más reciente de butterflow-ui está disponible.</value>
+  </data>
 </root>

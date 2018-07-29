@@ -372,4 +372,22 @@
   <data name="SupportedFileTypesLabel" xml:space="preserve">
     <value>أنواع الملفات المدعومة</value>
   </data>
+  <data name="BehindVersionStatusDescription" xml:space="preserve">
+    <value>الإصدار الحالي هو وراء مستودع جيثب ويجب تحديثه.</value>
+  </data>
+  <data name="CurrentVersionStatusDescription" xml:space="preserve">
+    <value>الإصدار الحالي محدث مع مستودع جيثب.</value>
+  </data>
+  <data name="CustomVersionStatusDescription" xml:space="preserve">
+    <value>الإصدار الحالي هو قبل مستودع github ، أو هو نسخة مخصصة من butterflow -ii لا يمكن مقارنتها بمستودع جيثب.</value>
+  </data>
+  <data name="UnknownVersionStatusDescription" xml:space="preserve">
+    <value>فشل Github للرد مع الإصدار الحالي. قد يكون ذلك بسبب حدود المعدل أو فشل الشبكة.</value>
+  </data>
+  <data name="BehindVersionQuestion" xml:space="preserve">
+    <value>هل ترغب في زيارة butterflow -i على جيثب للتحديث إلى أحدث إصدار؟</value>
+  </data>
+  <data name="UpdateAvailableLabel" xml:space="preserve">
+    <value>يتوفر إصدار أحدث من butterflow-ui.</value>
+  </data>
 </root>

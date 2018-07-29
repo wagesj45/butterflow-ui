@@ -196,6 +196,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Would you like to visit butterflow-ui on github to update to the latest version?.
+        /// </summary>
+        public static string BehindVersionQuestion {
+            get {
+                return ResourceManager.GetString("BehindVersionQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The current version is behind the github repository and should be updated..
         /// </summary>
         public static string BehindVersionStatusDescription {
@@ -822,6 +831,15 @@ namespace butterflow_ui.Localization {
         public static string UnknownVersionStatusDescription {
             get {
                 return ResourceManager.GetString("UnknownVersionStatusDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A newer version of butterflow-ui is available..
+        /// </summary>
+        public static string UpdateAvailableLabel {
+            get {
+                return ResourceManager.GetString("UpdateAvailableLabel", resourceCulture);
             }
         }
         

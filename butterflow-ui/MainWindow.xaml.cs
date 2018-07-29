@@ -51,6 +51,19 @@ namespace butterflow_ui
             this.ButterflowWrapper.ParsedConsoleOutputRecieved += ButterflowWrapper_ParsedConsoleOutputRecieved;
             this.OptionsConfiguration.AddConstantCallProperty("CommandLineOutput");
             InitializeComponent();
+
+            // Check for updates.
+            if (OctokitWrapper.CurrentVersionStatus == OctokitWrapper.VersionStatus.behind)
+            {
+                var updateMessageBoxResult = MessageBox.Show(string.Format("{0} {1}", Localization.Localization.BehindVersionStatusDescription, Localization.Localization.BehindVersionQuestion), Localization.Localization.UpdateAvailableLabel, MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+                // If the user wants to update now, take them to the latest release on github and close this window.
+                if(updateMessageBoxResult == MessageBoxResult.Yes)
+                {
+                    Process.Start("https://github.com/wagesj45/butterflow-ui/releases/latest");
+                    this.Close();
+                }
+            }
         }
 
         #region Methods

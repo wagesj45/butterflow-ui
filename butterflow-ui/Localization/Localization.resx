@@ -384,4 +384,10 @@
   <data name="UnknownVersionStatusDescription" xml:space="preserve">
     <value>Github failed to respond with the current version. This could be because of rate limits or a network failure.</value>
   </data>
+  <data name="BehindVersionQuestion" xml:space="preserve">
+    <value>Would you like to visit butterflow-ui on github to update to the latest version?</value>
+  </data>
+  <data name="UpdateAvailableLabel" xml:space="preserve">
+    <value>A newer version of butterflow-ui is available.</value>
+  </data>
 </root>

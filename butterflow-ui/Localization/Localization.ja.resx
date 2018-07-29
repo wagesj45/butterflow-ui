@@ -372,4 +372,22 @@
   <data name="SupportedFileTypesLabel" xml:space="preserve">
     <value>サポートされているファイルの種類</value>
   </data>
+  <data name="BehindVersionStatusDescription" xml:space="preserve">
+    <value>現在のバージョンはgithubリポジトリの後ろにあり、更新する必要があります。</value>
+  </data>
+  <data name="CurrentVersionStatusDescription" xml:space="preserve">
+    <value>現在のバージョンはgithubリポジトリで最新のものです。</value>
+  </data>
+  <data name="CustomVersionStatusDescription" xml:space="preserve">
+    <value>現在のバージョンはgithubリポジトリより先にあるか、githubリポジトリと比較できないカスタムバージョンのbutterflow-uiです。</value>
+  </data>
+  <data name="UnknownVersionStatusDescription" xml:space="preserve">
+    <value>Githubは現在のバージョンでは応答できませんでした。これは、レート制限またはネットワーク障害が原因である可能性があります。</value>
+  </data>
+  <data name="BehindVersionQuestion" xml:space="preserve">
+    <value>最新版に更新するgithubでbutterflow-uiにアクセスしますか？</value>
+  </data>
+  <data name="UpdateAvailableLabel" xml:space="preserve">
+    <value>新しいバージョンのbutterflow-uiが利用可能です。</value>
+  </data>
 </root>

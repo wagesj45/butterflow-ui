@@ -372,4 +372,22 @@
   <data name="SupportedFileTypesLabel" xml:space="preserve">
     <value>支持的文件类型</value>
   </data>
+  <data name="BehindVersionStatusDescription" xml:space="preserve">
+    <value>当前版本位于github存储库后面，应该更新。</value>
+  </data>
+  <data name="CurrentVersionStatusDescription" xml:space="preserve">
+    <value>当前版本是github存储库的最新版本。</value>
+  </data>
+  <data name="CustomVersionStatusDescription" xml:space="preserve">
+    <value>当前版本领先于github存储库，或者是butterflow-ui的自定义版本，无法与github存储库进行比较。</value>
+  </data>
+  <data name="UnknownVersionStatusDescription" xml:space="preserve">
+    <value>Github未对当前版本做出回应。这可能是因为速率限制或网络故障。</value>
+  </data>
+  <data name="BehindVersionQuestion" xml:space="preserve">
+    <value>你是否想在github上访问butterflow-ui更新到最新版本？</value>
+  </data>
+  <data name="UpdateAvailableLabel" xml:space="preserve">
+    <value>有更新版本的butterflow-ui可供选择。</value>
+  </data>
 </root>
