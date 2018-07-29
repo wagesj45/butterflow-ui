@@ -62,6 +62,12 @@
       <Component Id="cmpA92B99883E0DB6154DB87A067B20DCDE" Directory="INSTALLFOLDER" Guid="{6E279AC9-5B1B-4B58-8C8C-3BFEE35AE701}">
         <File Id="filF8B79D49DE875310B08A74573BF5DEFF" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Gu.Wpf.Media.xml" />
       </Component>
+      <Component Id="cmpoctdll" Directory="INSTALLFOLDER" Guid="">
+        <File Id="filOctokitdll" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Octokit.dll" />
+      </Component>
+      <Component Id="cmpoctxml" Directory="INSTALLFOLDER" Guid="">
+        <File Id="filOctokitxml" KeyPath="yes" Source="..\butterflow-ui\bin\Release\Octokit.xml" />
+      </Component>
       <Component Id="cmpar" Directory="dirar" Guid="{7399EF14-06B7-4575-BA0B-7B4375E25CF7}">
         <File Id="filar" KeyPath="yes" Source="..\butterflow-ui\bin\Release\ar\butterflow-ui.resources.dll" />
       </Component>
