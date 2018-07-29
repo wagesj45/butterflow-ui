@@ -196,6 +196,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The current version is behind the github repository and should be updated..
+        /// </summary>
+        public static string BehindVersionStatusDescription {
+            get {
+                return ResourceManager.GetString("BehindVersionStatusDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ButterflowUI Configuration File.
         /// </summary>
         public static string ButterflowUIConfigurationLabel {
@@ -250,11 +259,29 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The current version is up to date with the github repository..
+        /// </summary>
+        public static string CurrentVersionStatusDescription {
+            get {
+                return ResourceManager.GetString("CurrentVersionStatusDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom Rate.
         /// </summary>
         public static string CustomPlaybackRateLabel {
             get {
                 return ResourceManager.GetString("CustomPlaybackRateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current version is ahead of the github repository, or is a custom version of butterflow-ui that cannot be compared to the github repository..
+        /// </summary>
+        public static string CustomVersionStatusDescription {
+            get {
+                return ResourceManager.GetString("CustomVersionStatusDescription", resourceCulture);
             }
         }
         
@@ -786,6 +813,15 @@ namespace butterflow_ui.Localization {
         public static string ToEndLabel {
             get {
                 return ResourceManager.GetString("ToEndLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Github failed to respond with the current version. This could be because of rate limits or a network failure..
+        /// </summary>
+        public static string UnknownVersionStatusDescription {
+            get {
+                return ResourceManager.GetString("UnknownVersionStatusDescription", resourceCulture);
             }
         }
         

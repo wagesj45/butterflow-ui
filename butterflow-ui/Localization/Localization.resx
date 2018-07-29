@@ -372,4 +372,16 @@
   <data name="SupportedFileTypesLabel" xml:space="preserve">
     <value>Supported File Types</value>
   </data>
+  <data name="BehindVersionStatusDescription" xml:space="preserve">
+    <value>The current version is behind the github repository and should be updated.</value>
+  </data>
+  <data name="CurrentVersionStatusDescription" xml:space="preserve">
+    <value>The current version is up to date with the github repository.</value>
+  </data>
+  <data name="CustomVersionStatusDescription" xml:space="preserve">
+    <value>The current version is ahead of the github repository, or is a custom version of butterflow-ui that cannot be compared to the github repository.</value>
+  </data>
+  <data name="UnknownVersionStatusDescription" xml:space="preserve">
+    <value>Github failed to respond with the current version. This could be because of rate limits or a network failure.</value>
+  </data>
 </root>
