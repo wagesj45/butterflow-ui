@@ -390,4 +390,7 @@
   <data name="UpdateAvailableLabel" xml:space="preserve">
     <value>Доступна более новая версия butterflow-ui.</value>
   </data>
+  <data name="DeviceLabel" xml:space="preserve">
+    <value>Вычислительное устройство</value>
+  </data>
 </root>

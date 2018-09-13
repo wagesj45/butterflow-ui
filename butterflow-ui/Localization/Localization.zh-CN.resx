@@ -390,4 +390,7 @@
   <data name="UpdateAvailableLabel" xml:space="preserve">
     <value>有更新版本的butterflow-ui可供选择。</value>
   </data>
+  <data name="DeviceLabel" xml:space="preserve">
+    <value>计算设备</value>
+  </data>
 </root>

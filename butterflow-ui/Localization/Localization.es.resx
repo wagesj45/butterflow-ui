@@ -390,4 +390,7 @@
   <data name="UpdateAvailableLabel" xml:space="preserve">
     <value>Una versión más reciente de butterflow-ui está disponible.</value>
   </data>
+  <data name="DeviceLabel" xml:space="preserve">
+    <value>Dispositivo de computación</value>
+  </data>
 </root>
