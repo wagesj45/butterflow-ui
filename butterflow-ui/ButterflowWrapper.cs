@@ -237,6 +237,7 @@ namespace butterflow_ui
                 OnParsedConsoleOutputRecieved(ButterflowOutputType.Progress, progress, consoleOutput);
             }
 
+            // An alternate test for progression on a rendering video
             regex = new Regex(REGEX_PROGRESS_ALT);
             foreach (Match match in regex.Matches(consoleOutput))
             {
@@ -248,6 +249,7 @@ namespace butterflow_ui
                 OnParsedConsoleOutputRecieved(ButterflowOutputType.Progress, progress, consoleOutput);
             }
 
+            // Test for device declaration
             regex = new Regex(REGEX_DEVICE);
             foreach (Match match in regex.Matches(consoleOutput))
             {
