@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="butterflow-ui" Language="1033" Version="1.0.3" Manufacturer="butterflow-ui @ github" UpgradeCode="bba9d512-377a-467e-920a-cbcf36ffc072">
+  <Product Id="*" Name="butterflow-ui" Language="1033" Version="1.0.4" Manufacturer="butterflow-ui @ github" UpgradeCode="bba9d512-377a-467e-920a-cbcf36ffc072">
     <Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

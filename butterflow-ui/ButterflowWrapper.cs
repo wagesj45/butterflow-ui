@@ -24,6 +24,8 @@ namespace butterflow_ui
         private const string REGEX_PROGRESS = @"To write\:\s*\w*\s*\w*\,*\w*\s*(?<Progress>\d+\.*\d*)%";
         /// <summary> An alternative RegEx string for detecting progress made when rendering a video. </summary>
         private const string REGEX_PROGRESS_ALT = @"\<Rendering progress\:\s*(?<Progress>\d+\.*\d*)%\>";
+        /// <summary> The RegEx string for determining available processing devices in butterflow.. </summary>
+        private const string REGEX_DEVICE = @"\*\s*Device\s*(?<DeviceID>\d+)\s*\:\s*(?<DeviceName>(\w*\s*)*)";
 
         /// <summary> Full pathname of the butterflow executable file. </summary>
         private Lazy<string> executablePath = new Lazy<string>(() => Path.Combine(Directory.GetCurrentDirectory(), "ThirdPartyCompiled", "butterflow.exe"));
@@ -41,6 +43,8 @@ namespace butterflow_ui
         private InputInterpreter interpreter = new InputInterpreter();
         /// <summary> Event queue for all listeners interested in ParsedConsoleOutputRecieved events. </summary>
         public event EventHandler<ButterflowOutputArgs> ParsedConsoleOutputRecieved;
+        /// <summary> Event queue for all listeners interested in ButterflowExited events. </summary>
+        public event EventHandler<ButterflowExitArgs> ButterflowExited;
 
         #endregion
 
@@ -91,6 +95,10 @@ namespace butterflow_ui
             }
         }
 
+        /// <summary> Gets or sets the list of devices available for butterflow processing. </summary>
+        /// <value> The devices available for butterflow processing. </value>
+        public Dictionary<int, string> Devices { get; private set; } = new Dictionary<int, string>();
+
         #endregion
 
         #region Methods
@@ -99,7 +107,7 @@ namespace butterflow_ui
         /// <param name="optionsConfiguration"> The options configuration. </param>
         public void Run(OptionsConfiguration optionsConfiguration)
         {
-            for(int i = 0; i < optionsConfiguration.VideoInput.Count(); i++)
+            for (int i = 0; i < optionsConfiguration.VideoInput.Count(); i++)
             {
                 var arguments = optionsConfiguration.ToButterflowArguments(i);
                 this.runQueue.Enqueue(arguments);
@@ -139,7 +147,7 @@ namespace butterflow_ui
         /// <summary> Kills the running instance of butterflow, cancelling its current operation. </summary>
         public void Cancel()
         {
-            if(this.IsRunning && this.runningProcess != null)
+            if (this.IsRunning && this.runningProcess != null)
             {
                 this.runningProcess.Kill();
             }
@@ -152,6 +160,13 @@ namespace butterflow_ui
         public void Probe(string videoFile)
         {
             string arguments = string.Format("-prb \"{0}\"", videoFile);
+            Run(arguments);
+        }
+
+        /// <summary> Gets the devices available for butterflow processing. </summary>
+        public void GetDevices()
+        {
+            string arguments = "--show-devices";
             Run(arguments);
         }
 
@@ -171,6 +186,8 @@ namespace butterflow_ui
         {
             this.IsRunning = false;
             this.runningProcess = null;
+
+            OnButterflowExited();
 
             ProcessQueue();
         }
@@ -201,7 +218,7 @@ namespace butterflow_ui
 
             // Test for playback rate
             regex = new Regex(REGEX_RATE);
-            foreach(Match match in regex.Matches(consoleOutput))
+            foreach (Match match in regex.Matches(consoleOutput))
             {
                 var rate = match.Groups["Rate"].Value;
 
@@ -210,7 +227,7 @@ namespace butterflow_ui
 
             // Test for progress being made when rendering a video
             regex = new Regex(REGEX_PROGRESS);
-            foreach(Match match in regex.Matches(consoleOutput))
+            foreach (Match match in regex.Matches(consoleOutput))
             {
                 var progress = match.Groups["Progress"].Value;
 
@@ -230,6 +247,23 @@ namespace butterflow_ui
 
                 OnParsedConsoleOutputRecieved(ButterflowOutputType.Progress, progress, consoleOutput);
             }
+
+            regex = new Regex(REGEX_DEVICE);
+            foreach (Match match in regex.Matches(consoleOutput))
+            {
+                var deviceID = match.Groups["DeviceID"].Value;
+                var deviceName = match.Groups["DeviceName"].Value.Trim();
+
+                this.interpreter.Interpret(deviceID);
+
+                if (!this.Devices.ContainsKey(this.interpreter.Int))
+                {
+                    this.Devices.Add(this.interpreter.Int, deviceName);
+                    OnPropertyChanged("Devices");
+                }
+
+                OnParsedConsoleOutputRecieved(ButterflowOutputType.Device, deviceName, consoleOutput);
+            }
         }
 
         /// <summary> Executes the parsed console output recieved action. </summary>
@@ -238,10 +272,13 @@ namespace butterflow_ui
         /// <param name="consoleOutput"> The console output from butterflow. </param>
         private void OnParsedConsoleOutputRecieved(ButterflowOutputType outputType, string value, string consoleOutput)
         {
-            if (this.ParsedConsoleOutputRecieved != null)
-            {
-                this.ParsedConsoleOutputRecieved(this, new ButterflowOutputArgs(outputType, value, consoleOutput));
-            }
+            this.ParsedConsoleOutputRecieved?.Invoke(this, new ButterflowOutputArgs(outputType, value, consoleOutput));
+        }
+
+        /// <summary> Executes the butterflow exited action. </summary>
+        private void OnButterflowExited()
+        {
+            this.ButterflowExited?.Invoke(this, new ButterflowExitArgs());
         }
 
         /// <summary> Event handler. Called by Process for output data received events. </summary>
@@ -308,6 +345,19 @@ namespace butterflow_ui
             #endregion
         }
 
+        /// <summary> Arguments for butterflow exiting. </summary>
+        public class ButterflowExitArgs : EventArgs
+        {
+            #region Constructors
+
+            public ButterflowExitArgs()
+            {
+                //
+            }
+
+            #endregion
+        }
+
         /// <summary> Values that represent butterflow output types. </summary>
         public enum ButterflowOutputType
         {
@@ -318,7 +368,9 @@ namespace butterflow_ui
             /// <summary> Video playback rate. </summary>
             Rate,
             /// <summary> Video processing progress. </summary>
-            Progress
+            Progress,
+            /// <summary> An available processing device. </summary>
+            Device
         }
 
         #endregion

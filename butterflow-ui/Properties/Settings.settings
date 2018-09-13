@@ -5,5 +5,8 @@
     <Setting Name="Language" Type="System.Globalization.CultureInfo" Scope="User">
       <Value Profile="(Default)">en-US</Value>
     </Setting>
+    <Setting Name="Device" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

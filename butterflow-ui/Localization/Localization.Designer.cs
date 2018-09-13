@@ -304,6 +304,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Computing Device.
+        /// </summary>
+        public static string DeviceLabel {
+            get {
+                return ResourceManager.GetString("DeviceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string EditMenu {

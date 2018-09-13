@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using butterflow_ui.Properties;
 using csmic;
 
 namespace butterflow_ui
@@ -529,6 +530,11 @@ namespace butterflow_ui
             else
             {
                 stringBuilder.AppendFormat("-vs {0}:{1} ", this.Width, this.Height);
+            }
+
+            if(Settings.Default.Device != 0)
+            {
+                stringBuilder.AppendFormat("-device {0} ", Settings.Default.Device);
             }
 
             if (!string.IsNullOrWhiteSpace(this.PlaybackRate)) stringBuilder.AppendFormat("-r {0} ", this.PlaybackRate);

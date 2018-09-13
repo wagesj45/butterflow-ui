@@ -1,4 +1,5 @@
-﻿using System;
+﻿using butterflow_ui.Properties;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -21,6 +22,9 @@ namespace butterflow_ui
     {
         #region Properties
 
+        /// <summary> The butterflow wrapper used to call butterflow. </summary>
+        public ButterflowWrapper ButterflowWrapper { get; set; } = new ButterflowWrapper();
+
         /// <summary> Gets or sets the supported languages. </summary>
         /// <value> The supported languages. </value>
         public List<CultureInfo> SupportedLanguages { get; set; } = new List<CultureInfo>(new[]
@@ -40,6 +44,8 @@ namespace butterflow_ui
         /// <summary> Default constructor. </summary>
         public OptionsWindow()
         {
+            this.ButterflowWrapper.GetDevices();
+            this.ButterflowWrapper.ButterflowExited += ButterflowWrapper_ButterflowExited;
             InitializeComponent();
         }
 
@@ -55,6 +61,21 @@ namespace butterflow_ui
             Properties.Settings.Default.Save();
 
             this.Close();
+        }
+
+        /// <summary> Butterflow wrapper butterflow exited. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      The ButterflowExitArgs to process. </param>
+        private void ButterflowWrapper_ButterflowExited(object sender, ButterflowWrapper.ButterflowExitArgs e)
+        {
+            if (Settings.Default.Device >= 0)
+            {
+                this.comboDeviceList.Dispatcher.Invoke(() => this.comboDeviceList.SelectedIndex = Settings.Default.Device);
+            }
+            else
+            {
+                this.comboDeviceList.Dispatcher.Invoke(() => this.comboDeviceList.SelectedIndex = 0);
+            }
         }
 
         #endregion
