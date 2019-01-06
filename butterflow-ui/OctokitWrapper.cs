@@ -22,7 +22,7 @@ namespace butterflow_ui
         private const string REGEX_VERSION = @"(?<Major>\d+ ?)\.(?<Minor>\d+ ?)\.(?<Patch>\d+ ?)";
 
         /// <summary> The version status of the current installation. </summary>
-        private static VersionStatus versionStatus = VersionStatus.unknown;
+        private static VersionStatus versionStatus = VersionStatus.Unknown;
 
         #endregion
 
@@ -46,13 +46,13 @@ namespace butterflow_ui
             {
                 switch (CurrentVersionStatus)
                 {
-                    case VersionStatus.current:
+                    case VersionStatus.Current:
                         return Localization.Localization.CurrentVersionStatusDescription;
-                    case VersionStatus.behind:
+                    case VersionStatus.Behind:
                         return Localization.Localization.BehindVersionStatusDescription;
-                    case VersionStatus.custom:
+                    case VersionStatus.Custom:
                         return Localization.Localization.CustomVersionStatusDescription;
-                    case VersionStatus.unknown:
+                    case VersionStatus.Unknown:
                     default:
                         return Localization.Localization.UnknownVersionStatusDescription;
                 }
@@ -77,44 +77,53 @@ namespace butterflow_ui
         /// <returns> The current version status. </returns>
         private static VersionStatus GetVersionStatus()
         {
-            var interpreter = new InputInterpreter();
-            var client = new GitHubClient(new ProductHeaderValue("butterflow-ui"));
-            var releases = client.Repository.Release.GetAll("wagesj45", "butterflow-ui").Result;
-
-            if (releases.Any())
+            try
             {
-                var latest = releases.First();
-                decimal latestMajor = 0, latestMinor = 0, latestPatch = 0, currentMajor = 0, currentMinor = 0, currentPatch = 0;
+                var interpreter = new InputInterpreter();
+                var client = new GitHubClient(new ProductHeaderValue("butterflow-ui"));
+                var releases = client.Repository.Release.GetAll("wagesj45", "butterflow-ui").Result;
 
-                var regex = new Regex(REGEX_VERSION);
-                foreach (Match match in regex.Matches(latest.TagName))
+                if (releases.Any())
                 {
-                    latestMajor = interpreter.ComputeExpression(match.Groups["Major"].Value);
-                    latestMinor = interpreter.ComputeExpression(match.Groups["Minor"].Value);
-                    latestPatch = interpreter.ComputeExpression(match.Groups["Patch"].Value);
-                }
+                    var latest = releases.First();
+                    decimal latestMajor = 0, latestMinor = 0, latestPatch = 0, currentMajor = 0, currentMinor = 0, currentPatch = 0;
 
-                foreach (Match match in regex.Matches(Assembly.GetExecutingAssembly().GetName().Version.ToString()))
-                {
-                    currentMajor = interpreter.ComputeExpression(match.Groups["Major"].Value);
-                    currentMinor = interpreter.ComputeExpression(match.Groups["Minor"].Value);
-                    currentPatch = interpreter.ComputeExpression(match.Groups["Patch"].Value);
-                }
+                    var regex = new Regex(REGEX_VERSION);
+                    foreach (Match match in regex.Matches(latest.TagName))
+                    {
+                        latestMajor = interpreter.ComputeExpression(match.Groups["Major"].Value);
+                        latestMinor = interpreter.ComputeExpression(match.Groups["Minor"].Value);
+                        latestPatch = interpreter.ComputeExpression(match.Groups["Patch"].Value);
+                    }
 
-                if (latestMajor == currentMajor && latestMinor == currentMinor && latestPatch == currentPatch)
-                {
-                    return VersionStatus.current;
-                }
+                    foreach (Match match in regex.Matches(Assembly.GetExecutingAssembly().GetName().Version.ToString()))
+                    {
+                        currentMajor = interpreter.ComputeExpression(match.Groups["Major"].Value);
+                        currentMinor = interpreter.ComputeExpression(match.Groups["Minor"].Value);
+                        currentPatch = interpreter.ComputeExpression(match.Groups["Patch"].Value);
+                    }
 
-                if (latestMajor >= currentMajor && latestMinor >= currentMinor && latestPatch >= currentPatch)
-                {
-                    return VersionStatus.behind;
-                }
+                    if (latestMajor == currentMajor && latestMinor == currentMinor && latestPatch == currentPatch)
+                    {
+                        return VersionStatus.Current;
+                    }
 
-                return VersionStatus.custom;
+                    if (latestMajor >= currentMajor && latestMinor >= currentMinor && latestPatch >= currentPatch)
+                    {
+                        return VersionStatus.Behind;
+                    }
+
+                    return VersionStatus.Custom;
+                }
+            }
+            catch(Exception e)
+            {
+                //There was an issue connecting to Github. This could be caused by a missing network connection.
+                //We can safely ignore an error in this process and proceed, falling through to the default connection
+                //value of Unknown.
             }
 
-            return VersionStatus.unknown;
+            return VersionStatus.Unknown;
         }
 
         #endregion
@@ -125,13 +134,13 @@ namespace butterflow_ui
         public enum VersionStatus
         {
             /// <summary> The current version is up to date with the github repository. </summary>
-            current,
+            Current,
             /// <summary> The current version is behind the github repository and should be updated. </summary>
-            behind,
+            Behind,
             /// <summary> The current version is ahead of the github repository, or is a custom version of butterflow-ui that cannot be compared to the github repository. </summary>
-            custom,
+            Custom,
             /// <summary> Github failed to respond with the current version. This could be because of rate limits or a network failure. </summary>
-            unknown
+            Unknown
         }
 
         #endregion

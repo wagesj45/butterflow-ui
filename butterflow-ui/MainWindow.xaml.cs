@@ -53,17 +53,18 @@ namespace butterflow_ui
             InitializeComponent();
 
             // Check for updates.
-            if (OctokitWrapper.CurrentVersionStatus == OctokitWrapper.VersionStatus.behind)
+            if (OctokitWrapper.CurrentVersionStatus == OctokitWrapper.VersionStatus.Behind)
             {
                 var updateMessageBoxResult = MessageBox.Show(string.Format("{0} {1}", Localization.Localization.BehindVersionStatusDescription, Localization.Localization.BehindVersionQuestion), Localization.Localization.UpdateAvailableLabel, MessageBoxButton.YesNo, MessageBoxImage.Information);
 
                 // If the user wants to update now, take them to the latest release on github and close this window.
-                if(updateMessageBoxResult == MessageBoxResult.Yes)
+                if (updateMessageBoxResult == MessageBoxResult.Yes)
                 {
                     Process.Start("https://github.com/wagesj45/butterflow-ui/releases/latest");
                     this.Close();
                 }
             }
+
         }
 
         #region Methods
@@ -113,8 +114,8 @@ namespace butterflow_ui
                     this.OptionsConfiguration.Height = e.Value;
                     break;
                 case ButterflowWrapper.ButterflowOutputType.Progress:
-                    // This case doesn't need to be considered since we're binding the progress bar's value to a property on the butterflow wrapper.
-                    // We may use this in the future, though.
+                // This case doesn't need to be considered since we're binding the progress bar's value to a property on the butterflow wrapper.
+                // We may use this in the future, though.
                 default:
                     break;
             }
@@ -357,7 +358,7 @@ namespace butterflow_ui
         {
             var button = sender as Button;
 
-            if(button != null)
+            if (button != null)
             {
                 if (button.Tag.GetType() == typeof(Guid))
                 {
@@ -385,7 +386,7 @@ namespace butterflow_ui
             {
                 var binaryFormatter = new BinaryFormatter();
                 var file = binaryFormatter.Deserialize(ofd.OpenFile());
-                if(file is OptionsConfigurationFile)
+                if (file is OptionsConfigurationFile)
                 {
                     this.OptionsConfiguration.LoadFile((OptionsConfigurationFile)file);
                 }
