@@ -393,4 +393,7 @@
   <data name="DeviceLabel" xml:space="preserve">
     <value>Dispositivo de computación</value>
   </data>
+  <data name="ForceCPU" xml:space="preserve">
+    <value>Unidad de procesamiento central de fuerza</value>
+  </data>
 </root>

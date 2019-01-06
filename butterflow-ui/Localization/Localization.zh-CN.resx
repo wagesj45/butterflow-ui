@@ -393,4 +393,7 @@
   <data name="DeviceLabel" xml:space="preserve">
     <value>计算设备</value>
   </data>
+  <data name="ForceCPU" xml:space="preserve">
+    <value>部队中央处理股</value>
+  </data>
 </root>

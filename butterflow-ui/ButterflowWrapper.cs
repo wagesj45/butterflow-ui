@@ -97,7 +97,7 @@ namespace butterflow_ui
 
         /// <summary> Gets or sets the list of devices available for butterflow processing. </summary>
         /// <value> The devices available for butterflow processing. </value>
-        public Dictionary<int, string> Devices { get; private set; } = new Dictionary<int, string>();
+        public Dictionary<int, string> Devices { get; private set; } = new Dictionary<int, string>() { { 0, Localization.Localization.ForceCPU } };
 
         #endregion
 
@@ -256,7 +256,8 @@ namespace butterflow_ui
                 var deviceID = match.Groups["DeviceID"].Value;
                 var deviceName = match.Groups["DeviceName"].Value.Trim();
 
-                this.interpreter.Interpret(deviceID);
+                //Add 1 to the index count. This accounts for the 0 index of the "Force CPU" option in the options window.
+                this.interpreter.Interpret(string.Concat(deviceID,"+1"));
 
                 if (!this.Devices.ContainsKey(this.interpreter.Int))
                 {

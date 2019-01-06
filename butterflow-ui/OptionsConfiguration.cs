@@ -467,9 +467,18 @@ namespace butterflow_ui
 
         #region Methods
 
+        /// <summary> Subregion property changed. </summary>
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e">      Property changed event information. </param>
         private void SubregionPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged("CommandLineOutput");
+        }
+
+        /// <summary> Force the object's properties to report as updated. </summary>
+        public void ForceUpdate()
+        {
+            OnPropertyChanged();
         }
 
         /// <summary> Converts this object to a <seealso cref="OptionsConfigurationFile"/>. </summary>
@@ -532,7 +541,11 @@ namespace butterflow_ui
                 stringBuilder.AppendFormat("-vs {0}:{1} ", this.Width, this.Height);
             }
 
-            if(Settings.Default.Device != 0)
+            if(Settings.Default.Device == 0)
+            {
+                stringBuilder.Append("-sw ");
+            }
+            if(Settings.Default.Device > 0)
             {
                 stringBuilder.AppendFormat("-device {0} ", Settings.Default.Device);
             }

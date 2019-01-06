@@ -258,15 +258,6 @@ namespace butterflow_ui
             }
         }
 
-        /// <summary> Event handler. Called by mediaPreview for media opened events. </summary>
-        /// <param name="sender"> Source of the event. </param>
-        /// <param name="e">      Routed event information. </param>
-        private void mediaPreview_MediaOpened(object sender, RoutedEventArgs e)
-        {
-            //this.OptionsConfiguration.Width = this.mediaPreview.NaturalVideoWidth.ToString();
-            //this.OptionsConfiguration.Height = this.mediaPreview.NaturalVideoHeight.ToString();
-        }
-
         /// <summary> Event handler. Called by mediaPreview for media ended events. </summary>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Routed event information. </param>
@@ -442,7 +433,11 @@ namespace butterflow_ui
         {
             var optionsWindow = new OptionsWindow();
 
-            optionsWindow.Show();
+            optionsWindow.ShowDialog();
+
+            //Force an update on the command line arguments in case the user changed something in the
+            //Options window that necessitates it, such as the compute device.
+            this.OptionsConfiguration.ForceUpdate();
         }
 
         #endregion

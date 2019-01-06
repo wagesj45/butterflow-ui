@@ -403,6 +403,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Force CPU.
+        /// </summary>
+        public static string ForceCPU {
+            get {
+                return ResourceManager.GetString("ForceCPU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Height.
         /// </summary>
         public static string HeightLabel {

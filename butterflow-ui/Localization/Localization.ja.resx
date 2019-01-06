@@ -393,4 +393,7 @@
   <data name="DeviceLabel" xml:space="preserve">
     <value>コンピューティングデバイス</value>
   </data>
+  <data name="ForceCPU" xml:space="preserve">
+    <value>中央処理装置を強制する</value>
+  </data>
 </root>

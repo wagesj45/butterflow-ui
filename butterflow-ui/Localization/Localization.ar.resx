@@ -393,4 +393,7 @@
   <data name="DeviceLabel" xml:space="preserve">
     <value>جهاز الحوسبة</value>
   </data>
+  <data name="ForceCPU" xml:space="preserve">
+    <value>قوة وحدة المعالجة المركزية</value>
+  </data>
 </root>
