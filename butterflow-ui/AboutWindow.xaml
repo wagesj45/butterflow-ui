@@ -54,6 +54,11 @@
                         | <Hyperlink NavigateUri="https://github.com/JohanLarsson/Gu.Wpf.Media" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowGithubLinkLabel}" /></Hyperlink>
                         | <Hyperlink NavigateUri="https://github.com/JohanLarsson/Gu.Wpf.Media/blob/master/LICENSE.md" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowLicenseLinkLabel}" /></Hyperlink>
                     </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                        Octokit
+                        | <Hyperlink NavigateUri="https://github.com/octokit/octokit.net" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowGithubLinkLabel}" /></Hyperlink>
+                        | <Hyperlink NavigateUri="https://github.com/octokit/octokit.net/blob/master/LICENSE.txt" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowLicenseLinkLabel}" /></Hyperlink>
+                    </TextBlock>
                 </StackPanel>
             </Grid>
             <Separator Margin="0,10" />
