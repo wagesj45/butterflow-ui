@@ -30,6 +30,10 @@ A graphical user interface for butterflow.
 
 If you'd like to help contribute to the project, please don't be shy! Translation into your local language would always be appreciated. Translations can be generated automatically, but those automatic translations are prone to error. **butterflow-ui** can always be improved, and if there are missing features that you want, please submit a pull request.
 
+### Butterflow Needs a New Maintainer
+
+[butterflow](https://github.com/dthpham/butterflow) is currently looking for a new primary developer. If you're familiar with Python, C++, and the OpenCV toolkit, consider contributing to the project.
+
 ## Download
 
 **butterflow-ui** is conveniently packaged in a Windows installer file (MSI) built with the [WIX toolset](http://wixtoolset.org). The latest installer can be downloaded [here](https://github.com/wagesj45/butterflow-ui/releases/latest). You can also download [old releases](https://github.com/wagesj45/butterflow-ui/releases) as well.
@@ -37,3 +41,7 @@ If you'd like to help contribute to the project, please don't be shy! Translatio
 ## Code Documentation
 
 **butterflow-ui** is [fully documented](https://wagesj45.github.io/butterflow-ui) via [Sandcastle](https://github.com/EWSoftware/SHFB). You can find generated documents to help you contribute to the project in the [documentation section](https://wagesj45.github.io/butterflow-ui).
+
+## Donations
+
+If you would like to donate to the development of **butterflow-ui**, please direct you donation to my [PayPal.Me](https://www.paypal.me/wagesj45) page. You can also donate Ethereum [to my wallet](https://etherscan.io/address/0x917f3d67e2a7ec8884d241118ee829af57cc4afd).
