@@ -8,16 +8,23 @@
         xmlns:loc="clr-namespace:butterflow_ui.Localization"
         mc:Ignorable="d"
         Title="{x:Static loc:Localization.OptionsWindowTitle}" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <butterflow_ui:InverseBoolVisibilityConverter x:Key="InverseBoolVisibilityConverter" />
+    </Window.Resources>
     <DockPanel Margin="32">
         <StackPanel>
             <WrapPanel>
                 <Label Content="{x:Static loc:Localization.LanguageLabel}" />
-                <ComboBox DisplayMemberPath="DisplayName" ItemsSource="{Binding SupportedLanguages, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:OptionsWindow}}, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Source={x:Static settings:Settings.Default}, Path=Language}" />
+                <ComboBox DisplayMemberPath="DisplayName" ItemsSource="{Binding SupportedLanguages, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:OptionsWindow}}, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Source={x:Static settings:Settings.Default}, Path=Language}" VerticalAlignment="Center" />
             </WrapPanel>
             <TextBlock Text="{x:Static loc:Localization.OptionsWindowLanguageChangeNotice}" Foreground="Gray" />
             <WrapPanel>
+                <Label Content="{x:Static loc:Localization.UseDefaultDeviceLabel}" />
+                <CheckBox Name="chkUseDefaultDevice" IsChecked="{Binding Source={x:Static settings:Settings.Default}, Path=UseDefaultDevice}" VerticalAlignment="Center" />
+            </WrapPanel>
+            <WrapPanel Visibility="{Binding Source={x:Static settings:Settings.Default}, Path=UseDefaultDevice, Converter={StaticResource InverseBoolVisibilityConverter}}">
                 <Label Content="{x:Static loc:Localization.DeviceLabel}" />
-                <ComboBox Name="comboDeviceList" DisplayMemberPath="Value" ItemsSource="{Binding ButterflowWrapper.Devices, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:OptionsWindow}}, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding Source={x:Static settings:Settings.Default}, Path=Device}" />
+                <ComboBox Name="comboDeviceList" DisplayMemberPath="Value" ItemsSource="{Binding ButterflowWrapper.Devices, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:OptionsWindow}}, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding Source={x:Static settings:Settings.Default}, Path=Device}" VerticalAlignment="Center" />
             </WrapPanel>
             <Separator Margin="0,10" />
             <Button Name="btnSave" MaxWidth="45" Content="{x:Static loc:Localization.SaveLabel}" Click="btnSave_Click" />

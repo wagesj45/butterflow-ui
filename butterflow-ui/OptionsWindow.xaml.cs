@@ -37,7 +37,7 @@ namespace butterflow_ui
             CultureInfo.CreateSpecificCulture("zh-CN"),
         });
 
-        #endregion
+        #endregion Properties
 
         #region Constructors
 
@@ -49,7 +49,7 @@ namespace butterflow_ui
             InitializeComponent();
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Methods
 
@@ -68,7 +68,7 @@ namespace butterflow_ui
         /// <param name="e">      The ButterflowExitArgs to process. </param>
         private void ButterflowWrapper_ButterflowExited(object sender, ButterflowWrapper.ButterflowExitArgs e)
         {
-            if (Settings.Default.Device >= 0)
+            if(Settings.Default.Device >= 0)
             {
                 this.comboDeviceList.Dispatcher.Invoke(() => this.comboDeviceList.SelectedIndex = Settings.Default.Device);
             }
@@ -78,6 +78,6 @@ namespace butterflow_ui
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

@@ -15,13 +15,13 @@
         <ObjectDataProvider x:Key="enumRegionTypeDataProvider" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="butterflow_ui:RegionType"/>
+                <x:Type TypeName="butterflow_ui:RegionType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider x:Key="enumFlowFilterTypeDataProvider" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="butterflow_ui:FlowFilterType"/>
+                <x:Type TypeName="butterflow_ui:FlowFilterType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <butterflow_ui:InverseBoolConverter x:Key="InverseBoolConverter" />
@@ -56,7 +56,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="{x:Static loc:Localization.HelpMenu}">
-                <MenuItem Name="menuButterflowGithub" Header="{x:Static loc:Localization.AboutButterflowMenu}" Click="menuButterflowGithub_Click" >
+                <MenuItem Name="menuButterflowGithub" Header="{x:Static loc:Localization.AboutButterflowMenu}" Click="menuButterflowGithub_Click">
                     <MenuItem.Icon>
                         <ContentControl Template="{StaticResource LinkIcon}" />
                     </MenuItem.Icon>
@@ -83,7 +83,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -95,8 +95,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                        <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True"/>
+                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}" />
+                        <TextBox Name="txtFileName" Grid.Column="1" IsReadOnly="True" />
                         <Button Grid.Column="2" MinWidth="25" Name="btnFilePicker" Click="btnFilePicker_Click">...</Button>
                     </Grid>
                 </GroupBox>
@@ -107,8 +107,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}"/>
-                        <TextBox Name="txtFileOutputName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Column="0" Content="{x:Static loc:Localization.FileLabel}" />
+                        <TextBox Name="txtFileOutputName" Grid.Column="1" IsReadOnly="True" Text="{Binding OptionsConfiguration.VideoOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                         <Button Grid.Column="2" MinWidth="25" Name="btnFileOutputPicker" Click="btnFileOutputPicker_Click">...</Button>
                     </Grid>
                 </GroupBox>
@@ -134,7 +134,7 @@
             <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static loc:Localization.CommonOptionsGroupBox}">
                 <ScrollViewer>
                     <StackPanel>
-                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}" >
+                        <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.PlaybackRateLabel}">
                             <StackPanel Orientation="Vertical">
                                 <butterflow_ui:ButterflowOption LabelValue="">
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._2xLabel}" Tag="2x" />
@@ -146,7 +146,7 @@
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._4xLabel}" Tag="4x" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="">
-                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._24fpsLabel}" Tag="24"/>
+                                    <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._24fpsLabel}" Tag="24" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="">
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._30fpsLabel}" Tag="30" />
@@ -158,7 +158,7 @@
                                     <RadioButton GroupName="PlaybackRate" Checked="PlaybackRateRadioButton_Checked" Content="{x:Static loc:Localization._120fpsLabel}" Tag="120" />
                                 </butterflow_ui:ButterflowOption>
                                 <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.CustomPlaybackRateLabel}" DescriptionValue="{x:Static loc:Localization.PlaybackRateDescription}">
-                                    <TextBox Name="txtPlaybackRate" Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" GotFocus="txtPlaybackRate_GotFocus"  />
+                                    <TextBox Name="txtPlaybackRate" Text="{Binding OptionsConfiguration.PlaybackRate, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" GotFocus="txtPlaybackRate_GotFocus" />
                                 </butterflow_ui:ButterflowOption>
                             </StackPanel>
                         </butterflow_ui:ButterflowOption>
@@ -203,7 +203,6 @@
                                     </ToggleButton.Style>
                                 </ToggleButton>
                                 <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="bntVideoStop_Click">
-
                                 </Button>
                                 <butterflow_ui:ButterflowOption Grid.Column="2" LabelValue="{x:Static loc:Localization.HeightLabel}">
                                     <TextBox Text="{Binding OptionsConfiguration.Height, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" IsReadOnly="{Binding OptionsConfiguration.LockAspectRatio, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}">
@@ -233,10 +232,10 @@
                                     <DataTemplate>
                                         <DockPanel MaxHeight="24">
                                             <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.StartLabel}" />
-                                            <TextBlock VerticalAlignment="Center" Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}"/>
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Start, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding Start}" />
                                             <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.EndLabel}" />
-                                            <TextBlock VerticalAlignment="Center" Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}"/>
-                                            <ComboBox VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource enumRegionTypeDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}"/>
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding End, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" ToolTip="{Binding End}" />
+                                            <ComboBox VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource enumRegionTypeDataProvider}}" SelectedItem="{Binding SubregionType, Mode=TwoWay}" />
                                             <TextBox VerticalAlignment="Center" MinWidth="35" Text="{Binding Value, Mode=TwoWay}" />
                                             <TextBlock VerticalAlignment="Center" Text="{x:Static loc:Localization.ToEndLabel}" />
                                             <CheckBox VerticalAlignment="Center" IsChecked="{Binding ToEnd, Mode=TwoWay}" />
@@ -276,7 +275,7 @@
                             <TextBox Text="{Binding OptionsConfiguration.SmoothDerivativeStandardDeviation, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=LostFocus}" />
                         </butterflow_ui:ButterflowOption>
                         <butterflow_ui:ButterflowOption LabelValue="{x:Static loc:Localization.FlowFilterLabel}" DescriptionValue="{x:Static loc:Localization.FlowFilterTooltip}">
-                            <ComboBox ItemsSource="{Binding Source={StaticResource enumFlowFilterTypeDataProvider}}" SelectedItem="{Binding OptionsConfiguration.FlowFilterType, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <ComboBox ItemsSource="{Binding Source={StaticResource enumFlowFilterTypeDataProvider}}" SelectedItem="{Binding OptionsConfiguration.FlowFilterType, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}, UpdateSourceTrigger=PropertyChanged}" />
                         </butterflow_ui:ButterflowOption>
                     </StackPanel>
                 </ScrollViewer>
@@ -320,8 +319,8 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Content="{Binding ElementName=mediaPreview, Path=Position, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
-                    <Slider Grid.Column="1" Name="sliderMedia" 
-                            Value="{Binding ElementName=mediaPreview, Path=Position, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" 
+                    <Slider Grid.Column="1" Name="sliderMedia"
+                            Value="{Binding ElementName=mediaPreview, Path=Position, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}"
                             Maximum="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:NullableTimeSpanToSecondsConverter.Default}}" />
                     <Label Grid.Column="2" Content="{Binding Path=Length, ElementName=mediaPreview, Converter={x:Static gu:TimeSpanToStringConverter.Default}}" />
                 </Grid>
@@ -360,7 +359,7 @@
                     </Button>
                 </StatusBarItem>
                 <StatusBarItem Grid.Column="1">
-                    <TextBlock Text="{Binding OptionsConfiguration.CommandLineOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}}"/>
+                    <TextBlock Text="{Binding OptionsConfiguration.CommandLineOutput, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type butterflow_ui:MainWindow}}}" />
                 </StatusBarItem>
             </StatusBar>
         </Grid>

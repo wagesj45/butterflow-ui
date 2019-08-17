@@ -313,6 +313,15 @@ namespace butterflow_ui.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to donate.
+        /// </summary>
+        public static string DonateLabel {
+            get {
+                return ResourceManager.GetString("DonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string EditMenu {
@@ -858,6 +867,15 @@ namespace butterflow_ui.Localization {
         public static string UpdateAvailableLabel {
             get {
                 return ResourceManager.GetString("UpdateAvailableLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Default Compute Device.
+        /// </summary>
+        public static string UseDefaultDeviceLabel {
+            get {
+                return ResourceManager.GetString("UseDefaultDeviceLabel", resourceCulture);
             }
         }
         

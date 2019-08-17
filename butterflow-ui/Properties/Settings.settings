@@ -6,7 +6,10 @@
       <Value Profile="(Default)">en-US</Value>
     </Setting>
     <Setting Name="Device" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">-1</Value>
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UseDefaultDevice" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

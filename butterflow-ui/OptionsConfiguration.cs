@@ -11,7 +11,6 @@ using csmic;
 
 namespace butterflow_ui
 {
-
     /// <summary> The butterflow options configuration. Contians all the options necessary to run butterflow and process a video. </summary>
     public class OptionsConfiguration : PropertyChangedAlerter
     {
@@ -19,67 +18,93 @@ namespace butterflow_ui
 
         /// <summary> The default pyramid scale setting. </summary>
         private const decimal DEFAULT_PYRAMID_SCALE = 0.5m;
+
         /// <summary> The default levels setting. </summary>
         private const int DEFAULT_LEVELS = 3;
+
         /// <summary> The default window size setting. </summary>
         private const int DEFAULT_WINDOW_SIZE = 25;
+
         /// <summary> The default iterations setting. </summary>
         private const int DEFAULT_ITERATIONS = 3;
+
         /// <summary> The default pixel neighborhood setting. </summary>
         private const int DEFAULT_PIXEL_NEIGHBORHOOD = 5;
+
         /// <summary> The default smooth derivative standard deviation setting. </summary>
         private const decimal DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION = 1.1m;
+
         /// <summary> The default flow filter type setting. </summary>
         private const FlowFilterType DEFAULT_FLOW_FILTER_TYPE = FlowFilterType.box;
+
         /// <summary> The output file format when operating on more than one video. </summary>
         private const string OUTPUT_FILE_FORMAT = "{0}_{1}";
 
         /// <summary> An input interpreter used for converting string values to numeric values. </summary>
         [NonSerialized]
         private InputInterpreter interpreter = new InputInterpreter();
+
         /// <summary> The aspect ratio used for calculating heights when the aspect ratio is locked. </summary>
         private decimal aspectRatio = 0;
 
         /// <summary> The playback rate. </summary>
         private string playbackRate;
+
         /// <summary> A value indicating whether or not to keep the original audio in the final video. </summary>
         private bool keepAudio;
+
         /// <summary> The width of the output video. </summary>
         private int width;
+
         /// <summary> The height of the output video. </summary>
         private int height;
+
         /// <summary> A value indicating whether or not to render unspecified subregions. </summary>
         private bool keepSubregions;
+
         /// <summary> A value indicating whether or not to render the final video with lossless quality. </summary>
         private bool losslessQuality;
+
         /// <summary> A value indicating whether or not to tune processing for smooth motion. </summary>
         private bool smoothMotion;
+
         /// <summary> A value indicating whether or not to lock the aspect ratio to the <seealso cref="width"/> of the video. </summary>
         private bool lockAspectRatio;
+
         /// <summary> The video input files. </summary>
         private IEnumerable<string> videoInput;
+
         /// <summary> The video output file. </summary>
         private string videoOutput;
+
         /// <summary> A value indicating whether or not to use fast pyramids when processing a video. </summary>
         private bool fastPyramid;
+
         /// <summary> The pyramid scale setting. </summary>
         private decimal pyramidScale;
+
         /// <summary> The level size setting. </summary>
         private int levels;
+
         /// <summary> Size of the windowing average. </summary>
         private int windowSize;
+
         /// <summary> The number of iterations per pyramid level. </summary>
         private int iterations;
+
         /// <summary> The size of pixel neighborhood. </summary>
         private int pixelNeighborhood;
+
         /// <summary> The standard deviation of smooth derivatives </summary>
         private decimal smoothDerivativeStandardDeviation;
+
         /// <summary> Type of the flow filter to use for processing. </summary>
         private FlowFilterType flowFilterType = FlowFilterType.box;
+
         /// <summary> The subregions of the video on which to process. </summary>
         private ObservableCollection<ButterflowSubregion> subregions = new ObservableCollection<ButterflowSubregion>();
 
-        #endregion
+        #endregion Members
 
         #region Properties
 
@@ -158,7 +183,7 @@ namespace butterflow_ui
             }
             set
             {
-                if (value && this.width != 0 && this.height != 0)
+                if(value && this.width != 0 && this.height != 0)
                 {
                     this.aspectRatio = Convert.ToDecimal(this.height) / Convert.ToDecimal(this.width);
                 }
@@ -185,7 +210,7 @@ namespace butterflow_ui
 
                 OnPropertyChanged();
 
-                if (this.lockAspectRatio)
+                if(this.lockAspectRatio)
                 {
                     interpreter.Interpret(string.Format("{0} * {1}", this.aspectRatio, this.width));
                     this.height = interpreter.Int;
@@ -364,7 +389,7 @@ namespace butterflow_ui
             {
                 interpreter.Interpret(value);
 
-                if (interpreter.Int >= 5 && interpreter.Int <= 7)
+                if(interpreter.Int >= 5 && interpreter.Int <= 7)
                 {
                     this.pixelNeighborhood = interpreter.Int;
                 }
@@ -419,7 +444,7 @@ namespace butterflow_ui
             }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Contructors
 
@@ -445,16 +470,16 @@ namespace butterflow_ui
         /// <param name="e">      Notify collection changed event information. </param>
         private void Subregions_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            if (e.NewItems != null)
+            if(e.NewItems != null)
             {
-                foreach (ButterflowSubregion newItem in e.NewItems)
+                foreach(ButterflowSubregion newItem in e.NewItems)
                 {
                     newItem.PropertyChanged += SubregionPropertyChanged;
                 }
             }
-            if (e.OldItems != null)
+            if(e.OldItems != null)
             {
-                foreach (ButterflowSubregion oldItem in e.OldItems)
+                foreach(ButterflowSubregion oldItem in e.OldItems)
                 {
                     oldItem.PropertyChanged -= SubregionPropertyChanged;
                 }
@@ -463,7 +488,7 @@ namespace butterflow_ui
             OnPropertyChanged("CommandLineOutput");
         }
 
-        #endregion
+        #endregion Contructors
 
         #region Methods
 
@@ -532,7 +557,7 @@ namespace butterflow_ui
         {
             var stringBuilder = new StringBuilder("-v "); // Verbose
 
-            if (this.LockAspectRatio)
+            if(this.LockAspectRatio)
             {
                 stringBuilder.AppendFormat("-vs {0}:-1 ", this.Width);
             }
@@ -541,37 +566,40 @@ namespace butterflow_ui
                 stringBuilder.AppendFormat("-vs {0}:{1} ", this.Width, this.Height);
             }
 
-            if(Settings.Default.Device == 0)
+            if(!Settings.Default.UseDefaultDevice)
             {
-                stringBuilder.Append("-sw ");
-            }
-            if(Settings.Default.Device > 0)
-            {
-                stringBuilder.AppendFormat("-device {0} ", Settings.Default.Device);
+                if(Settings.Default.Device == 0)
+                {
+                    stringBuilder.Append("-sw ");
+                }
+                if(Settings.Default.Device > 0)
+                {
+                    stringBuilder.AppendFormat("-device {0} ", Settings.Default.Device - 1);
+                }
             }
 
-            if (!string.IsNullOrWhiteSpace(this.PlaybackRate)) stringBuilder.AppendFormat("-r {0} ", this.PlaybackRate);
-            if (this.KeepAudio) stringBuilder.Append("-audio ");
-            if (this.LosslessQuality) stringBuilder.Append("-l ");
+            if(!string.IsNullOrWhiteSpace(this.PlaybackRate)) stringBuilder.AppendFormat("-r {0} ", this.PlaybackRate);
+            if(this.KeepAudio) stringBuilder.Append("-audio ");
+            if(this.LosslessQuality) stringBuilder.Append("-l ");
 
-            if (this.Subregions.Any())
+            if(this.Subregions.Any())
             {
                 stringBuilder.Append("-s ");
 
-                foreach (var anon in this.Subregions.Select((sr, index) => new { Index = index, Subregion = sr }))
+                foreach(var anon in this.Subregions.Select((sr, index) => new { Index = index, Subregion = sr }))
                 {
                     string format = "ss\\.fff";
 
-                    if (anon.Index > 0)
+                    if(anon.Index > 0)
                     {
                         stringBuilder.Append(":");
                     }
 
-                    if (anon.Subregion.Start.TotalHours > 1)
+                    if(anon.Subregion.Start.TotalHours > 1)
                     {
                         format = "h\\:m\\:s\\.fff";
                     }
-                    else if (anon.Subregion.Start.TotalMinutes > 1)
+                    else if(anon.Subregion.Start.TotalMinutes > 1)
                     {
                         format = "m\\:s\\.fff";
                     }
@@ -581,26 +609,26 @@ namespace butterflow_ui
                 stringBuilder.Append(" ");
             }
 
-            if (this.KeepSubregions) stringBuilder.Append("-k ");
-            if (this.SmoothMotion) stringBuilder.Append("-sm ");
-            if (this.FastPyramid) stringBuilder.Append("--fast-pyr ");
-            if (this.pyramidScale != DEFAULT_PYRAMID_SCALE) stringBuilder.AppendFormat("--pyr-scale {0} ", this.PyramidScale);
-            if (this.levels != DEFAULT_LEVELS) stringBuilder.AppendFormat("--levels {0} ", this.Levels);
-            if (this.windowSize != DEFAULT_WINDOW_SIZE) stringBuilder.AppendFormat("--winsize {0} ", this.WindowSize);
-            if (this.iterations != DEFAULT_ITERATIONS) stringBuilder.AppendFormat("--iters {0} ", this.Iterations);
-            if (this.pixelNeighborhood != DEFAULT_PIXEL_NEIGHBORHOOD) stringBuilder.AppendFormat("--poly-n {0} ", this.PixelNeighborhood);
-            if (this.smoothDerivativeStandardDeviation != DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION) stringBuilder.AppendFormat("--poly-s {0} ", this.SmoothDerivativeStandardDeviation);
-            if (this.FlowFilterType != DEFAULT_FLOW_FILTER_TYPE) stringBuilder.AppendFormat("-ff {0} ", this.FlowFilterType);
+            if(this.KeepSubregions) stringBuilder.Append("-k ");
+            if(this.SmoothMotion) stringBuilder.Append("-sm ");
+            if(this.FastPyramid) stringBuilder.Append("--fast-pyr ");
+            if(this.pyramidScale != DEFAULT_PYRAMID_SCALE) stringBuilder.AppendFormat("--pyr-scale {0} ", this.PyramidScale);
+            if(this.levels != DEFAULT_LEVELS) stringBuilder.AppendFormat("--levels {0} ", this.Levels);
+            if(this.windowSize != DEFAULT_WINDOW_SIZE) stringBuilder.AppendFormat("--winsize {0} ", this.WindowSize);
+            if(this.iterations != DEFAULT_ITERATIONS) stringBuilder.AppendFormat("--iters {0} ", this.Iterations);
+            if(this.pixelNeighborhood != DEFAULT_PIXEL_NEIGHBORHOOD) stringBuilder.AppendFormat("--poly-n {0} ", this.PixelNeighborhood);
+            if(this.smoothDerivativeStandardDeviation != DEFAULT_SMOOTH_DERIVATIVE_STANDARD_DEVIATION) stringBuilder.AppendFormat("--poly-s {0} ", this.SmoothDerivativeStandardDeviation);
+            if(this.FlowFilterType != DEFAULT_FLOW_FILTER_TYPE) stringBuilder.AppendFormat("-ff {0} ", this.FlowFilterType);
 
-            if (!string.IsNullOrWhiteSpace(this.VideoOutput))
+            if(!string.IsNullOrWhiteSpace(this.VideoOutput))
             {
                 string videoOutputFile = string.Empty;
 
-                if (this.MultipleFiles)
+                if(this.MultipleFiles)
                 {
                     var format = new StringBuilder(Path.GetFileNameWithoutExtension(this.VideoOutput));
                     format.Append("_{0:");
-                    for (int i = 0; i < this.videoInput.Count().ToString().Length; i++)
+                    for(int i = 0; i < this.videoInput.Count().ToString().Length; i++)
                     {
                         format.Append("0");
                     }
@@ -619,7 +647,7 @@ namespace butterflow_ui
                 stringBuilder.AppendFormat("-o \"{0}\" ", videoOutputFile);
             }
 
-            if (this.VideoInput.Any())
+            if(this.VideoInput.Any())
             {
                 stringBuilder.AppendFormat("\"{0}\"", this.VideoInput.ElementAt(videoInputIndex));
             }
@@ -634,6 +662,6 @@ namespace butterflow_ui
             return ToButterflowArguments();
         }
 
-        #endregion
+        #endregion Methods
     }
 }

@@ -17,7 +17,7 @@
             </StackPanel>
             <WrapPanel HorizontalAlignment="Center">
                 <TextBlock Text="{x:Static loc:Localization.VersionLabel}" />
-                <TextBlock Text=" - "/>
+                <TextBlock Text=" - " />
                 <TextBlock Name="txtVersion" Text="0.0.0.0" />
             </WrapPanel>
             <TextBlock Text="{x:Static loc:Localization.AboutWindowDescription}" TextAlignment="Center" />
@@ -34,23 +34,25 @@
                 <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Content="{x:Static loc:Localization.DevelopersLabel}" />
                 <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">
-                            <Hyperlink NavigateUri="https://github.com/wagesj45" RequestNavigate="Hyperlink_RequestNavigate">Jordan Wages</Hyperlink>
+                        <Hyperlink NavigateUri="https://github.com/wagesj45" RequestNavigate="Hyperlink_RequestNavigate">Jordan Wages</Hyperlink>
+                        |
+                        <Hyperlink NavigateUri="https://www.paypal.me/wagesj45" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.DonateLabel}" /></Hyperlink>
                     </TextBlock>
                 </StackPanel>
                 <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Content="{x:Static loc:Localization.OpenSourceCreditsLabel}" />
                 <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">
-                        butterflow 
+                        butterflow
                         | <Hyperlink NavigateUri="https://github.com/dthpham/butterflow" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowGithubLinkLabel}" /></Hyperlink>
                         | <Hyperlink NavigateUri="https://github.com/dthpham/butterflow/blob/master/LICENSE" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowLicenseLinkLabel}" /></Hyperlink>
                     </TextBlock>
                     <TextBlock HorizontalAlignment="Center">
-                        cs-mic 
+                        cs-mic
                         | <Hyperlink NavigateUri="https://github.com/wagesj45/cs-mic" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowGithubLinkLabel}" /></Hyperlink>
                         | <Hyperlink NavigateUri="https://github.com/wagesj45/cs-mic/blob/master/LICENSE" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowLicenseLinkLabel}" /></Hyperlink>
                     </TextBlock>
                     <TextBlock HorizontalAlignment="Center">
-                        Gu.Wpf.Media 
+                        Gu.Wpf.Media
                         | <Hyperlink NavigateUri="https://github.com/JohanLarsson/Gu.Wpf.Media" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowGithubLinkLabel}" /></Hyperlink>
                         | <Hyperlink NavigateUri="https://github.com/JohanLarsson/Gu.Wpf.Media/blob/master/LICENSE.md" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static loc:Localization.AboutWindowLicenseLinkLabel}" /></Hyperlink>
                     </TextBlock>
@@ -63,7 +65,7 @@
             </Grid>
             <Separator Margin="0,10" />
             <TextBlock Text="{x:Static butterflow_ui:OctokitWrapper.CurrentVersionStatusDescription}" TextAlignment="Center" Margin="0,10" />
-            <Button Name="btnOK" MaxWidth="50" Content="{x:Static loc:Localization.OKLabel}" Click="btnOK_Click"/>
+            <Button Name="btnOK" MaxWidth="50" Content="{x:Static loc:Localization.OKLabel}" Click="btnOK_Click" />
         </StackPanel>
     </DockPanel>
 </Window>
