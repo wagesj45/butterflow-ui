@@ -75,8 +75,8 @@
     <HelpKINode Title="properties" Url="html/94537008-4543-dfe4-9289-9bd1888c21de.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.ButterflowOption constructor">
-    <HelpKINode Title="ButterflowOption Constructor " Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
     <HelpKINode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
+    <HelpKINode Title="ButterflowOption Constructor " Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.DescriptionValue property" Url="html/78c4c081-252e-17d4-672d-1cc91216a0b3.htm" />
   <HelpKINode Title="ButterflowOption.DescriptionValueProperty field" Url="html/4cce9345-4d0e-3448-bd43-915028cfa134.htm" />
@@ -427,8 +427,8 @@
   <HelpKINode Title="OnStartup method" Url="html/ccc1be7a-d5d7-ad31-d88e-3bc9f970885d.htm" />
   <HelpKINode Title="OptionsConfiguration class">
     <HelpKINode Title="OptionsConfiguration Class" Url="html/8b6c756f-d88d-a439-ae46-36933c20e4cc.htm" />
-    <HelpKINode Title="constructor" Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="constructor" Url="html/09c4fb13-1283-2577-67f6-743c466a6f4b.htm" />
+    <HelpKINode Title="constructor" Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="events" Url="html/cb8c955a-251f-0ecf-6487-38d42a4c82e1.htm" />
     <HelpKINode Title="fields" Url="html/3ccf0d1f-1e4a-6f63-7257-985718950daf.htm" />
     <HelpKINode Title="methods" Url="html/63626eb2-554c-1d04-c1c3-26d0352bee6b.htm" />
@@ -467,8 +467,8 @@
   <HelpKINode Title="OptionsConfiguration.LosslessQuality property" Url="html/73a52eb1-4244-8eb1-e3c0-31fa95ca7595.htm" />
   <HelpKINode Title="OptionsConfiguration.MultipleFiles property" Url="html/13c73cc4-b3e4-00ab-4e06-fc79e457ca64.htm" />
   <HelpKINode Title="OptionsConfiguration.OptionsConfiguration constructor">
-    <HelpKINode Title="OptionsConfiguration Constructor " Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
     <HelpKINode Title="OptionsConfiguration Constructor " Url="html/09c4fb13-1283-2577-67f6-743c466a6f4b.htm" />
+    <HelpKINode Title="OptionsConfiguration Constructor " Url="html/4b292151-5a2e-cea1-2368-802e23b5bb6f.htm" />
   </HelpKINode>
   <HelpKINode Title="OptionsConfiguration.OUTPUT_FILE_FORMAT field" Url="html/b0f7dcea-f771-c054-b833-f40dcb1bd196.htm" />
   <HelpKINode Title="OptionsConfiguration.pixelNeighborhood field" Url="html/c08cb601-d3f9-b04f-501b-4d8194e11287.htm" />
