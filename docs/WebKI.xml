@@ -75,8 +75,8 @@
     <HelpKINode Title="properties" Url="html/94537008-4543-dfe4-9289-9bd1888c21de.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.ButterflowOption constructor">
-    <HelpKINode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
     <HelpKINode Title="ButterflowOption Constructor " Url="html/0117ff48-c896-d702-4a7b-dc7bf783a375.htm" />
+    <HelpKINode Title="ButterflowOption Constructor " Url="html/2308a429-b981-6557-0817-2d675417c82c.htm" />
   </HelpKINode>
   <HelpKINode Title="ButterflowOption.DescriptionValue property" Url="html/78c4c081-252e-17d4-672d-1cc91216a0b3.htm" />
   <HelpKINode Title="ButterflowOption.DescriptionValueProperty field" Url="html/4cce9345-4d0e-3448-bd43-915028cfa134.htm" />
@@ -194,6 +194,7 @@
   <HelpKINode Title="butterflow_ui.RegionType enumeration" Url="html/4e076ed3-56c3-9ed7-43ef-41dd0c624aa7.htm" />
   <HelpKINode Title="Cancel method" Url="html/4ae309d0-c1b6-0cf8-5c03-ff0ca2ba871c.htm" />
   <HelpKINode Title="canvas field" Url="html/3e5afd2f-63a6-319e-2a7b-e113410a07ac.htm" />
+  <HelpKINode Title="chkUseDefaultDevice field" Url="html/013f849f-fee7-7eae-4076-dfea38c4a8ba.htm" />
   <HelpKINode Title="ClippingButtonIcon field" Url="html/76da4765-2b8e-7546-731c-36022fd99be0.htm" />
   <HelpKINode Title="clipStart field" Url="html/be383e5a-6606-a9a5-c136-6795578d2552.htm" />
   <HelpKINode Title="comboDeviceList field" Url="html/1587ea4a-0ce3-bc18-3c60-0c585da7a2f2.htm" />
@@ -526,6 +527,7 @@
   <HelpKINode Title="OptionsWindow.btnSave_Click method" Url="html/d06cd6bc-11f9-936c-17ac-91258dd3341a.htm" />
   <HelpKINode Title="OptionsWindow.ButterflowWrapper property" Url="html/c02e47a3-a9e3-2cfa-32f5-3fab8c95cb9a.htm" />
   <HelpKINode Title="OptionsWindow.ButterflowWrapper_ButterflowExited method" Url="html/8a7395e6-ab2c-16b9-78c5-ee74ea25d941.htm" />
+  <HelpKINode Title="OptionsWindow.chkUseDefaultDevice field" Url="html/013f849f-fee7-7eae-4076-dfea38c4a8ba.htm" />
   <HelpKINode Title="OptionsWindow.comboDeviceList field" Url="html/1587ea4a-0ce3-bc18-3c60-0c585da7a2f2.htm" />
   <HelpKINode Title="OptionsWindow.InitializeComponent method" Url="html/439fa3a9-b5ca-3f5c-b7a9-7273d38d5d7d.htm" />
   <HelpKINode Title="OptionsWindow.OptionsWindow constructor" Url="html/0fb61c2f-e9ec-2c31-4d3f-6843444484b1.htm" />
