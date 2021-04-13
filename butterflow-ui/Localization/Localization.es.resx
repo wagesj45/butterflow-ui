@@ -187,7 +187,7 @@
     <value>Resolución de salida</value>
   </data>
   <data name="SkipBackTooltip" xml:space="preserve">
-    <value>Salte hacia atrás en el video.</value>
+    <value>Salta hacia atrás en el video.</value>
   </data>
   <data name="SkipForwardTooltip" xml:space="preserve">
     <value>Salta hacia adelante en el video.</value>
@@ -286,7 +286,7 @@
     <value>Proceso</value>
   </data>
   <data name="ProcessTooltip" xml:space="preserve">
-    <value>Procesar el video Este puede ser un proceso largo.</value>
+    <value>Procesar el video. Esto puede resultar en un proceso largo.</value>
   </data>
   <data name="PyramidScaleLabel" xml:space="preserve">
     <value>Factor de escala de pirámide</value>
@@ -325,7 +325,7 @@
     <value>github</value>
   </data>
   <data name="AboutWindowLicenseLinkLabel" xml:space="preserve">
-    <value>licencia</value>
+    <value>Licencia</value>
   </data>
   <data name="AboutWindowTitle" xml:space="preserve">
     <value>Acerca de butterflow-ui</value>
@@ -349,13 +349,13 @@
     <value>Opciones de aplicación ...</value>
   </data>
   <data name="OptionsWindowLanguageChangeNotice" xml:space="preserve">
-    <value>Nota: Cambiar el idioma del usuario requerirá un reinicio del programa.</value>
+    <value>Nota: Cambiar el idioma del usuario requerirá reiniciar el programa.</value>
   </data>
   <data name="OptionsWindowTitle" xml:space="preserve">
     <value>Opciones</value>
   </data>
   <data name="SaveLabel" xml:space="preserve">
-    <value>Salvar</value>
+    <value>Guardar</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versión</value>
@@ -373,7 +373,7 @@
     <value>Tipos de archivos admitidos</value>
   </data>
   <data name="BehindVersionStatusDescription" xml:space="preserve">
-    <value>La versión actual está detrás del repositorio de Github y debe actualizarse.</value>
+    <value>La versión actual está desactualizada respecto del repositorio de Github y debe actualizarse.</value>
   </data>
   <data name="CurrentVersionStatusDescription" xml:space="preserve">
     <value>La versión actual está actualizada con el repositorio github.</value>
