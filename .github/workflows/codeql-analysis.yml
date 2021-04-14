@@ -51,13 +51,18 @@ jobs:
     # If this step fails, then you should remove it and run the build manually (see below)
     #- name: Autobuild
     #  uses: github/codeql-action/autobuild@v1
-    - name: Setup .Net
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
+
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
         
-    - name : Build
-      run: dotnet build butterflow-ui/butterflow-ui.csproj
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+     
+    - name: Restore NuGet Packages
+      run: nuget restore butterflow-ui/butterflow-ui.sln
+ 
+    - name: Build and Publish Web App
+      run: msbuild butterflow-ui/butterflow-ui.sln
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
