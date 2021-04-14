@@ -17,8 +17,6 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
-  schedule:
-    - cron: '31 15 * * 5'
 
 jobs:
   analyze:
@@ -62,7 +60,7 @@ jobs:
       run: nuget restore butterflow-ui/butterflow-ui.sln
  
     - name: Build and Publish Web App
-      run: msbuild butterflow-ui/butterflow-ui.sln
+      run: msbuild /p:UseSharedCompilation=false butterflow-ui/butterflow-ui.sln
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
