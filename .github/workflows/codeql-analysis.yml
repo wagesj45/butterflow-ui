@@ -55,11 +55,11 @@ jobs:
     - name: Setup MSBuild Path
       uses: microsoft/Setup-MSBuild@v1
         
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+    #- name: Setup NuGet
+    #  uses: NuGet/setup-nuget@v1.0.2
      
-    - name: Restore NuGet Packages
-      run: nuget restore butterflow-ui/butterflow-ui.sln
+    #- name: Restore NuGet Packages
+    #  run: nuget restore butterflow-ui/butterflow-ui.sln
  
     - name: Build and Publish Web App
       run: msbuild butterflow-ui/butterflow-ui.sln
