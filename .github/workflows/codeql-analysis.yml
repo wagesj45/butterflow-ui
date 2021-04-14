@@ -53,7 +53,7 @@ jobs:
     #  uses: github/codeql-action/autobuild@v1
 
     - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/Setup-MSBuild@v1
         
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
