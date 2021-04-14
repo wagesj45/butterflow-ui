@@ -57,7 +57,7 @@ jobs:
         dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
         
     - name : Build
-      run: dotnet build butterflow-ui.csproj
+      run: dotnet build butterflow-ui/butterflow-ui.csproj
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
