@@ -13,7 +13,7 @@
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.7.1</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.7.2</FrameworkVersion>
     <OutputPath>docs\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
@@ -41,22 +41,21 @@
     <BinaryTOC>True</BinaryTOC>
     <IncludeFavorites>False</IncludeFavorites>
     <WebsiteSdkLinkType>Msdn</WebsiteSdkLinkType>
-    <WebsiteAdContent>&amp;lt%3b!-- Matomo --&amp;gt%3b
-&amp;lt%3bscript type=&amp;quot%3btext/javascript&amp;quot%3b&amp;gt%3b
+    <WebsiteAdContent>&amp;lt%3bscript type=&amp;quot%3btext/javascript&amp;quot%3b&amp;gt%3b
   var _paq = window._paq = window._paq || []%3b
   /%2a tracker methods like &amp;quot%3bsetCustomDimension&amp;quot%3b should be called before &amp;quot%3btrackPageView&amp;quot%3b %2a/
   _paq.push%28[&amp;#39%3btrackPageView&amp;#39%3b]%29%3b
   _paq.push%28[&amp;#39%3benableLinkTracking&amp;#39%3b]%29%3b
   %28function%28%29 {
     var u=&amp;quot%3b//t.thebreadsticks.com/&amp;quot%3b%3b
-    _paq.push%28[&amp;#39%3bsetTrackerUrl&amp;#39%3b, u+&amp;#39%3bmatomo.php&amp;#39%3b]%29%3b
-    _paq.push%28[&amp;#39%3bsetSiteId&amp;#39%3b, &amp;#39%3b7&amp;#39%3b]%29%3b
+    _paq.push%28[&amp;#39%3bsetTrackerUrl&amp;#39%3b, u+&amp;#39%3bjs/&amp;#39%3b]%29%3b
+    _paq.push%28[&amp;#39%3bsetSiteId&amp;#39%3b, &amp;#39%3b6&amp;#39%3b]%29%3b
     var d=document, g=d.createElement%28&amp;#39%3bscript&amp;#39%3b%29, s=d.getElementsByTagName%28&amp;#39%3bscript&amp;#39%3b%29[0]%3b
-    g.type=&amp;#39%3btext/javascript&amp;#39%3b%3b g.async=true%3b g.src=u+&amp;#39%3bmatomo.js&amp;#39%3b%3b s.parentNode.insertBefore%28g,s%29%3b
+    g.type=&amp;#39%3btext/javascript&amp;#39%3b%3b g.async=true%3b g.src=u+&amp;#39%3bjs/&amp;#39%3b%3b s.parentNode.insertBefore%28g,s%29%3b
   }%29%28%29%3b
-&amp;lt%3b/script&amp;gt%3b
-&amp;lt%3b!-- End Matomo Code --&amp;gt%3b</WebsiteAdContent>
+&amp;lt%3b/script&amp;gt%3b</WebsiteAdContent>
     <AppendMarkdownFileExtensionsToUrls>False</AppendMarkdownFileExtensionsToUrls>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
